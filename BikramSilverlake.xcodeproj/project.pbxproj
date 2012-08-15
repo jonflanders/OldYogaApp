@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59685C15DC5431006B4745 /* UIKit.framework */; };
+		FC59685F15DC5431006B4745 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59685E15DC5431006B4745 /* Foundation.framework */; };
+		FC59686115DC5431006B4745 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59686015DC5431006B4745 /* CoreGraphics.framework */; };
+		FC59686715DC5431006B4745 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC59686515DC5431006B4745 /* InfoPlist.strings */; };
+		FC59686915DC5431006B4745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59686815DC5431006B4745 /* main.m */; };
+		FC59686D15DC5431006B4745 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59686C15DC5431006B4745 /* AppDelegate.m */; };
+		FC59687015DC5431006B4745 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59686F15DC5431006B4745 /* ViewController.m */; };
+		FC59687315DC5431006B4745 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687115DC5431006B4745 /* ViewController_iPhone.xib */; };
+		FC59687615DC5431006B4745 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687415DC5431006B4745 /* ViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FC59685815DC5431006B4745 /* BikramSilverlake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikramSilverlake.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC59685C15DC5431006B4745 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FC59685E15DC5431006B4745 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FC59686015DC5431006B4745 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FC59686415DC5431006B4745 /* BikramSilverlake-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BikramSilverlake-Info.plist"; sourceTree = "<group>"; };
+		FC59686615DC5431006B4745 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FC59686815DC5431006B4745 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FC59686A15DC5431006B4745 /* BikramSilverlake-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BikramSilverlake-Prefix.pch"; sourceTree = "<group>"; };
+		FC59686B15DC5431006B4745 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FC59686C15DC5431006B4745 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FC59686E15DC5431006B4745 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FC59686F15DC5431006B4745 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FC59687215DC5431006B4745 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		FC59687515DC5431006B4745 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC59685515DC5431006B4745 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */,
+				FC59685F15DC5431006B4745 /* Foundation.framework in Frameworks */,
+				FC59686115DC5431006B4745 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC59684D15DC5431006B4745 = {
+			isa = PBXGroup;
+			children = (
+				FC59686215DC5431006B4745 /* BikramSilverlake */,
+				FC59685B15DC5431006B4745 /* Frameworks */,
+				FC59685915DC5431006B4745 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC59685915DC5431006B4745 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC59685815DC5431006B4745 /* BikramSilverlake.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC59685B15DC5431006B4745 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC59685C15DC5431006B4745 /* UIKit.framework */,
+				FC59685E15DC5431006B4745 /* Foundation.framework */,
+				FC59686015DC5431006B4745 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC59686215DC5431006B4745 /* BikramSilverlake */ = {
+			isa = PBXGroup;
+			children = (
+				FC59686B15DC5431006B4745 /* AppDelegate.h */,
+				FC59686C15DC5431006B4745 /* AppDelegate.m */,
+				FC59686E15DC5431006B4745 /* ViewController.h */,
+				FC59686F15DC5431006B4745 /* ViewController.m */,
+				FC59687115DC5431006B4745 /* ViewController_iPhone.xib */,
+				FC59687415DC5431006B4745 /* ViewController_iPad.xib */,
+				FC59686315DC5431006B4745 /* Supporting Files */,
+			);
+			path = BikramSilverlake;
+			sourceTree = "<group>";
+		};
+		FC59686315DC5431006B4745 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC59686415DC5431006B4745 /* BikramSilverlake-Info.plist */,
+				FC59686515DC5431006B4745 /* InfoPlist.strings */,
+				FC59686815DC5431006B4745 /* main.m */,
+				FC59686A15DC5431006B4745 /* BikramSilverlake-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC59685715DC5431006B4745 /* BikramSilverlake */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC59687915DC5431006B4745 /* Build configuration list for PBXNativeTarget "BikramSilverlake" */;
+			buildPhases = (
+				FC59685415DC5431006B4745 /* Sources */,
+				FC59685515DC5431006B4745 /* Frameworks */,
+				FC59685615DC5431006B4745 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikramSilverlake;
+			productName = BikramSilverlake;
+			productReference = FC59685815DC5431006B4745 /* BikramSilverlake.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC59684F15DC5431006B4745 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = flounderware;
+			};
+			buildConfigurationList = FC59685215DC5431006B4745 /* Build configuration list for PBXProject "BikramSilverlake" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FC59684D15DC5431006B4745;
+			productRefGroup = FC59685915DC5431006B4745 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC59685715DC5431006B4745 /* BikramSilverlake */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC59685615DC5431006B4745 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC59686715DC5431006B4745 /* InfoPlist.strings in Resources */,
+				FC59687315DC5431006B4745 /* ViewController_iPhone.xib in Resources */,
+				FC59687615DC5431006B4745 /* ViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC59685415DC5431006B4745 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC59686915DC5431006B4745 /* main.m in Sources */,
+				FC59686D15DC5431006B4745 /* AppDelegate.m in Sources */,
+				FC59687015DC5431006B4745 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FC59686515DC5431006B4745 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC59686615DC5431006B4745 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FC59687115DC5431006B4745 /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC59687215DC5431006B4745 /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		FC59687415DC5431006B4745 /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC59687515DC5431006B4745 /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC59687715DC5431006B4745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC59687815DC5431006B4745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC59687A15DC5431006B4745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
+				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FC59687B15DC5431006B4745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
+				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC59685215DC5431006B4745 /* Build configuration list for PBXProject "BikramSilverlake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC59687715DC5431006B4745 /* Debug */,
+				FC59687815DC5431006B4745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC59687915DC5431006B4745 /* Build configuration list for PBXNativeTarget "BikramSilverlake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC59687A15DC5431006B4745 /* Debug */,
+				FC59687B15DC5431006B4745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC59684F15DC5431006B4745 /* Project object */;
+}
