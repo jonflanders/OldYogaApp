@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC3FF76516C831C800CB3700 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3FF76416C831C800CB3700 /* arrow.png */; };
 		FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59685C15DC5431006B4745 /* UIKit.framework */; };
 		FC59685F15DC5431006B4745 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59685E15DC5431006B4745 /* Foundation.framework */; };
 		FC59686115DC5431006B4745 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59686015DC5431006B4745 /* CoreGraphics.framework */; };
@@ -16,9 +17,27 @@
 		FC59687015DC5431006B4745 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59686F15DC5431006B4745 /* ViewController.m */; };
 		FC59687315DC5431006B4745 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687115DC5431006B4745 /* ViewController_iPhone.xib */; };
 		FC59687615DC5431006B4745 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687415DC5431006B4745 /* ViewController_iPad.xib */; };
+		FC59687D15DC558D006B4745 /* apple114.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59687C15DC558D006B4745 /* apple114.png */; };
+		FC59687F15DC55A0006B4745 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59687E15DC55A0006B4745 /* apple.png */; };
+		FC98D3961628CDFA00436255 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3941628CDFA00436255 /* MainPageTableViewController.m */; };
+		FC98D3971628CDFA00436255 /* MainPageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */; };
+		FC98D39A1628CF0B00436255 /* MainPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3991628CF0B00436255 /* MainPageCell.xib */; };
+		FC98D3BB1628EBD300436255 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3BA1628EBD300436255 /* PullRefreshTableViewController.m */; };
+		FC98D3BE1628EC3200436255 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3BC1628EC3200436255 /* calendar.png */; };
+		FC98D3BF1628EC3200436255 /* poses.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3BD1628EC3200436255 /* poses.png */; };
+		FC98D3C11628EC6900436255 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC98D3C01628EC6900436255 /* QuartzCore.framework */; };
+		FC98D3C7162A314D00436255 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC98D3C6162A314D00436255 /* EventKit.framework */; };
+		FC98D3CD162A3D1F00436255 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3CA162A3D1F00436255 /* about.png */; };
+		FC98D3CE162A3D1F00436255 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3CB162A3D1F00436255 /* back.png */; };
+		FC98D3CF162A3D1F00436255 /* fwd.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3CC162A3D1F00436255 /* fwd.png */; };
+		FC98D3D2162A489E00436255 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3D1162A489E00436255 /* MainTabBarViewController.m */; };
+		FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3D4162A494C00436255 /* SettingsViewController.m */; };
+		FC98D3D7162A494C00436255 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3D5162A494C00436255 /* SettingsViewController.xib */; };
+		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC3FF76416C831C800CB3700 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		FC59685815DC5431006B4745 /* BikramSilverlake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikramSilverlake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC59685C15DC5431006B4745 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC59685E15DC5431006B4745 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -33,6 +52,29 @@
 		FC59686F15DC5431006B4745 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FC59687215DC5431006B4745 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		FC59687515DC5431006B4745 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		FC59687C15DC558D006B4745 /* apple114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple114.png; sourceTree = "<group>"; };
+		FC59687E15DC55A0006B4745 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
+		FC59688015DC55AB006B4745 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FC59688215DC55B8006B4745 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FC98D3931628CDFA00436255 /* MainPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageTableViewController.h; sourceTree = "<group>"; };
+		FC98D3941628CDFA00436255 /* MainPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageTableViewController.m; sourceTree = "<group>"; };
+		FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPageTableViewController.xib; sourceTree = "<group>"; };
+		FC98D3991628CF0B00436255 /* MainPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPageCell.xib; sourceTree = "<group>"; };
+		FC98D3B91628EBD300436255 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		FC98D3BA1628EBD300436255 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		FC98D3BC1628EC3200436255 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		FC98D3BD1628EC3200436255 /* poses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poses.png; sourceTree = "<group>"; };
+		FC98D3C01628EC6900436255 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FC98D3C6162A314D00436255 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		FC98D3CA162A3D1F00436255 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		FC98D3CB162A3D1F00436255 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		FC98D3CC162A3D1F00436255 /* fwd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fwd.png; sourceTree = "<group>"; };
+		FC98D3D0162A489E00436255 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
+		FC98D3D1162A489E00436255 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
+		FC98D3D3162A494C00436255 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FC98D3D4162A494C00436255 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		FC98D3D5162A494C00436255 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC98D3C7162A314D00436255 /* EventKit.framework in Frameworks */,
+				FC98D3C11628EC6900436255 /* QuartzCore.framework in Frameworks */,
 				FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */,
 				FC59685F15DC5431006B4745 /* Foundation.framework in Frameworks */,
 				FC59686115DC5431006B4745 /* CoreGraphics.framework in Frameworks */,
@@ -52,6 +96,17 @@
 		FC59684D15DC5431006B4745 = {
 			isa = PBXGroup;
 			children = (
+				FC3FF76416C831C800CB3700 /* arrow.png */,
+				FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */,
+				FC98D3CA162A3D1F00436255 /* about.png */,
+				FC98D3CB162A3D1F00436255 /* back.png */,
+				FC98D3CC162A3D1F00436255 /* fwd.png */,
+				FC98D3BC1628EC3200436255 /* calendar.png */,
+				FC98D3BD1628EC3200436255 /* poses.png */,
+				FC59688215DC55B8006B4745 /* Default@2x.png */,
+				FC59688015DC55AB006B4745 /* Default.png */,
+				FC59687E15DC55A0006B4745 /* apple.png */,
+				FC59687C15DC558D006B4745 /* apple114.png */,
 				FC59686215DC5431006B4745 /* BikramSilverlake */,
 				FC59685B15DC5431006B4745 /* Frameworks */,
 				FC59685915DC5431006B4745 /* Products */,
@@ -69,6 +124,8 @@
 		FC59685B15DC5431006B4745 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC98D3C6162A314D00436255 /* EventKit.framework */,
+				FC98D3C01628EC6900436255 /* QuartzCore.framework */,
 				FC59685C15DC5431006B4745 /* UIKit.framework */,
 				FC59685E15DC5431006B4745 /* Foundation.framework */,
 				FC59686015DC5431006B4745 /* CoreGraphics.framework */,
@@ -79,6 +136,8 @@
 		FC59686215DC5431006B4745 /* BikramSilverlake */ = {
 			isa = PBXGroup;
 			children = (
+				FC98D3B91628EBD300436255 /* PullRefreshTableViewController.h */,
+				FC98D3BA1628EBD300436255 /* PullRefreshTableViewController.m */,
 				FC59686B15DC5431006B4745 /* AppDelegate.h */,
 				FC59686C15DC5431006B4745 /* AppDelegate.m */,
 				FC59686E15DC5431006B4745 /* ViewController.h */,
@@ -86,6 +145,15 @@
 				FC59687115DC5431006B4745 /* ViewController_iPhone.xib */,
 				FC59687415DC5431006B4745 /* ViewController_iPad.xib */,
 				FC59686315DC5431006B4745 /* Supporting Files */,
+				FC98D3931628CDFA00436255 /* MainPageTableViewController.h */,
+				FC98D3941628CDFA00436255 /* MainPageTableViewController.m */,
+				FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */,
+				FC98D3991628CF0B00436255 /* MainPageCell.xib */,
+				FC98D3D0162A489E00436255 /* MainTabBarViewController.h */,
+				FC98D3D1162A489E00436255 /* MainTabBarViewController.m */,
+				FC98D3D3162A494C00436255 /* SettingsViewController.h */,
+				FC98D3D4162A494C00436255 /* SettingsViewController.m */,
+				FC98D3D5162A494C00436255 /* SettingsViewController.xib */,
 			);
 			path = BikramSilverlake;
 			sourceTree = "<group>";
@@ -155,6 +223,18 @@
 				FC59686715DC5431006B4745 /* InfoPlist.strings in Resources */,
 				FC59687315DC5431006B4745 /* ViewController_iPhone.xib in Resources */,
 				FC59687615DC5431006B4745 /* ViewController_iPad.xib in Resources */,
+				FC59687D15DC558D006B4745 /* apple114.png in Resources */,
+				FC59687F15DC55A0006B4745 /* apple.png in Resources */,
+				FC98D3971628CDFA00436255 /* MainPageTableViewController.xib in Resources */,
+				FC98D39A1628CF0B00436255 /* MainPageCell.xib in Resources */,
+				FC98D3BE1628EC3200436255 /* calendar.png in Resources */,
+				FC98D3BF1628EC3200436255 /* poses.png in Resources */,
+				FC98D3CD162A3D1F00436255 /* about.png in Resources */,
+				FC98D3CE162A3D1F00436255 /* back.png in Resources */,
+				FC98D3CF162A3D1F00436255 /* fwd.png in Resources */,
+				FC98D3D7162A494C00436255 /* SettingsViewController.xib in Resources */,
+				FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */,
+				FC3FF76516C831C800CB3700 /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +248,10 @@
 				FC59686915DC5431006B4745 /* main.m in Sources */,
 				FC59686D15DC5431006B4745 /* AppDelegate.m in Sources */,
 				FC59687015DC5431006B4745 /* ViewController.m in Sources */,
+				FC98D3961628CDFA00436255 /* MainPageTableViewController.m in Sources */,
+				FC98D3BB1628EBD300436255 /* PullRefreshTableViewController.m in Sources */,
+				FC98D3D2162A489E00436255 /* MainTabBarViewController.m in Sources */,
+				FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +342,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
 				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -269,6 +354,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
 				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -293,6 +379,7 @@
 				FC59687B15DC5431006B4745 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
