@@ -55,11 +55,11 @@
 -(void)loadFromJSON{
  
     NSDictionary* thisWeek = [[self.studioData objectForKey:@"ThisWeek"] objectAtIndex: self.currentDay];
-     self.navItem.title = [thisWeek objectForKey:@"Date"];
+    self.navigationItem.title = [thisWeek objectForKey:@"Date"];
     self.tabBarItem.title = @"Schedule";
     self.classes = [thisWeek objectForKey:@"Schedule"];
     [self.tableView reloadData];
-       [self stopLoading];
+    [self stopLoading];
     
 }
 -(void)next{
@@ -67,24 +67,36 @@
     temp++;
     if(temp<[[self.studioData objectForKey:@"ThisWeek"] count]){
         self.currentDay = temp;
-        
         [self loadFromJSON];
-        
+    }
+    [self flipButtons];
+}
+-(void)flipButtons{
+    NSInteger count = [[self.studioData objectForKey:@"ThisWeek"] count];
+    if(self.currentDay==(count-1)){
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+    else{
+        self.navigationItem.rightBarButtonItem  = self.nextButton;
     }
     
-    
-    
+    if(self.currentDay==0)
+    {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
+    else
+    {
+        self.navigationItem.leftBarButtonItem = self.prevButton;
+    }
 }
 -(void)prev{
     int temp = self.currentDay;
     temp--;
     if(temp>=0){
         self.currentDay = temp;
-        
         [self loadFromJSON];
-        		
     }
-
+     [self flipButtons];
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -95,25 +107,26 @@
     return self;
 }
 -(void)viewWillAppear:(BOOL)animated{
-    AppDelegate* appDel = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    self.navItem = appDel.navController.navigationBar.topItem;
+   
     UIBarButtonItem* right = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(next)];
-    self.navItem.rightBarButtonItem =right;
+    self.nextButton = right;
+    self.navigationItem.rightBarButtonItem =self.nextButton;
     
     UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithTitle:@"Prev" style:UIBarButtonItemStyleBordered target:self action:@selector(prev)];
-    self.navItem.leftBarButtonItem =left;
+    self.prevButton  = left;
+    //self.navigationItem.leftBarButtonItem =left;
 
 }
 -(void)viewDidDisappear:(BOOL)animated{    
-    self.navItem.rightBarButtonItem =nil;	
-    self.navItem.leftBarButtonItem =nil;
+    self.navigationItem.rightBarButtonItem =nil;	
+    self.navigationItem.leftBarButtonItem =nil;
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
        self.currentDay = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"MainPageCell" bundle:nil] forCellReuseIdentifier:MainCellIdentifier];
-   self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = [UIColor whiteColor];
 //    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"poses"]];
    
     [self refresh];

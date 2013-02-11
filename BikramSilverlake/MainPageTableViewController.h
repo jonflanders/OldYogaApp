@@ -17,5 +17,7 @@ static NSString* LocalCache = @"LocalCacheData";
 @property (strong,nonatomic) NSDictionary* studioData;
 @property (strong,nonatomic)NSString* dateString;
 @property (nonatomic)NSInteger currentDay;
-@property (strong,nonatomic) UINavigationItem *navItem;
+@property (strong,nonatomic) UIBarButtonItem* nextButton;
+@property (strong,nonatomic) UIBarButtonItem* prevButton;
+
 @end

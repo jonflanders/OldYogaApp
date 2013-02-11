@@ -15,5 +15,4 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) MainTabBarViewController *viewController;
-@property  (strong,nonatomic) UINavigationController* navController;
 @end

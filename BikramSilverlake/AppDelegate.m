@@ -21,11 +21,11 @@
     } else {
        // self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
     }
-    self.navController = [[UINavigationController alloc]
-                          init ];
-    [self.navController.navigationBar setTintColor:[UIColor colorWithRed:(254.0/255.0) green:(178.0/255.0) blue:(67.0/255.0) alpha:1.0]];
-    [self.navController pushViewController:self.viewController animated:YES];
-    self.window.rootViewController = self.navController;
+//    self.navController = [[UINavigationController alloc]
+//                          init ];
+//    [self.navController.navigationBar setTintColor:[UIColor colorWithRed:(254.0/255.0) green:(178.0/255.0) blue:(67.0/255.0) alpha:1.0]];
+//    [self.navController pushViewController:self.viewController animated:YES];
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

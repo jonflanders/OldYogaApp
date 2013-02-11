@@ -12,4 +12,6 @@
 @interface MainTabBarViewController : UITabBarController
 @property  (strong,nonatomic) MainPageTableViewController* schedule;
 @property   (strong,nonatomic)  SettingsViewController* settings;
+
+@property  (strong,nonatomic) UINavigationController* scheduleNavController;
 @end

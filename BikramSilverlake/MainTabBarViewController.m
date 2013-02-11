@@ -33,10 +33,11 @@
     self.schedule  =  [[MainPageTableViewController alloc] initWithNibName:@"MainPageTableViewController" bundle:nil];
    // self.schedule.navigationController = self.navigationController;
     self.settings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
-    self.schedule.tabBarItem.title = @"Schedule";
     self.settings.tabBarItem.title = @"Settings";
-    
-    self.viewControllers = @[self.schedule,self.settings];
+    self.scheduleNavController = [[UINavigationController alloc] initWithRootViewController:self.schedule];
+    self.scheduleNavController.tabBarItem.title = @"Schedule";
+    [self.scheduleNavController.navigationBar setTintColor:[UIColor colorWithRed:(254.0/255.0) green:(178.0/255.0) blue:(67.0/255.0) alpha:1.0]];
+    self.viewControllers = @[self.scheduleNavController,self.settings];
    
 }
 
