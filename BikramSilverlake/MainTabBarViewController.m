@@ -19,7 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-    }
+          }
     return self;
 }
 
@@ -31,7 +31,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.schedule  =  [[MainPageTableViewController alloc] initWithNibName:@"MainPageTableViewController" bundle:nil];
-   // self.schedule.navigationController = self.navigationController;
     self.settings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
     self.settings.tabBarItem.title = @"Settings";
     self.scheduleNavController = [[UINavigationController alloc] initWithRootViewController:self.schedule];

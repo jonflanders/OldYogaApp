@@ -124,6 +124,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tabBarItem.image = [UIImage imageNamed:@"Default"];
+
        self.currentDay = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"MainPageCell" bundle:nil] forCellReuseIdentifier:MainCellIdentifier];
     self.tableView.backgroundColor = [UIColor whiteColor];
