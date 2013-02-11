@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PullRefreshTableViewController.h"
 #import <EventKit/EventKit.h>
+#import "BusyViewController.h"
+
 static NSString *MainCellIdentifier = @"Cell";
 static NSString *URL = @"http://www.bikramyogasilverlake.com/api/schedule";
 static NSString* LocalCache = @"LocalCacheData";
@@ -19,5 +21,6 @@ static NSString* LocalCache = @"LocalCacheData";
 @property (nonatomic)NSInteger currentDay;
 @property (strong,nonatomic) UIBarButtonItem* nextButton;
 @property (strong,nonatomic) UIBarButtonItem* prevButton;
-
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeGR;
+@property (strong,nonatomic) BusyViewController* busyView;
 @end

@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.tabBar.tintColor = [UIColor clearColor];	// Do any additional setup after loading the view.
     self.schedule  =  [[MainPageTableViewController alloc] initWithNibName:@"MainPageTableViewController" bundle:nil];
     self.settings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
     self.settings.tabBarItem.title = @"Settings";

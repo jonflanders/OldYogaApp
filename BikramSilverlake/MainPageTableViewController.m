@@ -15,7 +15,7 @@
 
 @implementation MainPageTableViewController
 -(void)refresh{
-    
+    self.busyView.view.hidden=NO;
     self.classes = NULL;
     NSURL* url = [NSURL URLWithString:URL];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
@@ -47,6 +47,9 @@
              });
            
          }
+         dispatch_async(dispatch_get_main_queue(), ^{
+             self.busyView.view.hidden=YES;
+         });
         
          
      }];
@@ -121,15 +124,35 @@
     self.navigationItem.rightBarButtonItem =nil;	
     self.navigationItem.leftBarButtonItem =nil;
 }
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.tabBarItem.image = [UIImage imageNamed:@"pose"];
+        self.busyView = [[BusyViewController alloc] initWithNibName:@"BusyViewController" bundle:nil];
+
+    }
+    return self;
+}
+-(void)swipe{
+//   if(self.swipeGR.direction==UISwipeGestureRecognizerDirectionRight)
+//   {
+//       [self prev ];
+//   }
+//    if(self.swipeGR.direction == UISwipeGestureRecognizerDirectionLeft) {
+//        [self next];
+//    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tabBarItem.image = [UIImage imageNamed:@"Default"];
-
-       self.currentDay = 0;
+    self.currentDay = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"MainPageCell" bundle:nil] forCellReuseIdentifier:MainCellIdentifier];
     self.tableView.backgroundColor = [UIColor whiteColor];
-//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"poses"]];
+    [self.swipeGR addTarget:self action:@selector(swipe)];
+    [self.tableView addGestureRecognizer:self.swipeGR];
+    self.busyView.view.hidden=YES;
+    [self.tableView addSubview:self.busyView.view];
    
     [self refresh];
 }
@@ -258,4 +281,8 @@
      */
 }
 
+- (void)viewDidUnload {
+    [self setSwipeGR:nil];
+    [super viewDidUnload];
+}
 @end
