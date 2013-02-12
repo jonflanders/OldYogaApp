@@ -153,7 +153,6 @@
     [self.tableView addGestureRecognizer:self.swipeGR];
     self.busyView.view.hidden=YES;
     [self.tableView addSubview:self.busyView.view];
-   
     [self refresh];
 }
 
@@ -182,7 +181,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MainCellIdentifier];
     NSDictionary* day = [self.classes objectAtIndex:indexPath.row];
     NSInteger idx =indexPath.row%2;
-    NSLog(@"Index path = %d - modulo 2 == %d",indexPath.row, idx);
+   // NSLog(@"Index path = %d - modulo 2 == %d",indexPath.row, idx);
     // Configure the cell...
     if(idx==0){
         //cell.backgroundColor = [UIColor colorWithRed:.5 green:.5 blue:.5 alpha:.8];
@@ -206,8 +205,8 @@
             }
             if([sview isKindOfClass:[UIButton class]])
             {
-                UIButton* b = (UIButton*)sview;
-                [b addTarget:self action:@selector(addToCalendar) forControlEvents:UIControlEventTouchDown];
+//                UIButton* b = (UIButton*)sview;
+//                [b addTarget:self action:@selector(addToCalendar) forControlEvents:UIControlEventTouchDown];
             }
         }
     }
@@ -215,16 +214,21 @@
     return cell;
 }
 -(void)addToCalendar{
+  
+    NSIndexPath* path =    self.tableView.indexPathForSelectedRow;
+   // NSLog(@"%@",path);
     EKEventStore *eventStore = [[EKEventStore alloc] init];
-    
+    NSDictionary* day = [self.classes objectAtIndex:path.row];
+    NSString* dateString = [day objectForKey:@"DateLink"];
     EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
     event.title     = @"Bikram Yoga Silverlake";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
     [dateFormatter setDateFormat:@"yyyy-MM-ddHH:mm:ss"];
-    NSDate *date = [dateFormatter dateFromString:self.dateString];
+    NSDate *date = [dateFormatter dateFromString:dateString];
     event.startDate = date;
-    event.endDate   = [[NSDate alloc] initWithTimeInterval:(60*90) sinceDate:event.startDate];
+    NSNumber* time = [day objectForKey:@"ClassLength"];
+    event.endDate   = [[NSDate alloc] initWithTimeInterval:(60*time.doubleValue) sinceDate:event.startDate];
     [event setCalendar:[eventStore defaultCalendarForNewEvents]];
     NSError *err;
     [eventStore saveEvent:event span:EKSpanThisEvent error:&err];
@@ -272,13 +276,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self addToCalendar];
 }
 
 - (void)viewDidUnload {

@@ -18,7 +18,6 @@
 		FC59686715DC5431006B4745 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC59686515DC5431006B4745 /* InfoPlist.strings */; };
 		FC59686915DC5431006B4745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59686815DC5431006B4745 /* main.m */; };
 		FC59686D15DC5431006B4745 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59686C15DC5431006B4745 /* AppDelegate.m */; };
-		FC59687015DC5431006B4745 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59686F15DC5431006B4745 /* ViewController.m */; };
 		FC59687315DC5431006B4745 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687115DC5431006B4745 /* ViewController_iPhone.xib */; };
 		FC59687615DC5431006B4745 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687415DC5431006B4745 /* ViewController_iPad.xib */; };
 		FC59687D15DC558D006B4745 /* apple114.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59687C15DC558D006B4745 /* apple114.png */; };
@@ -38,6 +37,10 @@
 		FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3D4162A494C00436255 /* SettingsViewController.m */; };
 		FC98D3D7162A494C00436255 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3D5162A494C00436255 /* SettingsViewController.xib */; };
 		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
+		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
+		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
+		FCF38AC116CAC1E5005DD57B /* AlarmTimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */; };
+		FCF38AC316CAC368005DD57B /* NavController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF38AC216CAC368005DD57B /* NavController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +60,6 @@
 		FC59686A15DC5431006B4745 /* BikramSilverlake-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BikramSilverlake-Prefix.pch"; sourceTree = "<group>"; };
 		FC59686B15DC5431006B4745 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC59686C15DC5431006B4745 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FC59686E15DC5431006B4745 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FC59686F15DC5431006B4745 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FC59687215DC5431006B4745 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		FC59687515DC5431006B4745 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		FC59687C15DC558D006B4745 /* apple114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple114.png; path = ../apple114.png; sourceTree = "<group>"; };
@@ -84,6 +85,12 @@
 		FC98D3D4162A494C00436255 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FC98D3D5162A494C00436255 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
+		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
+		FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmTimeTableViewController.h; path = ../AlarmTimeTableViewController.h; sourceTree = "<group>"; };
+		FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlarmTimeTableViewController.m; path = ../AlarmTimeTableViewController.m; sourceTree = "<group>"; };
+		FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlarmTimeTableViewController.xib; path = ../AlarmTimeTableViewController.xib; sourceTree = "<group>"; };
+		FCF38AC216CAC368005DD57B /* NavController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,12 +132,14 @@
 		FC3FF76716C8D63200CB3700 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */,
 				FC3FF77116C8E42F00CB3700 /* BusyViewController.xib */,
 				FC98D3D5162A494C00436255 /* SettingsViewController.xib */,
 				FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */,
 				FC98D3991628CF0B00436255 /* MainPageCell.xib */,
 				FC59687115DC5431006B4745 /* ViewController_iPhone.xib */,
 				FC59687415DC5431006B4745 /* ViewController_iPad.xib */,
+				FCF38AC216CAC368005DD57B /* NavController.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -138,6 +147,8 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */,
+				FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */,
 				FC3FF77216C8E42F00CB3700 /* BusyViewController.h */,
 				FC3FF77316C8E42F00CB3700 /* BusyViewController.m */,
 				FC98D3D0162A489E00436255 /* MainTabBarViewController.h */,
@@ -150,8 +161,8 @@
 				FC98D3BA1628EBD300436255 /* PullRefreshTableViewController.m */,
 				FC59686B15DC5431006B4745 /* AppDelegate.h */,
 				FC59686C15DC5431006B4745 /* AppDelegate.m */,
-				FC59686E15DC5431006B4745 /* ViewController.h */,
-				FC59686F15DC5431006B4745 /* ViewController.m */,
+				FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */,
+				FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -276,6 +287,8 @@
 				FC3FF76E16C8DCA200CB3700 /* pose.png in Resources */,
 				FC3FF77016C8DFC700CB3700 /* bikramsettings.png in Resources */,
 				FC3FF77416C8E43000CB3700 /* BusyViewController.xib in Resources */,
+				FCF38AC116CAC1E5005DD57B /* AlarmTimeTableViewController.xib in Resources */,
+				FCF38AC316CAC368005DD57B /* NavController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,12 +301,13 @@
 			files = (
 				FC59686915DC5431006B4745 /* main.m in Sources */,
 				FC59686D15DC5431006B4745 /* AppDelegate.m in Sources */,
-				FC59687015DC5431006B4745 /* ViewController.m in Sources */,
 				FC98D3961628CDFA00436255 /* MainPageTableViewController.m in Sources */,
 				FC98D3BB1628EBD300436255 /* PullRefreshTableViewController.m in Sources */,
 				FC98D3D2162A489E00436255 /* MainTabBarViewController.m in Sources */,
 				FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */,
 				FC3FF77516C8E43000CB3700 /* BusyViewController.m in Sources */,
+				FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */,
+				FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
