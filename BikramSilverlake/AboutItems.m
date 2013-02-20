@@ -12,7 +12,7 @@
 -(id)initWithItem:(NSString*)item andValue:(NSString*) value{
     self = [super init];
     if(self)
-    {
+    {        
         self.item = item;
         self.value = value;
     }
