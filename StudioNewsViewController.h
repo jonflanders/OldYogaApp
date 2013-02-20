@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface StudioNewsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIView *newsView;
 
 @end

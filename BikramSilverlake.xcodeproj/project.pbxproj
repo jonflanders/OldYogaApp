@@ -31,6 +31,8 @@
 		FC96662716D4826000E656A2 /* AboutItems.m in Sources */ = {isa = PBXBuildFile; fileRef = FC96662616D4826000E656A2 /* AboutItems.m */; };
 		FC96662A16D4925B00E656A2 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = FC96662816D4925B00E656A2 /* news.png */; };
 		FC96662B16D4925B00E656A2 /* studio.png in Resources */ = {isa = PBXBuildFile; fileRef = FC96662916D4925B00E656A2 /* studio.png */; };
+		FC96662D16D49E7C00E656A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC96662C16D49E7C00E656A2 /* MapKit.framework */; };
+		FC96662F16D4A3DF00E656A2 /* Post-it-note-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = FC96662E16D4A3DF00E656A2 /* Post-it-note-transparent.png */; };
 		FC98D3961628CDFA00436255 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3941628CDFA00436255 /* MainPageTableViewController.m */; };
 		FC98D3971628CDFA00436255 /* MainPageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */; };
 		FC98D39A1628CF0B00436255 /* MainPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3991628CF0B00436255 /* MainPageCell.xib */; };
@@ -88,6 +90,8 @@
 		FC96662616D4826000E656A2 /* AboutItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutItems.m; sourceTree = "<group>"; };
 		FC96662816D4925B00E656A2 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
 		FC96662916D4925B00E656A2 /* studio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studio.png; sourceTree = "<group>"; };
+		FC96662C16D49E7C00E656A2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FC96662E16D4A3DF00E656A2 /* Post-it-note-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Post-it-note-transparent.png"; path = "../../../../Drones/Post-it-note-transparent.png"; sourceTree = "<group>"; };
 		FC98D3931628CDFA00436255 /* MainPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageTableViewController.h; sourceTree = "<group>"; };
 		FC98D3941628CDFA00436255 /* MainPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageTableViewController.m; sourceTree = "<group>"; };
 		FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPageTableViewController.xib; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC96662D16D49E7C00E656A2 /* MapKit.framework in Frameworks */,
 				FC98D3C7162A314D00436255 /* EventKit.framework in Frameworks */,
 				FC98D3C11628EC6900436255 /* QuartzCore.framework in Frameworks */,
 				FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */,
@@ -134,6 +139,7 @@
 		FC3FF76616C8D62B00CB3700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FC96662E16D4A3DF00E656A2 /* Post-it-note-transparent.png */,
 				FC96662816D4925B00E656A2 /* news.png */,
 				FC96662916D4925B00E656A2 /* studio.png */,
 				FC3FF76F16C8DFC700CB3700 /* bikramsettings.png */,
@@ -205,6 +211,7 @@
 		FC59684D15DC5431006B4745 = {
 			isa = PBXGroup;
 			children = (
+				FC96662C16D49E7C00E656A2 /* MapKit.framework */,
 				FC59686215DC5431006B4745 /* BikramSilverlake */,
 				FC59685B15DC5431006B4745 /* Frameworks */,
 				FC59685915DC5431006B4745 /* Products */,
@@ -329,6 +336,7 @@
 				FC9665ED16D41C5700E656A2 /* StudioNewsViewController.xib in Resources */,
 				FC96662A16D4925B00E656A2 /* news.png in Resources */,
 				FC96662B16D4925B00E656A2 /* studio.png in Resources */,
+				FC96662F16D4A3DF00E656A2 /* Post-it-note-transparent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

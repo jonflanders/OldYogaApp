@@ -8,7 +8,7 @@
 
 #import "AboutTheStudioViewController.h"
 #import "AboutItems.h"
-
+#import <MapKit/MapKit.h>
 @interface AboutTheStudioViewController ()
 {
     NSArray* _items;
@@ -47,6 +47,27 @@
     }
     
 }
+-(void)address:(NSString*)addy
+{
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = 34.118425;
+    coordinate.longitude = -118.260727;
+    MKPlacemark* placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
+    MKMapItem* destination =  [[MKMapItem alloc] initWithPlacemark:placemark];
+    
+    if([destination respondsToSelector:@selector(openInMapsWithLaunchOptions:)])
+    {
+        // Using iOS6 native maps app
+        [destination openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving}];
+    }
+    else
+    {
+        // Using iOS5 which has the Google Maps application
+        NSString *currentLocation = @"Current%20Location";
+        NSString *routeString = [NSString stringWithFormat:@"%@saddr=%@", @"http://maps.google.com", addy];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:routeString]];
+    }
+}
 -(void)phone:(NSString*)number
 {
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",number]]];
@@ -58,7 +79,7 @@
         // Custom initialization
           self.title = @"The Studio";
         self.tabBarItem.image = [UIImage imageNamed:@"studio"];
-        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard \n Los Angeles, California 90039"]];
+        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"]];
     }
     return self;
 }

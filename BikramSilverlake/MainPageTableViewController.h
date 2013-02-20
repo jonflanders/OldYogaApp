@@ -23,4 +23,5 @@ static NSString* LocalCache = @"LocalCacheData";
 @property (strong,nonatomic) UIBarButtonItem* prevButton;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeGR;
 @property (strong,nonatomic) BusyViewController* busyView;
+@property (strong, nonatomic) IBOutlet UILabel *addedToCalendar;
 @end

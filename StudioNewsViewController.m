@@ -38,4 +38,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setPageControl:nil];
+    [self setNewsView:nil];
+    [super viewDidUnload];
+}
 @end

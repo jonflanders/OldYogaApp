@@ -55,6 +55,7 @@
      }];
     
 }
+
 -(void)loadFromJSON{
  
     NSDictionary* thisWeek = [[self.studioData objectForKey:@"ThisWeek"] objectAtIndex: self.currentDay];
@@ -153,6 +154,7 @@
     [self.tableView addGestureRecognizer:self.swipeGR];
     self.busyView.view.hidden=YES;
     [self.tableView addSubview:self.busyView.view];
+    [self.tableView addSubview:self.addedToCalendar];
     [self refresh];
 }
 
@@ -174,7 +176,7 @@
    return self.classes.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 75;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -216,6 +218,7 @@
 }
 -(void)addToCalendar:(id)sender{
   
+    self.addedToCalendar.hidden = NO;
     UIButton* b = (UIButton*)sender;
     UIView* superView = b.superview;
     UITableViewCell* cell = (UITableViewCell*)superView.superview;
@@ -236,6 +239,11 @@
     [event setCalendar:[eventStore defaultCalendarForNewEvents]];
     NSError *err;
     [eventStore saveEvent:event span:EKSpanThisEvent error:&err];
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        self.addedToCalendar.hidden = YES;
+    });
 }
 /*
 // Override to support conditional editing of the table view.
@@ -285,6 +293,7 @@
 
 - (void)viewDidUnload {
     [self setSwipeGR:nil];
+    [self setAddedToCalendar:nil];
     [super viewDidUnload];
 }
 @end
