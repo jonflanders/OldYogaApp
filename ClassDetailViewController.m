@@ -1,18 +1,18 @@
 //
-//  BusyViewController.m
-//  AYM
+//  ClassDetailViewController.m
+//  BikramSilverlake
 //
-//  Created by Jon Flanders on 12/15/12.
-//  Copyright (c) 2012 flounderware. All rights reserved.
+//  Created by Jon Flanders on 2/19/13.
+//  Copyright (c) 2013 flounderware. All rights reserved.
 //
 
-#import "BusyViewController.h"
-#import <QuartzCore/QuartzCore.h>
-@interface BusyViewController ()
+#import "ClassDetailViewController.h"
+
+@interface ClassDetailViewController ()
 
 @end
 
-@implementation BusyViewController
+@implementation ClassDetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

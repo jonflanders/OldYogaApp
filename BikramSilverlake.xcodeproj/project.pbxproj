@@ -22,6 +22,15 @@
 		FC59687615DC5431006B4745 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687415DC5431006B4745 /* ViewController_iPad.xib */; };
 		FC59687D15DC558D006B4745 /* apple114.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59687C15DC558D006B4745 /* apple114.png */; };
 		FC59687F15DC55A0006B4745 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59687E15DC55A0006B4745 /* apple.png */; };
+		FC9665E216D41BE800E656A2 /* ClassDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */; };
+		FC9665E316D41BE800E656A2 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */; };
+		FC9665E716D41BFD00E656A2 /* AboutTheStudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665E516D41BFD00E656A2 /* AboutTheStudioViewController.m */; };
+		FC9665E816D41BFD00E656A2 /* AboutTheStudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9665E616D41BFD00E656A2 /* AboutTheStudioViewController.xib */; };
+		FC9665EC16D41C5700E656A2 /* StudioNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665EA16D41C5700E656A2 /* StudioNewsViewController.m */; };
+		FC9665ED16D41C5700E656A2 /* StudioNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9665EB16D41C5700E656A2 /* StudioNewsViewController.xib */; };
+		FC96662716D4826000E656A2 /* AboutItems.m in Sources */ = {isa = PBXBuildFile; fileRef = FC96662616D4826000E656A2 /* AboutItems.m */; };
+		FC96662A16D4925B00E656A2 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = FC96662816D4925B00E656A2 /* news.png */; };
+		FC96662B16D4925B00E656A2 /* studio.png in Resources */ = {isa = PBXBuildFile; fileRef = FC96662916D4925B00E656A2 /* studio.png */; };
 		FC98D3961628CDFA00436255 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3941628CDFA00436255 /* MainPageTableViewController.m */; };
 		FC98D3971628CDFA00436255 /* MainPageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */; };
 		FC98D39A1628CF0B00436255 /* MainPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3991628CF0B00436255 /* MainPageCell.xib */; };
@@ -66,6 +75,19 @@
 		FC59687E15DC55A0006B4745 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple.png; path = ../apple.png; sourceTree = "<group>"; };
 		FC59688015DC55AB006B4745 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		FC59688215DC55B8006B4745 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassDetailViewController.h; path = ../ClassDetailViewController.h; sourceTree = "<group>"; };
+		FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassDetailViewController.m; path = ../ClassDetailViewController.m; sourceTree = "<group>"; };
+		FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClassDetailViewController.xib; path = ../ClassDetailViewController.xib; sourceTree = "<group>"; };
+		FC9665E416D41BFD00E656A2 /* AboutTheStudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutTheStudioViewController.h; path = ../AboutTheStudioViewController.h; sourceTree = "<group>"; };
+		FC9665E516D41BFD00E656A2 /* AboutTheStudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutTheStudioViewController.m; path = ../AboutTheStudioViewController.m; sourceTree = "<group>"; };
+		FC9665E616D41BFD00E656A2 /* AboutTheStudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutTheStudioViewController.xib; path = ../AboutTheStudioViewController.xib; sourceTree = "<group>"; };
+		FC9665E916D41C5700E656A2 /* StudioNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudioNewsViewController.h; path = ../StudioNewsViewController.h; sourceTree = "<group>"; };
+		FC9665EA16D41C5700E656A2 /* StudioNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudioNewsViewController.m; path = ../StudioNewsViewController.m; sourceTree = "<group>"; };
+		FC9665EB16D41C5700E656A2 /* StudioNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StudioNewsViewController.xib; path = ../StudioNewsViewController.xib; sourceTree = "<group>"; };
+		FC96662516D4825F00E656A2 /* AboutItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutItems.h; sourceTree = "<group>"; };
+		FC96662616D4826000E656A2 /* AboutItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutItems.m; sourceTree = "<group>"; };
+		FC96662816D4925B00E656A2 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		FC96662916D4925B00E656A2 /* studio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studio.png; sourceTree = "<group>"; };
 		FC98D3931628CDFA00436255 /* MainPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageTableViewController.h; sourceTree = "<group>"; };
 		FC98D3941628CDFA00436255 /* MainPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageTableViewController.m; sourceTree = "<group>"; };
 		FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPageTableViewController.xib; sourceTree = "<group>"; };
@@ -112,6 +134,8 @@
 		FC3FF76616C8D62B00CB3700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FC96662816D4925B00E656A2 /* news.png */,
+				FC96662916D4925B00E656A2 /* studio.png */,
 				FC3FF76F16C8DFC700CB3700 /* bikramsettings.png */,
 				FC3FF76D16C8DCA200CB3700 /* pose.png */,
 				FC3FF76416C831C800CB3700 /* arrow.png */,
@@ -132,6 +156,9 @@
 		FC3FF76716C8D63200CB3700 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				FC9665EB16D41C5700E656A2 /* StudioNewsViewController.xib */,
+				FC9665E616D41BFD00E656A2 /* AboutTheStudioViewController.xib */,
+				FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */,
 				FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */,
 				FC3FF77116C8E42F00CB3700 /* BusyViewController.xib */,
 				FC98D3D5162A494C00436255 /* SettingsViewController.xib */,
@@ -147,6 +174,14 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FC96662516D4825F00E656A2 /* AboutItems.h */,
+				FC96662616D4826000E656A2 /* AboutItems.m */,
+				FC9665E916D41C5700E656A2 /* StudioNewsViewController.h */,
+				FC9665EA16D41C5700E656A2 /* StudioNewsViewController.m */,
+				FC9665E416D41BFD00E656A2 /* AboutTheStudioViewController.h */,
+				FC9665E516D41BFD00E656A2 /* AboutTheStudioViewController.m */,
+				FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */,
+				FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */,
 				FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */,
 				FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */,
 				FC3FF77216C8E42F00CB3700 /* BusyViewController.h */,
@@ -244,7 +279,7 @@
 		FC59684F15DC5431006B4745 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = flounderware;
 			};
 			buildConfigurationList = FC59685215DC5431006B4745 /* Build configuration list for PBXProject "BikramSilverlake" */;
@@ -289,6 +324,11 @@
 				FC3FF77416C8E43000CB3700 /* BusyViewController.xib in Resources */,
 				FCF38AC116CAC1E5005DD57B /* AlarmTimeTableViewController.xib in Resources */,
 				FCF38AC316CAC368005DD57B /* NavController.xib in Resources */,
+				FC9665E316D41BE800E656A2 /* ClassDetailViewController.xib in Resources */,
+				FC9665E816D41BFD00E656A2 /* AboutTheStudioViewController.xib in Resources */,
+				FC9665ED16D41C5700E656A2 /* StudioNewsViewController.xib in Resources */,
+				FC96662A16D4925B00E656A2 /* news.png in Resources */,
+				FC96662B16D4925B00E656A2 /* studio.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +348,10 @@
 				FC3FF77516C8E43000CB3700 /* BusyViewController.m in Sources */,
 				FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */,
 				FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */,
+				FC9665E216D41BE800E656A2 /* ClassDetailViewController.m in Sources */,
+				FC9665E716D41BFD00E656A2 /* AboutTheStudioViewController.m in Sources */,
+				FC9665EC16D41C5700E656A2 /* StudioNewsViewController.m in Sources */,
+				FC96662716D4826000E656A2 /* AboutItems.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +392,9 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -376,6 +423,9 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;

@@ -124,7 +124,7 @@
     self.navigationItem.rightBarButtonItem =nil;	
     self.navigationItem.leftBarButtonItem =nil;
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -179,6 +179,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MainCellIdentifier];
+    
     NSDictionary* day = [self.classes objectAtIndex:indexPath.row];
     NSInteger idx =indexPath.row%2;
    // NSLog(@"Index path = %d - modulo 2 == %d",indexPath.row, idx);
@@ -193,7 +194,7 @@
             {
                 UILabel* nb = (UILabel*)sview;
                 if(nb.tag==1){
-                    nb.text = (NSString*)[day objectForKey:@"FullTime"];
+                    nb.text = (NSString*)[day objectForKey:@"Time"];
                 }
                 if(nb.tag==2){
                     nb.text = (NSString*)[day objectForKey:@"Type"];
@@ -205,17 +206,20 @@
             }
             if([sview isKindOfClass:[UIButton class]])
             {
-//                UIButton* b = (UIButton*)sview;
-//                [b addTarget:self action:@selector(addToCalendar) forControlEvents:UIControlEventTouchDown];
+                UIButton* b = (UIButton*)sview;
+                [b addTarget:self action:@selector(addToCalendar:) forControlEvents:UIControlEventTouchDown];
             }
         }
     }
     
     return cell;
 }
--(void)addToCalendar{
+-(void)addToCalendar:(id)sender{
   
-    NSIndexPath* path =    self.tableView.indexPathForSelectedRow;
+    UIButton* b = (UIButton*)sender;
+    UIView* superView = b.superview;
+    UITableViewCell* cell = (UITableViewCell*)superView.superview;
+    NSIndexPath* path =    [self.tableView indexPathForCell:cell];
    // NSLog(@"%@",path);
     EKEventStore *eventStore = [[EKEventStore alloc] init];
     NSDictionary* day = [self.classes objectAtIndex:path.row];
@@ -276,7 +280,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self addToCalendar];
+   
 }
 
 - (void)viewDidUnload {
