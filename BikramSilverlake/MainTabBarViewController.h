@@ -11,7 +11,7 @@
 #import "SettingsViewController.h"
 #import "StudioNewsViewController.h"
 #import "AboutTheStudioViewController.h"
-
+#import "BuyViewController.h"
 
 
 @interface MainTabBarViewController : UITabBarController
@@ -20,4 +20,5 @@
 @property (strong,nonatomic) StudioNewsViewController* studioNews;
 @property (strong,nonatomic) AboutTheStudioViewController* about;
 @property  (strong,nonatomic) UINavigationController* scheduleNavController;
+@property (strong,nonatomic) BuyViewController* buyViewController;
 @end

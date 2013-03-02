@@ -8,6 +8,7 @@
 
 #import "MainPageTableViewController.h"
 #import "AppDelegate.h"
+#import "Constants.h"
 
 @interface MainPageTableViewController ()
 
@@ -17,7 +18,7 @@
 -(void)refresh{
     self.busyView.view.hidden=NO;
     self.classes = NULL;
-    NSURL* url = [NSURL URLWithString:URL];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BaseURL,ScheduleURL]];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [NSURLConnection
      sendAsynchronousRequest:request

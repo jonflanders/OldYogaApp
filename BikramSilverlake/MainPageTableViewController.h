@@ -12,7 +12,6 @@
 #import "BusyViewController.h"
 
 static NSString *MainCellIdentifier = @"Cell";
-static NSString *URL = @"http://www.bikramyogasilverlake.com/api/schedule";
 static NSString* LocalCache = @"LocalCacheData";
 @interface MainPageTableViewController : PullRefreshTableViewController
 @property (strong,nonatomic) NSArray* classes;

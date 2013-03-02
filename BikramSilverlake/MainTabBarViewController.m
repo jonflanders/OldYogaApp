@@ -38,7 +38,8 @@
     [self.scheduleNavController.navigationBar setTintColor:[UIColor colorWithRed:(254.0/255.0) green:(178.0/255.0) blue:(67.0/255.0) alpha:1.0]];
     self.studioNews = [[StudioNewsViewController alloc] initWithNibName:@"StudioNewsViewController" bundle:nil];
     self.about = [[AboutTheStudioViewController alloc] initWithNibName:@"AboutTheStudioViewController" bundle:nil];
-    self.viewControllers = @[self.scheduleNavController,self.studioNews ,self.about,self.settings];
+    self.buyViewController = [[BuyViewController alloc] initWithNibName:@"BuyViewController" bundle:nil];
+    self.viewControllers = @[self.scheduleNavController,self.buyViewController,self.studioNews ,self.about,self.settings];
    
 }
 

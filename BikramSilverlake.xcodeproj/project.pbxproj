@@ -47,6 +47,9 @@
 		FC98D3D2162A489E00436255 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3D1162A489E00436255 /* MainTabBarViewController.m */; };
 		FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3D4162A494C00436255 /* SettingsViewController.m */; };
 		FC98D3D7162A494C00436255 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3D5162A494C00436255 /* SettingsViewController.xib */; };
+		FCA905B316DF03F500746A54 /* BuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B116DF03F500746A54 /* BuyViewController.m */; };
+		FCA905B416DF03F500746A54 /* BuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA905B216DF03F500746A54 /* BuyViewController.xib */; };
+		FCA905B716E18F0100746A54 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B616E18F0100746A54 /* Constants.m */; };
 		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
@@ -110,6 +113,11 @@
 		FC98D3D3162A494C00436255 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FC98D3D4162A494C00436255 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FC98D3D5162A494C00436255 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		FCA905B016DF03F500746A54 /* BuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyViewController.h; path = ../BuyViewController.h; sourceTree = "<group>"; };
+		FCA905B116DF03F500746A54 /* BuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyViewController.m; path = ../BuyViewController.m; sourceTree = "<group>"; };
+		FCA905B216DF03F500746A54 /* BuyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyViewController.xib; path = ../BuyViewController.xib; sourceTree = "<group>"; };
+		FCA905B516E18F0000746A54 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FCA905B616E18F0100746A54 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 		FC3FF76716C8D63200CB3700 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				FCA905B216DF03F500746A54 /* BuyViewController.xib */,
 				FC9665EB16D41C5700E656A2 /* StudioNewsViewController.xib */,
 				FC9665E616D41BFD00E656A2 /* AboutTheStudioViewController.xib */,
 				FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */,
@@ -180,6 +189,10 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FCA905B516E18F0000746A54 /* Constants.h */,
+				FCA905B616E18F0100746A54 /* Constants.m */,
+				FCA905B016DF03F500746A54 /* BuyViewController.h */,
+				FCA905B116DF03F500746A54 /* BuyViewController.m */,
 				FC96662516D4825F00E656A2 /* AboutItems.h */,
 				FC96662616D4826000E656A2 /* AboutItems.m */,
 				FC9665E916D41C5700E656A2 /* StudioNewsViewController.h */,
@@ -211,7 +224,6 @@
 		FC59684D15DC5431006B4745 = {
 			isa = PBXGroup;
 			children = (
-				FC96662C16D49E7C00E656A2 /* MapKit.framework */,
 				FC59686215DC5431006B4745 /* BikramSilverlake */,
 				FC59685B15DC5431006B4745 /* Frameworks */,
 				FC59685915DC5431006B4745 /* Products */,
@@ -229,6 +241,7 @@
 		FC59685B15DC5431006B4745 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC96662C16D49E7C00E656A2 /* MapKit.framework */,
 				FC98D3C6162A314D00436255 /* EventKit.framework */,
 				FC98D3C01628EC6900436255 /* QuartzCore.framework */,
 				FC59685C15DC5431006B4745 /* UIKit.framework */,
@@ -337,6 +350,7 @@
 				FC96662A16D4925B00E656A2 /* news.png in Resources */,
 				FC96662B16D4925B00E656A2 /* studio.png in Resources */,
 				FC96662F16D4A3DF00E656A2 /* Post-it-note-transparent.png in Resources */,
+				FCA905B416DF03F500746A54 /* BuyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +374,8 @@
 				FC9665E716D41BFD00E656A2 /* AboutTheStudioViewController.m in Sources */,
 				FC9665EC16D41C5700E656A2 /* StudioNewsViewController.m in Sources */,
 				FC96662716D4826000E656A2 /* AboutItems.m in Sources */,
+				FCA905B316DF03F500746A54 /* BuyViewController.m in Sources */,
+				FCA905B716E18F0100746A54 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
