@@ -50,6 +50,8 @@
 		FCA905B316DF03F500746A54 /* BuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B116DF03F500746A54 /* BuyViewController.m */; };
 		FCA905B416DF03F500746A54 /* BuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA905B216DF03F500746A54 /* BuyViewController.xib */; };
 		FCA905B716E18F0100746A54 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B616E18F0100746A54 /* Constants.m */; };
+		FCA905BB16E2D66500746A54 /* BuyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B916E2D66500746A54 /* BuyDetailViewController.m */; };
+		FCA905BC16E2D66500746A54 /* BuyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA905BA16E2D66500746A54 /* BuyDetailViewController.xib */; };
 		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
@@ -118,6 +120,9 @@
 		FCA905B216DF03F500746A54 /* BuyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyViewController.xib; path = ../BuyViewController.xib; sourceTree = "<group>"; };
 		FCA905B516E18F0000746A54 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FCA905B616E18F0100746A54 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		FCA905B816E2D66500746A54 /* BuyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyDetailViewController.h; path = ../BuyDetailViewController.h; sourceTree = "<group>"; };
+		FCA905B916E2D66500746A54 /* BuyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyDetailViewController.m; path = ../BuyDetailViewController.m; sourceTree = "<group>"; };
+		FCA905BA16E2D66500746A54 /* BuyDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyDetailViewController.xib; path = ../BuyDetailViewController.xib; sourceTree = "<group>"; };
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
@@ -170,6 +175,7 @@
 		FC3FF76716C8D63200CB3700 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				FCA905BA16E2D66500746A54 /* BuyDetailViewController.xib */,
 				FCA905B216DF03F500746A54 /* BuyViewController.xib */,
 				FC9665EB16D41C5700E656A2 /* StudioNewsViewController.xib */,
 				FC9665E616D41BFD00E656A2 /* AboutTheStudioViewController.xib */,
@@ -189,6 +195,8 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FCA905B816E2D66500746A54 /* BuyDetailViewController.h */,
+				FCA905B916E2D66500746A54 /* BuyDetailViewController.m */,
 				FCA905B516E18F0000746A54 /* Constants.h */,
 				FCA905B616E18F0100746A54 /* Constants.m */,
 				FCA905B016DF03F500746A54 /* BuyViewController.h */,
@@ -351,6 +359,7 @@
 				FC96662B16D4925B00E656A2 /* studio.png in Resources */,
 				FC96662F16D4A3DF00E656A2 /* Post-it-note-transparent.png in Resources */,
 				FCA905B416DF03F500746A54 /* BuyViewController.xib in Resources */,
+				FCA905BC16E2D66500746A54 /* BuyDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +385,7 @@
 				FC96662716D4826000E656A2 /* AboutItems.m in Sources */,
 				FCA905B316DF03F500746A54 /* BuyViewController.m in Sources */,
 				FCA905B716E18F0100746A54 /* Constants.m in Sources */,
+				FCA905BB16E2D66500746A54 /* BuyDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

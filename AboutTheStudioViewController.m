@@ -62,9 +62,7 @@
     }
     else
     {
-        // Using iOS5 which has the Google Maps application
-        NSString *currentLocation = @"Current%20Location";
-        NSString *routeString = [NSString stringWithFormat:@"%@saddr=%@", @"http://maps.google.com", addy];
+       NSString *routeString = [NSString stringWithFormat:@"%@saddr=%@", @"http://maps.google.com", addy];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:routeString]];
     }
 }

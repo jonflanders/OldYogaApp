@@ -33,7 +33,6 @@
         c = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cell];
         c.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-   
     SettingsSectionItem* item = [self getForIndexPath:indexPath];
     c.textLabel.text = item.title;
     c.detailTextLabel.text = item.subTitle;
@@ -58,10 +57,8 @@
         nib =   [NSString stringWithFormat:@"%@ViewController",viewControllerName];
     } else {
         nib =   [NSString stringWithFormat:@"%@ViewController_iPad",viewControllerName];
-        
     }
     UIViewController* vc = [[NSClassFromString(class) alloc] initWithNibName:nib bundle:nil];
-  
     self.nav.viewControllers = @[vc];
     self.nav.navigationBar.topItem.title = item.title;
     self.nav.navigationBar.topItem.rightBarButtonItem = self.doneButton;
@@ -69,8 +66,6 @@
     [self presentViewController:self.nav animated:YES completion:^{
       
     }];
-   
-    
 }
 -(SettingsSectionItem*) getForIndexPath:(NSIndexPath*)indexPath{
     NSString* sectionKey = [[sections allKeys] objectAtIndex:indexPath.section];

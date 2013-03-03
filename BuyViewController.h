@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BuyViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UINavigationController *nav;
 
 @end
