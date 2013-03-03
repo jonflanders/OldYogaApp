@@ -15,6 +15,7 @@ static NSString *MainCellIdentifier = @"Cell";
 static NSString* LocalCache = @"LocalCacheData";
 @interface MainPageTableViewController : PullRefreshTableViewController
 @property (strong,nonatomic) NSArray* classes;
+@property (strong,nonatomic) NSArray* instructors;
 @property (strong,nonatomic) NSDictionary* studioData;
 @property (strong,nonatomic)NSString* dateString;
 @property (nonatomic)NSInteger currentDay;

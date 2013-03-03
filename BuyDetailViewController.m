@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = self.doneButton;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,14 +54,19 @@
     }
     return 1;
 }
-
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 100;
+//}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+   
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    static NSString *ButtonCellID = @"ButtonCell";
+    
     
     // Configure the cell...
     if(indexPath.section==0)
@@ -76,6 +82,15 @@
             cell.textLabel.text = [formatter stringFromNumber:price];
            
         }
+    }
+    else{
+        cell  = [tableView dequeueReusableCellWithIdentifier:ButtonCellID];
+        if(cell==nil)
+        {
+            [self.tableView registerNib:[UINib nibWithNibName:@"ButtonTableViewCell" bundle:nil] forCellReuseIdentifier:ButtonCellID];
+             cell  = [tableView dequeueReusableCellWithIdentifier:ButtonCellID];
+        }
+       
     }
     return cell;
 }

@@ -10,6 +10,6 @@
 
 @interface StudioNewsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UIView *newsView;
 
+@property (strong, nonatomic) IBOutlet UITextView *newsView;
 @end

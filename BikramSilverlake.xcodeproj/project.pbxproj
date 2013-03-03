@@ -52,6 +52,8 @@
 		FCA905B716E18F0100746A54 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B616E18F0100746A54 /* Constants.m */; };
 		FCA905BB16E2D66500746A54 /* BuyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B916E2D66500746A54 /* BuyDetailViewController.m */; };
 		FCA905BC16E2D66500746A54 /* BuyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA905BA16E2D66500746A54 /* BuyDetailViewController.xib */; };
+		FCA905BE16E2F1AE00746A54 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA905BD16E2F1AE00746A54 /* ButtonTableViewCell.xib */; };
+		FCA905C016E311D200746A54 /* mats.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA905BF16E311D200746A54 /* mats.png */; };
 		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
@@ -123,6 +125,8 @@
 		FCA905B816E2D66500746A54 /* BuyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyDetailViewController.h; path = ../BuyDetailViewController.h; sourceTree = "<group>"; };
 		FCA905B916E2D66500746A54 /* BuyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyDetailViewController.m; path = ../BuyDetailViewController.m; sourceTree = "<group>"; };
 		FCA905BA16E2D66500746A54 /* BuyDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyDetailViewController.xib; path = ../BuyDetailViewController.xib; sourceTree = "<group>"; };
+		FCA905BD16E2F1AE00746A54 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
+		FCA905BF16E311D200746A54 /* mats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mats.png; sourceTree = "<group>"; };
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		FC3FF76616C8D62B00CB3700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FCA905BF16E311D200746A54 /* mats.png */,
 				FC96662E16D4A3DF00E656A2 /* Post-it-note-transparent.png */,
 				FC96662816D4925B00E656A2 /* news.png */,
 				FC96662916D4925B00E656A2 /* studio.png */,
@@ -175,6 +180,7 @@
 		FC3FF76716C8D63200CB3700 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				FCA905BD16E2F1AE00746A54 /* ButtonTableViewCell.xib */,
 				FCA905BA16E2D66500746A54 /* BuyDetailViewController.xib */,
 				FCA905B216DF03F500746A54 /* BuyViewController.xib */,
 				FC9665EB16D41C5700E656A2 /* StudioNewsViewController.xib */,
@@ -360,6 +366,8 @@
 				FC96662F16D4A3DF00E656A2 /* Post-it-note-transparent.png in Resources */,
 				FCA905B416DF03F500746A54 /* BuyViewController.xib in Resources */,
 				FCA905BC16E2D66500746A54 /* BuyDetailViewController.xib in Resources */,
+				FCA905BE16E2F1AE00746A54 /* ButtonTableViewCell.xib in Resources */,
+				FCA905C016E311D200746A54 /* mats.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

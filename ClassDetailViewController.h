@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ClassDetailViewController : UIViewController
-
+@property (nonatomic,strong) NSDictionary* teacherBio;
+@property (nonatomic,strong) NSDictionary* classData;
 @end

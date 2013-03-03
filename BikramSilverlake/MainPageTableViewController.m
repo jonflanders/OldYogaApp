@@ -36,7 +36,7 @@
                             NSError* nerror;
              self.studioData =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&nerror];
              [self.studioData writeToFile:LocalCache atomically:YES];
-              [self loadFromJSON];
+             [self loadFromJSON];
              });
 
                       }
@@ -60,6 +60,7 @@
 -(void)loadFromJSON{
  
     NSDictionary* thisWeek = [[self.studioData objectForKey:@"ThisWeek"] objectAtIndex: self.currentDay];
+    self.instructors = [thisWeek objectForKey:@"Instructors"];
     self.navigationItem.title = [thisWeek objectForKey:@"Date"];
     self.tabBarItem.title = @"Schedule";
     self.classes = [thisWeek objectForKey:@"Schedule"];
@@ -116,7 +117,6 @@
     UIBarButtonItem* right = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(next)];
     self.nextButton = right;
     self.navigationItem.rightBarButtonItem =self.nextButton;
-    
     UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithTitle:@"Prev" style:UIBarButtonItemStyleBordered target:self action:@selector(prev)];
     self.prevButton  = left;
     //self.navigationItem.leftBarButtonItem =left;
@@ -217,14 +217,26 @@
     
     return cell;
 }
+
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary* class = [self.classes objectAtIndex:indexPath.row];
+    NSString* teacher = [class objectForKey:@"Teacher"];
+    NSArray* tResult  = [self.instructors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Name==[c] %@",teacher]];
+    
+   
+}
 -(void)addToCalendar:(id)sender{
-  
+    
     self.addedToCalendar.hidden = NO;
     UIButton* b = (UIButton*)sender;
     UIView* superView = b.superview;
     UITableViewCell* cell = (UITableViewCell*)superView.superview;
     NSIndexPath* path =    [self.tableView indexPathForCell:cell];
-   // NSLog(@"%@",path);
+    // NSLog(@"%@",path);
     EKEventStore *eventStore = [[EKEventStore alloc] init];
     NSDictionary* day = [self.classes objectAtIndex:path.row];
     NSString* dateString = [day objectForKey:@"DateLink"];
@@ -245,51 +257,6 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         self.addedToCalendar.hidden = YES;
     });
-}
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES; 
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-   
 }
 
 - (void)viewDidUnload {

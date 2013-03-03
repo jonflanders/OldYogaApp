@@ -11,3 +11,4 @@
 extern NSString* const BaseURL;
 extern NSString* const ScheduleURL;
 extern NSString* const SalesURL;
+extern NSString* const NewsURL;
