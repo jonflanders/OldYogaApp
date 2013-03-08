@@ -20,6 +20,16 @@
     NSString* data = [_newsItems objectAtIndex:currentPage];
     self.newsView.text  = data;		
 }
+- (IBAction)swipe:(id)sender {
+       self.pageControl.currentPage=self.pageControl.currentPage+1;
+    
+    [self pageChanged:nil];
+}
+- (IBAction)leftSwipe:(id)sender {
+      self.pageControl.currentPage=self.pageControl.currentPage-1;
+    
+    [self pageChanged:nil];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +38,18 @@
         // Custom initialization
          self.title = @"Hot News";
         self.tabBarItem.image = [UIImage imageNamed:@"news"];
-        NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BaseURL,NewsURL]];
+  
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    [self.view addGestureRecognizer:self.swipeGesture];
+    [self.view addGestureRecognizer:self.leftswipeGesture];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BaseURL,NewsURL]];
 
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [NSURLConnection
@@ -48,6 +69,7 @@
              dispatch_async(dispatch_get_main_queue(), ^{
                  
                  self.pageControl.numberOfPages = _newsItems.count;
+                 self.pageControl.currentPage = 0;
                  [self pageChanged:nil];
              });
              
@@ -61,19 +83,11 @@
          }
          else if (statusCode==500){
              NSLog(@"Error 500");
-
+             
          }
          
      }];
-    }
-    return self;
-}
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-   
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,6 +100,8 @@
     [self setPageControl:nil];
     [self setNewsView:nil];
     [self setNewsView:nil];
+    [self setSwipeGesture:nil];
+    [self setLeftswipeGesture:nil];
     [super viewDidUnload];
 }
 @end

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StudioNewsViewController : UIViewController
+@interface StudioNewsViewController : UIViewController<UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeGesture;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftswipeGesture;
 
 @property (strong, nonatomic) IBOutlet UITextView *newsView;
 @end
