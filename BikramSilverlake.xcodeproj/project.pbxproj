@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC20D1CC16F11FE800CA43D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC20D1CB16F11FE800CA43D2 /* Settings.bundle */; };
 		FC20D1CF16F1243900CA43D2 /* Client_x0020_ServiceSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FC20D1CE16F1243900CA43D2 /* Client_x0020_ServiceSvc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC20D1D216F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FC20D1D116F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FC33B8CF16EE58DD006991CD /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33B8C416EE58DD006991CD /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FC33B8D016EE58DD006991CD /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33B8C616EE58DD006991CD /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FC33B8D116EE58DD006991CD /* Sale_x0020_Service.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33B8C816EE58DD006991CD /* Sale_x0020_Service.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -74,6 +75,8 @@
 		FC20D1CB16F11FE800CA43D2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		FC20D1CD16F1243900CA43D2 /* Client_x0020_ServiceSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client_x0020_ServiceSvc.h; sourceTree = "<group>"; };
 		FC20D1CE16F1243900CA43D2 /* Client_x0020_ServiceSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client_x0020_ServiceSvc.m; sourceTree = "<group>"; };
+		FC20D1D016F12C1D00CA43D2 /* Class_x0020_ServiceSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Class_x0020_ServiceSvc.h; sourceTree = "<group>"; };
+		FC20D1D116F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Class_x0020_ServiceSvc.m; sourceTree = "<group>"; };
 		FC33B8C316EE58DD006991CD /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
 		FC33B8C416EE58DD006991CD /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
 		FC33B8C516EE58DD006991CD /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 		FC33B8C216EE58C8006991CD /* MBO */ = {
 			isa = PBXGroup;
 			children = (
+				FC20D1D016F12C1D00CA43D2 /* Class_x0020_ServiceSvc.h */,
+				FC20D1D116F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m */,
 				FC20D1CD16F1243900CA43D2 /* Client_x0020_ServiceSvc.h */,
 				FC20D1CE16F1243900CA43D2 /* Client_x0020_ServiceSvc.m */,
 				FC33B8C316EE58DD006991CD /* NSDate+ISO8601Parsing.h */,
@@ -452,6 +457,7 @@
 				FC33B8D316EE58DD006991CD /* USGlobals.m in Sources */,
 				FC33B8D416EE58DD006991CD /* xsd.m in Sources */,
 				FC20D1CF16F1243900CA43D2 /* Client_x0020_ServiceSvc.m in Sources */,
+				FC20D1D216F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28683,7 +28683,7 @@ NSString * Sale_x0020_Service_ScheduleType_stringFromEnum(Sale_x0020_Service_Sch
 	}
 	[request setValue:@"wsdl2objc" forHTTPHeaderField:@"User-Agent"];
 	[request setValue:soapAction forHTTPHeaderField:@"SOAPAction"];
-	[request setValue:@"application/soap+xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+	[request setValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
 	[request setValue:[NSString stringWithFormat:@"%u", [bodyData length]] forHTTPHeaderField:@"Content-Length"];
 	[request setValue:self.address.host forHTTPHeaderField:@"Host"];
 	[request setHTTPMethod: @"POST"];
@@ -28759,7 +28759,7 @@ NSString * Sale_x0020_Service_ScheduleType_stringFromEnum(Sale_x0020_Service_Sch
 	
 	binding.cookies = cookies;
 	[cookies release];
-  if ([urlResponse.MIMEType rangeOfString:@"application/soap+xml"].length == 0) {
+  if ([urlResponse.MIMEType rangeOfString:@"text/xml"].length == 0) {
 		NSError *error = nil;
 		[connection cancel];
 		if ([httpResponse statusCode] >= 400) {
@@ -29756,7 +29756,7 @@ static Sale_x0020_ServiceSoapBinding_envelope *Sale_x0020_ServiceSoapBindingShar
 	xmlNodePtr root = xmlNewDocNode(doc, NULL, (const xmlChar*)"Envelope", NULL);
 	xmlDocSetRootElement(doc, root);
 	
-	xmlNsPtr soapEnvelopeNs = xmlNewNs(root, (const xmlChar*)"http://www.w3.org/2003/05/soap-envelope", (const xmlChar*)"soap");
+	xmlNsPtr soapEnvelopeNs = xmlNewNs(root, (const xmlChar*)"http://schemas.xmlsoap.org/soap/envelope/", (const xmlChar*)"soap");
 	xmlSetNs(root, soapEnvelopeNs);
 	
 	xmlNsPtr xslNs = xmlNewNs(root, (const xmlChar*)"http://www.w3.org/1999/XSL/Transform", (const xmlChar*)"xsl");

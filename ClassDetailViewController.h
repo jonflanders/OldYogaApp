@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClassDetailViewController : UIViewController
+@interface ClassDetailViewController : UIViewController<UIAlertViewDelegate>
 @property (nonatomic,strong) NSDictionary* teacherBio;
 @property (nonatomic,strong) NSDictionary* classData;
 @property (strong, nonatomic) IBOutlet UIImageView *instructorImage;

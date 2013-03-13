@@ -125,7 +125,12 @@
 
 + (NSDate *)deserializeNode:(xmlNodePtr)cur
 {
-	return [NSDate dateWithString:[NSString deserializeNode:cur]];
+    NSString* xmlStr =[ NSString deserializeNode:cur];
+    if(xmlStr!=nil){
+	return [NSDate dateWithString:xmlStr];
+    }
+    else
+        return nil;
 }
 
 @end
@@ -349,7 +354,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 				}
 			}
 		}
-	} else if ([ns isEqualToString:@"http://www.w3.org/2003/05/soap-envelope"]) {
+	} else if ([ns isEqualToString:@"http://schemas.xmlsoap.org/soap/envelope/"]) {
 		// soap 1.2
 				
 		for( cur = cur->children ; cur != NULL ; cur = cur->next ) {
