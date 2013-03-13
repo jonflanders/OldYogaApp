@@ -11,4 +11,6 @@
 @interface ClassDetailViewController : UIViewController
 @property (nonatomic,strong) NSDictionary* teacherBio;
 @property (nonatomic,strong) NSDictionary* classData;
+@property (strong, nonatomic) IBOutlet UIImageView *instructorImage;
+@property (strong, nonatomic) IBOutlet UILabel *teacherName;
 @end

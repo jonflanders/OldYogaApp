@@ -9,7 +9,7 @@
 #import "MainPageTableViewController.h"
 #import "AppDelegate.h"
 #import "Constants.h"
-
+#import "ClassDetailViewController.h"
 @interface MainPageTableViewController ()
 
 @end
@@ -225,8 +225,12 @@
 {
     NSDictionary* class = [self.classes objectAtIndex:indexPath.row];
     NSString* teacher = [class objectForKey:@"Teacher"];
-    NSArray* tResult  = [self.instructors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Name==[c] %@",teacher]];
-    
+    NSArray* tResult  = [self.instructors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(Name==%@)",teacher]];
+    ClassDetailViewController* vc = [[ClassDetailViewController alloc]  initWithNibName:@"ClassDetailViewController" bundle:nil];
+    vc.classData = class;
+    vc.teacherBio= [tResult objectAtIndex:0];
+    UINavigationController* nav = self.navigationController;
+    [nav pushViewController:vc animated:YES];
    
 }
 -(void)addToCalendar:(id)sender{

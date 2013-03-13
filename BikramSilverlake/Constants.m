@@ -8,7 +8,7 @@
 
 #import "Constants.h"
 
- NSString* const BaseURL = @"http://www.bikramyogasilverlake.com";
- NSString* const ScheduleURL = @"/api/schedule";
- NSString* const SalesURL = @"/api/sales";
+NSString* const BaseURL = @"http://www.bikramyogasilverlake.com";
+NSString* const ScheduleURL = @"/api/schedule";
+NSString* const SalesURL = @"/api/sales";
 NSString* const NewsURL = @"/api/news";

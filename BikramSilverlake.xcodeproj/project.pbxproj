@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC20D1CC16F11FE800CA43D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC20D1CB16F11FE800CA43D2 /* Settings.bundle */; };
+		FC20D1CF16F1243900CA43D2 /* Client_x0020_ServiceSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FC20D1CE16F1243900CA43D2 /* Client_x0020_ServiceSvc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC33B8CF16EE58DD006991CD /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33B8C416EE58DD006991CD /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC33B8D016EE58DD006991CD /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33B8C616EE58DD006991CD /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC33B8D116EE58DD006991CD /* Sale_x0020_Service.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33B8C816EE58DD006991CD /* Sale_x0020_Service.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC33B8D216EE58DD006991CD /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33B8CA16EE58DD006991CD /* USAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC33B8D316EE58DD006991CD /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33B8CC16EE58DD006991CD /* USGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC33B8D416EE58DD006991CD /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = FC33B8CE16EE58DD006991CD /* xsd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC33B8D616EE5951006991CD /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC33B8D516EE5951006991CD /* libxml2.2.dylib */; };
 		FC3FF76516C831C800CB3700 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3FF76416C831C800CB3700 /* arrow.png */; };
 		FC3FF76E16C8DCA200CB3700 /* pose.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3FF76D16C8DCA200CB3700 /* pose.png */; };
 		FC3FF77016C8DFC700CB3700 /* bikramsettings.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3FF76F16C8DFC700CB3700 /* bikramsettings.png */; };
@@ -62,6 +71,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC20D1CB16F11FE800CA43D2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
+		FC20D1CD16F1243900CA43D2 /* Client_x0020_ServiceSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client_x0020_ServiceSvc.h; sourceTree = "<group>"; };
+		FC20D1CE16F1243900CA43D2 /* Client_x0020_ServiceSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client_x0020_ServiceSvc.m; sourceTree = "<group>"; };
+		FC33B8C316EE58DD006991CD /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
+		FC33B8C416EE58DD006991CD /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
+		FC33B8C516EE58DD006991CD /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
+		FC33B8C616EE58DD006991CD /* NSDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
+		FC33B8C716EE58DD006991CD /* Sale_x0020_Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sale_x0020_Service.h; sourceTree = "<group>"; };
+		FC33B8C816EE58DD006991CD /* Sale_x0020_Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sale_x0020_Service.m; sourceTree = "<group>"; };
+		FC33B8C916EE58DD006991CD /* USAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USAdditions.h; sourceTree = "<group>"; };
+		FC33B8CA16EE58DD006991CD /* USAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USAdditions.m; sourceTree = "<group>"; };
+		FC33B8CB16EE58DD006991CD /* USGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USGlobals.h; sourceTree = "<group>"; };
+		FC33B8CC16EE58DD006991CD /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USGlobals.m; sourceTree = "<group>"; };
+		FC33B8CD16EE58DD006991CD /* xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsd.h; sourceTree = "<group>"; };
+		FC33B8CE16EE58DD006991CD /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xsd.m; sourceTree = "<group>"; };
+		FC33B8D516EE5951006991CD /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		FC3FF76416C831C800CB3700 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = ../arrow.png; sourceTree = "<group>"; };
 		FC3FF76D16C8DCA200CB3700 /* pose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pose.png; sourceTree = "<group>"; };
 		FC3FF76F16C8DFC700CB3700 /* bikramsettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikramsettings.png; sourceTree = "<group>"; };
@@ -141,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC33B8D616EE5951006991CD /* libxml2.2.dylib in Frameworks */,
 				FC96662D16D49E7C00E656A2 /* MapKit.framework in Frameworks */,
 				FC98D3C7162A314D00436255 /* EventKit.framework in Frameworks */,
 				FC98D3C11628EC6900436255 /* QuartzCore.framework in Frameworks */,
@@ -153,6 +179,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC33B8C216EE58C8006991CD /* MBO */ = {
+			isa = PBXGroup;
+			children = (
+				FC20D1CD16F1243900CA43D2 /* Client_x0020_ServiceSvc.h */,
+				FC20D1CE16F1243900CA43D2 /* Client_x0020_ServiceSvc.m */,
+				FC33B8C316EE58DD006991CD /* NSDate+ISO8601Parsing.h */,
+				FC33B8C416EE58DD006991CD /* NSDate+ISO8601Parsing.m */,
+				FC33B8C516EE58DD006991CD /* NSDate+ISO8601Unparsing.h */,
+				FC33B8C616EE58DD006991CD /* NSDate+ISO8601Unparsing.m */,
+				FC33B8C716EE58DD006991CD /* Sale_x0020_Service.h */,
+				FC33B8C816EE58DD006991CD /* Sale_x0020_Service.m */,
+				FC33B8C916EE58DD006991CD /* USAdditions.h */,
+				FC33B8CA16EE58DD006991CD /* USAdditions.m */,
+				FC33B8CB16EE58DD006991CD /* USGlobals.h */,
+				FC33B8CC16EE58DD006991CD /* USGlobals.m */,
+				FC33B8CD16EE58DD006991CD /* xsd.h */,
+				FC33B8CE16EE58DD006991CD /* xsd.m */,
+			);
+			name = MBO;
+			sourceTree = "<group>";
+		};
 		FC3FF76616C8D62B00CB3700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +302,7 @@
 		FC59685B15DC5431006B4745 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC33B8D516EE5951006991CD /* libxml2.2.dylib */,
 				FC96662C16D49E7C00E656A2 /* MapKit.framework */,
 				FC98D3C6162A314D00436255 /* EventKit.framework */,
 				FC98D3C01628EC6900436255 /* QuartzCore.framework */,
@@ -268,6 +316,7 @@
 		FC59686215DC5431006B4745 /* BikramSilverlake */ = {
 			isa = PBXGroup;
 			children = (
+				FC33B8C216EE58C8006991CD /* MBO */,
 				FC3FF76816C8D63800CB3700 /* Code */,
 				FC3FF76716C8D63200CB3700 /* Nibs */,
 				FC3FF76616C8D62B00CB3700 /* Resources */,
@@ -279,6 +328,7 @@
 		FC59686315DC5431006B4745 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC20D1CB16F11FE800CA43D2 /* Settings.bundle */,
 				FC59686415DC5431006B4745 /* BikramSilverlake-Info.plist */,
 				FC59686515DC5431006B4745 /* InfoPlist.strings */,
 				FC59686815DC5431006B4745 /* main.m */,
@@ -368,6 +418,7 @@
 				FCA905BC16E2D66500746A54 /* BuyDetailViewController.xib in Resources */,
 				FCA905BE16E2F1AE00746A54 /* ButtonTableViewCell.xib in Resources */,
 				FCA905C016E311D200746A54 /* mats.png in Resources */,
+				FC20D1CC16F11FE800CA43D2 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +445,13 @@
 				FCA905B316DF03F500746A54 /* BuyViewController.m in Sources */,
 				FCA905B716E18F0100746A54 /* Constants.m in Sources */,
 				FCA905BB16E2D66500746A54 /* BuyDetailViewController.m in Sources */,
+				FC33B8CF16EE58DD006991CD /* NSDate+ISO8601Parsing.m in Sources */,
+				FC33B8D016EE58DD006991CD /* NSDate+ISO8601Unparsing.m in Sources */,
+				FC33B8D116EE58DD006991CD /* Sale_x0020_Service.m in Sources */,
+				FC33B8D216EE58DD006991CD /* USAdditions.m in Sources */,
+				FC33B8D316EE58DD006991CD /* USGlobals.m in Sources */,
+				FC33B8D416EE58DD006991CD /* xsd.m in Sources */,
+				FC20D1CF16F1243900CA43D2 /* Client_x0020_ServiceSvc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +510,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,6 +535,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
