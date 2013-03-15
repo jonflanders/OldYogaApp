@@ -16,4 +16,5 @@ extern NSString* const MBOClientURL;
 extern NSString* const MBOClassURL;
 extern NSString* const MBOSourceName;
 extern NSString* const MBOPassword;
+extern NSString* const MBOSalesURL;
 extern int const SiteId;

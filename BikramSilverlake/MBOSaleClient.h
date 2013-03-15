@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface MBOSaleClient : NSObject
-
+-(BOOL) makeSale:(NSDictionary*)params;
 @end

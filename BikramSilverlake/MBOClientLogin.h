@@ -9,8 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "Client_x0020_ServiceSvc.h"
 #import "Constants.h"
+@protocol MBOLoginComplete;
+
 @interface MBOClientLogin : NSObject<UIAlertViewDelegate>
+-(void)login;
 -(NSString*) loginWithUserName:(NSString*)userName andPassword:(NSString*) password;
 -(NSString*) clientLoggedIn;
 -(void)logout;
+@property (strong,nonatomic) id<MBOLoginComplete> delegate;
+@end
+
+@protocol MBOLoginComplete <NSObject>
+
+-(void)complete:(NSString*)clientID;
+
 @end

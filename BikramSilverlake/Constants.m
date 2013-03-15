@@ -19,7 +19,9 @@ NSString* const MBOClassURL = @"http://api.mindbodyonline.com/0_5/ClassService.a
 #else
 NSString* const MBOClientURL = @"https://api.mindbodyonline.com/0_5/ClientService.asmx";
 NSString* const MBOClassURL = @"https://api.mindbodyonline.com/0_5/ClassService.asmx";
+
 #endif
+NSString* const MBOSalesURL = @"https://api.mindbodyonline.com/0_5/SaleService.asmx";
 
 NSString* const MBOSourceName = @"BikramYogaSilverlake";
 NSString* const MBOPassword = @"WebSite2011";

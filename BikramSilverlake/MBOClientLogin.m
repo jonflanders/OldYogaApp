@@ -21,7 +21,29 @@
     }
     return self;
 }
+-(void)login{
+    UIAlertView* theAlert = [[UIAlertView alloc]  initWithTitle:@"Enter your MBO username and password" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil ];
+    
+    theAlert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    
+#ifdef DEBUG
+    [[theAlert textFieldAtIndex:0] setText:@"jon.flanders@gmail.com"];
+    [[theAlert textFieldAtIndex:1] setText:@"rookie95"];
+#endif
+    [theAlert show];
 
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSString* button = [alertView buttonTitleAtIndex:buttonIndex];
+    if([button isEqualToString:@"Login"])
+    {
+        UITextField *username = [alertView textFieldAtIndex:0];
+        UITextField *password = [alertView textFieldAtIndex:1];
+      
+        NSString* clientID = [self loginWithUserName:username.text andPassword:password.text];
+        [self.delegate complete:clientID];
+    }
+}
 -(NSString*) clientLoggedIn
 {
    return  [[NSUserDefaults standardUserDefaults] valueForKey:clientIDKey ];

@@ -8,8 +8,12 @@
 
 #import "BuyDetailViewController.h"
 #import "CreditCardInputViewController.h"
+#import "MBOSaleClient.h"
 @interface BuyDetailViewController ()
-
+{
+    NSArray* items;
+    NSArray* itemValues;
+}
 @end
 
 @implementation BuyDetailViewController
@@ -19,7 +23,9 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        self.title = @"Purchase";
+      
+        
+
     }
     return self;
 }
@@ -30,8 +36,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.busyView = [[BusyViewController alloc] initWithNibName:@"BusyViewController" bundle:nil];
+    self.busyView.view.hidden = YES;
     self.navigationItem.leftBarButtonItem = self.doneButton;
-    
+    self.navigationItem.rightBarButtonItem = self.buyButton;
+    self.title = @"Purchase";
+    items = @[@"Name",@"Credit Card",@"Address",@"City",@"State",@"Zip",@"Expiration Month",@"Expiration Year"];
+#ifdef DEBUG
+    itemValues = @[@"Jon Flanders",@"4111111111111111",@"710 Cipriano Pl",@"Monterey Park",@"CA",@"91754",@"03",@"2016"];
+#endif
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,67 +63,110 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section==0){
-        return 2;
+        return 1;
     }
-    return 1;
+    return items.count;
 }
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return 100;
-//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-   
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    static NSString *ButtonCellID = @"ButtonCell";
+    static NSString *TextCellID = @"TextCell";
     
+    
+    UITableViewCell *cell = nil;
     
     // Configure the cell...
     if(indexPath.section==0)
     {
-        if(indexPath.row==0){
-            cell.textLabel.text = [self.item objectForKey:@"name"];
-             cell.detailTextLabel.textAlignment = NSTextAlignmentCenter;
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-        if(indexPath.row==1){
+
+        if(indexPath.row==0){
             NSNumber* price = [self.item objectForKey:@"price"];
             NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
-            formatter.numberStyle = NSNumberFormatterCurrencyStyle;        
-            cell.textLabel.text = [formatter stringFromNumber:price];
+            formatter.numberStyle = NSNumberFormatterCurrencyStyle;
+            cell.textLabel.text =[NSString stringWithFormat:@"%@-%@", [self.item objectForKey:@"name"],[formatter stringFromNumber:price]];
            
         }
+       
     }
     else{
-        cell  = [tableView dequeueReusableCellWithIdentifier:ButtonCellID];
+        cell  = [tableView dequeueReusableCellWithIdentifier:TextCellID];
         if(cell==nil)
         {
-            [self.tableView registerNib:[UINib nibWithNibName:@"ButtonTableViewCell" bundle:nil] forCellReuseIdentifier:ButtonCellID];
-             cell  = [tableView dequeueReusableCellWithIdentifier:ButtonCellID];
-            for (UIView* view in cell.subviews) {
-                for (UIView* sv in view.subviews) {
-                    if([sv isKindOfClass:[UIButton class]])
-                    {
-                        UIButton* button = (UIButton*)sv;
-                       [button addTarget:self action:@selector(buy) forControlEvents:UIControlEventTouchDown];
-                    }
+            [self.tableView registerNib:[UINib nibWithNibName:@"EditTableViewCell" bundle:nil] forCellReuseIdentifier:TextCellID];
+            cell  = [tableView dequeueReusableCellWithIdentifier:TextCellID];
+        }
+        // Configure the cell...
+        NSString* t = [items objectAtIndex:indexPath.row];
+        for (UIView* view in cell.subviews) {
+            for (UIView* sv in view.subviews) {
+                if([sv isKindOfClass:[UILabel class]])
+                {
+                    UILabel* label = (UILabel*)sv;
+                    label.text = t;
                 }
+#ifdef DEBUG
+                if([sv isKindOfClass:[UITextField class]])
+                {
+                    UITextField* tf = (UITextField*)sv;
+                    tf.text= [itemValues objectAtIndex:indexPath.row];
+                }
+              
+#endif
+
             }
         }
+
        
     }
     return cell;
 }
--(void)buy{
-    CreditCardInputViewController* vc = [[CreditCardInputViewController alloc] init];
-    self.nav.viewControllers = @[vc];
-    [self presentViewController:self.nav animated:YES completion:^{
-        
-    }];
 
+
+
+
+-(NSMutableDictionary*) extractParametersFromTable
+{
+    NSMutableDictionary* ret = [[NSMutableDictionary alloc] initWithCapacity:items.count];
+    for (int i=0; i<items.count; i++) {
+        NSString* key = [items objectAtIndex:i];
+        UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:1]];
+        for (UIView* view in cell.subviews) {
+            for (UIView* sv in view.subviews) {
+                if([sv isKindOfClass:[UITextField class]])
+                {
+                    UITextField* tf = (UITextField*)sv;
+                    [ret setObject:tf.text forKey:key];
+                }
+            }
+        }
+    }
+    return ret;
+    
 }
+-(void)complete:(NSString *)clientID{
+    
+    MBOSaleClient* client = [[MBOSaleClient alloc] init];
+    NSMutableDictionary* params = [self extractParametersFromTable];
+    [params setObject:clientID forKey:@"ClientID"];
+    [params setObject: [self.item objectForKey:@"price"] forKey:@"Amount"];
+    [params setObject:[self.item objectForKey:@"id"] forKey:@"ID"];
+    [client makeSale:params];
+    self.busyView.view.hidden = NO;
+    
+}
+- (IBAction)buy:(id)sender {
+    self.busyView.view.hidden = YES;
+    self.login  = [[MBOClientLogin alloc] init];
+    self.login.delegate = self;
+    [self.login login];
+   
+}
+
 
 - (void)viewDidUnload {
     [self setDoneButton:nil];

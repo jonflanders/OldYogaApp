@@ -50,6 +50,9 @@
          }
          dispatch_async(dispatch_get_main_queue(), ^{
              self.busyView.view.hidden=YES;
+             self.navigationController.navigationBarHidden = NO;
+             self.tabBarController.tabBar.hidden = NO;
+             
          });
         
          

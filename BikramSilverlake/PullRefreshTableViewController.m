@@ -170,9 +170,6 @@
 
 - (void)stopLoadingComplete {
     // Reset the header
-    self.navigationController.navigationBarHidden = NO;
-    self.tabBarController.tabBar.hidden = NO;
-    
     refreshLabel.text = self.textPull;
     refreshArrow.hidden = NO;
     [refreshSpinner stopAnimating];
