@@ -7,7 +7,7 @@
 //
 
 #import "BuyDetailViewController.h"
-
+#import "CreditCardInputViewController.h"
 @interface BuyDetailViewController ()
 
 @end
@@ -89,15 +89,35 @@
         {
             [self.tableView registerNib:[UINib nibWithNibName:@"ButtonTableViewCell" bundle:nil] forCellReuseIdentifier:ButtonCellID];
              cell  = [tableView dequeueReusableCellWithIdentifier:ButtonCellID];
+            for (UIView* view in cell.subviews) {
+                for (UIView* sv in view.subviews) {
+                    if([sv isKindOfClass:[UIButton class]])
+                    {
+                        UIButton* button = (UIButton*)sv;
+                       [button addTarget:self action:@selector(buy) forControlEvents:UIControlEventTouchDown];
+                    }
+                }
+            }
         }
        
     }
     return cell;
 }
+-(void)buy{
+    CreditCardInputViewController* vc = [[CreditCardInputViewController alloc] init];
+    self.nav.viewControllers = @[vc];
+    [self presentViewController:self.nav animated:YES completion:^{
+        
+    }];
 
+}
 
 - (void)viewDidUnload {
     [self setDoneButton:nil];
+    [self setNav:nil];
+    [self setCancelButton:nil];
+    [self setBuyButton:nil];
+    [self setNav:nil];
     [super viewDidUnload];
 }
 @end

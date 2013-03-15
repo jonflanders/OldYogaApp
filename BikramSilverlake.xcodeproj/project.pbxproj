@@ -22,6 +22,10 @@
 		FC3FF77016C8DFC700CB3700 /* bikramsettings.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3FF76F16C8DFC700CB3700 /* bikramsettings.png */; };
 		FC3FF77416C8E43000CB3700 /* BusyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3FF77116C8E42F00CB3700 /* BusyViewController.xib */; };
 		FC3FF77516C8E43000CB3700 /* BusyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3FF77316C8E42F00CB3700 /* BusyViewController.m */; };
+		FC58722716F2BA4C002DAEA4 /* MBOSaleClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC58722616F2BA4C002DAEA4 /* MBOSaleClient.m */; };
+		FC58722B16F2BC15002DAEA4 /* CreditCardInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC58722916F2BC15002DAEA4 /* CreditCardInputViewController.m */; };
+		FC58722C16F2BC15002DAEA4 /* CreditCardInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC58722A16F2BC15002DAEA4 /* CreditCardInputViewController.xib */; };
+		FC58722E16F2EAF6002DAEA4 /* EditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC58722D16F2EAF6002DAEA4 /* EditTableViewCell.xib */; };
 		FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59685C15DC5431006B4745 /* UIKit.framework */; };
 		FC59685F15DC5431006B4745 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59685E15DC5431006B4745 /* Foundation.framework */; };
 		FC59686115DC5431006B4745 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59686015DC5431006B4745 /* CoreGraphics.framework */; };
@@ -69,6 +73,7 @@
 		FCACB9EC16F28A9A00D4E78A /* YouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCACB9EA16F28A9900D4E78A /* YouViewController.m */; };
 		FCACB9ED16F28A9A00D4E78A /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCACB9EB16F28A9900D4E78A /* YouViewController.xib */; };
 		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
+		FCC453E816F2EB28004127C3 /* CreditCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
 		FCF38AC116CAC1E5005DD57B /* AlarmTimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */; };
@@ -100,6 +105,12 @@
 		FC3FF77116C8E42F00CB3700 /* BusyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusyViewController.xib; sourceTree = "<group>"; };
 		FC3FF77216C8E42F00CB3700 /* BusyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusyViewController.h; sourceTree = "<group>"; };
 		FC3FF77316C8E42F00CB3700 /* BusyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusyViewController.m; sourceTree = "<group>"; };
+		FC58722516F2BA4C002DAEA4 /* MBOSaleClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBOSaleClient.h; sourceTree = "<group>"; };
+		FC58722616F2BA4C002DAEA4 /* MBOSaleClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBOSaleClient.m; sourceTree = "<group>"; };
+		FC58722816F2BC15002DAEA4 /* CreditCardInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardInputViewController.h; sourceTree = "<group>"; };
+		FC58722916F2BC15002DAEA4 /* CreditCardInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardInputViewController.m; sourceTree = "<group>"; };
+		FC58722A16F2BC15002DAEA4 /* CreditCardInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardInputViewController.xib; sourceTree = "<group>"; };
+		FC58722D16F2EAF6002DAEA4 /* EditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableViewCell.xib; sourceTree = "<group>"; };
 		FC59685815DC5431006B4745 /* BikramSilverlake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikramSilverlake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC59685C15DC5431006B4745 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC59685E15DC5431006B4745 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,6 +178,7 @@
 		FCACB9EA16F28A9900D4E78A /* YouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouViewController.m; path = ../YouViewController.m; sourceTree = "<group>"; };
 		FCACB9EB16F28A9900D4E78A /* YouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YouViewController.xib; path = ../YouViewController.xib; sourceTree = "<group>"; };
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTableViewCell.xib; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
 		FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmTimeTableViewController.h; path = ../AlarmTimeTableViewController.h; sourceTree = "<group>"; };
@@ -216,6 +228,8 @@
 				FC33B8CE16EE58DD006991CD /* xsd.m */,
 				FCACB9E616F14B3C00D4E78A /* MBOReserveClass.h */,
 				FCACB9E716F14B3C00D4E78A /* MBOReserveClass.m */,
+				FC58722516F2BA4C002DAEA4 /* MBOSaleClient.h */,
+				FC58722616F2BA4C002DAEA4 /* MBOSaleClient.m */,
 			);
 			name = MBO;
 			sourceTree = "<group>";
@@ -262,6 +276,9 @@
 				FC59687115DC5431006B4745 /* ViewController_iPhone.xib */,
 				FC59687415DC5431006B4745 /* ViewController_iPad.xib */,
 				FCF38AC216CAC368005DD57B /* NavController.xib */,
+				FC58722A16F2BC15002DAEA4 /* CreditCardInputViewController.xib */,
+				FC58722D16F2EAF6002DAEA4 /* EditTableViewCell.xib */,
+				FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -269,6 +286,8 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FC58722816F2BC15002DAEA4 /* CreditCardInputViewController.h */,
+				FC58722916F2BC15002DAEA4 /* CreditCardInputViewController.m */,
 				FCACB9E916F28A9900D4E78A /* YouViewController.h */,
 				FCACB9EA16F28A9900D4E78A /* YouViewController.m */,
 				FCA905B816E2D66500746A54 /* BuyDetailViewController.h */,
@@ -443,6 +462,9 @@
 				FCA905C016E311D200746A54 /* mats.png in Resources */,
 				FC20D1CC16F11FE800CA43D2 /* Settings.bundle in Resources */,
 				FCACB9ED16F28A9A00D4E78A /* YouViewController.xib in Resources */,
+				FC58722C16F2BC15002DAEA4 /* CreditCardInputViewController.xib in Resources */,
+				FC58722E16F2EAF6002DAEA4 /* EditTableViewCell.xib in Resources */,
+				FCC453E816F2EB28004127C3 /* CreditCardTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +502,8 @@
 				FCACB9E516F14AC200D4E78A /* MBOClientLogin.m in Sources */,
 				FCACB9E816F14B3C00D4E78A /* MBOReserveClass.m in Sources */,
 				FCACB9EC16F28A9A00D4E78A /* YouViewController.m in Sources */,
+				FC58722716F2BA4C002DAEA4 /* MBOSaleClient.m in Sources */,
+				FC58722B16F2BC15002DAEA4 /* CreditCardInputViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

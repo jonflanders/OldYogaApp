@@ -11,5 +11,9 @@
 @interface BuyDetailViewController : UITableViewController
 @property (nonatomic,strong) NSDictionary* item;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (strong, nonatomic) IBOutlet UINavigationController *nav;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *buyButton;
 
 @end
