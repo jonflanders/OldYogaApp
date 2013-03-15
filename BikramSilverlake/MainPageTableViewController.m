@@ -234,7 +234,7 @@
     ClassDetailViewController* vc = [[ClassDetailViewController alloc]  initWithNibName:@"ClassDetailViewController" bundle:nil];
     vc.classData = class;
     if(tResult!=nil&&tResult.count>0){
-        vc.teacherBio= [tResult objectAtIndex:0];
+        vc.instructorData= [tResult objectAtIndex:0];
     }
     UINavigationController* nav = self.navigationController;
     [nav pushViewController:vc animated:YES];

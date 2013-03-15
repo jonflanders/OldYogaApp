@@ -36,7 +36,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-         self.title = @"Hot News";
+        self.title = @"Hot News";
         self.tabBarItem.image = [UIImage imageNamed:@"news"];
   
     }
@@ -49,6 +49,9 @@
     // Do any additional setup after loading the view from its nib.
     [self.view addGestureRecognizer:self.swipeGesture];
     [self.view addGestureRecognizer:self.leftswipeGesture];
+    self.busyViewController = [[BusyViewController alloc] initWithNibName:@"BusyViewController" bundle:nil];
+    [self.view addSubview:self.busyViewController.view];
+    
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BaseURL,NewsURL]];
 
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
@@ -67,7 +70,7 @@
              _newsItems = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
              
              dispatch_async(dispatch_get_main_queue(), ^{
-                 
+                 self.busyViewController.view.hidden=YES;
                  self.pageControl.numberOfPages = _newsItems.count;
                  self.pageControl.currentPage = 0;
                  [self pageChanged:nil];

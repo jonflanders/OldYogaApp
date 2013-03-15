@@ -22,6 +22,8 @@
     return self;
 }
 -(void)login{
+    NSString* clientID =  [[NSUserDefaults standardUserDefaults] valueForKey:clientIDKey ];
+    if(clientID==nil){
     UIAlertView* theAlert = [[UIAlertView alloc]  initWithTitle:@"Enter your MBO username and password" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil ];
     
     theAlert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
@@ -30,7 +32,10 @@
     [[theAlert textFieldAtIndex:0] setText:@"jon.flanders@gmail.com"];
     [[theAlert textFieldAtIndex:1] setText:@"rookie95"];
 #endif
-    [theAlert show];
+        [theAlert show];}
+    else{
+        [self.delegate complete:clientID];
+    }
 
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{

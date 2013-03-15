@@ -41,7 +41,16 @@
 {
     MBOReserveClass* reserve = [[MBOReserveClass alloc] init];
     NSString* classID =[self.classData objectForKey:@"ClassID"];
-    [reserve reserveClass:classID forClient:clientID];
+    if([reserve reserveClass:classID forClient:clientID]){
+        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You are confirmed for this class." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+        [theAlert show];
+        self.reserveButton.enabled=NO;
+    }
+    else{
+        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+        [theAlert show];
+
+    }
 }
 - (IBAction)reserve:(id)sender {
     MBOClientLogin* login = [[MBOClientLogin alloc] init];
@@ -67,9 +76,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSString* name = [self.teacherBio objectForKey:@"Name"];
-    self.teacherName.text = name;
-    NSURL* url = [NSURL URLWithString:[self.teacherBio objectForKey:@"ImageURI"]];    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+    NSString* name = [self.instructorData objectForKey:@"Name"];
+    self.instructorName.text = name;
+    self.instrutorBio.text = [self.instructorData objectForKey:@"Bio"];
+    NSURL* url = [NSURL URLWithString:[self.instructorData objectForKey:@"ImageURI"]];    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [NSURLConnection
      sendAsynchronousRequest:request
      queue:[[NSOperationQueue alloc] init]
@@ -112,7 +122,9 @@
 
 - (void)viewDidUnload {
     [self setInstructorImage:nil];
-    [self setTeacherName:nil];
+    [self setInstructorName:nil];
+    [self setInstrutorBio:nil];
+    [self setReserveButton:nil];
     [super viewDidUnload];
 }
 @end

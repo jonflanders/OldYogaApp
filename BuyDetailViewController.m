@@ -38,6 +38,7 @@
     [super viewDidLoad];
     self.busyView = [[BusyViewController alloc] initWithNibName:@"BusyViewController" bundle:nil];
     self.busyView.view.hidden = YES;
+    [self.tableView addSubview:self.busyView.view];
     self.navigationItem.leftBarButtonItem = self.doneButton;
     self.navigationItem.rightBarButtonItem = self.buyButton;
     self.title = @"Purchase";
@@ -72,11 +73,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     static NSString *TextCellID = @"TextCell";
-    
-    
     UITableViewCell *cell = nil;
-    
-    // Configure the cell...
     if(indexPath.section==0)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -155,7 +152,16 @@
     [params setObject:clientID forKey:@"ClientID"];
     [params setObject: [self.item objectForKey:@"price"] forKey:@"Amount"];
     [params setObject:[self.item objectForKey:@"id"] forKey:@"ID"];
-    [client makeSale:params];
+    if([client makeSale:params])
+    {
+        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Thanks for your purchase" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+        [theAlert show];
+        [self done:nil];
+
+    }else{
+        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+        [theAlert show];
+    }
     self.busyView.view.hidden = NO;
     
 }

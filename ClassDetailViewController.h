@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ClassDetailViewController : UIViewController<UIAlertViewDelegate>
-@property (nonatomic,strong) NSDictionary* teacherBio;
+@property (nonatomic,strong) NSDictionary* instructorData;
 @property (nonatomic,strong) NSDictionary* classData;
 @property (strong, nonatomic) IBOutlet UIImageView *instructorImage;
-@property (strong, nonatomic) IBOutlet UILabel *teacherName;
+@property (strong, nonatomic) IBOutlet UILabel *instructorName;
+@property (strong, nonatomic) IBOutlet UITextView *instrutorBio;
+@property (strong, nonatomic) IBOutlet UIButton *reserveButton;
 @end
