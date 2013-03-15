@@ -31,8 +31,8 @@
     [super viewDidLoad];
     self.tabBar.tintColor = [UIColor clearColor];	// Do any additional setup after loading the view.
     self.schedule  =  [[MainPageTableViewController alloc] initWithNibName:@"MainPageTableViewController" bundle:nil];
-    self.settings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
-    self.settings.tabBarItem.title = @"Settings";
+    self.settings = [[YouViewController alloc] initWithNibName:@"YouViewController" bundle:nil];
+    self.settings.tabBarItem.title = @"You";
     self.scheduleNavController = [[UINavigationController alloc] initWithRootViewController:self.schedule];
     self.scheduleNavController.tabBarItem.title = @"Schedule";
     [self.scheduleNavController.navigationBar setTintColor:[UIColor colorWithRed:(254.0/255.0) green:(178.0/255.0) blue:(67.0/255.0) alpha:1.0]];

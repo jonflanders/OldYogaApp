@@ -56,6 +56,7 @@
         {
             SOAPFault* fault = (SOAPFault*)r;
             NSString* f = fault.faultstring;
+            NSLog(@"SOAPFault %@",f);
             
         }
     }

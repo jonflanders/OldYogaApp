@@ -228,7 +228,9 @@
     NSArray* tResult  = [self.instructors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(Name==%@)",teacher]];
     ClassDetailViewController* vc = [[ClassDetailViewController alloc]  initWithNibName:@"ClassDetailViewController" bundle:nil];
     vc.classData = class;
-    vc.teacherBio= [tResult objectAtIndex:0];
+    if(tResult!=nil&&tResult.count>0){
+        vc.teacherBio= [tResult objectAtIndex:0];
+    }
     UINavigationController* nav = self.navigationController;
     [nav pushViewController:vc animated:YES];
    

@@ -66,6 +66,8 @@
 		FCA905C016E311D200746A54 /* mats.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA905BF16E311D200746A54 /* mats.png */; };
 		FCACB9E516F14AC200D4E78A /* MBOClientLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = FCACB9E416F14AC200D4E78A /* MBOClientLogin.m */; };
 		FCACB9E816F14B3C00D4E78A /* MBOReserveClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCACB9E716F14B3C00D4E78A /* MBOReserveClass.m */; };
+		FCACB9EC16F28A9A00D4E78A /* YouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCACB9EA16F28A9900D4E78A /* YouViewController.m */; };
+		FCACB9ED16F28A9A00D4E78A /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCACB9EB16F28A9900D4E78A /* YouViewController.xib */; };
 		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
@@ -161,6 +163,9 @@
 		FCACB9E416F14AC200D4E78A /* MBOClientLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBOClientLogin.m; sourceTree = "<group>"; };
 		FCACB9E616F14B3C00D4E78A /* MBOReserveClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBOReserveClass.h; sourceTree = "<group>"; };
 		FCACB9E716F14B3C00D4E78A /* MBOReserveClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBOReserveClass.m; sourceTree = "<group>"; };
+		FCACB9E916F28A9900D4E78A /* YouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouViewController.h; path = ../YouViewController.h; sourceTree = "<group>"; };
+		FCACB9EA16F28A9900D4E78A /* YouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouViewController.m; path = ../YouViewController.m; sourceTree = "<group>"; };
+		FCACB9EB16F28A9900D4E78A /* YouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YouViewController.xib; path = ../YouViewController.xib; sourceTree = "<group>"; };
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
@@ -242,6 +247,7 @@
 		FC3FF76716C8D63200CB3700 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				FCACB9EB16F28A9900D4E78A /* YouViewController.xib */,
 				FCA905BD16E2F1AE00746A54 /* ButtonTableViewCell.xib */,
 				FCA905BA16E2D66500746A54 /* BuyDetailViewController.xib */,
 				FCA905B216DF03F500746A54 /* BuyViewController.xib */,
@@ -263,6 +269,8 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FCACB9E916F28A9900D4E78A /* YouViewController.h */,
+				FCACB9EA16F28A9900D4E78A /* YouViewController.m */,
 				FCA905B816E2D66500746A54 /* BuyDetailViewController.h */,
 				FCA905B916E2D66500746A54 /* BuyDetailViewController.m */,
 				FCA905B516E18F0000746A54 /* Constants.h */,
@@ -434,6 +442,7 @@
 				FCA905BE16E2F1AE00746A54 /* ButtonTableViewCell.xib in Resources */,
 				FCA905C016E311D200746A54 /* mats.png in Resources */,
 				FC20D1CC16F11FE800CA43D2 /* Settings.bundle in Resources */,
+				FCACB9ED16F28A9A00D4E78A /* YouViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +479,7 @@
 				FC20D1D216F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m in Sources */,
 				FCACB9E516F14AC200D4E78A /* MBOClientLogin.m in Sources */,
 				FCACB9E816F14B3C00D4E78A /* MBOReserveClass.m in Sources */,
+				FCACB9EC16F28A9A00D4E78A /* YouViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

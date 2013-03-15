@@ -33,26 +33,33 @@
         MBOClientLogin* login = [[MBOClientLogin alloc] init];
         NSString* clientID = [login loginWithUserName:username.text andPassword:password.text];
         if(clientID!=nil){
-            MBOReserveClass* reserve = [[MBOReserveClass alloc] init];
-            NSString* classID =[self.classData objectForKey:@"ClassID"];
-            [reserve reserveClass:classID forClient:clientID];
+            [self internalReserve:clientID];
         }  
     }
 }
+-(void)internalReserve:(NSString*)clientID
+{
+    MBOReserveClass* reserve = [[MBOReserveClass alloc] init];
+    NSString* classID =[self.classData objectForKey:@"ClassID"];
+    [reserve reserveClass:classID forClient:clientID];
+}
 - (IBAction)reserve:(id)sender {
-    NSString* userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_name"];
-    UIAlertView* theAlert = [[UIAlertView alloc]  initWithTitle:@"Enter your MBO username and password" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil ];
+    MBOClientLogin* login = [[MBOClientLogin alloc] init];
+    NSString* clientID = [login clientLoggedIn];
+    if(clientID==nil){
+        UIAlertView* theAlert = [[UIAlertView alloc]  initWithTitle:@"Enter your MBO username and password" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil ];
 
-    theAlert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    if(userName!=nil)
-    {
-        [[theAlert textFieldAtIndex:0] setText:userName];
+        theAlert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+       
+    #ifdef DEBUG
+        [[theAlert textFieldAtIndex:0] setText:@"jon.flanders@gmail.com"];
+        [[theAlert textFieldAtIndex:1] setText:@"rookie95"];
+    #endif
+        [theAlert show];
     }
-#ifdef DEBUG
-    [[theAlert textFieldAtIndex:0] setText:@"jon.flanders@gmail.com"];
-    [[theAlert textFieldAtIndex:1] setText:@"rookie95"];
-#endif
-    [theAlert show];
+    else{
+          [self internalReserve:clientID];
+    }
 
 }
 

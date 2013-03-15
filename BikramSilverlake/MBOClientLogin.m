@@ -9,10 +9,28 @@
 #import "MBOClientLogin.h"
 #import "Client_x0020_ServiceSvc.h"
 #import "Constants.h"
-
+@interface MBOClientLogin(){
+    NSString* clientIDKey;
+}
+@end
 @implementation MBOClientLogin
+-(id) init{
+    self = [super init];
+    if(self){
+        clientIDKey=@"ClientID";
+    }
+    return self;
+}
+-(NSString*) clientLoggedIn
+{
+   return  [[NSUserDefaults standardUserDefaults] valueForKey:clientIDKey ];
+}
+-(void)logout{
+     [[NSUserDefaults standardUserDefaults] setValue:nil forKey:clientIDKey];
+}
 -(NSString*) loginWithUserName:(NSString *)userName andPassword:(NSString *)password{
-    NSString* clientID =  [[NSUserDefaults standardUserDefaults] valueForKey:@"CliendID" ];
+   
+    NSString* clientID =  [[NSUserDefaults standardUserDefaults] valueForKey:clientIDKey ];
     if(clientID==nil){
     Client_x0020_ServiceSoapBinding* binding = [[Client_x0020_ServiceSoapBinding alloc] initWithAddress:MBOClientURL];
     Client_x0020_ServiceSvc_ValidateLoginRequest* vlr = [[Client_x0020_ServiceSvc_ValidateLoginRequest alloc] init];
@@ -46,7 +64,7 @@
             
         }
         else{
-            [[NSUserDefaults standardUserDefaults] setValue:clientID forKey:@"ClientID"];
+            [[NSUserDefaults standardUserDefaults] setValue:clientID forKey:clientIDKey];
             
             
         }

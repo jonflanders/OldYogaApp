@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Client_x0020_ServiceSvc.h"
 #import "Constants.h"
-@interface MBOClientLogin : NSObject
+@interface MBOClientLogin : NSObject<UIAlertViewDelegate>
 -(NSString*) loginWithUserName:(NSString*)userName andPassword:(NSString*) password;
+-(NSString*) clientLoggedIn;
+-(void)logout;
 @end
