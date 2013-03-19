@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBOClientRecords.h"
+#import "BusyViewController.h"
 
-@interface YouViewController : UITableViewController
-
+@interface YouViewController : UITableViewController<MBOClientRecordDelegate>
+@property    (strong,nonatomic) MBOClientRecords* records;
+@property (strong,nonatomic) BusyViewController* busyViewController;
 @end

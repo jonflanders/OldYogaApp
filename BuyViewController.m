@@ -23,6 +23,7 @@
     if (self) {
     // Custom initialization
         self.title = @"Buy";
+        self.tabBarItem.image = [UIImage imageNamed:@"buy"];
         NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BaseURL,SalesURL]];
 
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
@@ -33,12 +34,13 @@
                          NSData *data,
                          NSError *error)
      {
+         BOOL hasError = NO;
          NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
          NSInteger statusCode = [httpResponse statusCode];
-         _items = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-         if ([data length] >0 && error == nil&&statusCode==200)
+          if ([data length] >0 && error == nil&&statusCode==200)
          {
-           
+             _items = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+             
              dispatch_async(dispatch_get_main_queue(), ^{
                  
                  [self.tableView reloadData];
@@ -48,12 +50,25 @@
          else if ([data length] == 0 && error == nil)
          {
              NSLog(@"Nothing was downloaded.");
+             hasError=YES;
          }
          else if (error != nil){
              NSLog(@"Error = %@", error);
+                          hasError=YES;
          }
          else if (statusCode==500){
              NSLog(@"Error 500");
+             hasError=YES;
+         }
+         if(hasError){
+             dispatch_async(dispatch_get_main_queue(), ^{
+                       UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"We're Sorry" message:@"There is an error connecting - you can pull to refresh to try again" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+                 [theAlert show];
+
+                              });
+
+           
+  
 
          }
          

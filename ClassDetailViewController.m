@@ -10,6 +10,7 @@
 #import "MBOClientLogin.h"
 #import "MBOReserveClass.h"
 #import "Constants.h"
+#import "QuartzCore/QuartzCore.h"
 @interface ClassDetailViewController ()
 
 @end
@@ -75,6 +76,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = [self.classData objectForKey:@"FullTime"];
+    self.instrutorBioView.layer.masksToBounds = NO;
+    self.instrutorBioView.layer.cornerRadius = 8; // if you like rounded corners
+   // self.instrutorBio.layer.shadowOffset = CGSizeMake(-15, 20);
+    self.instrutorBioView.layer.shadowRadius = 5;
+    self.instrutorBioView.layer.shadowOpacity = 0.5;
     // Do any additional setup after loading the view from its nib.
     NSString* name = [self.instructorData objectForKey:@"Name"];
     self.instructorName.text = name;
@@ -125,6 +132,7 @@
     [self setInstructorName:nil];
     [self setInstrutorBio:nil];
     [self setReserveButton:nil];
+    [self setInstrutorBioView:nil];
     [super viewDidUnload];
 }
 @end

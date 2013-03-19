@@ -14,5 +14,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *instructorImage;
 @property (strong, nonatomic) IBOutlet UILabel *instructorName;
 @property (strong, nonatomic) IBOutlet UITextView *instrutorBio;
+@property (strong, nonatomic) IBOutlet UIView *instrutorBioView;
 @property (strong, nonatomic) IBOutlet UIButton *reserveButton;
 @end

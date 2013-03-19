@@ -38,7 +38,7 @@
     [super viewDidLoad];
     self.busyView = [[BusyViewController alloc] initWithNibName:@"BusyViewController" bundle:nil];
     self.busyView.view.hidden = YES;
-    [self.tableView addSubview:self.busyView.view];
+    [self.view addSubview:self.busyView.view];
     self.navigationItem.leftBarButtonItem = self.doneButton;
     self.navigationItem.rightBarButtonItem = self.buyButton;
     self.title = @"Purchase";
@@ -146,7 +146,6 @@
     
 }
 -(void)complete:(NSString *)clientID{
-    
     MBOSaleClient* client = [[MBOSaleClient alloc] init];
     NSMutableDictionary* params = [self extractParametersFromTable];
     [params setObject:clientID forKey:@"ClientID"];
@@ -162,11 +161,12 @@
         UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
         [theAlert show];
     }
-    self.busyView.view.hidden = NO;
+    self.busyView.view.hidden = YES;
+    
     
 }
 - (IBAction)buy:(id)sender {
-    self.busyView.view.hidden = YES;
+    self.busyView.view.hidden = NO;
     self.login  = [[MBOClientLogin alloc] init];
     self.login.delegate = self;
     [self.login login];

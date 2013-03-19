@@ -37,14 +37,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self getClasses];
+    
 }
-
+-(void)getClasses{
+    MBOClientLogin* login = [[MBOClientLogin alloc] init];
+    if ([login clientLoggedIn]) {
+        self.busyViewController = [[BusyViewController alloc] initWithNibName:@"BusyViewController" bundle:nil];
+        [self.view addSubview:self.busyViewController.view];
+        
+        self.records = [[MBOClientRecords alloc] init];
+        self.records.delegate  = self;
+        [self.records retrieveRecords];
+    }
+}
+-(void)recordsReceived:(NSArray *)records{
+    classes  = records;
+    [self.tableView reloadData];
+    self.busyViewController.view.hidden=YES;
+    self.busyViewController = nil;
+    self.records =nil;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -52,7 +65,12 @@
 }
 
 #pragma mark - Table view data source
-
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if(section==1){
+        return [NSString stringWithFormat:@"You've been to %d classes",classes.count];
+    }
+    return nil;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 2;
@@ -80,16 +98,19 @@
         if(clientID!=nil){
             UITableViewCell * cell =  [ self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
             [self setButton:cell withTitle:@"Logout"];
+            
         }
     }
 }
 -(void)logout{
+    
     MBOClientLogin* login = [[MBOClientLogin alloc] init];
     if ([login clientLoggedIn]) {
         [login logout];
          UITableViewCell * cell =  [ self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
          [self setButton:cell withTitle:@"Login"];
-
+        classes = nil;
+        [self.tableView reloadData];
     }
     else{
         UIAlertView* theAlert = [[UIAlertView alloc]  initWithTitle:@"Enter your MBO username and password" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil ];
@@ -120,10 +141,11 @@
    	if(indexPath.section==1){
      cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
+    NSString* item = [classes objectAtIndex:indexPath.row];
+    cell.textLabel.text = item;
     }
     if(indexPath.section==0){
         cell = [tableView dequeueReusableCellWithIdentifier:ButtonCellID];
@@ -148,58 +170,6 @@
         }
     }
     return cell;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
 @end

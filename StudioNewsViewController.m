@@ -8,6 +8,7 @@
 
 #import "StudioNewsViewController.h"
 #import "Constants.h"
+#import "QuartzCore/QuartzCore.h"
 @interface StudioNewsViewController ()
 {
     NSArray* _newsItems;
@@ -46,6 +47,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.newsContainerView.layer.masksToBounds = NO;
+    self.newsContainerView.layer.cornerRadius = 8; // if you like rounded corners
+    // self.instrutorBio.layer.shadowOffset = CGSizeMake(-15, 20);
+    self.newsContainerView.layer.shadowRadius = 5;
+    self.newsContainerView.layer.shadowOpacity = 0.5;
+    
     // Do any additional setup after loading the view from its nib.
     [self.view addGestureRecognizer:self.swipeGesture];
     [self.view addGestureRecognizer:self.leftswipeGesture];
@@ -105,6 +112,7 @@
     [self setNewsView:nil];
     [self setSwipeGesture:nil];
     [self setLeftswipeGesture:nil];
+    [self setNewsContainerView:nil];
     [super viewDidUnload];
 }
 @end

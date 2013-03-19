@@ -74,6 +74,8 @@
 		FCACB9ED16F28A9A00D4E78A /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCACB9EB16F28A9900D4E78A /* YouViewController.xib */; };
 		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
 		FCC453E816F2EB28004127C3 /* CreditCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */; };
+		FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC453EA16F4E59C004127C3 /* MBOClientRecords.m */; };
+		FCE6F10516F7E94000F3312C /* buy.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6F10416F7E94000F3312C /* buy.png */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
 		FCF38AC116CAC1E5005DD57B /* AlarmTimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */; };
@@ -179,6 +181,9 @@
 		FCACB9EB16F28A9900D4E78A /* YouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YouViewController.xib; path = ../YouViewController.xib; sourceTree = "<group>"; };
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTableViewCell.xib; sourceTree = "<group>"; };
+		FCC453E916F4E59C004127C3 /* MBOClientRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBOClientRecords.h; sourceTree = "<group>"; };
+		FCC453EA16F4E59C004127C3 /* MBOClientRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBOClientRecords.m; sourceTree = "<group>"; };
+		FCE6F10416F7E94000F3312C /* buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy.png; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
 		FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmTimeTableViewController.h; path = ../AlarmTimeTableViewController.h; sourceTree = "<group>"; };
@@ -210,6 +215,8 @@
 			children = (
 				FCACB9E316F14AC200D4E78A /* MBOClientLogin.h */,
 				FCACB9E416F14AC200D4E78A /* MBOClientLogin.m */,
+				FCC453E916F4E59C004127C3 /* MBOClientRecords.h */,
+				FCC453EA16F4E59C004127C3 /* MBOClientRecords.m */,
 				FC20D1D016F12C1D00CA43D2 /* Class_x0020_ServiceSvc.h */,
 				FC20D1D116F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m */,
 				FC20D1CD16F1243900CA43D2 /* Client_x0020_ServiceSvc.h */,
@@ -237,6 +244,7 @@
 		FC3FF76616C8D62B00CB3700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FCE6F10416F7E94000F3312C /* buy.png */,
 				FCA905BF16E311D200746A54 /* mats.png */,
 				FC96662E16D4A3DF00E656A2 /* Post-it-note-transparent.png */,
 				FC96662816D4925B00E656A2 /* news.png */,
@@ -465,6 +473,7 @@
 				FC58722C16F2BC15002DAEA4 /* CreditCardInputViewController.xib in Resources */,
 				FC58722E16F2EAF6002DAEA4 /* EditTableViewCell.xib in Resources */,
 				FCC453E816F2EB28004127C3 /* CreditCardTableViewCell.xib in Resources */,
+				FCE6F10516F7E94000F3312C /* buy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +513,7 @@
 				FCACB9EC16F28A9A00D4E78A /* YouViewController.m in Sources */,
 				FC58722716F2BA4C002DAEA4 /* MBOSaleClient.m in Sources */,
 				FC58722B16F2BC15002DAEA4 /* CreditCardInputViewController.m in Sources */,
+				FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,11 +621,15 @@
 		FC59687B15DC5431006B4745 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Flanders Software Consulting, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Flanders Software Consulting, Inc.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
 				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "372198B8-C9D1-42BF-9015-021890F36988";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "372198B8-C9D1-42BF-9015-021890F36988";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

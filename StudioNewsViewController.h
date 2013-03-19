@@ -14,4 +14,5 @@
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftswipeGesture;
 @property (strong,nonatomic) BusyViewController* busyViewController;
 @property (strong, nonatomic) IBOutlet UITextView *newsView;
+@property (strong, nonatomic) IBOutlet UIView *newsContainerView;
 @end
