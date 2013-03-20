@@ -271,16 +271,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary* class = [self.classes objectAtIndex:indexPath.row];
-    NSString* teacher = [class objectForKey:@"Teacher"];
-    NSArray* tResult  = [self.instructors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(Name==%@)",teacher]];
-    ClassDetailViewController* vc = [[ClassDetailViewController alloc]  initWithNibName:@"ClassDetailViewController" bundle:nil];
-    vc.classData = class;
-    if(tResult!=nil&&tResult.count>0){
-        vc.instructorData= [tResult objectAtIndex:0];
-    }
-    UINavigationController* nav = self.navigationController;
-    [nav pushViewController:vc animated:YES];
+//    NSDictionary* class = [self.classes objectAtIndex:indexPath.row];
+//    NSString* teacher = [class objectForKey:@"Teacher"];
+//    NSArray* tResult  = [self.instructors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(Name==%@)",teacher]];
+//    ClassDetailViewController* vc = [[ClassDetailViewController alloc]  initWithNibName:@"ClassDetailViewController" bundle:nil];
+//    vc.classData = class;
+//    if(tResult!=nil&&tResult.count>0){
+//        vc.instructorData= [tResult objectAtIndex:0];
+//    }
+//    UINavigationController* nav = self.navigationController;
+//    [nav pushViewController:vc animated:YES];
    
 }
 -(void)complete:(NSString *)clientID{

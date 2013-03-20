@@ -89,7 +89,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"About us";
+        self.title = @"About";
         self.tabBarItem.image = [UIImage imageNamed:@"aboutus"];
         _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"]];
     }
