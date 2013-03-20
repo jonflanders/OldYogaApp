@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Constants.h"
 #import "ClassDetailViewController.h"
+#import "MBOReserveClass.h"
 @interface MainPageTableViewController ()
 
 @end
@@ -201,6 +202,9 @@
     }
     else{
         cell = [tableView dequeueReusableCellWithIdentifier:MainCellIdentifier];
+        UIButton* reserveButton=nil;
+        NSNumber* time = [day objectForKey:@"ClassLength"];
+        double dtime = [time doubleValue];
         for (UIView* view in cell.subviews) {
             for (UIView* sview in view.subviews) {
                 if([sview isKindOfClass:[UILabel class]])
@@ -220,9 +224,42 @@
                 if([sview isKindOfClass:[UIButton class]])
                 {
                     UIButton* b = (UIButton*)sview;
-                    [b addTarget:self action:@selector(addToCalendar:) forControlEvents:UIControlEventTouchDown];
+                    if(b.tag==20){
+                        [b addTarget:self action:@selector(addToCalendar:) forControlEvents:UIControlEventTouchDown];
+                    }
+                    if(b.tag==30){
+                        reserveButton = b;
+                        [b addTarget:self action:@selector(reserve:) forControlEvents:UIControlEventTouchDown];
+                    }
+                    if(b.tag==10){
+                        if(dtime==60){
+                            b.imageView.image = [UIImage imageNamed:@"60minutes.png"];
+                          
+                        }
+                    }
                 }
             }
+        }
+        NSDate* currentDate = [NSDate date];
+        NSDateFormatter* df = [[NSDateFormatter alloc] init];
+        [df setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+        [df setDateFormat:@"yyyy-MM-ddHH:mm:ss"];
+
+        NSDate* classDate = [df dateFromString:[day objectForKey:@"DateLink"]];
+        NSComparisonResult r =[currentDate compare:classDate];
+        if(r==NSOrderedDescending){
+            for (UIView* view in cell.subviews) {
+                for (UIView* sview in view.subviews) {
+                    sview.alpha = .2;
+                }
+            }
+            cell.userInteractionEnabled =NO;
+        }
+        NSTimeInterval t = [classDate timeIntervalSinceDate:currentDate];
+        double diff = (t/60)/60;
+        if(diff>0&&diff<1){
+            reserveButton.alpha=.2;
+            reserveButton.userInteractionEnabled=NO;
         }
     }
     
@@ -246,17 +283,52 @@
     [nav pushViewController:vc animated:YES];
    
 }
--(void)addToCalendar:(id)sender{
-    
-    self.addedToCalendar.hidden = NO;
+-(void)complete:(NSString *)clientID{
+    if(clientID==nil){
+        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"You must login in order to reservere a class"   delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+        [theAlert show];
+    }
+    else{
+        MBOReserveClass* reserve = [[MBOReserveClass alloc] init];
+        NSString* classID =[self.selectedDay objectForKey:@"ClassID"];
+        if([reserve reserveClass:classID forClient:clientID]){
+            UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You are confirmed for this class." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+            [theAlert show];
+          
+        }
+        else{
+            UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+            [theAlert show];
+            
+        }
+
+    }
+}
+-(void)reserve:(id)sender{
     UIButton* b = (UIButton*)sender;
+    self.selectedDay = [self dayForButton:b];
+    if(self.login==nil){
+        self.login  = [[MBOClientLogin alloc] init];
+        self.login.delegate = self;
+    }
+    [self.login login];
+}
+-(NSDictionary*)dayForButton:(UIButton*)b{
     UIView* superView = b.superview;
     UITableViewCell* cell = (UITableViewCell*)superView.superview;
     NSIndexPath* path =    [self.tableView indexPathForCell:cell];
     // NSLog(@"%@",path);
-    EKEventStore *eventStore = [[EKEventStore alloc] init];
     NSDictionary* day = [self.classes objectAtIndex:path.row];
+    return day;
+}
+-(void)addToCalendar:(id)sender{
+    
+    self.addedToCalendar.hidden = NO;
+    UIButton* b = (UIButton*)sender;
+    NSDictionary* day = [self dayForButton:b];
     NSString* dateString = [day objectForKey:@"DateLink"];
+    EKEventStore *eventStore = [[EKEventStore alloc] init];
+    
     EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
     event.title     = @"Bikram Yoga Silverlake";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

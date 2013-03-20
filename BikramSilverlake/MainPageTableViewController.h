@@ -10,12 +10,12 @@
 #import "PullRefreshTableViewController.h"
 #import <EventKit/EventKit.h>
 #import "BusyViewController.h"
-
+#import "MBOClientLogin.h"
 static NSString *MainCellIdentifier = @"Cell";
 static NSString *TopCellIdentifier = @"Top";
 
 static NSString* LocalCache = @"LocalCacheData";
-@interface MainPageTableViewController : PullRefreshTableViewController
+@interface MainPageTableViewController : PullRefreshTableViewController<MBOLoginComplete>
 @property (strong,nonatomic) NSArray* classes;
 @property (strong,nonatomic) NSArray* instructors;
 @property (strong,nonatomic) NSDictionary* studioData;
@@ -26,4 +26,6 @@ static NSString* LocalCache = @"LocalCacheData";
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeGR;
 @property (strong,nonatomic) BusyViewController* busyView;
 @property (strong, nonatomic) IBOutlet UILabel *addedToCalendar;
+@property (strong,nonatomic) NSDictionary* selectedDay;
+@property (strong,nonatomic) MBOClientLogin* login;
 @end

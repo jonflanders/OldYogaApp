@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MainTabBarViewController.h"
+#import "LoginViewController.h"
 @class ViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,LoginViewComplete>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong,nonatomic) LoginViewController* loginViewController;
 @property (strong, nonatomic) MainTabBarViewController *viewController;
 @end

@@ -55,6 +55,7 @@
 }
 -(void)logout{
      [[NSUserDefaults standardUserDefaults] setValue:nil forKey:clientIDKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(NSString*) loginWithUserName:(NSString *)userName andPassword:(NSString *)password{

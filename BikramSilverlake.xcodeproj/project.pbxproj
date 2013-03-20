@@ -75,11 +75,13 @@
 		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
 		FCB6330B16F9258F00E8D4A6 /* ScheduleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */; };
 		FCB6330E16F92F2F00E8D4A6 /* 90minutes.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6330C16F92F2F00E8D4A6 /* 90minutes.png */; };
-		FCB6330F16F92F2F00E8D4A6 /* 60minutes.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6330D16F92F2F00E8D4A6 /* 60minutes.png */; };
 		FCB6331316F9314B00E8D4A6 /* reserve.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6331216F9314B00E8D4A6 /* reserve.png */; };
 		FCB6331B16F9372500E8D4A6 /* noun_project_12301.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6331A16F9372500E8D4A6 /* noun_project_12301.png */; };
 		FCB6331D16F937BF00E8D4A6 /* bikramreserve.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6331C16F937BF00E8D4A6 /* bikramreserve.png */; };
 		FCB6331F16F983E200E8D4A6 /* aboutus.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6331E16F983E200E8D4A6 /* aboutus.png */; };
+		FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6332116F9862200E8D4A6 /* LoginViewController.m */; };
+		FCB6332416F9862200E8D4A6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB6332216F9862200E8D4A6 /* LoginViewController.xib */; };
+		FCB6332816FA1D2500E8D4A6 /* 60minutes.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6332716FA1D2500E8D4A6 /* 60minutes.png */; };
 		FCC453E816F2EB28004127C3 /* CreditCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */; };
 		FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC453EA16F4E59C004127C3 /* MBOClientRecords.m */; };
 		FCE6F10516F7E94000F3312C /* buy.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6F10416F7E94000F3312C /* buy.png */; };
@@ -189,11 +191,14 @@
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleHeader.xib; sourceTree = "<group>"; };
 		FCB6330C16F92F2F00E8D4A6 /* 90minutes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 90minutes.png; sourceTree = "<group>"; };
-		FCB6330D16F92F2F00E8D4A6 /* 60minutes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60minutes.png; sourceTree = "<group>"; };
 		FCB6331216F9314B00E8D4A6 /* reserve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reserve.png; sourceTree = "<group>"; };
 		FCB6331A16F9372500E8D4A6 /* noun_project_12301.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_project_12301.png; sourceTree = "<group>"; };
 		FCB6331C16F937BF00E8D4A6 /* bikramreserve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikramreserve.png; sourceTree = "<group>"; };
 		FCB6331E16F983E200E8D4A6 /* aboutus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutus.png; sourceTree = "<group>"; };
+		FCB6332016F9862200E8D4A6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FCB6332116F9862200E8D4A6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FCB6332216F9862200E8D4A6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		FCB6332716FA1D2500E8D4A6 /* 60minutes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60minutes.png; sourceTree = "<group>"; };
 		FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTableViewCell.xib; sourceTree = "<group>"; };
 		FCC453E916F4E59C004127C3 /* MBOClientRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBOClientRecords.h; sourceTree = "<group>"; };
 		FCC453EA16F4E59C004127C3 /* MBOClientRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBOClientRecords.m; sourceTree = "<group>"; };
@@ -258,12 +263,12 @@
 		FC3FF76616C8D62B00CB3700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FCB6332716FA1D2500E8D4A6 /* 60minutes.png */,
 				FCB6331E16F983E200E8D4A6 /* aboutus.png */,
 				FCB6331C16F937BF00E8D4A6 /* bikramreserve.png */,
 				FCB6331A16F9372500E8D4A6 /* noun_project_12301.png */,
 				FCB6331216F9314B00E8D4A6 /* reserve.png */,
 				FCB6330C16F92F2F00E8D4A6 /* 90minutes.png */,
-				FCB6330D16F92F2F00E8D4A6 /* 60minutes.png */,
 				FCE6F10416F7E94000F3312C /* buy.png */,
 				FCA905BF16E311D200746A54 /* mats.png */,
 				FC96662E16D4A3DF00E656A2 /* Post-it-note-transparent.png */,
@@ -308,6 +313,7 @@
 				FC58722D16F2EAF6002DAEA4 /* EditTableViewCell.xib */,
 				FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */,
 				FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */,
+				FCB6332216F9862200E8D4A6 /* LoginViewController.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -315,6 +321,8 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FCB6332016F9862200E8D4A6 /* LoginViewController.h */,
+				FCB6332116F9862200E8D4A6 /* LoginViewController.m */,
 				FC58722816F2BC15002DAEA4 /* CreditCardInputViewController.h */,
 				FC58722916F2BC15002DAEA4 /* CreditCardInputViewController.m */,
 				FCACB9E916F28A9900D4E78A /* YouViewController.h */,
@@ -497,11 +505,12 @@
 				FCE6F10516F7E94000F3312C /* buy.png in Resources */,
 				FCB6330B16F9258F00E8D4A6 /* ScheduleHeader.xib in Resources */,
 				FCB6330E16F92F2F00E8D4A6 /* 90minutes.png in Resources */,
-				FCB6330F16F92F2F00E8D4A6 /* 60minutes.png in Resources */,
 				FCB6331316F9314B00E8D4A6 /* reserve.png in Resources */,
 				FCB6331B16F9372500E8D4A6 /* noun_project_12301.png in Resources */,
 				FCB6331D16F937BF00E8D4A6 /* bikramreserve.png in Resources */,
 				FCB6331F16F983E200E8D4A6 /* aboutus.png in Resources */,
+				FCB6332416F9862200E8D4A6 /* LoginViewController.xib in Resources */,
+				FCB6332816FA1D2500E8D4A6 /* 60minutes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +551,7 @@
 				FC58722716F2BA4C002DAEA4 /* MBOSaleClient.m in Sources */,
 				FC58722B16F2BC15002DAEA4 /* CreditCardInputViewController.m in Sources */,
 				FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */,
+				FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

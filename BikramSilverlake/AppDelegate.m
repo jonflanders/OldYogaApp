@@ -17,14 +17,20 @@
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[MainTabBarViewController alloc] init];
+        
+        self.loginViewController = [[LoginViewController alloc] init];
+        self.loginViewController.delegate = self;
     } else {
        // self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    self.window.rootViewController = self.loginViewController;//self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
-
+-(void)loginViewComplete{
+    self.window.rootViewController = self.viewController;
+    self.loginViewController=nil;
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
