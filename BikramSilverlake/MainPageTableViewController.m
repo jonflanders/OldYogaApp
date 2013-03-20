@@ -155,7 +155,9 @@
     self.tabBarController.tabBar.hidden = YES;
     self.currentDay = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"MainPageCell" bundle:nil] forCellReuseIdentifier:MainCellIdentifier];
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ScheduleHeader" bundle:nil] forCellReuseIdentifier:TopCellIdentifier];
+    
+    //self.tableView.backgroundColor = [UIColor whiteColor];
     [self.swipeGR addTarget:self action:@selector(swipe)];
     [self.tableView addGestureRecognizer:self.swipeGR];
     self.busyView.view.hidden=YES;
@@ -182,40 +184,44 @@
    return self.classes.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 75;
+    if(indexPath.row==0)
+        return 30;
+    else
+        return 60;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MainCellIdentifier];
+    UITableViewCell *cell =nil;
     
     NSDictionary* day = [self.classes objectAtIndex:indexPath.row];
-    NSInteger idx =indexPath.row%2;
-   // NSLog(@"Index path = %d - modulo 2 == %d",indexPath.row, idx);
-    // Configure the cell...
-    if(idx==0){
-        //cell.backgroundColor = [UIColor colorWithRed:.5 green:.5 blue:.5 alpha:.8];
+    if(indexPath.row==0){
+        cell = [tableView dequeueReusableCellWithIdentifier:TopCellIdentifier];
+        
+       
     }
-    for (UIView* view in cell.subviews) {
-        for (UIView* sview in view.subviews) {
-           // NSLog(@"%@",sview.description);
-            if([sview isKindOfClass:[UILabel class]])
-            {
-                UILabel* nb = (UILabel*)sview;
-                if(nb.tag==1){
-                    nb.text = (NSString*)[day objectForKey:@"Time"];
-                }
-                if(nb.tag==2){
-                    nb.text = (NSString*)[day objectForKey:@"Type"];
-                }
-                if (nb.tag==4) {
-                    nb.text = (NSString*)[day objectForKey:@"Teacher"];
-                }
+    else{
+        cell = [tableView dequeueReusableCellWithIdentifier:MainCellIdentifier];
+        for (UIView* view in cell.subviews) {
+            for (UIView* sview in view.subviews) {
+                if([sview isKindOfClass:[UILabel class]])
+                {
+                    UILabel* nb = (UILabel*)sview;
+                    if(nb.tag==1){
+                        nb.text = (NSString*)[day objectForKey:@"Time"];
+                    }
+                    if(nb.tag==2){
+                        nb.text = (NSString*)[day objectForKey:@"Type"];
+                    }
+                    if (nb.tag==4) {
+                        nb.text = (NSString*)[day objectForKey:@"Teacher"];
+                    }
 
-            }
-            if([sview isKindOfClass:[UIButton class]])
-            {
-                UIButton* b = (UIButton*)sview;
-                [b addTarget:self action:@selector(addToCalendar:) forControlEvents:UIControlEventTouchDown];
+                }
+                if([sview isKindOfClass:[UIButton class]])
+                {
+                    UIButton* b = (UIButton*)sview;
+                    [b addTarget:self action:@selector(addToCalendar:) forControlEvents:UIControlEventTouchDown];
+                }
             }
         }
     }

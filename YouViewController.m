@@ -21,7 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.tabBarItem.image = [UIImage imageNamed:@"bikramsettings"];
+        self.tabBarItem.image = [UIImage imageNamed:@"studio"];
     }
     return self;
 }

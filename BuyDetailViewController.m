@@ -42,7 +42,7 @@
     self.navigationItem.leftBarButtonItem = self.doneButton;
     self.navigationItem.rightBarButtonItem = self.buyButton;
     self.title = @"Purchase";
-    items = @[@"Name",@"Credit Card",@"Address",@"City",@"State",@"Zip",@"Expiration Month",@"Expiration Year"];
+    items = @[@"Name",@"Credit Card",@"Address",@"City",@"State",@"Zip",@"Exp Month",@"Exp Year"];
 #ifdef DEBUG
     itemValues = @[@"Jon Flanders",@"4111111111111111",@"710 Cipriano Pl",@"Monterey Park",@"CA",@"91754",@"03",@"2016"];
 #endif

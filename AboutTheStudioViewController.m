@@ -34,9 +34,23 @@
     cell.textLabel.text = item.item;
     cell.detailTextLabel.text = item.value;
     cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
+    cell.detailTextLabel.numberOfLines=5;
    
     return cell;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    CGFloat h = 44;
+    if(indexPath.section==1)
+    {
+        h = 100;
+    }
+    return h;
+
+}
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tblView deselectRowAtIndexPath:indexPath animated:YES];
@@ -75,8 +89,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-          self.title = @"Studio";
-        self.tabBarItem.image = [UIImage imageNamed:@"studio"];
+        self.title = @"About us";
+        self.tabBarItem.image = [UIImage imageNamed:@"aboutus"];
         _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"]];
     }
     return self;

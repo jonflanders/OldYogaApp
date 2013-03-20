@@ -38,7 +38,7 @@
     if (self) {
         // Custom initialization
         self.title = @"Hot News";
-        self.tabBarItem.image = [UIImage imageNamed:@"news"];
+        self.tabBarItem.image = [UIImage imageNamed:@"bikramsettings"];
   
     }
     return self;
