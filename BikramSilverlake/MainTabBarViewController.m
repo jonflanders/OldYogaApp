@@ -29,14 +29,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    UIColor* tintColor = [UIColor colorWithRed:(254.0/255.0) green:(178.0/255.0) blue:(67.0/255.0) alpha:1.0];
+    self.tabBar.selectedImageTintColor =tintColor;
     self.tabBar.tintColor = [UIColor clearColor];	// Do any additional setup after loading the view.
     self.schedule  =  [[MainPageTableViewController alloc] initWithNibName:@"MainPageTableViewController" bundle:nil];
     self.settings = [[YouViewController alloc] initWithNibName:@"YouViewController" bundle:nil];
     self.settings.tabBarItem.title = @"My Info";
     self.scheduleNavController = [[UINavigationController alloc] initWithRootViewController:self.schedule];
     self.scheduleNavController.tabBarItem.title = @"Schedule";
-    [self.scheduleNavController.navigationBar setTintColor:[UIColor colorWithRed:(254.0/255.0) green:(178.0/255.0) blue:(67.0/255.0) alpha:1.0]];
+    [self.scheduleNavController.navigationBar setTintColor:tintColor];
     self.studioNews = [[StudioNewsViewController alloc] initWithNibName:@"StudioNewsViewController" bundle:nil];
     self.about = [[AboutTheStudioViewController alloc] initWithNibName:@"AboutTheStudioViewController" bundle:nil];
     self.buyViewController = [[BuyViewController alloc] initWithNibName:@"BuyViewController" bundle:nil];

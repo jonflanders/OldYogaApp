@@ -12,7 +12,11 @@
 #import "ClassDetailViewController.h"
 #import "MBOReserveClass.h"
 @interface MainPageTableViewController ()
+{
+    CMPopTipView* popup;
+    id	currentPopTipViewTarget;
 
+}
 @end
 
 @implementation MainPageTableViewController
@@ -134,7 +138,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.tabBarItem.image = [UIImage imageNamed:@"pose"];
+        self.tabBarItem.image = [UIImage imageNamed:@"smallcalendar"];
         self.busyView = [[BusyViewController alloc] initWithNibName:@"BusyViewController" bundle:nil];
 
     }
@@ -157,7 +161,8 @@
     self.currentDay = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"MainPageCell" bundle:nil] forCellReuseIdentifier:MainCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"ScheduleHeader" bundle:nil] forCellReuseIdentifier:TopCellIdentifier];
-    
+    popup = [[CMPopTipView alloc] init];
+   popup.backgroundColor = [UIColor colorWithRed:(254.0/255.0) green:(178.0/255.0) blue:(67.0/255.0) alpha:1.0];
     //self.tableView.backgroundColor = [UIColor whiteColor];
     [self.swipeGR addTarget:self action:@selector(swipe)];
     [self.tableView addGestureRecognizer:self.swipeGR];
@@ -182,7 +187,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-   return self.classes.count;
+   return self.classes.count+1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row==0)
@@ -193,20 +198,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell =nil;
-    
-    NSDictionary* day = [self.classes objectAtIndex:indexPath.row];
-    if(indexPath.row==0){
+     if(indexPath.row==0){
         cell = [tableView dequeueReusableCellWithIdentifier:TopCellIdentifier];
         
        
     }
     else{
+        
+        NSDictionary* day = [self.classes objectAtIndex:indexPath.row-1];
+        
         cell = [tableView dequeueReusableCellWithIdentifier:MainCellIdentifier];
+            cell.userInteractionEnabled =YES;
         UIButton* reserveButton=nil;
         NSNumber* time = [day objectForKey:@"ClassLength"];
         double dtime = [time doubleValue];
         for (UIView* view in cell.subviews) {
             for (UIView* sview in view.subviews) {
+                sview.alpha = 1;
                 if([sview isKindOfClass:[UILabel class]])
                 {
                     UILabel* nb = (UILabel*)sview;
@@ -232,10 +240,17 @@
                         [b addTarget:self action:@selector(reserve:) forControlEvents:UIControlEventTouchDown];
                     }
                     if(b.tag==10){
+                        [b setImage:[UIImage imageNamed:@"noun_project_12301.png"] forState:0];
                         if(dtime==60){
-                            b.imageView.image = [UIImage imageNamed:@"60minutes.png"];
+                            [b setImage:[UIImage imageNamed:@"60minutes.png"] forState:0];
                           
                         }
+                        NSString* type = [day objectForKey:@"Type"];
+                        if([type isEqualToString:@"DONATION CLASS - $10 cash only"]){
+                            [b setImage:[UIImage imageNamed:@"bikramdonate"] forState:0];
+                                                    }
+                        [b addTarget:self action:@selector(showClassType:) forControlEvents:UIControlEventTouchDown];
+
                     }
                 }
             }
@@ -313,12 +328,42 @@
     }
     [self.login login];
 }
+-(void)showClassType:(id)sender{
+    UIButton* b = (UIButton*)sender;
+    NSDictionary* day = [self dayForButton:b];
+    
+	if (sender == currentPopTipViewTarget) {
+		// Dismiss the popTipView and that is all
+		currentPopTipViewTarget = nil;
+        [popup dismissAnimated:YES];
+
+	}
+	else {
+		NSString *contentMessage = [day objectForKey:@"Type"];
+		popup.delegate = self;
+        popup.animation = arc4random() % 2;
+		popup.dismissTapAnywhere = YES;
+        [popup autoDismissAnimated:YES atTimeInterval:3.0];
+        popup.message = contentMessage;
+		if ([sender isKindOfClass:[UIButton class]]) {
+			UIButton *button = (UIButton *)sender;
+			[popup presentPointingAtView:button inView:self.view animated:YES];
+		}
+		else {
+			UIBarButtonItem *barButtonItem = (UIBarButtonItem *)sender;
+			[popup presentPointingAtBarButtonItem:barButtonItem animated:YES];
+		}
+		
+		//[visiblePopTipViews addObject:popTipView];
+		currentPopTipViewTarget = sender;
+	}
+}
 -(NSDictionary*)dayForButton:(UIButton*)b{
     UIView* superView = b.superview;
-    UITableViewCell* cell = (UITableViewCell*)superView.superview;
+    UITableViewCell* cell = 	(UITableViewCell*)superView.superview;
     NSIndexPath* path =    [self.tableView indexPathForCell:cell];
     // NSLog(@"%@",path);
-    NSDictionary* day = [self.classes objectAtIndex:path.row];
+    NSDictionary* day = [self.classes objectAtIndex:path.row-1	];
     return day;
 }
 -(void)addToCalendar:(id)sender{

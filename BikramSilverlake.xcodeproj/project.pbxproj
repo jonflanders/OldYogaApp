@@ -82,6 +82,9 @@
 		FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6332116F9862200E8D4A6 /* LoginViewController.m */; };
 		FCB6332416F9862200E8D4A6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB6332216F9862200E8D4A6 /* LoginViewController.xib */; };
 		FCB6332816FA1D2500E8D4A6 /* 60minutes.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6332716FA1D2500E8D4A6 /* 60minutes.png */; };
+		FCC3718516FD3C5600CC57CA /* smallcalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3718416FD3C5600CC57CA /* smallcalendar.png */; };
+		FCC3718716FD3EAA00CC57CA /* bikramdonate.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3718616FD3EAA00CC57CA /* bikramdonate.png */; };
+		FCC3718A16FD415000CC57CA /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC3718916FD415000CC57CA /* CMPopTipView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FCC453E816F2EB28004127C3 /* CreditCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */; };
 		FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC453EA16F4E59C004127C3 /* MBOClientRecords.m */; };
 		FCE6F10516F7E94000F3312C /* buy.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6F10416F7E94000F3312C /* buy.png */; };
@@ -199,6 +202,10 @@
 		FCB6332116F9862200E8D4A6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FCB6332216F9862200E8D4A6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FCB6332716FA1D2500E8D4A6 /* 60minutes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60minutes.png; sourceTree = "<group>"; };
+		FCC3718416FD3C5600CC57CA /* smallcalendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallcalendar.png; sourceTree = "<group>"; };
+		FCC3718616FD3EAA00CC57CA /* bikramdonate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikramdonate.png; sourceTree = "<group>"; };
+		FCC3718816FD415000CC57CA /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
+		FCC3718916FD415000CC57CA /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPopTipView.m; sourceTree = "<group>"; };
 		FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTableViewCell.xib; sourceTree = "<group>"; };
 		FCC453E916F4E59C004127C3 /* MBOClientRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBOClientRecords.h; sourceTree = "<group>"; };
 		FCC453EA16F4E59C004127C3 /* MBOClientRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBOClientRecords.m; sourceTree = "<group>"; };
@@ -263,6 +270,8 @@
 		FC3FF76616C8D62B00CB3700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FCC3718616FD3EAA00CC57CA /* bikramdonate.png */,
+				FCC3718416FD3C5600CC57CA /* smallcalendar.png */,
 				FCB6332716FA1D2500E8D4A6 /* 60minutes.png */,
 				FCB6331E16F983E200E8D4A6 /* aboutus.png */,
 				FCB6331C16F937BF00E8D4A6 /* bikramreserve.png */,
@@ -321,6 +330,8 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FCC3718816FD415000CC57CA /* CMPopTipView.h */,
+				FCC3718916FD415000CC57CA /* CMPopTipView.m */,
 				FCB6332016F9862200E8D4A6 /* LoginViewController.h */,
 				FCB6332116F9862200E8D4A6 /* LoginViewController.m */,
 				FC58722816F2BC15002DAEA4 /* CreditCardInputViewController.h */,
@@ -511,6 +522,8 @@
 				FCB6331F16F983E200E8D4A6 /* aboutus.png in Resources */,
 				FCB6332416F9862200E8D4A6 /* LoginViewController.xib in Resources */,
 				FCB6332816FA1D2500E8D4A6 /* 60minutes.png in Resources */,
+				FCC3718516FD3C5600CC57CA /* smallcalendar.png in Resources */,
+				FCC3718716FD3EAA00CC57CA /* bikramdonate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +565,7 @@
 				FC58722B16F2BC15002DAEA4 /* CreditCardInputViewController.m in Sources */,
 				FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */,
 				FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */,
+				FCC3718A16FD415000CC57CA /* CMPopTipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

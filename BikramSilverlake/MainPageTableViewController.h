@@ -11,11 +11,14 @@
 #import <EventKit/EventKit.h>
 #import "BusyViewController.h"
 #import "MBOClientLogin.h"
+#import "CMPopTipView.h"
+
 static NSString *MainCellIdentifier = @"Cell";
 static NSString *TopCellIdentifier = @"Top";
 
 static NSString* LocalCache = @"LocalCacheData";
-@interface MainPageTableViewController : PullRefreshTableViewController<MBOLoginComplete>
+
+@interface MainPageTableViewController : PullRefreshTableViewController<MBOLoginComplete,CMPopTipViewDelegate>
 @property (strong,nonatomic) NSArray* classes;
 @property (strong,nonatomic) NSArray* instructors;
 @property (strong,nonatomic) NSDictionary* studioData;
