@@ -214,7 +214,7 @@
         double dtime = [time doubleValue];
         for (UIView* view in cell.subviews) {
             for (UIView* sview in view.subviews) {
-                sview.alpha = 1;
+                sview.alpha = .6;
                 if([sview isKindOfClass:[UILabel class]])
                 {
                     UILabel* nb = (UILabel*)sview;
@@ -265,7 +265,7 @@
         if(r==NSOrderedDescending){
             for (UIView* view in cell.subviews) {
                 for (UIView* sview in view.subviews) {
-                    sview.alpha = .2;
+                    sview.alpha = .1;
                 }
             }
             cell.userInteractionEnabled =NO;

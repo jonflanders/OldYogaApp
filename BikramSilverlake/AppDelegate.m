@@ -14,6 +14,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [[UILabel appearanceWhenContainedIn:[UITableView class], nil ] setColor:[UIColor grayColor]];
+    [[UITextView appearance ] setTextColor:[UIColor grayColor]];
+    [[UIButton appearance] setAlpha:.8];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[MainTabBarViewController alloc] init];

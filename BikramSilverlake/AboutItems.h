@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface AboutItems : NSObject
+@property (strong,nonatomic) UIImage* image;
 @property (strong,nonatomic) NSString* item;
 @property (strong,nonatomic) NSString* value;
--(id)initWithItem:(NSString*)item andValue:(NSString*) value;	
+-(id)initWithItem:(NSString*)item andValue:(NSString*) value;
+-(id)initWithItem:(NSString*)item andValue:(NSString*) value andImage:(UIImage*)image;
 @end

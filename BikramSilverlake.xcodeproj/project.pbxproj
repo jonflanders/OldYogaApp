@@ -72,7 +72,13 @@
 		FCACB9E816F14B3C00D4E78A /* MBOReserveClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCACB9E716F14B3C00D4E78A /* MBOReserveClass.m */; };
 		FCACB9EC16F28A9A00D4E78A /* YouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCACB9EA16F28A9900D4E78A /* YouViewController.m */; };
 		FCACB9ED16F28A9A00D4E78A /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCACB9EB16F28A9900D4E78A /* YouViewController.xib */; };
-		FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
+		FCB04D7716FE1EBB005D505E /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7516FE1EBB005D505E /* fb.png */; };
+		FCB04D7816FE1EBB005D505E /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7616FE1EBB005D505E /* twitter.png */; };
+		FCB04D7A16FE2548005D505E /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7916FE2548005D505E /* ImageCell.xib */; };
+		FCB04D7B16FE2FB4005D505E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
+		FCB04D7F16FE3CE9005D505E /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */; };
+		FCB04D8016FE3CE9005D505E /* NewAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7E16FE3CE9005D505E /* NewAccountViewController.xib */; };
+		FCB04D8216FE3D80005D505E /* NewEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D8116FE3D80005D505E /* NewEditTableViewCell.xib */; };
 		FCB6330B16F9258F00E8D4A6 /* ScheduleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */; };
 		FCB6330E16F92F2F00E8D4A6 /* 90minutes.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6330C16F92F2F00E8D4A6 /* 90minutes.png */; };
 		FCB6331316F9314B00E8D4A6 /* reserve.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6331216F9314B00E8D4A6 /* reserve.png */; };
@@ -191,6 +197,13 @@
 		FCACB9E916F28A9900D4E78A /* YouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouViewController.h; path = ../YouViewController.h; sourceTree = "<group>"; };
 		FCACB9EA16F28A9900D4E78A /* YouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouViewController.m; path = ../YouViewController.m; sourceTree = "<group>"; };
 		FCACB9EB16F28A9900D4E78A /* YouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YouViewController.xib; path = ../YouViewController.xib; sourceTree = "<group>"; };
+		FCB04D7516FE1EBB005D505E /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
+		FCB04D7616FE1EBB005D505E /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		FCB04D7916FE2548005D505E /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		FCB04D7C16FE3CE9005D505E /* NewAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewAccountViewController.h; path = ../NewAccountViewController.h; sourceTree = "<group>"; };
+		FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewAccountViewController.m; path = ../NewAccountViewController.m; sourceTree = "<group>"; };
+		FCB04D7E16FE3CE9005D505E /* NewAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewAccountViewController.xib; path = ../NewAccountViewController.xib; sourceTree = "<group>"; };
+		FCB04D8116FE3D80005D505E /* NewEditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewEditTableViewCell.xib; sourceTree = "<group>"; };
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleHeader.xib; sourceTree = "<group>"; };
 		FCB6330C16F92F2F00E8D4A6 /* 90minutes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 90minutes.png; sourceTree = "<group>"; };
@@ -270,6 +283,8 @@
 		FC3FF76616C8D62B00CB3700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FCB04D7516FE1EBB005D505E /* fb.png */,
+				FCB04D7616FE1EBB005D505E /* twitter.png */,
 				FCC3718616FD3EAA00CC57CA /* bikramdonate.png */,
 				FCC3718416FD3C5600CC57CA /* smallcalendar.png */,
 				FCB6332716FA1D2500E8D4A6 /* 60minutes.png */,
@@ -303,6 +318,7 @@
 		FC3FF76716C8D63200CB3700 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				FCB04D7E16FE3CE9005D505E /* NewAccountViewController.xib */,
 				FCACB9EB16F28A9900D4E78A /* YouViewController.xib */,
 				FCA905BD16E2F1AE00746A54 /* ButtonTableViewCell.xib */,
 				FCA905BA16E2D66500746A54 /* BuyDetailViewController.xib */,
@@ -323,6 +339,8 @@
 				FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */,
 				FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */,
 				FCB6332216F9862200E8D4A6 /* LoginViewController.xib */,
+				FCB04D7916FE2548005D505E /* ImageCell.xib */,
+				FCB04D8116FE3D80005D505E /* NewEditTableViewCell.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -330,6 +348,8 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FCB04D7C16FE3CE9005D505E /* NewAccountViewController.h */,
+				FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */,
 				FCC3718816FD415000CC57CA /* CMPopTipView.h */,
 				FCC3718916FD415000CC57CA /* CMPopTipView.m */,
 				FCB6332016F9862200E8D4A6 /* LoginViewController.h */,
@@ -491,7 +511,6 @@
 				FC98D3CE162A3D1F00436255 /* back.png in Resources */,
 				FC98D3CF162A3D1F00436255 /* fwd.png in Resources */,
 				FC98D3D7162A494C00436255 /* SettingsViewController.xib in Resources */,
-				FCB4F3B3163864CE00A2AA9A /* Default-568h@2x.png in Resources */,
 				FC3FF76516C831C800CB3700 /* arrow.png in Resources */,
 				FC3FF76E16C8DCA200CB3700 /* pose.png in Resources */,
 				FC3FF77016C8DFC700CB3700 /* bikramsettings.png in Resources */,
@@ -524,6 +543,12 @@
 				FCB6332816FA1D2500E8D4A6 /* 60minutes.png in Resources */,
 				FCC3718516FD3C5600CC57CA /* smallcalendar.png in Resources */,
 				FCC3718716FD3EAA00CC57CA /* bikramdonate.png in Resources */,
+				FCB04D7716FE1EBB005D505E /* fb.png in Resources */,
+				FCB04D7816FE1EBB005D505E /* twitter.png in Resources */,
+				FCB04D7A16FE2548005D505E /* ImageCell.xib in Resources */,
+				FCB04D7B16FE2FB4005D505E /* Default-568h@2x.png in Resources */,
+				FCB04D8016FE3CE9005D505E /* NewAccountViewController.xib in Resources */,
+				FCB04D8216FE3D80005D505E /* NewEditTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +591,7 @@
 				FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */,
 				FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */,
 				FCC3718A16FD415000CC57CA /* CMPopTipView.m in Sources */,
+				FCB04D7F16FE3CE9005D505E /* NewAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

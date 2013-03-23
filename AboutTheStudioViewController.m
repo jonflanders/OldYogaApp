@@ -9,9 +9,11 @@
 #import "AboutTheStudioViewController.h"
 #import "AboutItems.h"
 #import <MapKit/MapKit.h>
+#import <QuartzCore/QuartzCore.h>
 @interface AboutTheStudioViewController ()
 {
     NSArray* _items;
+    NSString* ImageCellIdentifier;
 }
 @end
 
@@ -30,12 +32,31 @@
     if(cell==nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellId];
     }
+    CGRect bounds =  cell.bounds;
+    
     AboutItems* item= [_items objectAtIndex:indexPath.section];
-    cell.textLabel.text = item.item;
-    cell.detailTextLabel.text = item.value;
-    cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
-    cell.detailTextLabel.numberOfLines=5;
-   
+    if(item.image==nil){
+        cell.textLabel.text = item.item;
+        cell.detailTextLabel.text = item.value;
+        cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
+        cell.detailTextLabel.numberOfLines=5;
+    }
+    else{
+      
+        cell   =  [self.tblView dequeueReusableCellWithIdentifier:ImageCellIdentifier];
+        for (UIView* view in cell.subviews) {
+            for (UIView* sview in view.subviews) {
+                if([sview isKindOfClass:[UIImageView class]])
+                {
+//                    UIImageView* iview = (UIImageView*)sview;
+//                     CGRect ibounds = iview.bounds;
+//                    iview.image =item.image;
+//                    iview.layer.cornerRadius = 10;
+//                    iview.contentMode = UIViewContentModeScaleAspectFit;
+                }
+            }
+        }
+    }
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -89,17 +110,21 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"About";
+        self.title = @"Info";
         self.tabBarItem.image = [UIImage imageNamed:@"aboutus"];
-        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"]];
+        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"],[[AboutItems alloc] initWithItem:@"twitter" andValue:@"" andImage:[UIImage imageNamed:@"twitter"]]];
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
+    ImageCellIdentifier = @"ImageCell";
+
     // Do any additional setup after loading the view from its nib.
+    [self.tblView registerNib:[UINib nibWithNibName:@"ImageCell" bundle:nil] forCellReuseIdentifier:ImageCellIdentifier];
     
   
 }
