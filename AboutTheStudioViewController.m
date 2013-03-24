@@ -28,21 +28,26 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* cellId = @"Cell";
-    UITableViewCell* cell = [self.tblView dequeueReusableCellWithIdentifier:cellId];
-    if(cell==nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellId];
-    }
-    CGRect bounds =  cell.bounds;
+    UITableViewCell* cell = nil;
+    
+   
     
     AboutItems* item= [_items objectAtIndex:indexPath.section];
     if(item.image==nil){
+        cell = [self.tblView dequeueReusableCellWithIdentifier:cellId];
+        if(cell==nil){
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellId];
+        }
         cell.textLabel.text = item.item;
         cell.detailTextLabel.text = item.value;
         cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
-        cell.detailTextLabel.numberOfLines=5;
-    }
+        cell.detailTextLabel.adjustsLetterSpacingToFitWidth=YES;
+        if([item.item isEqualToString:@"address"]){
+            cell.detailTextLabel.numberOfLines=5;
+
+        }
+       }
     else{
-      
         cell   =  [self.tblView dequeueReusableCellWithIdentifier:ImageCellIdentifier];
         for (UIView* view in cell.subviews) {
             for (UIView* sview in view.subviews) {
@@ -82,6 +87,9 @@
     }
     
 }
+-(void)email:(NSString*)emailAddy{
+     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:[NSString stringWithFormat:@"mailto://%@",emailAddy]]];
+}
 -(void)address:(NSString*)addy
 {
     CLLocationCoordinate2D coordinate;
@@ -112,11 +120,30 @@
         // Custom initialization
         self.title = @"Info";
         self.tabBarItem.image = [UIImage imageNamed:@"aboutus"];
-        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"],[[AboutItems alloc] initWithItem:@"twitter" andValue:@"" andImage:[UIImage imageNamed:@"twitter"]]];
+        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"],[[AboutItems alloc] initWithItem:@"twitter" andValue:@"bikramsilvrlake" andImage:[UIImage imageNamed:nil]],[[AboutItems alloc] initWithItem:@"facebook" andValue:@"bikramyogasilverlake" andImage:[UIImage imageNamed:nil]]];
     }
     return self;
 }
+-(void)twitter:(NSString*)twitterUser
+{
+    [self tryURL:@"twitter://user?screen_name=%@" withValue:twitterUser orThisURL:@"http://www.twitter.com/%@"];
+    
+}
+-(void)tryURL:(NSString*)url withValue:(NSString*)val orThisURL:(NSString*)secondURL{
+    NSURL* rurl = [NSURL URLWithString:[NSString stringWithFormat:url,val]];
+    UIApplication* app = [UIApplication sharedApplication];
+    if([app canOpenURL:rurl]){
+        [app openURL:rurl];
+    }else{
+        rurl = [NSURL URLWithString:[NSString stringWithFormat:secondURL,val]];
+        [app openURL:rurl];
+    }
 
+}
+-(void)facebook:(NSString*)facebookUser{
+ 
+    [self tryURL:@"fb://profile/%@" withValue:@"106087309432633" orThisURL:@"http://www.facebook.com/%@"];
+}
 - (void)viewDidLoad
 {
     
