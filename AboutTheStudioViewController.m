@@ -70,7 +70,7 @@
 }
 -(CGFloat) tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section{
     int header = 10;
-    int sheader = 2;
+    int sheader = 0;
     
     if (IS_RETINA&&[UIScreen mainScreen].bounds.size.height == 568.0) {
         int mul = 6;
@@ -84,10 +84,10 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    CGFloat h = 44;
+    CGFloat h = 25;
     if(indexPath.section==1)
     {
-        h = 100;
+        h = 75;
     }
     return h;
 
@@ -146,9 +146,13 @@
         // Custom initialization
         self.title = @"Info";
         self.tabBarItem.image = [UIImage imageNamed:@"aboutus"];
-        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"],[[AboutItems alloc] initWithItem:@"twitter" andValue:@"bikramsilvrlake" andImage:[UIImage imageNamed:nil]],[[AboutItems alloc] initWithItem:@"facebook" andValue:@"bikramyogasilverlake" andImage:[UIImage imageNamed:nil]]];
+        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"],[[AboutItems alloc] initWithItem:@"twitter" andValue:@"bikramsilvrlake" andImage:[UIImage imageNamed:nil]],[[AboutItems alloc] initWithItem:@"facebook" andValue:@"bikramyogasilverlake" andImage:[UIImage imageNamed:nil]],[[AboutItems alloc] initWithItem:@"privacy" andValue:@"view privacy policy" andImage:[UIImage imageNamed:nil]]];
     }
     return self;
+}
+-(void)privacy:(NSString*)s{
+    NSURL* url = [NSURL URLWithString:@"http://www.bikramyogasilverlake.com/#!//Home/Privacy"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 -(void)twitter:(NSString*)twitterUser
 {

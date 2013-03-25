@@ -58,26 +58,28 @@
     emergencyData = @[@"Name",@"Relationship",@"Contact Phone",@"Contact Email"];
     self.data = [NSMutableDictionary dictionaryWithObjects:userData forKeys:userData];
     [self.data addEntriesFromDictionary:[NSMutableDictionary dictionaryWithObjects:emergencyData    forKeys:emergencyData]];
-#ifdef DEBUG
-    [self.data setObject:@"jflanders" forKey:@"Username"];
-    [self.data setObject:@"Jon" forKey:@"First"];
-    [self.data setObject:@"Flanders" forKey:@"Last"];
-    [self.data setObject:@"jon.flanders@me.com" forKey:@"Email"];
-    [self.data setObject:@"Testing12" forKey:@"Password"];
-    [self.data setObject:@"Testing12" forKey:@"Confirm"];
-    [self.data setObject:@"710 Cipriano " forKey:@"Address"];
     [self.data setObject:@"" forKey:@"Address 2"];
-    [self.data setObject:@"Monterey Park" forKey:@"City"];
-    [self.data setObject:@"CA" forKey:@"State"];
-    [self.data setObject:@"USA" forKey:@"Country"];
-    [self.data setObject:@"91754" forKey:@"Zip"];
-    [self.data setObject:@"651-492-1273" forKey:@"Phone"];
-    [self.data setObject:@"Shannon Ahern" forKey:@"Name"];
-    [self.data setObject:@"wife" forKey:@"Relationship"];
-    [self.data setObject:@"818-599-9522" forKey:@"Contact Phone"];
-    [self.data setObject:@"shannon.ahern@gmail.com" forKey:@"Contact Email"];
     
-#endif
+    [[UILabel appearanceWhenContainedIn:[UITextField class], nil] setTextColor:[UIColor darkGrayColor]];
+//#ifdef DEBUG
+//    [self.data setObject:@"jflanders" forKey:@"Username"];
+//    [self.data setObject:@"Jon" forKey:@"First"];
+//    [self.data setObject:@"Flanders" forKey:@"Last"];
+//    [self.data setObject:@"jon.flanders@me.com" forKey:@"Email"];
+//    [self.data setObject:@"Testing12" forKey:@"Password"];
+//    [self.data setObject:@"Testing12" forKey:@"Confirm"];
+//    [self.data setObject:@"710 Cipriano " forKey:@"Address"];
+//    [self.data setObject:@"Monterey Park" forKey:@"City"];
+//    [self.data setObject:@"CA" forKey:@"State"];
+//    [self.data setObject:@"USA" forKey:@"Country"];
+//    [self.data setObject:@"91754" forKey:@"Zip"];
+//    [self.data setObject:@"651-492-1273" forKey:@"Phone"];
+//    [self.data setObject:@"Shannon Ahern" forKey:@"Name"];
+//    [self.data setObject:@"wife" forKey:@"Relationship"];
+//    [self.data setObject:@"818-599-9522" forKey:@"Contact Phone"];
+//    [self.data setObject:@"shannon.ahern@gmail.com" forKey:@"Contact Email"];
+//    
+//#endif
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,6 +107,10 @@
         return userData.count;
     else
         return emergencyData.count;
+}
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    textField.text = @"";
+    textField.textColor = [UIColor blackColor];
 }
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     NSString* key = [self keyForTextField:textField];
@@ -160,6 +166,10 @@
                     }
                     field.delegate = self;
                     field.text = textVal;
+                    if(field.text==nil&&!protected&&![labeltext isEqualToString:@"Address 2"])
+                    {
+                        field.text = @"required";
+                    }
                     NSLog(@"label = %@ text = %@ row = %d section = %d",labeltext, field.text,indexPath.row, indexPath.section);
                 }
             }

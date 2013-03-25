@@ -171,8 +171,17 @@
     [self.tableView addGestureRecognizer:self.swipeGR];
     self.busyView.view.hidden=YES;
     [self.tableView addSubview:self.busyView.view];
-    [self.tableView addSubview:self.addedToCalendar];
+    self.addedToCalendar.center = CGPointMake(self.view.frame.size.width/2, (self.view.frame.size.height-self.addedToCalendar.bounds.size.height/2)+25);
+       [self.tableView addSubview:self.addedToCalendar];
     [self refresh];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGRect newFrame =   self.addedToCalendar.frame;
+    newFrame.origin.x = 0;
+    newFrame.origin.y = self.tableView.contentOffset.y+(self.tableView.frame.size.height-self.view.frame.size.height-self.addedToCalendar.bounds.size.height/2)+25;
+     self.addedToCalendar.frame = newFrame;
 }
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
