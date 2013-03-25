@@ -15,7 +15,7 @@
 {
     CMPopTipView* popup;
     id	currentPopTipViewTarget;
-
+    EKEventStore *eventStore;
 }
 @end
 
@@ -44,7 +44,7 @@
              [self loadFromJSON];
              });
 
-                      }
+         }
          else{
             
              dispatch_async(dispatch_get_main_queue(), ^{
@@ -128,11 +128,13 @@
     UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithTitle:@"Prev" style:UIBarButtonItemStyleBordered target:self action:@selector(prev)];
     self.prevButton  = left;
     //self.navigationItem.leftBarButtonItem =left;
+    [self flipButtons];
 
 }
 -(void)viewDidDisappear:(BOOL)animated{    
     self.navigationItem.rightBarButtonItem =nil;	
     self.navigationItem.leftBarButtonItem =nil;
+    
 }
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -156,6 +158,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    eventStore = [[EKEventStore alloc] init];
     self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = YES;
     self.currentDay = 0;
@@ -171,7 +174,13 @@
     [self.tableView addSubview:self.addedToCalendar];
     [self refresh];
 }
-
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    if (indexPath.row==0) {
+        return nil;
+    }
+    return indexPath;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -205,8 +214,7 @@
     }
     else{
         
-        NSDictionary* day = [self.classes objectAtIndex:indexPath.row-1];
-        
+        NSDictionary* day = [self.classes objectAtIndex:indexPath.row-1];        
         cell = [tableView dequeueReusableCellWithIdentifier:MainCellIdentifier];
             cell.userInteractionEnabled =YES;
         UIButton* reserveButton=nil;
@@ -259,7 +267,6 @@
         NSDateFormatter* df = [[NSDateFormatter alloc] init];
         [df setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
         [df setDateFormat:@"yyyy-MM-ddHH:mm:ss"];
-
         NSDate* classDate = [df dateFromString:[day objectForKey:@"DateLink"]];
         NSComparisonResult r =[currentDate compare:classDate];
         if(r==NSOrderedDescending){
@@ -276,28 +283,14 @@
             reserveButton.alpha=.2;
             reserveButton.userInteractionEnabled=NO;
         }
-    }
-    
+    }    
     return cell;
 }
 
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    NSDictionary* class = [self.classes objectAtIndex:indexPath.row];
-//    NSString* teacher = [class objectForKey:@"Teacher"];
-//    NSArray* tResult  = [self.instructors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(Name==%@)",teacher]];
-//    ClassDetailViewController* vc = [[ClassDetailViewController alloc]  initWithNibName:@"ClassDetailViewController" bundle:nil];
-//    vc.classData = class;
-//    if(tResult!=nil&&tResult.count>0){
-//        vc.instructorData= [tResult objectAtIndex:0];
-//    }
-//    UINavigationController* nav = self.navigationController;
-//    [nav pushViewController:vc animated:YES];
-   
-}
+
 -(void)complete:(NSString *)clientID{
     if(clientID==nil){
         UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"You must login in order to reservere a class"   delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
@@ -366,14 +359,11 @@
     NSDictionary* day = [self.classes objectAtIndex:path.row-1	];
     return day;
 }
--(void)addToCalendar:(id)sender{
-    
+-(void)addEventToCalendar:(id)sender{
     self.addedToCalendar.hidden = NO;
     UIButton* b = (UIButton*)sender;
     NSDictionary* day = [self dayForButton:b];
     NSString* dateString = [day objectForKey:@"DateLink"];
-    EKEventStore *eventStore = [[EKEventStore alloc] init];
-    
     EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
     event.title     = @"Bikram Yoga Silverlake";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -383,7 +373,8 @@
     event.startDate = date;
     NSNumber* time = [day objectForKey:@"ClassLength"];
     event.endDate   = [[NSDate alloc] initWithTimeInterval:(60*time.doubleValue) sinceDate:event.startDate];
-    [event setCalendar:[eventStore defaultCalendarForNewEvents]];
+    EKCalendar* cal = [eventStore defaultCalendarForNewEvents];
+    [event setCalendar:cal];
     NSError *err;
     [eventStore saveEvent:event span:EKSpanThisEvent error:&err];
     double delayInSeconds = 2.0;
@@ -391,7 +382,31 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         self.addedToCalendar.hidden = YES;
     });
+
 }
+-(void)addToCalendar:(id)sender{
+    
+  
+    if ([eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)])
+    {
+        __weak typeof (self) weakSelf = self;
+        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
+         {
+             if (granted)
+             {
+                 [weakSelf performSelectorOnMainThread:@selector(addEventToCalendar:) withObject:sender waitUntilDone:YES];
+             }
+             else
+             {
+                 NSLog(@"Not granted");
+             }
+         }];
+    }
+    else
+    {
+        [self addEventToCalendar:sender];
+    }
+  }
 
 - (void)viewDidUnload {
     [self setSwipeGR:nil];
