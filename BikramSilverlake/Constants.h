@@ -18,3 +18,4 @@ extern NSString* const MBOSourceName;
 extern NSString* const MBOPassword;
 extern NSString* const MBOSalesURL;
 extern int const SiteId;
+#define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))

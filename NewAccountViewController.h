@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewAccountViewController : UITableViewController
-
+@interface NewAccountViewController : UITableViewController<UITextFieldDelegate>
+@property (strong,nonatomic) NSMutableDictionary* data;
+-(void)invalidFields:(NSDictionary*)invalid;
 @end

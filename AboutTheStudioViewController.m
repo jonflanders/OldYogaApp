@@ -10,6 +10,7 @@
 #import "AboutItems.h"
 #import <MapKit/MapKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "Constants.h"
 @interface AboutTheStudioViewController ()
 {
     NSArray* _items;
@@ -64,6 +65,23 @@
     }
     return cell;
 }
+-(CGFloat) tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section{
+    return 0;
+}
+-(CGFloat) tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section{
+    int header = 10;
+    int sheader = 2;
+    
+    if (IS_RETINA&&[UIScreen mainScreen].bounds.size.height == 568.0) {
+        int mul = 6;
+        header= header*mul+8;
+        sheader = sheader*mul;
+    }
+    if(section==0)
+        return header;
+    return sheader;
+
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     CGFloat h = 44;
@@ -75,7 +93,15 @@
 
 }
 
+-(UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero] ;
+}
 
+-(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero] ;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -149,7 +175,8 @@
     
     [super viewDidLoad];
     ImageCellIdentifier = @"ImageCell";
-
+    self.tblView.sectionHeaderHeight = 0.0;
+    self.tblView.sectionFooterHeight = 0.0;
     // Do any additional setup after loading the view from its nib.
     [self.tblView registerNib:[UINib nibWithNibName:@"ImageCell" bundle:nil] forCellReuseIdentifier:ImageCellIdentifier];
     

@@ -21,6 +21,76 @@
     }
     return self;
 }
+-(NSString*)createClient:(NSDictionary *)params{
+    NSString* ret = nil;
+    Client_x0020_ServiceSoapBinding* binding = [[Client_x0020_ServiceSoapBinding alloc] initWithAddress:MBOClientURL];
+    Client_x0020_ServiceSvc_AddOrUpdateClientsRequest* vlr = [[Client_x0020_ServiceSvc_AddOrUpdateClientsRequest alloc] init];
+    Client_x0020_ServiceSvc_SourceCredentials* sc = [[Client_x0020_ServiceSvc_SourceCredentials alloc] init];
+    sc.SourceName = MBOSourceName;
+    sc.Password = MBOPassword;
+    sc.SiteIDs = [[Client_x0020_ServiceSvc_ArrayOfInt alloc] init];
+    [sc.SiteIDs addInt_:[NSNumber numberWithInt:SiteId]];
+    vlr.SourceCredentials = sc;
+    
+    Client_x0020_ServiceSvc_Client* newClient = [[Client_x0020_ServiceSvc_Client alloc] init];
+    newClient.FirstName = [params objectForKey:@"First"];
+    newClient.LastName = [params objectForKey:@"Last"];
+    newClient.Email = [params objectForKey:@"Email"];
+    newClient.HomePhone  = [params objectForKey:@"Phone"];
+    newClient.Username = [params objectForKey:@"Username"];
+    newClient.Password = [params objectForKey:@"Password"];
+    newClient.PostalCode = [params objectForKey:@"Zip"];
+    newClient.City  = [params objectForKey:@"City"];
+    newClient.State = [params objectForKey:@"State"];
+    newClient.Country = [params objectForKey:@"Country"];
+    newClient.EmergencyContactInfoEmail = [params objectForKey:@"Contact Email"];
+    newClient.EmergencyContactInfoName = [params objectForKey:@"Name"];
+    newClient.EmergencyContactInfoPhone = [params objectForKey:@"Contact Phone"];
+    newClient.EmergencyContactInfoRelationship = [params objectForKey:@"Relationship"];
+    newClient.AddressLine1 = [params objectForKey:@"Address"];
+    newClient.AddressLine2 = [params objectForKey:@"Address 2"];
+    newClient.ReferredBy = @"iOS App";
+    vlr.Clients  = [[Client_x0020_ServiceSvc_ArrayOfClient alloc] init];
+    
+    [vlr.Clients.Client addObject:newClient];
+    Client_x0020_ServiceSvc_AddOrUpdateClients* msg = [[Client_x0020_ServiceSvc_AddOrUpdateClients alloc] init];
+    msg.Request = vlr;
+//#ifdef DEBUG
+//    msg.Request.Test = [[USBoolean alloc] initWithBool:YES];
+//#endif
+    msg.Request.UpdateAction = @"AddNew";
+    Client_x0020_ServiceSoapBindingResponse * response = [binding AddOrUpdateClientsUsingParameters:msg];
+    if(response.error!=nil) {
+        
+        UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Unable to connect to server" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+        
+        [errorAlert show];
+        
+    }
+    else{
+        
+        Client_x0020_ServiceSvc_AddOrUpdateClientsResponse* lr =        [response.bodyParts objectAtIndex:0];
+        if(lr.AddOrUpdateClientsResult.Clients.Client.count>0)
+        {
+            Client_x0020_ServiceSvc_Client *client = [lr.AddOrUpdateClientsResult.Clients.Client objectAtIndex:0];
+            ret = client.ID_;
+        }
+        if(ret==nil)
+        {
+            UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Unable to create an account.  Please try again later." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+            
+            [errorAlert show];
+            
+        }
+        else{
+            [[NSUserDefaults standardUserDefaults] setValue:ret forKey:clientIDKey];
+            
+            
+        }
+    }
+    return ret;
+}
+
 -(void)login{
     NSString* clientID =  [[NSUserDefaults standardUserDefaults] valueForKey:clientIDKey ];
     if(clientID==nil){

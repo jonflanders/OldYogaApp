@@ -21,9 +21,35 @@
 @implementation LoginViewController
 - (IBAction)cancelNewAccount:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
+    newAccount = nil;
 }
 - (IBAction)saveNewAccount:(id)sender {
-      [self dismissModalViewControllerAnimated:YES];
+    BOOL valid = YES;
+    NSMutableDictionary* invalid = [[NSMutableDictionary alloc] init];
+   // [invalid setObject:@"Foo" forKey:@"Email"];
+    for (NSString* key in newAccount.data) {
+        NSString* val  = [newAccount.data objectForKey:key];
+        if([val isEqualToString:key]){
+            [invalid setObject:key forKey:key];
+            valid=NO;
+        }
+    }
+   
+    if(valid){
+        
+        MBOClientLogin* client = [[MBOClientLogin alloc] init];
+        NSString* clientID = [client createClient:newAccount.data];
+        if(clientID==nil){
+            	
+        }else{
+          [self dismissModalViewControllerAnimated:YES];
+           newAccount = nil;
+        }
+
+    }else
+    {
+        [newAccount invalidFields:invalid];
+    }
 }
 - (IBAction)login:(id)sender {
     UIAlertView* theAlert = [[UIAlertView alloc]  initWithTitle:@"Enter your MBO username and password" message:nil delegate:self cancelButtonTitle:@"Skip" otherButtonTitles:@"Login", nil ];
@@ -40,38 +66,38 @@
 
 }
 - (IBAction)create:(id)sender {
-    UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"Create an Account"
-                                                     message:@"\n\n\n\n\n"                                                    delegate:self
-                                           cancelButtonTitle:@"Cancel"
-                                           otherButtonTitles:@"OK", nil];
-    
-    txtOldPwd = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 50.0, 260.0, 25.0)];
-    [txtOldPwd setBackgroundColor:[UIColor whiteColor]];
-    [txtOldPwd setPlaceholder:@"Username"];
-    txtOldPwd.text=@"";
-    [prompt addSubview:txtOldPwd];
-    
-    txtNewPwd = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 80.0, 260.0, 25.0)];
-    [txtNewPwd setBackgroundColor:[UIColor whiteColor]];
-    [txtNewPwd setPlaceholder:@"Password"];
-    txtNewPwd.text=@"";
-    [prompt addSubview:txtNewPwd];
-    
-    txtConfirmPwd = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 110.0, 260.0, 25.0)];
-    [txtConfirmPwd setBackgroundColor:[UIColor whiteColor]];
-    [txtConfirmPwd setPlaceholder:@"Confirm Password"];
-    txtConfirmPwd.text=@"";
-    [prompt addSubview:txtConfirmPwd];
-    
-    [prompt show];
-//    newAccount = [[NewAccountViewController alloc] initWithNibName:@"NewAccountViewController" bundle:nil];
-//    self.nav.viewControllers = @[newAccount];
-//    self.nav.navigationBar.topItem.title = @"Create Account";
-//    self.nav.navigationBar.topItem.rightBarButtonItem = self.save;
-//    self.nav.navigationBar.topItem.leftBarButtonItem = self.cancel;
-//    [self presentViewController:self.nav animated:YES completion:^{
-//        
-//    }];
+//    UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"Create an Account"
+//                                                     message:@"\n\n\n\n\n"                                                    delegate:self
+//                                           cancelButtonTitle:@"Cancel"
+//                                           otherButtonTitles:@"OK", nil];
+//    
+//    txtOldPwd = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 50.0, 260.0, 25.0)];
+//    [txtOldPwd setBackgroundColor:[UIColor whiteColor]];
+//    [txtOldPwd setPlaceholder:@"Username"];
+//    txtOldPwd.text=@"";
+//    [prompt addSubview:txtOldPwd];
+//    
+//    txtNewPwd = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 80.0, 260.0, 25.0)];
+//    [txtNewPwd setBackgroundColor:[UIColor whiteColor]];
+//    [txtNewPwd setPlaceholder:@"Password"];
+//    txtNewPwd.text=@"";
+//    [prompt addSubview:txtNewPwd];
+//    
+//    txtConfirmPwd = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 110.0, 260.0, 25.0)];
+//    [txtConfirmPwd setBackgroundColor:[UIColor whiteColor]];
+//    [txtConfirmPwd setPlaceholder:@"Confirm Password"];
+//    txtConfirmPwd.text=@"";
+//    [prompt addSubview:txtConfirmPwd];
+//    
+//    [prompt show];
+    newAccount = [[NewAccountViewController alloc] initWithNibName:@"NewAccountViewController" bundle:nil];
+    self.nav.viewControllers = @[newAccount];
+    self.nav.navigationBar.topItem.title = @"Create Account";
+    self.nav.navigationBar.topItem.rightBarButtonItem = self.save;
+    self.nav.navigationBar.topItem.leftBarButtonItem = self.cancel;
+    [self presentViewController:self.nav animated:YES completion:^{
+        
+    }];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

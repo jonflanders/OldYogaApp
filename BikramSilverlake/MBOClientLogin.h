@@ -16,6 +16,7 @@
 -(NSString*) loginWithUserName:(NSString*)userName andPassword:(NSString*) password;
 -(NSString*) clientLoggedIn;
 -(void)logout;
+-(NSString*) createClient:(NSDictionary*)params;
 @property (strong,nonatomic) id<MBOLoginComplete> delegate;
 @end
 
