@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewAccountViewController : UITableViewController<UITextFieldDelegate>
+@interface NewAccountViewController : UITableViewController<UITextFieldDelegate,UIPickerViewDataSource>
+@property (strong, nonatomic) IBOutlet UIPickerView *countryPicker;
 @property (strong,nonatomic) NSMutableDictionary* data;
 -(void)invalidFields:(NSDictionary*)invalid;
 @end

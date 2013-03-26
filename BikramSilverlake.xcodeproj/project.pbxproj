@@ -36,6 +36,9 @@
 		FC59687615DC5431006B4745 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687415DC5431006B4745 /* ViewController_iPad.xib */; };
 		FC59687D15DC558D006B4745 /* apple114.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59687C15DC558D006B4745 /* apple114.png */; };
 		FC59687F15DC55A0006B4745 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59687E15DC55A0006B4745 /* apple.png */; };
+		FC5C0C44170118AD008C1D8D /* twitternew.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C42170118AD008C1D8D /* twitternew.png */; };
+		FC5C0C45170118AD008C1D8D /* likefb.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C43170118AD008C1D8D /* likefb.png */; };
+		FC5C0C4917013F80008C1D8D /* country_names_and_code_elements_txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */; };
 		FC9665E216D41BE800E656A2 /* ClassDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */; };
 		FC9665E316D41BE800E656A2 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */; };
 		FC9665E716D41BFD00E656A2 /* AboutTheStudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665E516D41BFD00E656A2 /* AboutTheStudioViewController.m */; };
@@ -147,6 +150,9 @@
 		FC59687E15DC55A0006B4745 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple.png; path = ../apple.png; sourceTree = "<group>"; };
 		FC59688015DC55AB006B4745 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		FC59688215DC55B8006B4745 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		FC5C0C42170118AD008C1D8D /* twitternew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitternew.png; sourceTree = "<group>"; };
+		FC5C0C43170118AD008C1D8D /* likefb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likefb.png; sourceTree = "<group>"; };
+		FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = country_names_and_code_elements_txt.txt; sourceTree = "<group>"; };
 		FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassDetailViewController.h; path = ../ClassDetailViewController.h; sourceTree = "<group>"; };
 		FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassDetailViewController.m; path = ../ClassDetailViewController.m; sourceTree = "<group>"; };
 		FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClassDetailViewController.xib; path = ../ClassDetailViewController.xib; sourceTree = "<group>"; };
@@ -283,6 +289,9 @@
 		FC3FF76616C8D62B00CB3700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */,
+				FC5C0C42170118AD008C1D8D /* twitternew.png */,
+				FC5C0C43170118AD008C1D8D /* likefb.png */,
 				FCB04D7516FE1EBB005D505E /* fb.png */,
 				FCB04D7616FE1EBB005D505E /* twitter.png */,
 				FCC3718616FD3EAA00CC57CA /* bikramdonate.png */,
@@ -549,6 +558,9 @@
 				FCB04D7B16FE2FB4005D505E /* Default-568h@2x.png in Resources */,
 				FCB04D8016FE3CE9005D505E /* NewAccountViewController.xib in Resources */,
 				FCB04D8216FE3D80005D505E /* NewEditTableViewCell.xib in Resources */,
+				FC5C0C44170118AD008C1D8D /* twitternew.png in Resources */,
+				FC5C0C45170118AD008C1D8D /* likefb.png in Resources */,
+				FC5C0C4917013F80008C1D8D /* country_names_and_code_elements_txt.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

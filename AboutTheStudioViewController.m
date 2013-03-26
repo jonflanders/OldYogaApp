@@ -44,7 +44,7 @@
         cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
         cell.detailTextLabel.adjustsLetterSpacingToFitWidth=YES;
         if([item.item isEqualToString:@"address"]){
-            cell.detailTextLabel.numberOfLines=5;
+            cell.detailTextLabel.numberOfLines=3;
 
         }
        }
@@ -87,7 +87,7 @@
     CGFloat h = 25;
     if(indexPath.section==1)
     {
-        h = 75;
+        h = 50;
     }
     return h;
 
@@ -146,9 +146,12 @@
         // Custom initialization
         self.title = @"Info";
         self.tabBarItem.image = [UIImage imageNamed:@"aboutus"];
-        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, California 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"],[[AboutItems alloc] initWithItem:@"twitter" andValue:@"bikramsilvrlake" andImage:[UIImage imageNamed:nil]],[[AboutItems alloc] initWithItem:@"facebook" andValue:@"bikramyogasilverlake" andImage:[UIImage imageNamed:nil]],[[AboutItems alloc] initWithItem:@"privacy" andValue:@"view privacy policy" andImage:[UIImage imageNamed:nil]]];
+        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, CA 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"]];
     }
     return self;
+}
+- (IBAction)privacyButton:(id)sender {
+    [self privacy:nil];
 }
 -(void)privacy:(NSString*)s{
     NSURL* url = [NSURL URLWithString:@"http://www.bikramyogasilverlake.com/#!//Home/Privacy"];

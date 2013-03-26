@@ -22,12 +22,12 @@
     self.newsView.text  = data;		
 }
 - (IBAction)swipe:(id)sender {
-       self.pageControl.currentPage=self.pageControl.currentPage+1;
+       self.pageControl.currentPage=self.pageControl.currentPage-1;
     
     [self pageChanged:nil];
 }
 - (IBAction)leftSwipe:(id)sender {
-      self.pageControl.currentPage=self.pageControl.currentPage-1;
+      self.pageControl.currentPage=self.pageControl.currentPage+1	;
     
     [self pageChanged:nil];
 }

@@ -23,13 +23,49 @@
     [self dismissModalViewControllerAnimated:YES];
     newAccount = nil;
 }
+-(void)addCityState:(NSMutableDictionary*)data{
+    NSString* postal = [data objectForKey:@"Postal Code"];
+    NSString* country = [data objectForKey:@"Country"];
+    NSString* fileRoot = [[NSBundle mainBundle]
+                          pathForResource:@"country_names_and_code_elements_txt" ofType:@"txt"];
+    NSString* sc = nil;
+    NSString* fileContents =
+    [NSString stringWithContentsOfFile:fileRoot
+                              encoding:NSUTF8StringEncoding error:nil];
+     NSArray* allLinedStrings =
+    [fileContents componentsSeparatedByCharactersInSet:
+     [NSCharacterSet newlineCharacterSet]];
+    for (NSString* c in allLinedStrings) {
+        NSArray* ca =
+        [c componentsSeparatedByCharactersInSet:
+         [NSCharacterSet characterSetWithCharactersInString:@";"]];
+        if(ca!=nil&&ca.count==2)
+        {
+            NSString* ncountry = [ca objectAtIndex:0];
+            if([ncountry isEqualToString:country]){
+                sc = [ca objectAtIndex:1];
+            }
+        }
+    }
+
+    NSString* url = [NSString stringWithFormat:@"http://api.geonames.org/findNearbyPostalCodesJSON?formatted=true&postalcode=%@&username=jonflanders&country=%@",postal,sc];
+    NSString* sdata = [NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:nil];
+    NSDictionary* results = [NSJSONSerialization JSONObjectWithData:[sdata dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
+    NSArray* presults = [results objectForKey:@"postalCodes"];
+    NSDictionary* fresult = [presults objectAtIndex:0];
+    NSString* state = [fresult objectForKey:@"adminName1"];
+    [data setObject:state forKey:@"State"];
+    NSString* city = [fresult objectForKey:@"placeName"];
+    [data setObject:city forKey:@"City"];
+}
 - (IBAction)saveNewAccount:(id)sender {
     BOOL valid = YES;
     NSMutableDictionary* invalid = [[NSMutableDictionary alloc] init];
    // [invalid setObject:@"Foo" forKey:@"Email"];
+    [self addCityState:newAccount.data];
     for (NSString* key in newAccount.data) {
         NSString* val  = [newAccount.data objectForKey:key];
-        if([val isEqualToString:key]){
+        if([val isEqualToString:key]||val==nil||[val isEqualToString:@""]){
             [invalid setObject:key forKey:key];
             valid=NO;
         }

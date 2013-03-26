@@ -37,27 +37,27 @@
     newClient.LastName = [params objectForKey:@"Last"];
     newClient.Email = [params objectForKey:@"Email"];
     newClient.HomePhone  = [params objectForKey:@"Phone"];
-    newClient.Username = [params objectForKey:@"Username"];
+    newClient.Username = [params objectForKey:@"Email"];
     newClient.Password = [params objectForKey:@"Password"];
-    newClient.PostalCode = [params objectForKey:@"Zip"];
+    newClient.PostalCode = [params objectForKey:@"Postal Code"];
     newClient.City  = [params objectForKey:@"City"];
-    newClient.State = [params objectForKey:@"State"];
+//    newClient.State = [params objectForKey:@"State"];
     newClient.Country = [params objectForKey:@"Country"];
     newClient.EmergencyContactInfoEmail = [params objectForKey:@"Contact Email"];
     newClient.EmergencyContactInfoName = [params objectForKey:@"Name"];
     newClient.EmergencyContactInfoPhone = [params objectForKey:@"Contact Phone"];
     newClient.EmergencyContactInfoRelationship = [params objectForKey:@"Relationship"];
     newClient.AddressLine1 = [params objectForKey:@"Address"];
-    newClient.AddressLine2 = [params objectForKey:@"Address 2"];
+//    newClient.AddressLine2 = [params objectForKey:@"Address 2"];
     newClient.ReferredBy = @"iOS App";
     vlr.Clients  = [[Client_x0020_ServiceSvc_ArrayOfClient alloc] init];
     
     [vlr.Clients.Client addObject:newClient];
     Client_x0020_ServiceSvc_AddOrUpdateClients* msg = [[Client_x0020_ServiceSvc_AddOrUpdateClients alloc] init];
     msg.Request = vlr;
-//#ifdef DEBUG
-//    msg.Request.Test = [[USBoolean alloc] initWithBool:YES];
-//#endif
+#ifdef DEBUG
+   // msg.Request.Test = [[USBoolean alloc] initWithBool:YES];
+#endif
     msg.Request.UpdateAction = @"AddNew";
     Client_x0020_ServiceSoapBindingResponse * response = [binding AddOrUpdateClientsUsingParameters:msg];
     if(response.error!=nil) {

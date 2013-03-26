@@ -341,8 +341,9 @@
 
 	}
 	else {
-		NSString *contentMessage = [day objectForKey:@"Type"];
+		NSString *contentMessage = [self stringByStrippingHTML:[day objectForKey:@"Type"]];
 		popup.delegate = self;
+      //  popup.textFont = [UIFont fontWithName:@"Helvetica" size:9];
         popup.animation = arc4random() % 2;
 		popup.dismissTapAnywhere = YES;
         [popup autoDismissAnimated:YES atTimeInterval:3.0];
@@ -359,6 +360,27 @@
 		//[visiblePopTipViews addObject:popTipView];
 		currentPopTipViewTarget = sender;
 	}
+}
+- (NSString *)stringByStrippingHTML:(NSString *)inputString
+{
+    NSMutableString *outString;
+    
+    if (inputString)
+    {
+        outString = [[NSMutableString alloc] initWithString:inputString];
+        
+        if ([inputString length] > 0)
+        {
+            NSRange r;
+            
+            while ((r = [outString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+            {
+                [outString deleteCharactersInRange:r];
+            }      
+        }
+    }
+    
+    return outString; 
 }
 -(NSDictionary*)dayForButton:(UIButton*)b{
     UIView* superView = b.superview;
