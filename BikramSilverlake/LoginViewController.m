@@ -70,6 +70,15 @@
             valid=NO;
         }
     }
+    //password check
+    NSString* pwdKey = @"Password";
+    NSString* cpwdKey = @"Confirm";
+    NSString* pwd = [newAccount.data objectForKey:pwdKey];
+    NSString* cpwd = [newAccount.data objectForKey:cpwdKey];
+    if(![pwd isEqualToString:cpwd]){
+        [invalid setObject:pwdKey forKey:pwdKey];
+         [invalid setObject:cpwdKey forKey:cpwdKey];
+    }
    
     if(valid){
         

@@ -33,6 +33,9 @@
         UITextField* field = [self textFieldForKey:key];
         field.backgroundColor  = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:.3];
     }
+    UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Invalid fields" message:@"Please correct the indicated field(s)."  delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+    [theAlert show];
+   
 }
 -(UITextField*)textFieldForKey:(NSString*)key
 {
@@ -78,7 +81,7 @@
     [self.data setObject:@"Flanders" forKey:@"Last"];
     [self.data setObject:@"jon@flounderware.com" forKey:@"Email"];
     [self.data setObject:@"Testing12" forKey:@"Password"];
-    [self.data setObject:@"Testing12" forKey:@"Confirm"];
+    [self.data setObject:@"Testing1" forKey:@"Confirm"];
     [self.data setObject:@"91754" forKey:@"Postal Code"];
     [self.data setObject:@"651-492-1273" forKey:@"Phone"];
     [self.data setObject:@"Shannon Ahern" forKey:@"Name"];
@@ -178,7 +181,9 @@
 }
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     NSString* key = [self keyForTextField:textField];
-    [self.data setObject:textField.text forKey:key];
+    if(textField.text!=nil){
+        [self.data setObject:textField.text forKey:key];
+    }
 
 }
 -(NSString*)keyForTextField:(UITextField*)textField{
