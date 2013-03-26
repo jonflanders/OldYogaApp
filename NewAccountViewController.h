@@ -12,4 +12,5 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *countryPicker;
 @property (strong,nonatomic) NSMutableDictionary* data;
 -(void)invalidFields:(NSDictionary*)invalid;
+-(void)checkForFieldData;
 @end

@@ -36,18 +36,29 @@
 }
 -(UITextField*)textFieldForKey:(NSString*)key
 {
+    return [self textFieldForKey:key withArray:userData inSection:0];
+}
+-(UITextField*)textFieldForKeyBoth:(NSString*)key{
+    UITextField* ret = [self textFieldForKey:key withArray:userData inSection:0];
+    if(ret==nil)
+    {
+        ret  = [self textFieldForKey:key withArray:emergencyData inSection:1];
+    }
+    return ret;
+}
+-(UITextField*)textFieldForKey:(NSString*)key withArray:(NSArray*)arr inSection:(NSInteger)s{
     UITextField* field= nil;
-    NSUInteger r = [userData indexOfObject:key];
-    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:r inSection:0]];
-       for (UIView* view in cell.subviews) {
-            for (UIView* sview in view.subviews) {
-                if([sview isKindOfClass:[UITextField class]])
-                {
-                    field = (UITextField*)sview;
-                }
+    NSUInteger r = [arr indexOfObject:key];
+    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:r inSection:s]];
+    for (UIView* view in cell.subviews) {
+        for (UIView* sview in view.subviews) {
+            if([sview isKindOfClass:[UITextField class]])
+            {
+                field = (UITextField*)sview;
             }
         }
-
+    }
+    
     return field;
 }
 - (void)viewDidLoad
@@ -154,12 +165,21 @@
         return emergencyData.count;
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-  
-  
+   
+}
+-(void)checkForFieldData{
+    NSArray* keys =  [self.data allKeys];
+    for (NSString* item in keys) {
+        UITextField* tf = [self textFieldForKeyBoth:item];
+        if(tf!=nil){
+            [self textFieldDidEndEditing:tf];
+        }
+    }
 }
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     NSString* key = [self keyForTextField:textField];
     [self.data setObject:textField.text forKey:key];
+
 }
 -(NSString*)keyForTextField:(UITextField*)textField{
     NSString* ret = nil;

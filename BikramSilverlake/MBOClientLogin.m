@@ -41,7 +41,7 @@
     newClient.Password = [params objectForKey:@"Password"];
     newClient.PostalCode = [params objectForKey:@"Postal Code"];
     newClient.City  = [params objectForKey:@"City"];
-//    newClient.State = [params objectForKey:@"State"];
+    newClient.State = [params objectForKey:@"State"];
     newClient.Country = [params objectForKey:@"Country"];
     newClient.EmergencyContactInfoEmail = [params objectForKey:@"Contact Email"];
     newClient.EmergencyContactInfoName = [params objectForKey:@"Name"];

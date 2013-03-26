@@ -61,7 +61,7 @@
 - (IBAction)saveNewAccount:(id)sender {
     BOOL valid = YES;
     NSMutableDictionary* invalid = [[NSMutableDictionary alloc] init];
-   // [invalid setObject:@"Foo" forKey:@"Email"];
+    [newAccount checkForFieldData];
     [self addCityState:newAccount.data];
     for (NSString* key in newAccount.data) {
         NSString* val  = [newAccount.data objectForKey:key];
