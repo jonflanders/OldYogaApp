@@ -157,6 +157,9 @@
     NSURL* url = [NSURL URLWithString:@"http://www.bikramyogasilverlake.com/#!//Home/Privacy"];
     [[UIApplication sharedApplication] openURL:url];
 }
+- (IBAction)twitterButton:(id)sender {
+    [self twitter:@"bikramsilvrlake"];
+}
 -(void)twitter:(NSString*)twitterUser
 {
     [self tryURL:@"twitter://user?screen_name=%@" withValue:twitterUser orThisURL:@"http://www.twitter.com/%@"];
@@ -172,6 +175,9 @@
         [app openURL:rurl];
     }
 
+}
+- (IBAction)facebookButton:(id)sender {
+    [self facebook:@"bikramyogasilverlake"];
 }
 -(void)facebook:(NSString*)facebookUser{
  

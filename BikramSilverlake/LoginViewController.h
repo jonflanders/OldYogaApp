@@ -18,6 +18,6 @@
 @property (strong,nonatomic) id<LoginViewComplete> delegate;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *cancel;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *save;
-
+-(void)createNewAccount;
 @property (strong, nonatomic) IBOutlet UINavigationController *nav;
 @end

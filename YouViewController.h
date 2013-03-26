@@ -13,4 +13,5 @@
 @interface YouViewController : UITableViewController<MBOClientRecordDelegate>
 @property    (strong,nonatomic) MBOClientRecords* records;
 @property (strong,nonatomic) BusyViewController* busyViewController;
+@property BOOL loggedIn;
 @end

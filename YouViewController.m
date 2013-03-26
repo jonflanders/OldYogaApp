@@ -8,9 +8,11 @@
 
 #import "YouViewController.h"
 #import "MBOClientLogin.h"
+#import "LoginViewController.h"
 @interface YouViewController ()
 {
     NSArray* classes;
+    MBOClientLogin* cl;
 }
 @end
 
@@ -38,7 +40,8 @@
 {
     [super viewDidLoad];
     [self getClasses];
-    
+    cl = [[MBOClientLogin alloc] init];
+     self.loggedIn = ([cl clientLoggedIn]!=nil);
 }
 -(void)getClasses{
     MBOClientLogin* login = [[MBOClientLogin alloc] init];
@@ -81,7 +84,7 @@
 
     if(section==0)
     {
-        return 1;
+        return 3;
     }
    else
        return classes.count;
@@ -98,19 +101,29 @@
         if(clientID!=nil){
             UITableViewCell * cell =  [ self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
             [self setButton:cell withTitle:@"Logout"];
-            
+            self.loggedIn=YES;
         }
     }
 }
+-(void)createAccount{
+    LoginViewController *vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    [self presentViewController:vc animated:YES completion:^{
+          [vc createNewAccount];
+    }];
+  
+}
+-(void)forgotPassword{
+       [cl sendPassword];
+}
 -(void)logout{
     
-    MBOClientLogin* login = [[MBOClientLogin alloc] init];
-    if ([login clientLoggedIn]) {
-        [login logout];
+    if ([cl clientLoggedIn]) {
+        [cl logout];
          UITableViewCell * cell =  [ self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
          [self setButton:cell withTitle:@"Login"];
         classes = nil;
         [self.tableView reloadData];
+        self.loggedIn=NO;
     }
     else{
         UIAlertView* theAlert = [[UIAlertView alloc]  initWithTitle:@"Enter your MBO username and password" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil ];
@@ -152,22 +165,44 @@
         if (cell == nil) {
             [self.tableView registerNib:[UINib nibWithNibName:@"ButtonTableViewCell" bundle:nil] forCellReuseIdentifier:ButtonCellID];
             cell  = [tableView dequeueReusableCellWithIdentifier:ButtonCellID];
+        }
+        
             for (UIView* view in cell.subviews) {
                  for (UIView* sv in view.subviews) {
                     if([sv isKindOfClass:[UIButton class]])
                     {
-                        UIButton* button = (UIButton*)sv;
-                        MBOClientLogin* cl = [[MBOClientLogin alloc] init];
-                        NSString* buttonTitle = @"Logout";
-                        if(![cl clientLoggedIn]){
-                            buttonTitle = @"Login";
+                        if(indexPath.row==0){
+                            UIButton* button = (UIButton*)sv;
+                            NSString* buttonTitle = @"Logout";
+                            
+                            if(!self.loggedIn){
+                                buttonTitle = @"Login";
+                            }
+                            [button setTitle:buttonTitle forState:UIControlStateNormal ];
+                            [button addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchDown];
                         }
-                        [button setTitle:buttonTitle forState:UIControlStateNormal ];
-                        [button addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchDown];
+                        if(indexPath.row==1){
+                            UIButton* button = (UIButton*)sv;
+                            
+                            [button setTitle:@"Create Account" forState:UIControlStateNormal ];
+                            [button addTarget:self action:@selector(createAccount) forControlEvents:UIControlEventTouchDown];
+                            if(self.loggedIn){
+                                cell.hidden = YES;
+                            }
+                        }
+                        if(indexPath.row==2){
+                            UIButton* button = (UIButton*)sv;
+                            
+                            [button setTitle:@"Forgot Password" forState:UIControlStateNormal ];
+                            [button addTarget:self action:@selector(forgotPassword) forControlEvents:UIControlEventTouchDown];
+                            if(self.loggedIn){
+                                cell.hidden = YES;
+                            }
+                        }
                     }
                  }
             }
-        }
+        
     }
     return cell;
 }

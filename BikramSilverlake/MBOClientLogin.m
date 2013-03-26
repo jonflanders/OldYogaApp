@@ -11,6 +11,9 @@
 #import "Constants.h"
 @interface MBOClientLogin(){
     NSString* clientIDKey;
+    UITextField* remindEmail;
+    UITextField* remindFirstName;
+    UITextField* remindLastName;
 }
 @end
 @implementation MBOClientLogin
@@ -108,6 +111,32 @@
     }
 
 }
+-(void)sendPassword{
+       UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"Send Password"
+                                                         message:@"\n\n\n\n\n"                                                    delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles:@"OK", nil];
+    
+        remindEmail = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 50.0, 260.0, 25.0)];
+        [remindEmail setBackgroundColor:[UIColor whiteColor]];
+        [remindEmail setPlaceholder:@"Username"];
+        remindEmail.text=@"";
+        [prompt addSubview:remindEmail];
+    
+        remindFirstName = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 80.0, 260.0, 25.0)];
+        [remindFirstName setBackgroundColor:[UIColor whiteColor]];
+        [remindFirstName setPlaceholder:@"First Name"];
+        remindFirstName.text=@"";
+        [prompt addSubview:remindFirstName];
+    
+        remindLastName = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 110.0, 260.0, 25.0)];
+        [remindLastName setBackgroundColor:[UIColor whiteColor]];
+        [remindLastName setPlaceholder:@"Last Name"];
+        remindLastName.text=@"";
+        [prompt addSubview:remindLastName];
+        
+        [prompt show];
+}
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSString* button = [alertView buttonTitleAtIndex:buttonIndex];
     if([button isEqualToString:@"Login"])
@@ -118,6 +147,60 @@
         NSString* clientID = [self loginWithUserName:username.text andPassword:password.text];
         [self.delegate complete:clientID];
     }
+    if([button isEqualToString:@"OK"])
+    {
+        NSString* e = remindEmail.text;
+        NSString* f = remindFirstName.text;
+        NSString* l = remindLastName.text;
+        [self sendReminder:e withFirstName:f andLastName:l];
+    }
+
+}
+-(BOOL)sendReminder:(NSString*)email withFirstName:(NSString*)firstName andLastName:(NSString*)lastName{
+    BOOL ret = NO;
+    
+    Client_x0020_ServiceSoapBinding* binding = [[Client_x0020_ServiceSoapBinding alloc] initWithAddress:MBOClientURL];
+    Client_x0020_ServiceSvc_ClientSendUserNewPasswordRequest* sp = [[Client_x0020_ServiceSvc_ClientSendUserNewPasswordRequest alloc] init];
+    Client_x0020_ServiceSvc_SourceCredentials* sc = [[Client_x0020_ServiceSvc_SourceCredentials alloc] init];
+    sc.SourceName = MBOSourceName;
+    sc.Password = MBOPassword;
+    sc.SiteIDs = [[Client_x0020_ServiceSvc_ArrayOfInt alloc] init];
+    [sc.SiteIDs addInt_:[NSNumber numberWithInt:SiteId]];
+    sp.SourceCredentials = sc;
+    sp.UserEmail = email;
+    sp.UserFirstName = firstName;
+    sp.UserLastName = lastName;
+    Client_x0020_ServiceSvc_SendUserNewPassword* p = [[Client_x0020_ServiceSvc_SendUserNewPassword alloc] init];
+    p.Request = sp;
+    Client_x0020_ServiceSoapBindingResponse* response = [binding SendUserNewPasswordUsingParameters:p];
+    if(response.error!=nil) {
+        
+        UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Unable to connect to server" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+        
+        [errorAlert show];
+        
+    }
+    else{
+        
+        Client_x0020_ServiceSvc_SendUserNewPasswordResponse* lr =        [response.bodyParts objectAtIndex:0];
+        if(lr.SendUserNewPasswordResult.Status!=Client_x0020_ServiceSvc_StatusCode_Success)
+        {
+            UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Unable to send password for that email" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+            
+            [errorAlert show];
+            
+        }
+        else{
+            ret = YES;
+            UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sent" message:@"A password reset email has been sent to your email address." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+            
+            [errorAlert show];
+
+            
+        }
+    }
+
+    return ret;
 }
 -(NSString*) clientLoggedIn
 {

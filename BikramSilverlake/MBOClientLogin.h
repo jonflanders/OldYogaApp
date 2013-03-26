@@ -13,6 +13,7 @@
 
 @interface MBOClientLogin : NSObject<UIAlertViewDelegate>
 -(void)login;
+-(void)sendPassword;
 -(NSString*) loginWithUserName:(NSString*)userName andPassword:(NSString*) password;
 -(NSString*) clientLoggedIn;
 -(void)logout;
