@@ -15,6 +15,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [[UILabel appearanceWhenContainedIn:[UITableView class], nil ] setColor:[UIColor grayColor]];
+    [[UILabel appearanceWhenContainedIn:[UIPickerView class], nil ] setColor:[UIColor blackColor]];
+    
     [[UITextView appearance ] setTextColor:[UIColor grayColor]];
     [[UIButton appearance] setAlpha:.8];
     // Override point for customization after application launch.

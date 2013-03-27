@@ -104,7 +104,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Create Account</string>
+						<string key="IBUINormalTitle">Create MBO Account</string>
 						<reference key="IBUIHighlightedTitleColor" ref="33348041"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
