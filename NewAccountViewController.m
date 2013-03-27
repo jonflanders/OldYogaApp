@@ -31,7 +31,6 @@
 -(void)invalidFields:(NSDictionary *)invalid{
     invalidFields = invalid;
     for (NSString* key in [invalidFields allKeys]) {
-        
         UITextField* field = [self textFieldForKeyBoth:key];
         [self setFieldInvalid:field];
     }
@@ -42,7 +41,7 @@
 -(void)setFieldInvalid:(UITextField*)field
 {
     field.backgroundColor  = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:.3];
-    
+  
 }
 -(UITextField*)textFieldForKey:(NSString*)key
 {
@@ -68,7 +67,6 @@
             }
         }
     }
-    
     return field;
 }
 - (void)viewDidLoad

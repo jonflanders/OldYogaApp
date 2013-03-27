@@ -241,14 +241,18 @@
                     if(nb.tag==2){
                         nb.text = (NSString*)[day objectForKey:@"Type"];
                     }
-                    if (nb.tag==4) {
-                        nb.text = (NSString*)[day objectForKey:@"Teacher"];
-                    }
+                  
 
                 }
                 if([sview isKindOfClass:[UIButton class]])
                 {
                     UIButton* b = (UIButton*)sview;
+                    if (b.tag==40) {
+                        [b setTitle:(NSString*)[day objectForKey:@"Teacher"] forState:nil] ;
+                        [b addTarget:self action:@selector(showTeacher:) forControlEvents:UIControlEventTouchDown];
+                        
+                    }
+                    
                     if(b.tag==20){
                         [b addTarget:self action:@selector(addToCalendar:) forControlEvents:UIControlEventTouchDown];
                     }
@@ -296,7 +300,21 @@
     return cell;
 }
 
-
+-(void)showTeacher:(id)sender
+{
+        NSDictionary* class = [self dayForButton:(UIButton*)sender];
+        NSString* teacher = [class objectForKey:@"Teacher"];
+        NSArray* tResult  = [self.instructors filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(Name==%@)",teacher]];
+        ClassDetailViewController* vc = [[ClassDetailViewController alloc]  initWithNibName:@"ClassDetailViewController" bundle:nil];
+        vc.classData = class;
+        if(tResult!=nil&&tResult.count>0){
+            vc.instructorData= [tResult objectAtIndex:0];
+        }
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+    
+}
 #pragma mark - Table view delegate
 
 

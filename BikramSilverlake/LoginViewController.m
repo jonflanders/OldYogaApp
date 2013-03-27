@@ -45,6 +45,16 @@
 -(void)addCityState:(NSMutableDictionary*)data{
     NSString* postal = [data objectForKey:@"Postal Code"];
     NSString* country = [data objectForKey:@"Country"];
+   //remove + 4 if country is US
+    if([country isEqualToString:@"UNITED STATES"])
+    {
+        NSRange contains = [postal rangeOfString:@"-"];
+        if(contains.location>0){
+            NSArray* split = [postal componentsSeparatedByString:@"-"];
+            postal = [split objectAtIndex:0];
+        }
+    }
+    
     NSString* fileRoot = [[NSBundle mainBundle]
                           pathForResource:@"country_names_and_code_elements_txt" ofType:@"txt"];
     NSString* sc = nil;
@@ -73,9 +83,15 @@
     NSArray* presults = [results objectForKey:@"postalCodes"];
     NSDictionary* fresult = [presults objectAtIndex:0];
     NSString* state = [fresult objectForKey:@"adminName1"];
-    [data setObject:state forKey:@"State"];
-    NSString* city = [fresult objectForKey:@"placeName"];
-    [data setObject:city forKey:@"City"];
+    if(state==nil){
+        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Can't find your location" message:@"Please check your Postal Code and Country" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+        [theAlert show];
+
+    }else{
+        [data setObject:state forKey:@"State"];
+        NSString* city = [fresult objectForKey:@"placeName"];
+        [data setObject:city forKey:@"City"];
+    }
 }
 - (IBAction)saveNewAccount:(id)sender {
     BOOL valid = YES;

@@ -72,7 +72,28 @@
     }
 
 }
-
+- (IBAction)closeButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (NSString *)stringByStrippingHTML:(NSString *)inputString
+{
+    NSMutableString *outString;
+    
+    if (inputString)
+    {
+        outString = [[NSMutableString alloc] initWithString:inputString];
+        if ([inputString length] > 0)
+        {
+            NSRange r;
+            
+            while ((r = [outString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+            {
+                [outString deleteCharactersInRange:r];
+            }
+        }
+    }
+    return outString;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -85,8 +106,9 @@
     // Do any additional setup after loading the view from its nib.
     NSString* name = [self.instructorData objectForKey:@"Name"];
     self.instructorName.text = name;
-    self.instrutorBio.text = [self.instructorData objectForKey:@"Bio"];
-    NSURL* url = [NSURL URLWithString:[self.instructorData objectForKey:@"ImageURI"]];    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+    self.instrutorBio.text = [self stringByStrippingHTML:[self.instructorData objectForKey:@"Bio"]];
+    NSURL* url = [NSURL URLWithString:[self.instructorData objectForKey:@"ImageURI"]];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [NSURLConnection
      sendAsynchronousRequest:request
      queue:[[NSOperationQueue alloc] init]
