@@ -13,6 +13,7 @@
     NSArray* userData;
     NSArray* emergencyData;
     NSMutableArray* countries;
+    NSDictionary* invalidFields;
 }
 
 @end
@@ -28,14 +29,20 @@
     return self;
 }
 -(void)invalidFields:(NSDictionary *)invalid{
-    for (NSString* key in [invalid allKeys]) {
+    invalidFields = invalid;
+    for (NSString* key in [invalidFields allKeys]) {
         
-        UITextField* field = [self textFieldForKey:key];
-        field.backgroundColor  = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:.3];
+        UITextField* field = [self textFieldForKeyBoth:key];
+        [self setFieldInvalid:field];
     }
     UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Invalid fields" message:@"Please correct the indicated field(s)."  delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
     [theAlert show];
    
+}
+-(void)setFieldInvalid:(UITextField*)field
+{
+    field.backgroundColor  = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:.3];
+    
 }
 -(UITextField*)textFieldForKey:(NSString*)key
 {
@@ -81,8 +88,9 @@
     [self.data setObject:@"Flanders" forKey:@"Last"];
     [self.data setObject:@"jon@flounderware.com" forKey:@"Email"];
     [self.data setObject:@"Testing12" forKey:@"Password"];
-    [self.data setObject:@"Testing1" forKey:@"Confirm"];
-    [self.data setObject:@"91754" forKey:@"Postal Code"];
+    [self.data setObject:@"Testing12" forKey:@"Confirm"];
+    [self.data setObject:@"710 Cipriano Pl" forKey:@"Address"];
+    [self.data setObject:@"91754-3802" forKey:@"Postal Code"];
     [self.data setObject:@"651-492-1273" forKey:@"Phone"];
     [self.data setObject:@"Shannon Ahern" forKey:@"Name"];
     [self.data setObject:@"wife" forKey:@"Relationship"];
@@ -236,6 +244,10 @@
                         {
                             keyboard = UIKeyboardTypeEmailAddress;
                         }
+                    if([label.text isEqualToString:@"Contact Email"])
+                    {
+                        keyboard = UIKeyboardTypeEmailAddress;
+                    }
                     if([label.text isEqualToString:@"Postal Code"])
                     {
                         keyboard = UIKeyboardTypeNumbersAndPunctuation;
@@ -247,6 +259,11 @@
                 }
                 if([sview isKindOfClass:[UITextField class]]){
                     UITextField* field = (UITextField*)sview;
+                    field.backgroundColor  = nil;
+                    
+                    if([[invalidFields allKeys] containsObject:labeltext]){
+                        [self setFieldInvalid:field];
+                    }
                     field.keyboardType = keyboard;
                     field.secureTextEntry=NO;
                     if(protected){

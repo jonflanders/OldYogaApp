@@ -62,6 +62,7 @@
    // msg.Request.Test = [[USBoolean alloc] initWithBool:YES];
 #endif
     msg.Request.UpdateAction = @"AddNew";
+    NSString* errorMessage = @"Please try again later.";
     Client_x0020_ServiceSoapBindingResponse * response = [binding AddOrUpdateClientsUsingParameters:msg];
     if(response.error!=nil) {
         
@@ -77,10 +78,11 @@
         {
             Client_x0020_ServiceSvc_Client *client = [lr.AddOrUpdateClientsResult.Clients.Client objectAtIndex:0];
             ret = client.ID_;
+            errorMessage=[client.Messages.string objectAtIndex:0];
         }
         if(ret==nil)
         {
-            UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Unable to create an account.  Please try again later." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+            UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:[NSString stringWithFormat:@"Unable to create an account. %@",errorMessage ] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
             
             [errorAlert show];
             

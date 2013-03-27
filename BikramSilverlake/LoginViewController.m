@@ -104,10 +104,13 @@
         MBOClientLogin* client = [[MBOClientLogin alloc] init];
         NSString* clientID = [client createClient:newAccount.data];
         if(clientID==nil){
-            	
+            NSLog(@"client is null - but data is valid!!!!");
         }else{
-          [self dismissModalViewControllerAnimated:YES];
-           newAccount = nil;
+          [self dismissViewControllerAnimated:YES completion:^{
+              [self dismissViewControllerAnimated:YES completion:nil];
+          }];
+            newAccount = nil;
+
         }
 
     }else
