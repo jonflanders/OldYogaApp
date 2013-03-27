@@ -73,7 +73,7 @@
     }
     else{
         
-        Client_x0020_ServiceSvc_AddOrUpdateClientsResponse* lr =        [response.bodyParts objectAtIndex:0];
+        Client_x0020_ServiceSvc_AddOrUpdateClientsResponse* lr =  [response.bodyParts objectAtIndex:0];
         if(lr.AddOrUpdateClientsResult.Clients.Client.count>0)
         {
             Client_x0020_ServiceSvc_Client *client = [lr.AddOrUpdateClientsResult.Clients.Client objectAtIndex:0];
@@ -187,7 +187,7 @@
         Client_x0020_ServiceSvc_SendUserNewPasswordResponse* lr =        [response.bodyParts objectAtIndex:0];
         if(lr.SendUserNewPasswordResult.Status!=Client_x0020_ServiceSvc_StatusCode_Success)
         {
-            UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Unable to send password for that email" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+            UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Unable to send password for that email  -%@" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
             
             [errorAlert show];
             

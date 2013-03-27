@@ -82,7 +82,7 @@
     NSDictionary* results = [NSJSONSerialization JSONObjectWithData:[sdata dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
     NSArray* presults = [results objectForKey:@"postalCodes"];
     NSDictionary* fresult = [presults objectAtIndex:0];
-    NSString* state = [fresult objectForKey:@"adminName1"];
+    NSString* state = [fresult objectForKey:@"adminCode1"];
     if(state==nil){
         UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Can't find your location" message:@"Please check your Postal Code and Country" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
         [theAlert show];
@@ -124,6 +124,7 @@
         }else{
           [self dismissViewControllerAnimated:YES completion:^{
               [self dismissViewControllerAnimated:YES completion:nil];
+              [self.delegate loginViewComplete];
           }];
             newAccount = nil;
 

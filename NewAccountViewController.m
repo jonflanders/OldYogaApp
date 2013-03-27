@@ -81,10 +81,10 @@
     [self.data setObject:@"UNITED STATES" forKey:@"Country"];
     [[UILabel appearanceWhenContainedIn:[UITextField class], nil] setTextColor:[UIColor darkGrayColor]];
 #ifdef DEBUG
-    [self.data setObject:@"jflanders" forKey:@"Username"];
+    //[self.data setObject:@"jflanders" forKey:@"Username"];
     [self.data setObject:@"Jon" forKey:@"First"];
     [self.data setObject:@"Flanders" forKey:@"Last"];
-    [self.data setObject:@"jon@flounderware.com" forKey:@"Email"];
+    [self.data setObject:@"shannon.ahern@me.com" forKey:@"Email"];
     [self.data setObject:@"Testing12" forKey:@"Password"];
     [self.data setObject:@"Testing12" forKey:@"Confirm"];
     [self.data setObject:@"710 Cipriano Pl" forKey:@"Address"];
