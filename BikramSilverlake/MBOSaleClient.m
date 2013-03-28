@@ -28,8 +28,8 @@
     request.Payments = [[Sale_x0020_Service_ArrayOfPaymentInfo alloc] init];
     Sale_x0020_Service_CreditCardInfo* cc = [[Sale_x0020_Service_CreditCardInfo alloc] init];
     cc.CreditCardNumber = [params objectForKey:@"Credit Card"];
-    cc.ExpMonth = [params objectForKey:@"Expiration Month"];
-    cc.ExpYear = [params objectForKey:@"Expiration Year"];
+    cc.ExpMonth = [params objectForKey:@"Exp Month"];
+    cc.ExpYear = [params objectForKey:@"Exp Year"];
     cc.Amount = [params objectForKey:@"Amount"];
     cc.BillingAddress = [params objectForKey:@"Address"];
     cc.BillingCity = [params objectForKey:@"City"];
@@ -47,7 +47,7 @@
     [request.CartItems addCartItem:ci];
     request.ClientID = [params objectForKey:@"ClientID"];
 #ifdef DEBUG
-    request.Test = [[USBoolean alloc] initWithBool:YES];
+   // request.Test = [[USBoolean alloc] initWithBool:YES];
 #endif
     Sale_x0020_Service_CheckoutShoppingCart* csc = [[Sale_x0020_Service_CheckoutShoppingCart alloc] init];
     csc.Request = request;
@@ -64,6 +64,15 @@
             {
                 ret = YES;
             }
+            else{
+                
+                NSString* errorMessage=result.Message;           
+                UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:[NSString stringWithFormat:@"Unable to process your transaction. %@",errorMessage ] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+                
+                [errorAlert show];
+                
+            }
+
         }
         if(r&&[r isKindOfClass:[SOAPFault class]])
         {

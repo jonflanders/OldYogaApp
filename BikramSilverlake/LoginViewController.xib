@@ -73,7 +73,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Login with your MBO Account</string>
+						<string key="IBUINormalTitle">Login</string>
 						<reference key="IBUIHighlightedTitleColor" ref="33348041"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -98,13 +98,14 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 286}, {280, 47}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView" ref="828366346"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Create MBO Account</string>
+						<string key="IBUINormalTitle">Create Account</string>
 						<reference key="IBUIHighlightedTitleColor" ref="33348041"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -119,13 +120,14 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 340}, {280, 47}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Forgot my MBO password</string>
+						<string key="IBUINormalTitle">Forgot password</string>
 						<reference key="IBUIHighlightedTitleColor" ref="33348041"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -339,8 +341,8 @@
 							<reference ref="258410602"/>
 							<reference ref="870035140"/>
 							<reference ref="721514123"/>
-							<reference ref="661571757"/>
 							<reference ref="828366346"/>
+							<reference ref="661571757"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>

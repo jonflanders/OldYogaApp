@@ -248,10 +248,9 @@
                 {
                     UIButton* b = (UIButton*)sview;
                     if (b.tag==40) {
-                        [b setTitle:(NSString*)[day objectForKey:@"Teacher"] forState:nil] ;
+                        [b setTitle:(NSString*)[day objectForKey:@"Teacher"] forState:0];
                         [b addTarget:self action:@selector(showTeacher:) forControlEvents:UIControlEventTouchDown];
-                        
-                    }
+                                            }
                     
                     if(b.tag==20){
                         [b addTarget:self action:@selector(addToCalendar:) forControlEvents:UIControlEventTouchDown];

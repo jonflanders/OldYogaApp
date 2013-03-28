@@ -193,7 +193,7 @@
                         if(indexPath.row==2){
                             UIButton* button = (UIButton*)sv;
                             
-                            [button setTitle:@"Forgot Password" forState:UIControlStateNormal ];
+                            [button setTitle:@"Forgot password" forState:UIControlStateNormal ];
                             [button addTarget:self action:@selector(forgotPassword) forControlEvents:UIControlEventTouchDown];
                             if(self.loggedIn){
                                 cell.hidden = YES;

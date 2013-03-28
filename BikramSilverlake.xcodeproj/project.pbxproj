@@ -91,6 +91,8 @@
 		FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6332116F9862200E8D4A6 /* LoginViewController.m */; };
 		FCB6332416F9862200E8D4A6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB6332216F9862200E8D4A6 /* LoginViewController.xib */; };
 		FCB6332816FA1D2500E8D4A6 /* 60minutes.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6332716FA1D2500E8D4A6 /* 60minutes.png */; };
+		FCC35C9D1702A38F00143B77 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59688215DC55B8006B4745 /* Default@2x.png */; };
+		FCC35C9E1702A39600143B77 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59688015DC55AB006B4745 /* Default.png */; };
 		FCC3718516FD3C5600CC57CA /* smallcalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3718416FD3C5600CC57CA /* smallcalendar.png */; };
 		FCC3718716FD3EAA00CC57CA /* bikramdonate.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3718616FD3EAA00CC57CA /* bikramdonate.png */; };
 		FCC3718A16FD415000CC57CA /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC3718916FD415000CC57CA /* CMPopTipView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -561,6 +563,8 @@
 				FC5C0C44170118AD008C1D8D /* twitternew.png in Resources */,
 				FC5C0C45170118AD008C1D8D /* likefb.png in Resources */,
 				FC5C0C4917013F80008C1D8D /* country_names_and_code_elements_txt.txt in Resources */,
+				FCC35C9D1702A38F00143B77 /* Default@2x.png in Resources */,
+				FCC35C9E1702A39600143B77 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +708,7 @@
 				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -720,6 +725,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "372198B8-C9D1-42BF-9015-021890F36988";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "372198B8-C9D1-42BF-9015-021890F36988";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

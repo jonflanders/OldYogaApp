@@ -137,7 +137,7 @@
                 if([sv isKindOfClass:[UITextField class]])
                 {
                     UITextField* tf = (UITextField*)sv;
-                    [ret setObject:tf.text forKey:key];
+                     [ret setObject:tf.text forKey:key];
                 }
             }
         }
@@ -158,8 +158,8 @@
         [self done:nil];
 
     }else{
-        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
-        [theAlert show];
+//        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+//        [theAlert show];
     }
     self.busyView.view.hidden = YES;
     
