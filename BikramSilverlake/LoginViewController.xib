@@ -120,14 +120,13 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 340}, {280, 47}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Forgot password</string>
+						<string key="IBUINormalTitle">Forgot Password</string>
 						<reference key="IBUIHighlightedTitleColor" ref="33348041"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
