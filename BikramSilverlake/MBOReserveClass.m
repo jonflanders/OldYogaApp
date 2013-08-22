@@ -28,7 +28,7 @@
     addRequest.SourceCredentials = sc;
     add.Request = addRequest;
 #ifdef DEBUG
-    addRequest.Test = [[USBoolean alloc] initWithBool:YES];
+  //  addRequest.Test = [[USBoolean alloc] initWithBool:YES];
 #endif
     addRequest.SendEmail = [[USBoolean alloc] initWithBool:NO];
     addRequest.Waitlist = addRequest.SendEmail;

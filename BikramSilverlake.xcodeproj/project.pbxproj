@@ -49,7 +49,6 @@
 		FC96662A16D4925B00E656A2 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = FC96662816D4925B00E656A2 /* news.png */; };
 		FC96662B16D4925B00E656A2 /* studio.png in Resources */ = {isa = PBXBuildFile; fileRef = FC96662916D4925B00E656A2 /* studio.png */; };
 		FC96662D16D49E7C00E656A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC96662C16D49E7C00E656A2 /* MapKit.framework */; };
-		FC96662F16D4A3DF00E656A2 /* Post-it-note-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = FC96662E16D4A3DF00E656A2 /* Post-it-note-transparent.png */; };
 		FC98D3961628CDFA00436255 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3941628CDFA00436255 /* MainPageTableViewController.m */; };
 		FC98D3971628CDFA00436255 /* MainPageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */; };
 		FC98D39A1628CF0B00436255 /* MainPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3991628CF0B00436255 /* MainPageCell.xib */; };
@@ -91,6 +90,7 @@
 		FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6332116F9862200E8D4A6 /* LoginViewController.m */; };
 		FCB6332416F9862200E8D4A6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB6332216F9862200E8D4A6 /* LoginViewController.xib */; };
 		FCB6332816FA1D2500E8D4A6 /* 60minutes.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6332716FA1D2500E8D4A6 /* 60minutes.png */; };
+		FCBD500517C6A39200047E70 /* NewAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBD500417C6A39200047E70 /* NewAccountTableViewCell.m */; };
 		FCC35C9D1702A38F00143B77 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59688215DC55B8006B4745 /* Default@2x.png */; };
 		FCC35C9E1702A39600143B77 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59688015DC55AB006B4745 /* Default.png */; };
 		FCC3718516FD3C5600CC57CA /* smallcalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC3718416FD3C5600CC57CA /* smallcalendar.png */; };
@@ -169,7 +169,6 @@
 		FC96662816D4925B00E656A2 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
 		FC96662916D4925B00E656A2 /* studio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studio.png; sourceTree = "<group>"; };
 		FC96662C16D49E7C00E656A2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		FC96662E16D4A3DF00E656A2 /* Post-it-note-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Post-it-note-transparent.png"; path = "../../../../Drones/Post-it-note-transparent.png"; sourceTree = "<group>"; };
 		FC98D3931628CDFA00436255 /* MainPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageTableViewController.h; sourceTree = "<group>"; };
 		FC98D3941628CDFA00436255 /* MainPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageTableViewController.m; sourceTree = "<group>"; };
 		FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPageTableViewController.xib; sourceTree = "<group>"; };
@@ -223,6 +222,8 @@
 		FCB6332116F9862200E8D4A6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FCB6332216F9862200E8D4A6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FCB6332716FA1D2500E8D4A6 /* 60minutes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60minutes.png; sourceTree = "<group>"; };
+		FCBD500317C6A39200047E70 /* NewAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountTableViewCell.h; sourceTree = "<group>"; };
+		FCBD500417C6A39200047E70 /* NewAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountTableViewCell.m; sourceTree = "<group>"; };
 		FCC3718416FD3C5600CC57CA /* smallcalendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallcalendar.png; sourceTree = "<group>"; };
 		FCC3718616FD3EAA00CC57CA /* bikramdonate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikramdonate.png; sourceTree = "<group>"; };
 		FCC3718816FD415000CC57CA /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
@@ -306,7 +307,6 @@
 				FCB6330C16F92F2F00E8D4A6 /* 90minutes.png */,
 				FCE6F10416F7E94000F3312C /* buy.png */,
 				FCA905BF16E311D200746A54 /* mats.png */,
-				FC96662E16D4A3DF00E656A2 /* Post-it-note-transparent.png */,
 				FC96662816D4925B00E656A2 /* news.png */,
 				FC96662916D4925B00E656A2 /* studio.png */,
 				FC3FF76F16C8DFC700CB3700 /* bikramsettings.png */,
@@ -399,6 +399,8 @@
 				FC59686C15DC5431006B4745 /* AppDelegate.m */,
 				FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */,
 				FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */,
+				FCBD500317C6A39200047E70 /* NewAccountTableViewCell.h */,
+				FCBD500417C6A39200047E70 /* NewAccountTableViewCell.m */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -533,7 +535,6 @@
 				FC9665ED16D41C5700E656A2 /* StudioNewsViewController.xib in Resources */,
 				FC96662A16D4925B00E656A2 /* news.png in Resources */,
 				FC96662B16D4925B00E656A2 /* studio.png in Resources */,
-				FC96662F16D4A3DF00E656A2 /* Post-it-note-transparent.png in Resources */,
 				FCA905B416DF03F500746A54 /* BuyViewController.xib in Resources */,
 				FCA905BC16E2D66500746A54 /* BuyDetailViewController.xib in Resources */,
 				FCA905BE16E2F1AE00746A54 /* ButtonTableViewCell.xib in Resources */,
@@ -608,6 +609,7 @@
 				FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */,
 				FCC3718A16FD415000CC57CA /* CMPopTipView.m in Sources */,
 				FCB04D7F16FE3CE9005D505E /* NewAccountViewController.m in Sources */,
+				FCBD500517C6A39200047E70 /* NewAccountTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

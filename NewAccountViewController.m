@@ -7,14 +7,15 @@
 //
 
 #import "NewAccountViewController.h"
+#import "NewAccountTableViewCell.h"
 
 @interface NewAccountViewController (){
     NSString* EditCell;
-    NSArray* userData;
-    NSArray* emergencyData;
+    NSMutableArray* userData;
+    NSMutableArray* emergencyData;
     NSMutableArray* countries;
     NSDictionary* invalidFields;
-}
+ }
 
 @end
 
@@ -74,8 +75,15 @@
     [super viewDidLoad];
     EditCell = @"EditCell"; 
     [self.tableView registerNib:[UINib nibWithNibName:@"NewEditTableViewCell" bundle:nil]  forCellReuseIdentifier:EditCell];
-    userData = @[@"First",@"Last",@"Email",@"Password",@"Confirm",@"Address",@"Country",@"Postal Code",@"Phone"];
-    emergencyData = @[@"Name",@"Relationship",@"Contact Phone",@"Contact Email"];
+    
+    NSArray* udStrings = @[@"First",@"Last",@"Email",@"Password",@"Confirm",@"Address",@"Country",@"Postal Code",@"Phone"];
+    userData = [[NSMutableArray alloc] initWithCapacity:udStrings.count];
+    
+    for (NSString* name in udStrings) {
+            
+    }
+    NSArray* edStrings = @[@"Name",@"Relationship",@"Contact Phone",@"Contact Email"];
+    emergencyData = [[NSMutableArray alloc] initWithCapacity:edStrings.count];
     self.data = [NSMutableDictionary dictionaryWithObjects:userData forKeys:userData];
     [self.data addEntriesFromDictionary:[NSMutableDictionary dictionaryWithObjects:emergencyData    forKeys:emergencyData]];
     [self.data setObject:@"UNITED STATES" forKey:@"Country"];
@@ -84,7 +92,7 @@
     //[self.data setObject:@"jflanders" forKey:@"Username"];
     [self.data setObject:@"Jon" forKey:@"First"];
     [self.data setObject:@"Flanders" forKey:@"Last"];
-    [self.data setObject:@"shannon.ahern@me.com" forKey:@"Email"];
+    [self.data setObject:@"jon.flanders@me.com" forKey:@"Email"];
     [self.data setObject:@"Testing12" forKey:@"Password"];
     [self.data setObject:@"Testing12" forKey:@"Confirm"];
     [self.data setObject:@"710 Cipriano Pl" forKey:@"Address"];
