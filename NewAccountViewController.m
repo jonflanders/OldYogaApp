@@ -57,35 +57,75 @@
     return ret;
 }
 -(UITextField*)textFieldForKey:(NSString*)key withArray:(NSArray*)arr inSection:(NSInteger)s{
-    UITextField* field= nil;
     NSUInteger r = [arr indexOfObject:key];
-    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:r inSection:s]];
-    for (UIView* view in cell.subviews) {
-        for (UIView* sview in view.subviews) {
-            if([sview isKindOfClass:[UITextField class]])
-            {
-                field = (UITextField*)sview;
-            }
-        }
+    NewAccountTableViewCell* cell = (NewAccountTableViewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:r inSection:s]];
+    
+    return cell.accountTextField;
+}
+-(void)configureCell:(NewAccountTableViewCell*)cell{
+    UIView* inputView = nil;
+    BOOL protected = NO;
+    UILabel* label = cell.nameLabel;
+    UIKeyboardType keyboard = UIKeyboardTypeDefault;
+    NSString* labeltext = label.text;
+    
+    if([labeltext isEqualToString:@"Password"]||[labeltext isEqualToString:@"Confirm"]){
+        protected = YES;
+    } if([labeltext isEqualToString:@"Phone"]||[labeltext isEqualToString:@"Contact Phone"]){
+        keyboard = UIKeyboardTypePhonePad;
     }
-    return field;
+    if([labeltext isEqualToString:@"Email"])
+    {
+        keyboard = UIKeyboardTypeEmailAddress;
+    }
+    if([labeltext isEqualToString:@"Contact Email"])
+    {
+        keyboard = UIKeyboardTypeEmailAddress;
+    }
+    if([labeltext isEqualToString:@"Postal Code"])
+    {
+        keyboard = UIKeyboardTypeNumbersAndPunctuation;
+    }
+    if([labeltext isEqualToString:@"Country"])
+    {
+        inputView = self.countryPicker;
+    }
+    UITextField* field = cell.accountTextField;
+    field.backgroundColor  = nil;
+    
+    if([[invalidFields allKeys] containsObject:labeltext]){
+        [self setFieldInvalid:field];
+    }
+    field.keyboardType = keyboard;
+    field.secureTextEntry=NO;
+    if(protected){
+        field.secureTextEntry=YES;
+    }
+    field.delegate = self;
+    NSString* textVal = [self.data objectForKey:labeltext];
+    if([textVal isEqualToString:labeltext]){
+        textVal =nil;
+    }
+
+    field.text = textVal;
+    field.placeholder = @"required";
+    if(inputView!=nil){
+        field.inputView = inputView;
+    }
+    
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    EditCell = @"EditCell"; 
-    [self.tableView registerNib:[UINib nibWithNibName:@"NewEditTableViewCell" bundle:nil]  forCellReuseIdentifier:EditCell];
-    
+    EditCell = @"EditCell";
+        UINib* cellNib = [UINib nibWithNibName:@"NewEditTableViewCell" bundle:nil];
     NSArray* udStrings = @[@"First",@"Last",@"Email",@"Password",@"Confirm",@"Address",@"Country",@"Postal Code",@"Phone"];
     userData = [[NSMutableArray alloc] initWithCapacity:udStrings.count];
-    
-    for (NSString* name in udStrings) {
-            
-    }
     NSArray* edStrings = @[@"Name",@"Relationship",@"Contact Phone",@"Contact Email"];
     emergencyData = [[NSMutableArray alloc] initWithCapacity:edStrings.count];
-    self.data = [NSMutableDictionary dictionaryWithObjects:userData forKeys:userData];
-    [self.data addEntriesFromDictionary:[NSMutableDictionary dictionaryWithObjects:emergencyData    forKeys:emergencyData]];
+    
+    self.data = [NSMutableDictionary dictionaryWithObjects:udStrings forKeys:udStrings];
+    [self.data addEntriesFromDictionary:[NSMutableDictionary dictionaryWithObjects:edStrings    forKeys:edStrings]];
     [self.data setObject:@"UNITED STATES" forKey:@"Country"];
     [[UILabel appearanceWhenContainedIn:[UITextField class], nil] setTextColor:[UIColor darkGrayColor]];
 #ifdef DEBUG
@@ -104,7 +144,22 @@
     [self.data setObject:@"shannon.ahern@gmail.com" forKey:@"Contact Email"];
     
 #endif
-    NSString* fileRoot = [[NSBundle mainBundle]
+ 
+    for (NSString* name in udStrings) {
+        NewAccountTableViewCell* cell = (NewAccountTableViewCell*)[cellNib instantiateWithOwner:nil options:nil][0];
+        cell.nameLabel.text = name;
+        [self configureCell:cell];
+        [userData addObject:cell];
+
+    }
+    for (NSString* name in edStrings) {
+        NewAccountTableViewCell* cell = (NewAccountTableViewCell*)[cellNib instantiateWithOwner:nil options:nil][0];
+        cell.nameLabel.text = name;
+        [self configureCell:cell];
+        [emergencyData addObject:cell];
+
+    }
+       NSString* fileRoot = [[NSBundle mainBundle]
                           pathForResource:@"country_names_and_code_elements_txt" ofType:@"txt"];
     // read everything from text
     NSString* fileContents =
@@ -203,89 +258,22 @@
 -(NSString*)keyForTextField:(UITextField*)textField{
     NSString* ret = nil;
     UIView* superView = textField.superview;
-    UITableViewCell* cell = 	(UITableViewCell*)superView.superview;
-    NSIndexPath* path =    [self.tableView indexPathForCell:cell];
-    if (path.section==0) {
-        ret = [userData objectAtIndex:path.row];
-        
-    }
-    else{
-        ret = [emergencyData objectAtIndex:path.row];
-    }
+    NewAccountTableViewCell* cell = (NewAccountTableViewCell*)superView.superview;
+    ret = cell.nameLabel.text;
     return ret;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* labeltext = nil;
-    NSString* textVal = nil;
+    UITableViewCell* cell= nil;
     if(indexPath.section==0){
-        labeltext = [userData objectAtIndex:indexPath.row];
-        
+     
+        cell = [userData objectAtIndex:indexPath.row];
     }
     else
     {
-        labeltext = [emergencyData objectAtIndex:indexPath.row];
+        cell = [emergencyData objectAtIndex:indexPath.row];
     }
-    textVal = [self.data objectForKey:labeltext];
-    if([textVal isEqualToString:labeltext]){
-        textVal =nil;
-    }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EditCell];
-       for (UIView* view in cell.subviews) {
-           BOOL protected = NO;
-           UIKeyboardType keyboard = UIKeyboardTypeDefault;
-           UIView* inputView = nil;
-            for (UIView* sview in view.subviews) {
-                if([sview isKindOfClass:[UILabel class]])
-                {
-                    UILabel* label = (UILabel*)sview;
-                    label.text = labeltext;
-                   
-                    if([label.text isEqualToString:@"Password"]||[label.text isEqualToString:@"Confirm"]){
-                        protected = YES;
-                    } if([label.text isEqualToString:@"Phone"]||[label.text isEqualToString:@"Contact Phone"]){
-                       keyboard = UIKeyboardTypePhonePad;
-                    }
-                    if([label.text isEqualToString:@"Email"])
-                        {
-                            keyboard = UIKeyboardTypeEmailAddress;
-                        }
-                    if([label.text isEqualToString:@"Contact Email"])
-                    {
-                        keyboard = UIKeyboardTypeEmailAddress;
-                    }
-                    if([label.text isEqualToString:@"Postal Code"])
-                    {
-                        keyboard = UIKeyboardTypeNumbersAndPunctuation;
-                    }
-                    if([label.text isEqualToString:@"Country"])
-                    {
-                        inputView = self.countryPicker;
-                    }
-                }
-                if([sview isKindOfClass:[UITextField class]]){
-                    UITextField* field = (UITextField*)sview;
-                    field.backgroundColor  = nil;
-                    
-                    if([[invalidFields allKeys] containsObject:labeltext]){
-                        [self setFieldInvalid:field];
-                    }
-                    field.keyboardType = keyboard;
-                    field.secureTextEntry=NO;
-                    if(protected){
-                        field.secureTextEntry=YES;
-                    }
-                    field.delegate = self;
-                    field.text = textVal;
-                    field.placeholder = @"required";
-                    if(view!=nil){
-                        field.inputView = inputView;
-                    }
-                    NSLog(@"label = %@ text = %@ row = %d section = %d",labeltext, field.text,indexPath.row, indexPath.section);
-                }
-            }
-      
-       }
+   
     return cell;
 }
 

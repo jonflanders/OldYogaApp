@@ -10,6 +10,5 @@
 
 @interface NewAccountTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UITextField *accountTextField;
-@property (strong,nonatomic) NSString* accountTextFieldName;
--(id)initWithName:(NSString*)name;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @end

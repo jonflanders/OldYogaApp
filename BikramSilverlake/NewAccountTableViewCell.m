@@ -9,14 +9,7 @@
 #import "NewAccountTableViewCell.h"
 
 @implementation NewAccountTableViewCell
--(id)initWithName:(NSString *)name{
-    self = [super init];
-    if(self)
-    {
-        self.accountTextFieldName  = name;
-    }
-    return self;
-}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
