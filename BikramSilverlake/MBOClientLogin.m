@@ -218,6 +218,7 @@
     NSString* clientID =  [[NSUserDefaults standardUserDefaults] valueForKey:clientIDKey ];
     if(clientID==nil){
         Client_x0020_ServiceSoapBinding* binding = [[Client_x0020_ServiceSoapBinding alloc] initWithAddress:MBOClientURL];
+		binding.logXMLInOut = NO;
         Client_x0020_ServiceSvc_ValidateLoginRequest* vlr = [[Client_x0020_ServiceSvc_ValidateLoginRequest alloc] init];
         vlr.Password = password;
         vlr.Username = userName;

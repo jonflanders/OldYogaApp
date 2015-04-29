@@ -11,12 +11,13 @@
 #import "Constants.h"
 #import "ClassDetailViewController.h"
 #import "MBOReserveClass.h"
-@interface MainPageTableViewController ()
+@interface MainPageTableViewController ()<UIAlertViewDelegate>
 {
     CMPopTipView* popup;
     id	currentPopTipViewTarget;
     EKEventStore *eventStore;
 }
+@property (nonatomic,strong) NSString* currentClientID;
 @end
 
 @implementation MainPageTableViewController
@@ -319,24 +320,33 @@
 
 -(void)complete:(NSString *)clientID{
     if(clientID==nil){
-        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"You must login in order to reservere a class"   delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+        UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"You must login in order to reserve a class"   delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
         [theAlert show];
     }
     else{
-        MBOReserveClass* reserve = [[MBOReserveClass alloc] init];
-        NSString* classID =[self.selectedDay objectForKey:@"ClassID"];
-        if([reserve reserveClass:classID forClient:clientID]){
-            UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You are confirmed for this class." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
-            [theAlert show];
-          
-        }
-        else{
-            UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
-            [theAlert show];
-            
-        }
+		self.currentClientID = clientID;
+		UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Add Class?" message:@"Are you sure you want to reserve this class?"   delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK" , nil];
+		[theAlert show];
+
 
     }
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+	if([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"OK"]){
+
+	MBOReserveClass* reserve = [[MBOReserveClass alloc] init];
+	NSString* classID =[self.selectedDay objectForKey:@"ClassID"];
+	if([reserve reserveClass:classID forClient:self.currentClientID]){
+		UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You are confirmed for this class." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+		[theAlert show];
+		
+	}
+	else{
+		UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later or make sure you have a valid payment method setup on Mindbody" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+		[theAlert show];
+		
+	}
+	}
 }
 -(void)reserve:(id)sender{
     UIButton* b = (UIButton*)sender;

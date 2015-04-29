@@ -17,6 +17,7 @@
     BOOL ret = NO;
     
     Class_x0020_ServiceSoapBinding* binding = [[Class_x0020_ServiceSoapBinding alloc] initWithAddress:MBOClassURL];
+	binding.logXMLInOut = NO;
     Class_x0020_ServiceSvc_AddClientsToClasses* add = [[Class_x0020_ServiceSvc_AddClientsToClasses alloc] init];
     Class_x0020_ServiceSvc_AddClientsToClassesRequest* addRequest = [[Class_x0020_ServiceSvc_AddClientsToClassesRequest alloc] init];
     Class_x0020_ServiceSvc_SourceCredentials* sc = [[Class_x0020_ServiceSvc_SourceCredentials alloc ] init];
@@ -37,7 +38,7 @@
     [addRequest.ClientIDs addString:clientID];
     addRequest.ClassIDs = [[Class_x0020_ServiceSvc_ArrayOfInt alloc] init];
     NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
-    NSNumber* nclass = [formatter numberFromString:classID];
+    NSNumber* nclass = classID;
     [addRequest.ClassIDs addInt_:nclass];Class_x0020_ServiceSoapBindingResponse* response = [binding AddClientsToClassesUsingParameters:add];
     if(response.error!=nil){
         //TODO: log error

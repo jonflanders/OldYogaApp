@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+		
           }
     return self;
 }
@@ -31,7 +32,7 @@
     [super viewDidLoad];
     UIColor* tintColor = [UIColor colorWithRed:(254.0/255.0) green:(178.0/255.0) blue:(67.0/255.0) alpha:1.0];
     self.tabBar.selectedImageTintColor =tintColor;
-    self.tabBar.tintColor = [UIColor clearColor];	// Do any additional setup after loading the view.
+    self.tabBar.tintColor = tintColor;	// Do any additional setup after loading the view.
     self.schedule  =  [[MainPageTableViewController alloc] initWithNibName:@"MainPageTableViewController" bundle:nil];
     self.settings = [[YouViewController alloc] initWithNibName:@"YouViewController" bundle:nil];
     self.settings.tabBarItem.title = @"Profile";

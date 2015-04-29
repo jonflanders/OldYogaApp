@@ -18,8 +18,8 @@
 @implementation StudioNewsViewController
 - (IBAction)pageChanged:(id)sender {
     NSInteger currentPage = self.pageControl.currentPage;
-    NSString* data = [_newsItems objectAtIndex:currentPage];
-    self.newsView.text  = data;		
+    NSDictionary* data = [_newsItems objectAtIndex:currentPage];
+    self.newsView.text  = data[@"message"];
 }
 - (IBAction)swipe:(id)sender {
        self.pageControl.currentPage=self.pageControl.currentPage-1;

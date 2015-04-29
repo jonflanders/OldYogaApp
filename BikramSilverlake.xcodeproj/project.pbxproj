@@ -39,6 +39,7 @@
 		FC5C0C44170118AD008C1D8D /* twitternew.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C42170118AD008C1D8D /* twitternew.png */; };
 		FC5C0C45170118AD008C1D8D /* likefb.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C43170118AD008C1D8D /* likefb.png */; };
 		FC5C0C4917013F80008C1D8D /* country_names_and_code_elements_txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */; };
+		FC8024A01AEC12FC003B5FEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC80249F1AEC12FC003B5FEB /* Images.xcassets */; };
 		FC9665E216D41BE800E656A2 /* ClassDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */; };
 		FC9665E316D41BE800E656A2 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */; };
 		FC9665E716D41BFD00E656A2 /* AboutTheStudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665E516D41BFD00E656A2 /* AboutTheStudioViewController.m */; };
@@ -155,6 +156,7 @@
 		FC5C0C42170118AD008C1D8D /* twitternew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitternew.png; sourceTree = "<group>"; };
 		FC5C0C43170118AD008C1D8D /* likefb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likefb.png; sourceTree = "<group>"; };
 		FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = country_names_and_code_elements_txt.txt; sourceTree = "<group>"; };
+		FC80249F1AEC12FC003B5FEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassDetailViewController.h; path = ../ClassDetailViewController.h; sourceTree = "<group>"; };
 		FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassDetailViewController.m; path = ../ClassDetailViewController.m; sourceTree = "<group>"; };
 		FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClassDetailViewController.xib; path = ../ClassDetailViewController.xib; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				FC59688015DC55AB006B4745 /* Default.png */,
 				FC59687E15DC55A0006B4745 /* apple.png */,
 				FC59687C15DC558D006B4745 /* apple114.png */,
+				FC80249F1AEC12FC003B5FEB /* Images.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -488,6 +491,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = flounderware;
+				TargetAttributes = {
+					FC59685715DC5431006B4745 = {
+						DevelopmentTeam = LCT7F69LK9;
+					};
+				};
 			};
 			buildConfigurationList = FC59685215DC5431006B4745 /* Build configuration list for PBXProject "BikramSilverlake" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -520,6 +528,7 @@
 				FC98D39A1628CF0B00436255 /* MainPageCell.xib in Resources */,
 				FC98D3BE1628EC3200436255 /* calendar.png in Resources */,
 				FC98D3BF1628EC3200436255 /* poses.png in Resources */,
+				FC8024A01AEC12FC003B5FEB /* Images.xcassets in Resources */,
 				FC98D3CD162A3D1F00436255 /* about.png in Resources */,
 				FC98D3CE162A3D1F00436255 /* back.png in Resources */,
 				FC98D3CF162A3D1F00436255 /* fwd.png in Resources */,
@@ -647,7 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -669,7 +678,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -679,7 +688,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -694,7 +703,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -705,11 +714,16 @@
 		FC59687A15DC5431006B4745 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
 				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -718,15 +732,17 @@
 		FC59687B15DC5431006B4745 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Flanders Software Consulting, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Flanders Software Consulting, Inc.";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
 				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "372198B8-C9D1-42BF-9015-021890F36988";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "372198B8-C9D1-42BF-9015-021890F36988";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "84c300dd-f88a-4b71-8704-f1ca97cbad32";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
