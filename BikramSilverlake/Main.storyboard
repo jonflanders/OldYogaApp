@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LND-Za-aNB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Buy-->
+        <scene sceneID="tye-Gg-W7Z">
+            <objects>
+                <viewController id="F40-Wf-cJx" userLabel="Buy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T0z-Xp-iMx"/>
+                        <viewControllerLayoutGuide type="bottom" id="tfY-h6-Q19"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jhl-5b-ZvU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Buy" image="buy.png" id="ec0-HN-C58"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jmh-Fa-5K1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="267" y="697"/>
+        </scene>
+        <!--Profile Scene-->
+        <scene sceneID="4gb-NY-fgo">
+            <objects>
+                <viewController id="foa-04-wRu" userLabel="Profile Scene" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MoW-jR-Zce"/>
+                        <viewControllerLayoutGuide type="bottom" id="hjI-z4-EBM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6is-F6-WEA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="studio.png" id="phh-Ej-rgg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBt-Oa-S2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1038" y="1002"/>
+        </scene>
+        <!--Info-->
+        <scene sceneID="3rt-GD-zk5">
+            <objects>
+                <viewController id="w4o-bS-PoH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CXK-Rd-mRZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="v53-bJ-3gR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JhN-uy-f5G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Info" image="aboutus.png" id="SJz-nI-3Rg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5L8-OX-OHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-431" y="1146"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="iVh-gy-d8B">
+            <objects>
+                <viewController id="xeq-fi-FcQ" userLabel="News" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jQd-m3-BGF"/>
+                        <viewControllerLayoutGuide type="bottom" id="CPU-7d-W2C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R33-1b-gt6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Hot News" image="bikramsettings.png" id="aV3-lm-0w4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qL1-fy-Otg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="1217"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="w1w-O9-7Jr">
+            <objects>
+                <viewController id="OAu-tm-G9e" userLabel="Schedule" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="POc-wq-MPV"/>
+                        <viewControllerLayoutGuide type="bottom" id="jq8-5m-BSd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0bq-lz-PEK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="smallcalendar.png" id="Fq7-vc-og3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8WO-Ze-gR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="-119"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yug-n3-b7F">
+            <objects>
+                <tabBarController id="LND-Za-aNB" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="gZT-UE-cnu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OAu-tm-G9e" kind="relationship" relationship="viewControllers" id="hZp-Of-31y"/>
+                        <segue destination="F40-Wf-cJx" kind="relationship" relationship="viewControllers" id="FCY-or-KJq"/>
+                        <segue destination="xeq-fi-FcQ" kind="relationship" relationship="viewControllers" id="cHP-o3-lNp"/>
+                        <segue destination="w4o-bS-PoH" kind="relationship" relationship="viewControllers" id="jui-fj-9fr"/>
+                        <segue destination="foa-04-wRu" kind="relationship" relationship="viewControllers" id="1LJ-2U-MrY"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6K-rC-4f8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-520" y="502"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="aboutus.png" width="30" height="30"/>
+        <image name="bikramsettings.png" width="30" height="30"/>
+        <image name="buy.png" width="30" height="30"/>
+        <image name="smallcalendar.png" width="30" height="30"/>
+        <image name="studio.png" width="30" height="30"/>
+    </resources>
+</document>

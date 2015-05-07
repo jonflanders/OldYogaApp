@@ -13,23 +13,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    [[UILabel appearanceWhenContainedIn:[UITableView class], nil ] setColor:[UIColor grayColor]];
-//    [[UILabel appearanceWhenContainedIn:[UIPickerView class], nil ] setColor:[UIColor blackColor]];
 	
     [[UITextView appearance ] setTextColor:[UIColor grayColor]];
     [[UIButton appearance] setAlpha:.8];
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[MainTabBarViewController alloc] init];
-        
-        self.loginViewController = [[LoginViewController alloc] init];
-        self.loginViewController.delegate = self;
-    } else {
-       // self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
-    }
-    self.window.rootViewController = self.loginViewController;//self.viewController;
-    [self.window makeKeyAndVisible];
 	self.window.tintColor  = [UIColor orangeColor];
     return YES;
 }

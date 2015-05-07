@@ -41,7 +41,7 @@
              dispatch_async(dispatch_get_main_queue(), ^{
                             NSError* nerror;
              self.studioData =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&nerror];
-             [self.studioData writeToFile:LocalCache atomically:YES];
+            // [self.studioData writeToFile:LocalCache atomically:YES];
              [self loadFromJSON];
              });
 
