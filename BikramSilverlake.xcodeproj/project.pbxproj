@@ -26,6 +26,15 @@
 		FC577F051AFC08B200377B90 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC577F041AFC08B200377B90 /* CFNetwork.framework */; };
 		FC577F071AFC08C000377B90 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC577F061AFC08C000377B90 /* libz.dylib */; };
 		FC577F0A1AFC2AB800377B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC577F091AFC2AB800377B90 /* Main.storyboard */; };
+		FC577F0F1AFC329000377B90 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F0E1AFC329000377B90 /* ScheduleTableViewCell.swift */; };
+		FC577F121AFC367A00377B90 /* ScheduleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F111AFC367A00377B90 /* ScheduleItem.swift */; };
+		FC577F151AFC424200377B90 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F141AFC424200377B90 /* ScheduleController.swift */; };
+		FC577F181AFC446500377B90 /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F171AFC446500377B90 /* ServerConnection.swift */; };
+		FC577F1B1AFC44A100377B90 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC577F1A1AFC44A100377B90 /* MainTabBarViewController.m */; };
+		FC577F1E1AFC46AE00377B90 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F1D1AFC46AE00377B90 /* Config.swift */; };
+		FC577F211AFC496200377B90 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F201AFC496200377B90 /* ScheduleViewController.swift */; };
+		FC577F231AFC64CF00377B90 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F221AFC64CF00377B90 /* Schedule.swift */; };
+		FC577F251AFC650100377B90 /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F241AFC650100377B90 /* Instructor.swift */; };
 		FC58722716F2BA4C002DAEA4 /* MBOSaleClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC58722616F2BA4C002DAEA4 /* MBOSaleClient.m */; };
 		FC58722B16F2BC15002DAEA4 /* CreditCardInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC58722916F2BC15002DAEA4 /* CreditCardInputViewController.m */; };
 		FC58722C16F2BC15002DAEA4 /* CreditCardInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC58722A16F2BC15002DAEA4 /* CreditCardInputViewController.xib */; };
@@ -36,8 +45,6 @@
 		FC59686715DC5431006B4745 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC59686515DC5431006B4745 /* InfoPlist.strings */; };
 		FC59686915DC5431006B4745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59686815DC5431006B4745 /* main.m */; };
 		FC59686D15DC5431006B4745 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59686C15DC5431006B4745 /* AppDelegate.m */; };
-		FC59687315DC5431006B4745 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687115DC5431006B4745 /* ViewController_iPhone.xib */; };
-		FC59687615DC5431006B4745 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC59687415DC5431006B4745 /* ViewController_iPad.xib */; };
 		FC59687D15DC558D006B4745 /* apple114.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59687C15DC558D006B4745 /* apple114.png */; };
 		FC59687F15DC55A0006B4745 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = FC59687E15DC55A0006B4745 /* apple.png */; };
 		FC5C0C44170118AD008C1D8D /* twitternew.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C42170118AD008C1D8D /* twitternew.png */; };
@@ -65,7 +72,6 @@
 		FC98D3CD162A3D1F00436255 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3CA162A3D1F00436255 /* about.png */; };
 		FC98D3CE162A3D1F00436255 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3CB162A3D1F00436255 /* back.png */; };
 		FC98D3CF162A3D1F00436255 /* fwd.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3CC162A3D1F00436255 /* fwd.png */; };
-		FC98D3D2162A489E00436255 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3D1162A489E00436255 /* MainTabBarViewController.m */; };
 		FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3D4162A494C00436255 /* SettingsViewController.m */; };
 		FC98D3D7162A494C00436255 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3D5162A494C00436255 /* SettingsViewController.xib */; };
 		FCA905B316DF03F500746A54 /* BuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B116DF03F500746A54 /* BuyViewController.m */; };
@@ -139,6 +145,17 @@
 		FC577F041AFC08B200377B90 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FC577F061AFC08C000377B90 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FC577F091AFC2AB800377B90 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FC577F0D1AFC329000377B90 /* BikramSilverlake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BikramSilverlake-Bridging-Header.h"; sourceTree = "<group>"; };
+		FC577F0E1AFC329000377B90 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		FC577F111AFC367A00377B90 /* ScheduleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleItem.swift; sourceTree = "<group>"; };
+		FC577F141AFC424200377B90 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
+		FC577F171AFC446500377B90 /* ServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
+		FC577F191AFC44A100377B90 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
+		FC577F1A1AFC44A100377B90 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
+		FC577F1D1AFC46AE00377B90 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		FC577F201AFC496200377B90 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		FC577F221AFC64CF00377B90 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		FC577F241AFC650100377B90 /* Instructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
 		FC58722516F2BA4C002DAEA4 /* MBOSaleClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBOSaleClient.h; sourceTree = "<group>"; };
 		FC58722616F2BA4C002DAEA4 /* MBOSaleClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBOSaleClient.m; sourceTree = "<group>"; };
 		FC58722816F2BC15002DAEA4 /* CreditCardInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardInputViewController.h; sourceTree = "<group>"; };
@@ -155,8 +172,6 @@
 		FC59686A15DC5431006B4745 /* BikramSilverlake-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BikramSilverlake-Prefix.pch"; sourceTree = "<group>"; };
 		FC59686B15DC5431006B4745 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC59686C15DC5431006B4745 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FC59687215DC5431006B4745 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		FC59687515DC5431006B4745 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		FC59687C15DC558D006B4745 /* apple114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple114.png; path = ../apple114.png; sourceTree = "<group>"; };
 		FC59687E15DC55A0006B4745 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple.png; path = ../apple.png; sourceTree = "<group>"; };
 		FC59688015DC55AB006B4745 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
@@ -192,8 +207,6 @@
 		FC98D3CA162A3D1F00436255 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = about.png; path = ../about.png; sourceTree = "<group>"; };
 		FC98D3CB162A3D1F00436255 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../back.png; sourceTree = "<group>"; };
 		FC98D3CC162A3D1F00436255 /* fwd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fwd.png; path = ../fwd.png; sourceTree = "<group>"; };
-		FC98D3D0162A489E00436255 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
-		FC98D3D1162A489E00436255 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		FC98D3D3162A494C00436255 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FC98D3D4162A494C00436255 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FC98D3D5162A494C00436255 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -356,8 +369,6 @@
 				FC98D3D5162A494C00436255 /* SettingsViewController.xib */,
 				FC98D3951628CDFA00436255 /* MainPageTableViewController.xib */,
 				FC98D3991628CF0B00436255 /* MainPageCell.xib */,
-				FC59687115DC5431006B4745 /* ViewController_iPhone.xib */,
-				FC59687415DC5431006B4745 /* ViewController_iPad.xib */,
 				FCF38AC216CAC368005DD57B /* NavController.xib */,
 				FC58722A16F2BC15002DAEA4 /* CreditCardInputViewController.xib */,
 				FC58722D16F2EAF6002DAEA4 /* EditTableViewCell.xib */,
@@ -373,48 +384,54 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				FCB04D7C16FE3CE9005D505E /* NewAccountViewController.h */,
-				FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */,
-				FCC3718816FD415000CC57CA /* CMPopTipView.h */,
-				FCC3718916FD415000CC57CA /* CMPopTipView.m */,
-				FCB6332016F9862200E8D4A6 /* LoginViewController.h */,
-				FCB6332116F9862200E8D4A6 /* LoginViewController.m */,
-				FC58722816F2BC15002DAEA4 /* CreditCardInputViewController.h */,
-				FC58722916F2BC15002DAEA4 /* CreditCardInputViewController.m */,
-				FCACB9E916F28A9900D4E78A /* YouViewController.h */,
-				FCACB9EA16F28A9900D4E78A /* YouViewController.m */,
-				FCA905B816E2D66500746A54 /* BuyDetailViewController.h */,
-				FCA905B916E2D66500746A54 /* BuyDetailViewController.m */,
-				FCA905B516E18F0000746A54 /* Constants.h */,
-				FCA905B616E18F0100746A54 /* Constants.m */,
-				FCA905B016DF03F500746A54 /* BuyViewController.h */,
-				FCA905B116DF03F500746A54 /* BuyViewController.m */,
+				FC577F1F1AFC494900377B90 /* NewViewControllers */,
+				FC577F1C1AFC46A200377B90 /* Config */,
+				FC577F161AFC43C700377B90 /* Networking */,
 				FC96662516D4825F00E656A2 /* AboutItems.h */,
 				FC96662616D4826000E656A2 /* AboutItems.m */,
-				FC9665E916D41C5700E656A2 /* StudioNewsViewController.h */,
-				FC9665EA16D41C5700E656A2 /* StudioNewsViewController.m */,
 				FC9665E416D41BFD00E656A2 /* AboutTheStudioViewController.h */,
 				FC9665E516D41BFD00E656A2 /* AboutTheStudioViewController.m */,
-				FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */,
-				FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */,
 				FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */,
 				FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */,
-				FC3FF77216C8E42F00CB3700 /* BusyViewController.h */,
-				FC3FF77316C8E42F00CB3700 /* BusyViewController.m */,
-				FC98D3D0162A489E00436255 /* MainTabBarViewController.h */,
-				FC98D3D1162A489E00436255 /* MainTabBarViewController.m */,
-				FC98D3D3162A494C00436255 /* SettingsViewController.h */,
-				FC98D3D4162A494C00436255 /* SettingsViewController.m */,
-				FC98D3931628CDFA00436255 /* MainPageTableViewController.h */,
-				FC98D3941628CDFA00436255 /* MainPageTableViewController.m */,
-				FC98D3B91628EBD300436255 /* PullRefreshTableViewController.h */,
-				FC98D3BA1628EBD300436255 /* PullRefreshTableViewController.m */,
 				FC59686B15DC5431006B4745 /* AppDelegate.h */,
 				FC59686C15DC5431006B4745 /* AppDelegate.m */,
-				FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */,
-				FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */,
+				FC3FF77216C8E42F00CB3700 /* BusyViewController.h */,
+				FC3FF77316C8E42F00CB3700 /* BusyViewController.m */,
+				FCA905B816E2D66500746A54 /* BuyDetailViewController.h */,
+				FCA905B916E2D66500746A54 /* BuyDetailViewController.m */,
+				FCA905B016DF03F500746A54 /* BuyViewController.h */,
+				FCA905B116DF03F500746A54 /* BuyViewController.m */,
+				FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */,
+				FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */,
+				FCC3718816FD415000CC57CA /* CMPopTipView.h */,
+				FCC3718916FD415000CC57CA /* CMPopTipView.m */,
+				FCA905B516E18F0000746A54 /* Constants.h */,
+				FCA905B616E18F0100746A54 /* Constants.m */,
+				FC58722816F2BC15002DAEA4 /* CreditCardInputViewController.h */,
+				FC58722916F2BC15002DAEA4 /* CreditCardInputViewController.m */,
+				FCB6332016F9862200E8D4A6 /* LoginViewController.h */,
+				FCB6332116F9862200E8D4A6 /* LoginViewController.m */,
+				FC98D3931628CDFA00436255 /* MainPageTableViewController.h */,
+				FC98D3941628CDFA00436255 /* MainPageTableViewController.m */,
+				FC577F191AFC44A100377B90 /* MainTabBarViewController.h */,
+				FC577F1A1AFC44A100377B90 /* MainTabBarViewController.m */,
+				FC577F131AFC422A00377B90 /* ModelController */,
+				FC577F101AFC364300377B90 /* Models */,
 				FCBD500317C6A39200047E70 /* NewAccountTableViewCell.h */,
 				FCBD500417C6A39200047E70 /* NewAccountTableViewCell.m */,
+				FCB04D7C16FE3CE9005D505E /* NewAccountViewController.h */,
+				FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */,
+				FC98D3B91628EBD300436255 /* PullRefreshTableViewController.h */,
+				FC98D3BA1628EBD300436255 /* PullRefreshTableViewController.m */,
+				FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */,
+				FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */,
+				FC98D3D3162A494C00436255 /* SettingsViewController.h */,
+				FC98D3D4162A494C00436255 /* SettingsViewController.m */,
+				FC9665E916D41C5700E656A2 /* StudioNewsViewController.h */,
+				FC9665EA16D41C5700E656A2 /* StudioNewsViewController.m */,
+				FC577F0B1AFC327000377B90 /* Views */,
+				FCACB9E916F28A9900D4E78A /* YouViewController.h */,
+				FCACB9EA16F28A9900D4E78A /* YouViewController.m */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -425,6 +442,65 @@
 				FC577F091AFC2AB800377B90 /* Main.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		FC577F0B1AFC327000377B90 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC577F0C1AFC327600377B90 /* TableViewCells */,
+				FC577F0D1AFC329000377B90 /* BikramSilverlake-Bridging-Header.h */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FC577F0C1AFC327600377B90 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FC577F0E1AFC329000377B90 /* ScheduleTableViewCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		FC577F101AFC364300377B90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC577F111AFC367A00377B90 /* ScheduleItem.swift */,
+				FC577F221AFC64CF00377B90 /* Schedule.swift */,
+				FC577F241AFC650100377B90 /* Instructor.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FC577F131AFC422A00377B90 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				FC577F141AFC424200377B90 /* ScheduleController.swift */,
+			);
+			name = ModelController;
+			sourceTree = "<group>";
+		};
+		FC577F161AFC43C700377B90 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FC577F171AFC446500377B90 /* ServerConnection.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		FC577F1C1AFC46A200377B90 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				FC577F1D1AFC46AE00377B90 /* Config.swift */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		FC577F1F1AFC494900377B90 /* NewViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC577F201AFC496200377B90 /* ScheduleViewController.swift */,
+			);
+			name = NewViewControllers;
 			sourceTree = "<group>";
 		};
 		FC59684D15DC5431006B4745 = {
@@ -543,8 +619,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC59686715DC5431006B4745 /* InfoPlist.strings in Resources */,
-				FC59687315DC5431006B4745 /* ViewController_iPhone.xib in Resources */,
-				FC59687615DC5431006B4745 /* ViewController_iPad.xib in Resources */,
 				FC59687D15DC558D006B4745 /* apple114.png in Resources */,
 				FC59687F15DC55A0006B4745 /* apple.png in Resources */,
 				FC98D3971628CDFA00436255 /* MainPageTableViewController.xib in Resources */,
@@ -612,11 +686,13 @@
 				FC59686915DC5431006B4745 /* main.m in Sources */,
 				FC59686D15DC5431006B4745 /* AppDelegate.m in Sources */,
 				FC98D3961628CDFA00436255 /* MainPageTableViewController.m in Sources */,
+				FC577F121AFC367A00377B90 /* ScheduleItem.swift in Sources */,
 				FC98D3BB1628EBD300436255 /* PullRefreshTableViewController.m in Sources */,
-				FC98D3D2162A489E00436255 /* MainTabBarViewController.m in Sources */,
 				FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */,
 				FC3FF77516C8E43000CB3700 /* BusyViewController.m in Sources */,
 				FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */,
+				FC577F231AFC64CF00377B90 /* Schedule.swift in Sources */,
+				FC577F181AFC446500377B90 /* ServerConnection.swift in Sources */,
 				FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */,
 				FC9665E216D41BE800E656A2 /* ClassDetailViewController.m in Sources */,
 				FC9665E716D41BFD00E656A2 /* AboutTheStudioViewController.m in Sources */,
@@ -635,10 +711,16 @@
 				FC20D1D216F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m in Sources */,
 				FCACB9E516F14AC200D4E78A /* MBOClientLogin.m in Sources */,
 				FCACB9E816F14B3C00D4E78A /* MBOReserveClass.m in Sources */,
+				FC577F1B1AFC44A100377B90 /* MainTabBarViewController.m in Sources */,
 				FCACB9EC16F28A9A00D4E78A /* YouViewController.m in Sources */,
+				FC577F151AFC424200377B90 /* ScheduleController.swift in Sources */,
 				FC58722716F2BA4C002DAEA4 /* MBOSaleClient.m in Sources */,
 				FC58722B16F2BC15002DAEA4 /* CreditCardInputViewController.m in Sources */,
+				FC577F1E1AFC46AE00377B90 /* Config.swift in Sources */,
+				FC577F251AFC650100377B90 /* Instructor.swift in Sources */,
+				FC577F0F1AFC329000377B90 /* ScheduleTableViewCell.swift in Sources */,
 				FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */,
+				FC577F211AFC496200377B90 /* ScheduleViewController.swift in Sources */,
 				FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */,
 				FCC3718A16FD415000CC57CA /* CMPopTipView.m in Sources */,
 				FCB04D7F16FE3CE9005D505E /* NewAccountViewController.m in Sources */,
@@ -655,22 +737,6 @@
 				FC59686615DC5431006B4745 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FC59687115DC5431006B4745 /* ViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC59687215DC5431006B4745 /* en */,
-			);
-			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		FC59687415DC5431006B4745 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC59687515DC5431006B4745 /* en */,
-			);
-			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -741,6 +807,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -751,8 +818,11 @@
 				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
 				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BikramSilverlake/BikramSilverlake-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -763,6 +833,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -773,9 +844,11 @@
 				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
 				INFOPLIST_FILE = "BikramSilverlake/BikramSilverlake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "84c300dd-f88a-4b71-8704-f1ca97cbad32";
+				SWIFT_OBJC_BRIDGING_HEADER = "BikramSilverlake/BikramSilverlake-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
