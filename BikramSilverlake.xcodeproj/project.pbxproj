@@ -111,6 +111,7 @@
 		FCC453E816F2EB28004127C3 /* CreditCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */; };
 		FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC453EA16F4E59C004127C3 /* MBOClientRecords.m */; };
 		FCE6F10516F7E94000F3312C /* buy.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6F10416F7E94000F3312C /* buy.png */; };
+		FCE7BC481AFEE378002EF2A4 /* ScheduleTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE7BC471AFEE378002EF2A4 /* ScheduleTableHeaderView.xib */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
 		FCF38AC116CAC1E5005DD57B /* AlarmTimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */; };
@@ -257,6 +258,7 @@
 		FCC453E916F4E59C004127C3 /* MBOClientRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBOClientRecords.h; sourceTree = "<group>"; };
 		FCC453EA16F4E59C004127C3 /* MBOClientRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBOClientRecords.m; sourceTree = "<group>"; };
 		FCE6F10416F7E94000F3312C /* buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy.png; sourceTree = "<group>"; };
+		FCE7BC471AFEE378002EF2A4 /* ScheduleTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleTableHeaderView.xib; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
 		FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmTimeTableViewController.h; path = ../AlarmTimeTableViewController.h; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				FCB6332216F9862200E8D4A6 /* LoginViewController.xib */,
 				FCB04D7916FE2548005D505E /* ImageCell.xib */,
 				FCB04D8116FE3D80005D505E /* NewEditTableViewCell.xib */,
+				FCE7BC471AFEE378002EF2A4 /* ScheduleTableHeaderView.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				FC59687F15DC55A0006B4745 /* apple.png in Resources */,
 				FC98D3971628CDFA00436255 /* MainPageTableViewController.xib in Resources */,
 				FC98D39A1628CF0B00436255 /* MainPageCell.xib in Resources */,
+				FCE7BC481AFEE378002EF2A4 /* ScheduleTableHeaderView.xib in Resources */,
 				FC98D3BE1628EC3200436255 /* calendar.png in Resources */,
 				FC98D3BF1628EC3200436255 /* poses.png in Resources */,
 				FC8024A01AEC12FC003B5FEB /* Images.xcassets in Resources */,
@@ -835,7 +839,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BikramSilverlake/BikramSilverlake-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -861,7 +865,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "84c300dd-f88a-4b71-8704-f1ca97cbad32";
 				SWIFT_OBJC_BRIDGING_HEADER = "BikramSilverlake/BikramSilverlake-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

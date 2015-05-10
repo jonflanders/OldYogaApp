@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ScheduleViewController: UIViewController {
+class ScheduleViewController: UIViewController,UITableViewDelegate {
 
+	func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		var nib = UINib(nibName: "ScheduleTableHeaderView", bundle: nil)
+		var view = nib.instantiateWithOwner(nil, options: nil).first as! UIView
+		return view
+	}
 	@IBOutlet var dataSource:ScheduleTableViewDataSource!
 	@IBOutlet var tableView:UITableView!
     override func viewDidLoad() {

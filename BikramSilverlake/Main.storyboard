@@ -133,9 +133,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="100" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="6CK-Hq-JMm" userLabel="Schedule Table View">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6CK-Hq-JMm" userLabel="Schedule Table View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="0.94340982019999997" blue="0.31983232150000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ScheduleCell" rowHeight="60" id="rUz-BJ-7wZ" customClass="ScheduleTableViewCell" customModule="BikramSilverlake" customModuleProvider="target">
@@ -146,7 +146,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssb-Hn-ynR" userLabel="Teacher Label">
-                                                    <rect key="frame" x="8" y="31" width="96" height="20"/>
+                                                    <rect key="frame" x="8" y="34" width="96" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="6kw-6u-btJ"/>
                                                         <constraint firstAttribute="width" constant="96" id="NWR-mB-dNm"/>
@@ -160,7 +160,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="12:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBt-Ar-PZt">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="12:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yBt-Ar-PZt">
                                                     <rect key="frame" x="8" y="5" width="96" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="ck9-ta-H7y"/>
@@ -220,12 +220,12 @@
                                                 <constraint firstItem="wz8-OD-Cqd" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" constant="5" id="8Ub-tw-BTp"/>
                                                 <constraint firstItem="Ssb-Hn-ynR" firstAttribute="leading" secondItem="lUs-EB-jL6" secondAttribute="leading" constant="8" id="BA8-nA-pTw"/>
                                                 <constraint firstItem="4TG-9l-mrH" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" constant="5" id="ETb-Yj-h8e"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ssb-Hn-ynR" secondAttribute="bottom" constant="5" id="FEc-2i-1A3"/>
                                                 <constraint firstItem="yBt-Ar-PZt" firstAttribute="leading" secondItem="lUs-EB-jL6" secondAttribute="leading" constant="8" id="GyV-Hr-m4R"/>
                                                 <constraint firstItem="mKX-ma-88i" firstAttribute="leading" secondItem="yBt-Ar-PZt" secondAttribute="trailing" constant="20" id="Kzz-7t-Bkm"/>
                                                 <constraint firstAttribute="trailing" secondItem="wz8-OD-Cqd" secondAttribute="trailing" constant="20" id="S05-gQ-Of6"/>
                                                 <constraint firstItem="mKX-ma-88i" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" constant="5" id="Xjn-1o-jTg"/>
                                                 <constraint firstItem="4TG-9l-mrH" firstAttribute="leading" secondItem="mKX-ma-88i" secondAttribute="trailing" constant="20" id="gog-qF-6c8"/>
-                                                <constraint firstItem="Ssb-Hn-ynR" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" constant="31" id="krF-6g-IQB"/>
                                                 <constraint firstItem="yBt-Ar-PZt" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" constant="5" id="uaG-Qg-2s6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -240,10 +240,17 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="EIy-bY-RY6" id="18y-SK-T1q"/>
+                                    <outlet property="delegate" destination="OAu-tm-G9e" id="7bf-N5-Jcr"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6CK-Hq-JMm" secondAttribute="bottom" id="7Cp-Ib-nsO"/>
+                            <constraint firstItem="6CK-Hq-JMm" firstAttribute="leading" secondItem="0bq-lz-PEK" secondAttribute="leading" id="A4B-AF-9dc"/>
+                            <constraint firstAttribute="trailing" secondItem="6CK-Hq-JMm" secondAttribute="trailing" id="ORZ-vA-z9A"/>
+                            <constraint firstItem="6CK-Hq-JMm" firstAttribute="top" secondItem="0bq-lz-PEK" secondAttribute="top" id="szf-Va-aTz"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Schedule" image="smallcalendar.png" id="Fq7-vc-og3"/>
                     <navigationItem key="navigationItem" title="Schedule" id="QDH-Ub-Zaf"/>

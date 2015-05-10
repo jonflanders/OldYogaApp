@@ -14,6 +14,7 @@ class ScheduleTableViewCell: UITableViewCell {
 		didSet{
 			if let si = self.scheduleItem{
 				self.timeLabel.text = si.scheduleFullTime
+				self.teacherButton .setTitle(si.scheduleTeacherName, forState: UIControlState.Normal)
 			}
 		}
 	}
