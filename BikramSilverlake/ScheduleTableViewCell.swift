@@ -10,6 +10,13 @@ import UIKit
 
 class ScheduleTableViewCell: UITableViewCell {
 
+	var scheduleItem:ScheduleItem?{
+		didSet{
+			if let si = self.scheduleItem{
+				self.timeLabel.text = si.scheduleFullTime
+			}
+		}
+	}
 	@IBOutlet weak var scheduleButton: UIButton!
 	@IBOutlet weak var classType: UIButton!
 	@IBOutlet weak var reserveButton: UIButton!

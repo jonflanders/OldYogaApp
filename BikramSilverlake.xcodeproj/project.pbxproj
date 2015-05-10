@@ -50,6 +50,7 @@
 		FC5C0C44170118AD008C1D8D /* twitternew.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C42170118AD008C1D8D /* twitternew.png */; };
 		FC5C0C45170118AD008C1D8D /* likefb.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C43170118AD008C1D8D /* likefb.png */; };
 		FC5C0C4917013F80008C1D8D /* country_names_and_code_elements_txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */; };
+		FC6497CD1AFE75B400A12668 /* ScheduleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6497CC1AFE75B400A12668 /* ScheduleTableViewDataSource.swift */; };
 		FC8024A01AEC12FC003B5FEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC80249F1AEC12FC003B5FEB /* Images.xcassets */; };
 		FC9665E216D41BE800E656A2 /* ClassDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */; };
 		FC9665E316D41BE800E656A2 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */; };
@@ -179,6 +180,7 @@
 		FC5C0C42170118AD008C1D8D /* twitternew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitternew.png; sourceTree = "<group>"; };
 		FC5C0C43170118AD008C1D8D /* likefb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likefb.png; sourceTree = "<group>"; };
 		FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = country_names_and_code_elements_txt.txt; sourceTree = "<group>"; };
+		FC6497CC1AFE75B400A12668 /* ScheduleTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewDataSource.swift; sourceTree = "<group>"; };
 		FC80249F1AEC12FC003B5FEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassDetailViewController.h; path = ../ClassDetailViewController.h; sourceTree = "<group>"; };
 		FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassDetailViewController.m; path = ../ClassDetailViewController.m; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FC6497CB1AFE741600A12668 /* DataSources */,
 				FC577F1F1AFC494900377B90 /* NewViewControllers */,
 				FC577F1C1AFC46A200377B90 /* Config */,
 				FC577F161AFC43C700377B90 /* Networking */,
@@ -562,6 +565,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FC6497CB1AFE741600A12668 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				FC6497CC1AFE75B400A12668 /* ScheduleTableViewDataSource.swift */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -718,6 +729,7 @@
 				FC58722B16F2BC15002DAEA4 /* CreditCardInputViewController.m in Sources */,
 				FC577F1E1AFC46AE00377B90 /* Config.swift in Sources */,
 				FC577F251AFC650100377B90 /* Instructor.swift in Sources */,
+				FC6497CD1AFE75B400A12668 /* ScheduleTableViewDataSource.swift in Sources */,
 				FC577F0F1AFC329000377B90 /* ScheduleTableViewCell.swift in Sources */,
 				FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */,
 				FC577F211AFC496200377B90 /* ScheduleViewController.swift in Sources */,

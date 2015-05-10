@@ -29,7 +29,7 @@ class ServerConnectionManager {
 		self.get(resourceURL, callback: { (data, error) -> Void in
 			
 			let (dict,error) = self.dictionaryFromData(data!)
-			serverCallback(dict,error.memory)
+			serverCallback(dict,nil)
 			
 		})
 	}

@@ -10,10 +10,18 @@ import UIKit
 
 class ScheduleViewController: UIViewController {
 
+	@IBOutlet var dataSource:ScheduleTableViewDataSource!
+	@IBOutlet var tableView:UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		let sc = ScheduleController()
+		sc.getSchedule { (schedule, error) -> Void in
+			if let realSchedule = schedule{
+				self.dataSource.schedule  = realSchedule
+			}
+		}
     }
 
     override func didReceiveMemoryWarning() {

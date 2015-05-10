@@ -124,7 +124,7 @@
         <!--Schedule-->
         <scene sceneID="w1w-O9-7Jr">
             <objects>
-                <viewController id="OAu-tm-G9e" userLabel="Schedule" sceneMemberID="viewController">
+                <viewController id="OAu-tm-G9e" userLabel="Schedule" customClass="ScheduleViewController" customModule="BikramSilverlake" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="POc-wq-MPV"/>
                         <viewControllerLayoutGuide type="bottom" id="jq8-5m-BSd"/>
@@ -133,7 +133,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="100" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="6CK-Hq-JMm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="100" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="6CK-Hq-JMm" userLabel="Schedule Table View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="0.94340982019999997" blue="0.31983232150000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -238,14 +238,26 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EIy-bY-RY6" id="18y-SK-T1q"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Schedule" image="smallcalendar.png" id="Fq7-vc-og3"/>
                     <navigationItem key="navigationItem" title="Schedule" id="QDH-Ub-Zaf"/>
+                    <connections>
+                        <outlet property="dataSource" destination="EIy-bY-RY6" id="DcD-YD-dRT"/>
+                        <outlet property="tableView" destination="6CK-Hq-JMm" id="JrH-vN-e9a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WO-Ze-gR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="EIy-bY-RY6" customClass="ScheduleTableViewDataSource" customModule="BikramSilverlake" customModuleProvider="target">
+                    <connections>
+                        <outlet property="tableView" destination="6CK-Hq-JMm" id="WJN-Vj-ZMj"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="887" y="-405"/>
         </scene>
