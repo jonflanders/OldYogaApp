@@ -257,7 +257,7 @@
                     <navigationItem key="navigationItem" title="Schedule" id="QDH-Ub-Zaf">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="YLU-3U-BZa">
                             <connections>
-                                <segue destination="OAu-tm-G9e" kind="show" id="xOG-5g-Xd7"/>
+                                <segue destination="OAu-tm-G9e" kind="show" identifier="showNextDaySegue" id="xOG-5g-Xd7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

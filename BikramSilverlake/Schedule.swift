@@ -55,7 +55,7 @@ struct Schedule{
 		var items = [ScheduleItem]()
 		if let sitems = dict[scheduleKey] as? [AnyObject]{
 			for si in sitems {
-				items.append(ScheduleItem.scheduleItemFromDictionary(si as! [String:AnyObject])!)
+				items.append(ScheduleItem.scheduleItemFromDictionary(si as? [String:AnyObject])!)
 			}
 		}
 		return (date,items)

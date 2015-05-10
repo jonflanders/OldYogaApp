@@ -11,23 +11,29 @@ import UIKit
 
 class ScheduleTableViewDataSource : NSObject, UITableViewDataSource
 {
+	override init() {
+		
+	}
 	private let cellID = "ScheduleCell"
 	@IBOutlet var tableView:UITableView!
-	var currentDay : [ScheduleItem]?
-	var schedule: Schedule?{
+	var currentDay : (String,[ScheduleItem])?{
 		didSet{
-			if let s = self.schedule{
-				self.currentDay = s.scheduleThisWeek[s.scheduleThisWeek.keys.first!]
-				dispatch_async(dispatch_get_main_queue(), { [unowned self] () -> Void in
+			if let cd = self.currentDay{
+				if self.tableView != nil {
 					self.tableView.reloadData()
-				})
+				}
 			}
+		}
+	}
+	func reloadData(){
+		if self.tableView != nil && self.currentDay != nil {
+			self.tableView.reloadData()
 		}
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if let items  = self.currentDay{
-			return items.count
+		if let unwarappedDay  = self.currentDay{
+			return unwarappedDay.1.count
 		}else
 		{
 			return 0
@@ -36,8 +42,8 @@ class ScheduleTableViewDataSource : NSObject, UITableViewDataSource
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		var ret:UITableViewCell?
 		if let cell = tableView.dequeueReusableCellWithIdentifier(cellID) as? ScheduleTableViewCell{
-			if let cd = self.currentDay{
-				cell.scheduleItem = cd[indexPath.row]
+			if let unwarappedDay = self.currentDay{
+				cell.scheduleItem = unwarappedDay.1[indexPath.row]
 			}
 			ret = cell
 		}
