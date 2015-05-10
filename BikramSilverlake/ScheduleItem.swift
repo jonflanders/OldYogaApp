@@ -8,6 +8,20 @@
 
 import UIKit
 
+
+enum ScheduleItemType : String{
+	case Normal = "Bikram"
+	case Hour = "Bikram Hour"
+	static func scheduleItemTypeFromString(type:String)->ScheduleItemType{
+		switch(type){
+		case ScheduleItemType.Hour.rawValue:
+			return ScheduleItemType.Hour
+		default:
+			return ScheduleItemType.Normal
+		}
+	}
+}
+
 struct ScheduleItem {
 	static func scheduleItemFromDictionary(jSONDict:JsonDictionary)->ScheduleItem?{
 		
@@ -27,6 +41,11 @@ struct ScheduleItem {
 	let scheduleTeacherName :String
 	let scheduleTeacherID: String
 	let scheduleFullTime : String
+	var scheduleItemType : ScheduleItemType {
+		get {
+			 return ScheduleItemType.scheduleItemTypeFromString(self.scheduleType)
+		}
+	}
    
 }
 private let descriptionKey = "Description"

@@ -41,6 +41,62 @@
             </objects>
             <point key="canvasLocation" x="267" y="697"/>
         </scene>
+        <!--Teacher View Controller-->
+        <scene sceneID="mDm-rQ-fVd">
+            <objects>
+                <viewController storyboardIdentifier="TeacherViewController" id="HAJ-Pq-4oG" userLabel="Teacher View Controller" customClass="TeacherViewController" customModule="BikramSilverlake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o5I-6r-7GK"/>
+                        <viewControllerLayoutGuide type="bottom" id="jg6-WC-SxG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MKR-vF-x0s">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="hDi-DH-6JM" userLabel="Image">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Hsf-dI-YJd"/>
+                                    <constraint firstAttribute="width" constant="100" id="UiH-iD-3Mv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Instructor Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="iox-0N-MRd" userLabel="Name">
+                                <rect key="frame" x="140" y="0.0" width="320" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="9XB-Lp-Kgm"/>
+                                    <constraint firstAttribute="height" constant="22" id="g5q-Pj-FPH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2G-6t-ZzP" userLabel="Bio">
+                                <rect key="frame" x="16" y="108" width="568" height="472"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="iox-0N-MRd" secondAttribute="centerX" id="0jI-Lu-nAS"/>
+                            <constraint firstItem="w2G-6t-ZzP" firstAttribute="leading" secondItem="MKR-vF-x0s" secondAttribute="leading" constant="16" id="7Aj-2Q-0ja"/>
+                            <constraint firstAttribute="trailing" secondItem="hDi-DH-6JM" secondAttribute="trailing" constant="500" id="FdY-09-KOU"/>
+                            <constraint firstItem="w2G-6t-ZzP" firstAttribute="top" secondItem="MKR-vF-x0s" secondAttribute="top" constant="108" id="W4s-FJ-SvB"/>
+                            <constraint firstItem="hDi-DH-6JM" firstAttribute="top" secondItem="MKR-vF-x0s" secondAttribute="top" id="Wh1-g9-64f"/>
+                            <constraint firstAttribute="bottom" secondItem="w2G-6t-ZzP" secondAttribute="bottom" constant="20" id="dW3-xa-7M8"/>
+                            <constraint firstItem="iox-0N-MRd" firstAttribute="top" secondItem="MKR-vF-x0s" secondAttribute="top" id="fc2-h3-Xyd"/>
+                            <constraint firstAttribute="trailing" secondItem="w2G-6t-ZzP" secondAttribute="trailing" constant="16" id="koD-2c-Qmf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="instructorBio" destination="w2G-6t-ZzP" id="lBv-ft-NQc"/>
+                        <outlet property="instructorImage" destination="hDi-DH-6JM" id="9o1-ZA-dGJ"/>
+                        <outlet property="instructorNameLabel" destination="iox-0N-MRd" id="hYh-pB-4IR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gog-y0-z9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989" y="271"/>
+        </scene>
         <!--Profile Scene-->
         <scene sceneID="4gb-NY-fgo">
             <objects>
@@ -159,6 +215,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="showTeacher:" destination="rUz-BJ-7wZ" eventType="touchUpInside" id="86x-Yv-4sw"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="12:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yBt-Ar-PZt">
                                                     <rect key="frame" x="8" y="5" width="96" height="27"/>
@@ -184,6 +243,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="reserverClass:" destination="rUz-BJ-7wZ" eventType="touchUpInside" id="9hL-8H-YUb"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" alpha="0.60000002384185791" tag="10" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKX-ma-88i" userLabel="Class Type Button">
                                                     <rect key="frame" x="124" y="5" width="50" height="50"/>
@@ -199,6 +261,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="showClassType:" destination="rUz-BJ-7wZ" eventType="touchUpInside" id="gXN-pY-BDJ"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" alpha="0.60000002384185791" tag="20" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TG-9l-mrH" userLabel="Schedule Button">
                                                     <rect key="frame" x="194" y="5" width="50" height="50"/>
@@ -214,6 +279,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addToSchedule:" destination="rUz-BJ-7wZ" eventType="touchUpInside" id="IaU-IK-Lvm"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -266,6 +334,9 @@
                         <outlet property="dataSource" destination="EIy-bY-RY6" id="DcD-YD-dRT"/>
                         <outlet property="nextButton" destination="YLU-3U-BZa" id="9lQ-gd-uOs"/>
                         <outlet property="tableView" destination="6CK-Hq-JMm" id="JrH-vN-e9a"/>
+                        <segue destination="HAJ-Pq-4oG" kind="popoverPresentation" identifier="showInstructorSegue" popoverAnchorView="6CK-Hq-JMm" id="SW8-hN-D7h">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WO-Ze-gR3" userLabel="First Responder" sceneMemberID="firstResponder"/>

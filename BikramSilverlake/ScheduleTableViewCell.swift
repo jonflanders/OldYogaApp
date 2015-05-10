@@ -8,8 +8,38 @@
 
 import UIKit
 
+protocol ScheduleTableViewCellDelegate{
+	func scheduleTableViewCellShowTeacher(view:UIView,rect:CGRect,instructor:String)
+	func scheduleTableViewCellShowClassType(view:UIView,rect:CGRect,type:ScheduleItemType)
+	func scheduleTableViewCellReserverClass(item:ScheduleItem)
+	func scheduleTableViewCellAddToSchedule(item:ScheduleItem)
+}
+
 class ScheduleTableViewCell: UITableViewCell {
 
+	var delegate:ScheduleTableViewCellDelegate?
+	@IBAction func showClassType(sender: AnyObject) {
+		if let del = self.delegate{
+			del.scheduleTableViewCellShowClassType(self, rect: self.classType.frame, type: self.scheduleItem!.scheduleItemType)
+		}
+	}
+	@IBAction func addToSchedule(sender: AnyObject) {
+		if let del = self.delegate{
+			del.scheduleTableViewCellAddToSchedule(self.scheduleItem!)
+		}
+	}
+	
+	@IBAction func reserverClass(sender: AnyObject) {
+		if let del = self.delegate{
+			del.scheduleTableViewCellReserverClass(self.scheduleItem!)
+		}
+	}
+	@IBAction func showTeacher(sender: AnyObject) {
+		if let del = self.delegate{
+			del.scheduleTableViewCellShowTeacher(self, rect: self.teacherButton.frame, instructor: self.scheduleItem!.scheduleTeacherID)
+		}
+		
+	}
 	var scheduleItem:ScheduleItem?{
 		didSet{
 			if let si = self.scheduleItem{

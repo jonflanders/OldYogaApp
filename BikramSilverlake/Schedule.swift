@@ -14,6 +14,9 @@ struct Schedule{
 	let scheduleThisWeek:ScheduleDict
 	let scheduleNextWeek:ScheduleDict
 	let scheduleInstructors:[Instructor]
+	func instructorFromID(id:String)->Instructor?{
+		return self.scheduleInstructors.filter{ $0.instructorID == id}.first
+	}
 	static func scheduleFromDictionary(dict:JsonDictionary)->Schedule?{
 	
 		var instructors = [Instructor]()

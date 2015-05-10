@@ -113,6 +113,7 @@
 		FCE6F10516F7E94000F3312C /* buy.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE6F10416F7E94000F3312C /* buy.png */; };
 		FCE7BC481AFEE378002EF2A4 /* ScheduleTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE7BC471AFEE378002EF2A4 /* ScheduleTableHeaderView.xib */; };
 		FCE7BC4A1AFFC4DB002EF2A4 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BC491AFFC4DB002EF2A4 /* OrderedDictionary.swift */; };
+		FCE7BC4C1AFFD671002EF2A4 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BC4B1AFFD671002EF2A4 /* TeacherViewController.swift */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
 		FCF38AC116CAC1E5005DD57B /* AlarmTimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */; };
@@ -261,6 +262,7 @@
 		FCE6F10416F7E94000F3312C /* buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy.png; sourceTree = "<group>"; };
 		FCE7BC471AFEE378002EF2A4 /* ScheduleTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleTableHeaderView.xib; sourceTree = "<group>"; };
 		FCE7BC491AFFC4DB002EF2A4 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		FCE7BC4B1AFFD671002EF2A4 /* TeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
 		FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmTimeTableViewController.h; path = ../AlarmTimeTableViewController.h; sourceTree = "<group>"; };
@@ -508,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				FC577F201AFC496200377B90 /* ScheduleViewController.swift */,
+				FCE7BC4B1AFFD671002EF2A4 /* TeacherViewController.swift */,
 			);
 			name = NewViewControllers;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				FC577F1B1AFC44A100377B90 /* MainTabBarViewController.m in Sources */,
 				FCACB9EC16F28A9A00D4E78A /* YouViewController.m in Sources */,
 				FC577F151AFC424200377B90 /* ScheduleController.swift in Sources */,
+				FCE7BC4C1AFFD671002EF2A4 /* TeacherViewController.swift in Sources */,
 				FC58722716F2BA4C002DAEA4 /* MBOSaleClient.m in Sources */,
 				FC58722B16F2BC15002DAEA4 /* CreditCardInputViewController.m in Sources */,
 				FC577F1E1AFC46AE00377B90 /* Config.swift in Sources */,

@@ -8,14 +8,63 @@
 
 import UIKit
 private let nextDaySegueID = "showNextDaySegue"
+private let showInstructorSegue = "showInstructorSegue"
 private var currentDayIndex = 0
-class ScheduleViewController: UIViewController,UITableViewDelegate {
+class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTableViewDataSourceDelegate {
 
-	
-
+	func scheduleTableViewDataSourceAddToSchedule(item: ScheduleItem) {
+		
+	}
+	func scheduleTableViewDataSourceReserverClass(item: ScheduleItem) {
+		
+	}
+	func scheduleTableViewDataSourceShowClassType(view: UIView, rect: CGRect, type: ScheduleItemType) {
+		
+	}
+	private var teacherParams:(UIView,CGRect,String)?
+	func scheduleTableViewDataSourceShowTeacher(view: UIView, rect: CGRect, instructor: String) {
+		self.teacherParams = (view,rect,instructor)
+		self.performSegueWithIdentifier(showInstructorSegue, sender: nil )
+	}
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		switch(segue.identifier!)
+		{
+		case nextDaySegueID:
+			if let  vc = segue.destinationViewController as? ScheduleViewController{
+				vc.schedule = self.schedule
+				vc.dataSource.currentDay = self.nextDay()
+			
+			}
+		case showInstructorSegue:
+			
+				if let vc = segue.destinationViewController as? TeacherViewController{
+					if let (v,r,i) = self.teacherParams{
+						vc.instructor = self.schedule?.instructorFromID(i)
+						if let pop = vc.popoverPresentationController{
+							pop.sourceRect = r
+							pop.sourceView = v
+						}
+					}
+					
+				}
+			
+		default:
+			break;
+		}
+		if segue.identifier==nextDaySegueID {
+			
+		}
+		if segue.identifier == showInstructorSegue{
+			
+		}
+		
+	}
 	override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-		var ret = false
-		ret = self.hasNextDay()
+		var ret = true
+		
+		if(identifier == nextDaySegueID){
+			ret = self.hasNextDay()
+		}
 		return ret
 	}
 	func hasNextDay()->Bool{
@@ -44,6 +93,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate {
 		}
 		return nil
 	}
+	
 	func nextDay()->(String,[ScheduleItem])?{
 		
 		if let s = self.schedule{
@@ -61,14 +111,8 @@ class ScheduleViewController: UIViewController,UITableViewDelegate {
 		}
 		return nil
 	}
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier==nextDaySegueID {
-			if let  vc = segue.destinationViewController as? ScheduleViewController{
-				vc.schedule = self.schedule
-				vc.dataSource.currentDay = self.nextDay()
-			}
-		}
-	}
+	
+	
 	
 	func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		var nib = UINib(nibName: "ScheduleTableHeaderView", bundle: nil)
@@ -95,18 +139,17 @@ class ScheduleViewController: UIViewController,UITableViewDelegate {
 				days.sort{ [unowned self] in
 					var d1 = self.dateFormatter?.dateFromString($0)
 					var d2 = self.dateFormatter?.dateFromString($1)
-					
-					
-					
 					return d1!.compare(d2!) == NSComparisonResult.OrderedAscending
 				}
 				self.daysInOrder = days
 			}
 		}
 	}
+	
 	var token: dispatch_once_t = 0
 	var dateFormatter:NSDateFormatter?
-    override func viewDidLoad() {
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 		        // Do any additional setup after loading the view.
 		if(self.schedule == nil){
@@ -119,6 +162,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate {
 						if let idx = realSchedule.scheduleThisWeek.indexForKey(day){
 							let (k,v) = realSchedule.scheduleThisWeek[idx]
 							self.dataSource.currentDay  = (k,v)
+							self.dataSource.delegate = self
 							self.navigationItem.title = self.dataSource.currentDay!.0
 							
 						}
@@ -129,11 +173,13 @@ class ScheduleViewController: UIViewController,UITableViewDelegate {
 		}else
 		{
 			self.dataSource.reloadData()
+			self.dataSource.delegate = self
 			self.navigationItem.title = self.dataSource.currentDay!.0
 			if !self.hasNextDay() {
 				self.navigationItem.rightBarButtonItem = nil
 			}
 		}
+		
 		
     }
 

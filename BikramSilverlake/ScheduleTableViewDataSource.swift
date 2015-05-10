@@ -9,10 +9,35 @@
 import Foundation
 import UIKit
 
-class ScheduleTableViewDataSource : NSObject, UITableViewDataSource
+protocol ScheduleTableViewDataSourceDelegate{
+	func scheduleTableViewDataSourceShowTeacher(view:UIView,rect:CGRect,instructor:String)
+	func scheduleTableViewDataSourceShowClassType(view:UIView,rect:CGRect,type:ScheduleItemType)
+	func scheduleTableViewDataSourceReserverClass(item:ScheduleItem)
+	func scheduleTableViewDataSourceAddToSchedule(item:ScheduleItem)
+}
+
+class ScheduleTableViewDataSource : NSObject, UITableViewDataSource, ScheduleTableViewCellDelegate
 {
-	override init() {
-		
+	 var delegate:ScheduleTableViewDataSourceDelegate?
+	func scheduleTableViewCellReserverClass(item: ScheduleItem) {
+		if let del = self.delegate{
+			del.scheduleTableViewDataSourceReserverClass(item)
+		}
+	}
+	func scheduleTableViewCellAddToSchedule(item: ScheduleItem) {
+		if let del = self.delegate{
+			del.scheduleTableViewDataSourceAddToSchedule(item)
+		}
+	}
+	func scheduleTableViewCellShowClassType(view: UIView, rect: CGRect, type: ScheduleItemType) {
+		if let del = self.delegate{
+			del.scheduleTableViewDataSourceShowClassType(view, rect: rect, type: type)
+		}
+	}
+	func scheduleTableViewCellShowTeacher(view: UIView, rect: CGRect, instructor: String) {
+		if let del = self.delegate{
+			del.scheduleTableViewDataSourceShowTeacher(view, rect: rect, instructor: instructor)
+		}
 	}
 	private let cellID = "ScheduleCell"
 	@IBOutlet var tableView:UITableView!
@@ -44,6 +69,7 @@ class ScheduleTableViewDataSource : NSObject, UITableViewDataSource
 		if let cell = tableView.dequeueReusableCellWithIdentifier(cellID) as? ScheduleTableViewCell{
 			if let unwarappedDay = self.currentDay{
 				cell.scheduleItem = unwarappedDay.1[indexPath.row]
+				cell.delegate = self
 			}
 			ret = cell
 		}
