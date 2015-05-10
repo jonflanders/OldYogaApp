@@ -15,6 +15,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate {
 		var view = nib.instantiateWithOwner(nil, options: nil).first as! UIView
 		return view
 	}
+	@IBOutlet weak var nextButton: UIBarButtonItem!
 	@IBOutlet var dataSource:ScheduleTableViewDataSource!
 	@IBOutlet var tableView:UITableView!
     override func viewDidLoad() {

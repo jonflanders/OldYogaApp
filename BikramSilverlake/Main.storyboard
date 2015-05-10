@@ -253,9 +253,18 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Schedule" image="smallcalendar.png" id="Fq7-vc-og3"/>
-                    <navigationItem key="navigationItem" title="Schedule" id="QDH-Ub-Zaf"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Schedule" id="QDH-Ub-Zaf">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="YLU-3U-BZa">
+                            <connections>
+                                <segue destination="OAu-tm-G9e" kind="show" id="xOG-5g-Xd7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dataSource" destination="EIy-bY-RY6" id="DcD-YD-dRT"/>
+                        <outlet property="nextButton" destination="YLU-3U-BZa" id="9lQ-gd-uOs"/>
                         <outlet property="tableView" destination="6CK-Hq-JMm" id="JrH-vN-e9a"/>
                     </connections>
                 </viewController>
@@ -302,4 +311,7 @@
         <image name="smallcalendar.png" width="30" height="30"/>
         <image name="studio.png" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NpS-nY-Vrc"/>
+    </inferredMetricsTieBreakers>
 </document>
