@@ -10,7 +10,7 @@ import UIKit
 private let nextDaySegueID = "showNextDaySegue"
 private let showInstructorSegue = "showInstructorSegue"
 private var currentDayIndex = 0
-class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTableViewDataSourceDelegate {
+class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTableViewDataSourceDelegate ,UIPopoverPresentationControllerDelegate{
 
 	func scheduleTableViewDataSourceAddToSchedule(item: ScheduleItem) {
 		
@@ -41,6 +41,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 					if let (v,r,i) = self.teacherParams{
 						vc.instructor = self.schedule?.instructorFromID(i)
 						if let pop = vc.popoverPresentationController{
+							pop.delegate = self
 							pop.sourceRect = r
 							pop.sourceView = v
 						}
@@ -58,6 +59,9 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 			
 		}
 		
+	}
+	func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+		return .None
 	}
 	override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
 		var ret = true

@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gog-y0-z9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="989" y="271"/>
+            <point key="canvasLocation" x="1010" y="471"/>
         </scene>
         <!--Profile Scene-->
         <scene sceneID="4gb-NY-fgo">
