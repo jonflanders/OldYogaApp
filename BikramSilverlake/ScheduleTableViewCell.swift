@@ -10,7 +10,7 @@ import UIKit
 
 protocol ScheduleTableViewCellDelegate{
 	func scheduleTableViewCellShowTeacher(view:UIView,rect:CGRect,instructor:String)
-	func scheduleTableViewCellShowClassType(view:UIView,rect:CGRect,type:ScheduleItemType)
+	func scheduleTableViewCellShowClassType(view:UIView,rect:CGRect,message:String)
 	func scheduleTableViewCellReserverClass(item:ScheduleItem)
 	func scheduleTableViewCellAddToSchedule(item:ScheduleItem)
 }
@@ -19,8 +19,9 @@ class ScheduleTableViewCell: UITableViewCell {
 
 	var delegate:ScheduleTableViewCellDelegate?
 	@IBAction func showClassType(sender: AnyObject) {
-		if let del = self.delegate{
-			del.scheduleTableViewCellShowClassType(self, rect: self.classType.frame, type: self.scheduleItem!.scheduleItemType)
+		if let del = self.delegate,let item  = self.scheduleItem{
+	
+			del.scheduleTableViewCellShowClassType(self, rect: self.classType.frame, message: item.scheduleDescription)
 		}
 	}
 	@IBAction func addToSchedule(sender: AnyObject) {

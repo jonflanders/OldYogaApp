@@ -11,7 +11,7 @@ import UIKit
 
 protocol ScheduleTableViewDataSourceDelegate{
 	func scheduleTableViewDataSourceShowTeacher(view:UIView,rect:CGRect,instructor:String)
-	func scheduleTableViewDataSourceShowClassType(view:UIView,rect:CGRect,type:ScheduleItemType)
+	func scheduleTableViewDataSourceShowClassType(view:UIView,rect:CGRect, message: String)
 	func scheduleTableViewDataSourceReserverClass(item:ScheduleItem)
 	func scheduleTableViewDataSourceAddToSchedule(item:ScheduleItem)
 }
@@ -29,9 +29,9 @@ class ScheduleTableViewDataSource : NSObject, UITableViewDataSource, ScheduleTab
 			del.scheduleTableViewDataSourceAddToSchedule(item)
 		}
 	}
-	func scheduleTableViewCellShowClassType(view: UIView, rect: CGRect, type: ScheduleItemType) {
+	func scheduleTableViewCellShowClassType(view: UIView, rect: CGRect, message: String) {
 		if let del = self.delegate{
-			del.scheduleTableViewDataSourceShowClassType(view, rect: rect, type: type)
+			del.scheduleTableViewDataSourceShowClassType(view, rect: rect, message:message)
 		}
 	}
 	func scheduleTableViewCellShowTeacher(view: UIView, rect: CGRect, instructor: String) {

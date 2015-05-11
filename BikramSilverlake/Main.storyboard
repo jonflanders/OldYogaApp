@@ -97,6 +97,37 @@
             </objects>
             <point key="canvasLocation" x="1010" y="471"/>
         </scene>
+        <!--Class Type-->
+        <scene sceneID="HTE-xe-97E">
+            <objects>
+                <viewController id="Eq6-e7-Rj2" userLabel="Class Type" customClass="ClassTypeViewController" customModule="BikramSilverlake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AWB-75-B1O"/>
+                        <viewControllerLayoutGuide type="bottom" id="LNX-U0-URs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qay-ad-z5h">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7R-1z-UGs" userLabel="ClassTypeMessage">
+                                <rect key="frame" x="16" y="20" width="268" height="160"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="200"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="C7R-1z-UGs" id="UIe-4E-4oI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QH1-4c-Efk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1535" y="-18"/>
+        </scene>
         <!--Profile Scene-->
         <scene sceneID="4gb-NY-fgo">
             <objects>
@@ -335,6 +366,9 @@
                         <outlet property="nextButton" destination="YLU-3U-BZa" id="9lQ-gd-uOs"/>
                         <outlet property="tableView" destination="6CK-Hq-JMm" id="JrH-vN-e9a"/>
                         <segue destination="HAJ-Pq-4oG" kind="popoverPresentation" identifier="showInstructorSegue" popoverAnchorView="6CK-Hq-JMm" id="SW8-hN-D7h">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                        <segue destination="Eq6-e7-Rj2" kind="popoverPresentation" identifier="showClassTypeSegue" popoverAnchorView="6CK-Hq-JMm" id="N1H-Le-pxR">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>

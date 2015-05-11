@@ -114,6 +114,7 @@
 		FCE7BC481AFEE378002EF2A4 /* ScheduleTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE7BC471AFEE378002EF2A4 /* ScheduleTableHeaderView.xib */; };
 		FCE7BC4A1AFFC4DB002EF2A4 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BC491AFFC4DB002EF2A4 /* OrderedDictionary.swift */; };
 		FCE7BC4C1AFFD671002EF2A4 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BC4B1AFFD671002EF2A4 /* TeacherViewController.swift */; };
+		FCE7BC4E1B004DE3002EF2A4 /* ClassTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BC4D1B004DE3002EF2A4 /* ClassTypeViewController.swift */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
 		FCF38AC116CAC1E5005DD57B /* AlarmTimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */; };
@@ -263,6 +264,7 @@
 		FCE7BC471AFEE378002EF2A4 /* ScheduleTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleTableHeaderView.xib; sourceTree = "<group>"; };
 		FCE7BC491AFFC4DB002EF2A4 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		FCE7BC4B1AFFD671002EF2A4 /* TeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
+		FCE7BC4D1B004DE3002EF2A4 /* ClassTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTypeViewController.swift; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
 		FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmTimeTableViewController.h; path = ../AlarmTimeTableViewController.h; sourceTree = "<group>"; };
@@ -411,9 +413,9 @@
 				FCA905B916E2D66500746A54 /* BuyDetailViewController.m */,
 				FCA905B016DF03F500746A54 /* BuyViewController.h */,
 				FCA905B116DF03F500746A54 /* BuyViewController.m */,
+				FCC3718816FD415000CC57CA /* CMPopTipView.h */,
 				FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */,
 				FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */,
-				FCC3718816FD415000CC57CA /* CMPopTipView.h */,
 				FCC3718916FD415000CC57CA /* CMPopTipView.m */,
 				FCA905B516E18F0000746A54 /* Constants.h */,
 				FCA905B616E18F0100746A54 /* Constants.m */,
@@ -511,6 +513,7 @@
 			children = (
 				FC577F201AFC496200377B90 /* ScheduleViewController.swift */,
 				FCE7BC4B1AFFD671002EF2A4 /* TeacherViewController.swift */,
+				FCE7BC4D1B004DE3002EF2A4 /* ClassTypeViewController.swift */,
 			);
 			name = NewViewControllers;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				FC98D3BB1628EBD300436255 /* PullRefreshTableViewController.m in Sources */,
 				FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */,
 				FC3FF77516C8E43000CB3700 /* BusyViewController.m in Sources */,
+				FCE7BC4E1B004DE3002EF2A4 /* ClassTypeViewController.swift in Sources */,
 				FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */,
 				FC577F231AFC64CF00377B90 /* Schedule.swift in Sources */,
 				FCE7BC4A1AFFC4DB002EF2A4 /* OrderedDictionary.swift in Sources */,

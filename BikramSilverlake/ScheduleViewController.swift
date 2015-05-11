@@ -9,21 +9,33 @@
 import UIKit
 private let nextDaySegueID = "showNextDaySegue"
 private let showInstructorSegue = "showInstructorSegue"
+private let showClassTypeSegue = "showClassTypeSegue"
+
 private var currentDayIndex = 0
-class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTableViewDataSourceDelegate ,UIPopoverPresentationControllerDelegate{
+class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTableViewDataSourceDelegate ,UIPopoverPresentationControllerDelegate,MBOLoginComplete{
 
 	func scheduleTableViewDataSourceAddToSchedule(item: ScheduleItem) {
-		
+		self.currentItem = item
 	}
 	func scheduleTableViewDataSourceReserverClass(item: ScheduleItem) {
+		self.currentItem = item
+		self.login  = MBOClientLogin()
+		if let l = self.login{
+			l.delegate = self
+			l.login()
+		}
+	}
+	func scheduleTableViewDataSourceShowClassType(view: UIView, rect: CGRect, message: String) {
+		self.params = (view,rect,message)
+		self .performSegueWithIdentifier(showClassTypeSegue, sender: nil)
+	}
+	func addCurrentItemToCalendar(){
 		
 	}
-	func scheduleTableViewDataSourceShowClassType(view: UIView, rect: CGRect, type: ScheduleItemType) {
-		
-	}
-	private var teacherParams:(UIView,CGRect,String)?
+	private var params:(UIView,CGRect,String)?
+	private var currentItem:ScheduleItem?
 	func scheduleTableViewDataSourceShowTeacher(view: UIView, rect: CGRect, instructor: String) {
-		self.teacherParams = (view,rect,instructor)
+		self.params = (view,rect,instructor)
 		self.performSegueWithIdentifier(showInstructorSegue, sender: nil )
 	}
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -38,7 +50,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		case showInstructorSegue:
 			
 				if let vc = segue.destinationViewController as? TeacherViewController{
-					if let (v,r,i) = self.teacherParams{
+					if let (v,r,i) = self.params{
 						vc.instructor = self.schedule?.instructorFromID(i)
 						if let pop = vc.popoverPresentationController{
 							pop.delegate = self
@@ -48,7 +60,17 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 					}
 					
 				}
-			
+		case showClassTypeSegue:
+			if let vc = segue.destinationViewController as? ClassTypeViewController{
+				if let (v,r,m) = self.params{
+					vc.message = m
+					if let pop = vc.popoverPresentationController{
+						pop.delegate = self
+						pop.sourceRect = r
+						pop.sourceView = v
+					}
+				}
+			}
 		default:
 			break;
 		}
@@ -123,7 +145,52 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		var view = nib.instantiateWithOwner(nil, options: nil).first as! UIView
 		return view
 	}
-	
+	var login:MBOClientLogin?
+	var currentClientID:String?
+	func complete(clientID: String!) {
+
+		if let id = clientID
+		{
+			self.currentClientID = id
+			let alert = UIAlertController(title: "Add Class?", message: "Are you sure you want to reserve this class?", preferredStyle: UIAlertControllerStyle.Alert)
+			alert.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.Default, handler:{ [unowned self](act) -> Void in
+				self.reserveClass()
+				}))
+			alert.addAction(UIAlertAction(title: "NO", style: .Default, handler: nil))
+			self .presentViewController(alert, animated: true, completion: { () -> Void in
+				
+			})
+			
+		}else
+		{let alert = UIAlertController(title: "Sorry", message: "You must login in order to reserver a class", preferredStyle: UIAlertControllerStyle.Alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
+			self .presentViewController(alert, animated: true, completion: { () -> Void in
+				
+			})
+			
+		}
+		
+	}
+	func reserveClass(){
+
+		if let item = self.currentItem{
+			var reserve = MBOReserveClass()
+			var classID = "\(item.scheduleItemID)"
+			if let currentID = self.currentClientID{
+				var title = "Sorry"
+				var msg = "There was a failure processing your request, please try again later or make sure you have a valid payment method setup on Mindbody"
+				if reserve.reserveClass(classID, forClient: currentID){
+					title = "Success!"
+					msg = "You are confirmed for this class."
+				}
+				let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
+				self .presentViewController(alert, animated: true, completion: { () -> Void in
+					
+				})
+			}
+		}
+	}
 	var isDayOne = true
 	@IBOutlet weak var nextButton: UIBarButtonItem!
 	@IBOutlet var dataSource:ScheduleTableViewDataSource!

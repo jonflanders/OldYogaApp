@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Client_x0020_ServiceSvc.h"
 #import "Constants.h"
 @protocol MBOLoginComplete;
