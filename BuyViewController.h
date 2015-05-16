@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BuyViewController : UITableViewController
-@property (strong, nonatomic) IBOutlet UINavigationController *nav;
+@interface BuyViewController : UIViewController
+
 
 @end

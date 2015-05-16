@@ -14,21 +14,12 @@
     NSArray* items;
     NSArray* itemValues;
 }
+@property (nonatomic,weak) IBOutlet UITableView* tableView;
 @end
 
 @implementation BuyDetailViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-      
-        
 
-    }
-    return self;
-}
 - (IBAction)done:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -68,11 +59,10 @@
     }
     return items.count;
 }
-
+static NSString* editCellID = @"itemCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    static NSString *TextCellID = @"TextCell";
     UITableViewCell *cell = nil;
     if(indexPath.section==0)
     {
@@ -91,12 +81,7 @@
        
     }
     else{
-        cell  = [tableView dequeueReusableCellWithIdentifier:TextCellID];
-        if(cell==nil)
-        {
-            [self.tableView registerNib:[UINib nibWithNibName:@"EditTableViewCell" bundle:nil] forCellReuseIdentifier:TextCellID];
-            cell  = [tableView dequeueReusableCellWithIdentifier:TextCellID];
-        }
+        cell  = [tableView dequeueReusableCellWithIdentifier:editCellID];
         // Configure the cell...
         NSString* t = [items objectAtIndex:indexPath.row];
         for (UIView* view in cell.subviews) {

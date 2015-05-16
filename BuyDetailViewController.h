@@ -10,7 +10,7 @@
 #import "BusyViewController.h"
 #import "MBOClientLogin.h"
 
-@interface BuyDetailViewController : UITableViewController<MBOLoginComplete>
+@interface BuyDetailViewController : UIViewController<MBOLoginComplete>
 @property (nonatomic,strong) NSDictionary* item;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property (strong, nonatomic) IBOutlet UINavigationController *nav;
