@@ -394,10 +394,6 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				FC6497CB1AFE741600A12668 /* DataSources */,
-				FC577F1F1AFC494900377B90 /* NewViewControllers */,
-				FC577F1C1AFC46A200377B90 /* Config */,
-				FC577F161AFC43C700377B90 /* Networking */,
 				FC96662516D4825F00E656A2 /* AboutItems.h */,
 				FC96662616D4826000E656A2 /* AboutItems.m */,
 				FC9665E416D41BFD00E656A2 /* AboutTheStudioViewController.h */,
@@ -412,14 +408,16 @@
 				FCA905B916E2D66500746A54 /* BuyDetailViewController.m */,
 				FCA905B016DF03F500746A54 /* BuyViewController.h */,
 				FCA905B116DF03F500746A54 /* BuyViewController.m */,
-				FCC3718816FD415000CC57CA /* CMPopTipView.h */,
 				FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */,
 				FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */,
+				FCC3718816FD415000CC57CA /* CMPopTipView.h */,
 				FCC3718916FD415000CC57CA /* CMPopTipView.m */,
+				FC577F1C1AFC46A200377B90 /* Config */,
 				FCA905B516E18F0000746A54 /* Constants.h */,
 				FCA905B616E18F0100746A54 /* Constants.m */,
 				FC58722816F2BC15002DAEA4 /* CreditCardInputViewController.h */,
 				FC58722916F2BC15002DAEA4 /* CreditCardInputViewController.m */,
+				FC6497CB1AFE741600A12668 /* DataSources */,
 				FCB6332016F9862200E8D4A6 /* LoginViewController.h */,
 				FCB6332116F9862200E8D4A6 /* LoginViewController.m */,
 				FC98D3931628CDFA00436255 /* MainPageTableViewController.h */,
@@ -428,10 +426,13 @@
 				FC577F1A1AFC44A100377B90 /* MainTabBarViewController.m */,
 				FC577F131AFC422A00377B90 /* ModelController */,
 				FC577F101AFC364300377B90 /* Models */,
+				FC577F161AFC43C700377B90 /* Networking */,
 				FCBD500317C6A39200047E70 /* NewAccountTableViewCell.h */,
 				FCBD500417C6A39200047E70 /* NewAccountTableViewCell.m */,
 				FCB04D7C16FE3CE9005D505E /* NewAccountViewController.h */,
 				FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */,
+				FC577F1F1AFC494900377B90 /* NewViewControllers */,
+				FCE7BC491AFFC4DB002EF2A4 /* OrderedDictionary.swift */,
 				FC98D3B91628EBD300436255 /* PullRefreshTableViewController.h */,
 				FC98D3BA1628EBD300436255 /* PullRefreshTableViewController.m */,
 				FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */,
@@ -443,7 +444,6 @@
 				FC577F0B1AFC327000377B90 /* Views */,
 				FCACB9E916F28A9900D4E78A /* YouViewController.h */,
 				FCACB9EA16F28A9900D4E78A /* YouViewController.m */,
-				FCE7BC491AFFC4DB002EF2A4 /* OrderedDictionary.swift */,
 			);
 			name = Code;
 			sourceTree = "<group>";

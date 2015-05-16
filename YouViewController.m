@@ -18,24 +18,10 @@
 
 @implementation YouViewController
 
--(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        self.tabBarItem.image = [UIImage imageNamed:@"studio"];
-    }
-    return self;
+-(void)complete:(NSString *)clientID{
+	self.loggedIn = YES;
+	[self.tableView reloadData];
 }
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -102,6 +88,8 @@
             UITableViewCell * cell =  [ self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
             [self setButton:cell withTitle:@"Logout"];
             self.loggedIn=YES;
+			[self.tableView reloadData];
+			[self getClasses];
         }
     }
 }

@@ -271,24 +271,38 @@
             </objects>
             <point key="canvasLocation" x="1535" y="-18"/>
         </scene>
-        <!--Profile Scene-->
-        <scene sceneID="4gb-NY-fgo">
+        <!--Student Info View Controller-->
+        <scene sceneID="dEQ-aD-KUp">
             <objects>
-                <viewController id="foa-04-wRu" userLabel="Profile Scene" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MoW-jR-Zce"/>
-                        <viewControllerLayoutGuide type="bottom" id="hjI-z4-EBM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6is-F6-WEA">
+                <tableViewController id="N6Y-eY-Fb1" userLabel="Student Info View Controller" customClass="YouViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ELH-cQ-4p7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="studio.png" id="phh-Ej-rgg"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oBt-Oa-S2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="rE6-u7-O6l">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8Rg-Sw-BgV">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Rg-Sw-BgV" id="tmR-CZ-ixQ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="N6Y-eY-Fb1" id="SWa-lo-l2c"/>
+                            <outlet property="delegate" destination="N6Y-eY-Fb1" id="osi-7X-gGA"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="pose.png" id="Bvc-pO-dy8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Up0-ch-R9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1038" y="1002"/>
+            <point key="canvasLocation" x="-1063" y="1269"/>
         </scene>
         <!--Info-->
         <scene sceneID="3rt-GD-zk5">
@@ -401,13 +415,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-9M-Ceu">
-                                <rect key="frame" x="140" y="501" width="320" height="37"/>
+                                <rect key="frame" x="140" y="451" width="320" height="37"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.69803921570000005" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Rju-QP-Dog"/>
                                     <constraint firstAttribute="width" constant="320" id="UMH-XF-gaf"/>
                                 </constraints>
-                                <color key="pageIndicatorTintColor" red="0.99607843139999996" green="0.69803921570000005" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="pageChanged:" destination="xeq-fi-FcQ" eventType="valueChanged" id="1re-z3-Mmp"/>
                                 </connections>
@@ -446,7 +461,7 @@
                             <constraint firstAttribute="trailing" secondItem="DxR-SY-jEj" secondAttribute="trailing" constant="20" id="F3p-IX-cjB"/>
                             <constraint firstItem="DxR-SY-jEj" firstAttribute="leading" secondItem="R33-1b-gt6" secondAttribute="leading" constant="20" id="GNd-q3-CdB"/>
                             <constraint firstAttribute="bottom" secondItem="DxR-SY-jEj" secondAttribute="bottom" constant="232" id="XaD-pV-7qR"/>
-                            <constraint firstItem="LhB-9M-Ceu" firstAttribute="top" secondItem="CPU-7d-W2C" secondAttribute="bottom" constant="-50" id="hvF-71-Bca"/>
+                            <constraint firstItem="LhB-9M-Ceu" firstAttribute="top" secondItem="CPU-7d-W2C" secondAttribute="bottom" constant="-100" id="hvF-71-Bca"/>
                             <constraint firstItem="iQu-WW-dic" firstAttribute="top" secondItem="R33-1b-gt6" secondAttribute="top" id="mbf-Jw-Ig4"/>
                             <constraint firstAttribute="centerX" secondItem="LhB-9M-Ceu" secondAttribute="centerX" id="oCw-Ab-xeG"/>
                         </constraints>
@@ -661,7 +676,7 @@
                         <segue destination="F40-Wf-cJx" kind="relationship" relationship="viewControllers" id="FCY-or-KJq"/>
                         <segue destination="xeq-fi-FcQ" kind="relationship" relationship="viewControllers" id="cHP-o3-lNp"/>
                         <segue destination="w4o-bS-PoH" kind="relationship" relationship="viewControllers" id="jui-fj-9fr"/>
-                        <segue destination="foa-04-wRu" kind="relationship" relationship="viewControllers" id="1LJ-2U-MrY"/>
+                        <segue destination="N6Y-eY-Fb1" kind="relationship" relationship="viewControllers" id="yV4-KN-kDi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6K-rC-4f8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -678,8 +693,8 @@
         <image name="calendar.png" width="44" height="50"/>
         <image name="mats.png" width="428" height="424"/>
         <image name="noun_project_12301.png" width="100" height="100"/>
+        <image name="pose.png" width="30" height="30"/>
         <image name="smallcalendar.png" width="30" height="30"/>
-        <image name="studio.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NpS-nY-Vrc"/>

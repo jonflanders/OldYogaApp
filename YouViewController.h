@@ -10,7 +10,7 @@
 #import "MBOClientRecords.h"
 #import "BusyViewController.h"
 
-@interface YouViewController : UITableViewController<MBOClientRecordDelegate>
+@interface YouViewController : UITableViewController<MBOLoginComplete,MBOClientRecordDelegate>
 @property    (strong,nonatomic) MBOClientRecords* records;
 @property (strong,nonatomic) BusyViewController* busyViewController;
 @property BOOL loggedIn;
