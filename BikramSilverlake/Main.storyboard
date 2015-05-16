@@ -158,7 +158,59 @@
                     <view key="view" contentMode="scaleToFill" id="JhN-uy-f5G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleAspectFill" fixedFrame="YES" image="about.png" translatesAutoresizingMaskIntoConstraints="NO" id="cHd-Xr-bVF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSQ-HO-krS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LRo-AP-7l3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hLE-HW-BP6">
+                                            <rect key="frame" x="40" y="40" width="520" height="520"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <prototypes>
+                                                <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uLA-sd-q5n">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uLA-sd-q5n" id="vne-9H-H21">
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </tableViewCellContentView>
+                                                </tableViewCell>
+                                                <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KCx-ez-Xhl">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KCx-ez-Xhl" id="Z5P-pP-Z6a">
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </tableViewCellContentView>
+                                                </tableViewCell>
+                                                <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TtX-3r-fVi">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TtX-3r-fVi" id="dH0-Dr-FeY">
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </tableViewCellContentView>
+                                                </tableViewCell>
+                                            </prototypes>
+                                            <sections/>
+                                        </tableView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="hLE-HW-BP6" secondAttribute="bottom" constant="40" id="AwX-UU-SXo"/>
+                                        <constraint firstItem="hLE-HW-BP6" firstAttribute="top" secondItem="LRo-AP-7l3" secondAttribute="top" constant="40" id="s5Y-Ye-MYV"/>
+                                        <constraint firstItem="hLE-HW-BP6" firstAttribute="leading" secondItem="LRo-AP-7l3" secondAttribute="leading" constant="40" id="vIw-Qi-Ush"/>
+                                        <constraint firstAttribute="trailing" secondItem="hLE-HW-BP6" secondAttribute="trailing" constant="40" id="x09-M1-Dxs"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SSQ-HO-krS" secondAttribute="trailing" id="9Kt-tq-tc7"/>
+                            <constraint firstItem="SSQ-HO-krS" firstAttribute="top" secondItem="JhN-uy-f5G" secondAttribute="top" id="a6u-SU-sOn"/>
+                            <constraint firstAttribute="bottom" secondItem="SSQ-HO-krS" secondAttribute="bottom" id="dVq-7S-ahG"/>
+                            <constraint firstItem="SSQ-HO-krS" firstAttribute="leading" secondItem="JhN-uy-f5G" secondAttribute="leading" id="guQ-TO-U5K"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="aboutus.png" id="SJz-nI-3Rg"/>
                 </viewController>
@@ -406,6 +458,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about.png" width="667" height="775"/>
         <image name="aboutus.png" width="30" height="30"/>
         <image name="bikramreserve.png" width="500" height="500"/>
         <image name="bikramsettings.png" width="30" height="30"/>

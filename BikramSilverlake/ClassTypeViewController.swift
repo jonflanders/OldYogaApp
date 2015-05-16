@@ -13,7 +13,40 @@ class ClassTypeViewController: UIViewController {
 	@IBOutlet private weak var messageLabel: UILabel!
 	override func viewDidLoad() {
 		if let msg  = self.message{
-			self.messageLabel.text = msg
+			self.messageLabel.text = self.stringByStrippingHTML(msg)
 		}
 	}
+	private let regex = "<[^>]+"
+	func stringByStrippingHTML(inputString:String)->String{
+		var outputString = String(inputString)
+		
+		var r = outputString.rangeOfString(regex, options:NSStringCompareOptions.RegularExpressionSearch)
+		do{
+			outputString.removeRange(r!)
+			r = outputString.rangeOfString(regex, options:NSStringCompareOptions.RegularExpressionSearch)
+		}while(r != nil)
+		outputString = outputString.stringByReplacingOccurrencesOfString(">", withString: "")
+		outputString = outputString.stringByReplacingOccurrencesOfString("<", withString: "")
+		
+		return outputString;
+	}
+//	- (NSString *)stringByStrippingHTML:(NSString *)inputString
+//	{
+//	NSMutableString *outString;
+//	
+//	if (inputString)
+//	{
+//	outString = [[NSMutableString alloc] initWithString:inputString];
+//	if ([inputString length] > 0)
+//	{
+//	NSRange r;
+//	
+//	while ((r = [outString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+//	{
+//	[outString deleteCharactersInRange:r];
+//	}
+//	}
+//	}
+//	return outString;
+//	}
 }
