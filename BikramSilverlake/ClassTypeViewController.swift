@@ -30,23 +30,4 @@ class ClassTypeViewController: UIViewController {
 		
 		return outputString;
 	}
-//	- (NSString *)stringByStrippingHTML:(NSString *)inputString
-//	{
-//	NSMutableString *outString;
-//	
-//	if (inputString)
-//	{
-//	outString = [[NSMutableString alloc] initWithString:inputString];
-//	if ([inputString length] > 0)
-//	{
-//	NSRange r;
-//	
-//	while ((r = [outString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-//	{
-//	[outString deleteCharactersInRange:r];
-//	}
-//	}
-//	}
-//	return outString;
-//	}
 }

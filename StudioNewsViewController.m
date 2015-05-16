@@ -10,16 +10,26 @@
 #import "Constants.h"
 #import "QuartzCore/QuartzCore.h"
 @interface StudioNewsViewController ()
-{
-    NSArray* _newsItems;
-}
+
+
+@property (nonatomic,strong) NSArray* newsItems;
 @end
 
 @implementation StudioNewsViewController
 - (IBAction)pageChanged:(id)sender {
     NSInteger currentPage = self.pageControl.currentPage;
-    NSDictionary* data = [_newsItems objectAtIndex:currentPage];
-    self.newsView.text  = data[@"message"];
+    NSDictionary* data = [self.newsItems objectAtIndex:currentPage];
+	__weak UITextView* nv = self.newsView;
+	
+	[UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		nv.alpha = 0;
+		nv.text  = data[@"message"];
+	} completion:^(BOOL finished) {
+		[UIView animateWithDuration:.5 animations:^{
+			nv.alpha = 1.0F;
+		}];
+	}];
+	
 }
 - (IBAction)swipe:(id)sender {
        self.pageControl.currentPage=self.pageControl.currentPage-1;
@@ -52,15 +62,12 @@
     // self.instrutorBio.layer.shadowOffset = CGSizeMake(-15, 20);
     self.newsContainerView.layer.shadowRadius = 5;
     self.newsContainerView.layer.shadowOpacity = 0.5;
-    
-    // Do any additional setup after loading the view from its nib.
-    [self.view addGestureRecognizer:self.swipeGesture];
-    [self.view addGestureRecognizer:self.leftswipeGesture];
+	self.newsView.layer.cornerRadius = 8;
     self.busyViewController = [[BusyViewController alloc] initWithNibName:@"BusyViewController" bundle:nil];
     [self.view addSubview:self.busyViewController.view];
     
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BaseURL,NewsURL]];
-
+	__weak StudioNewsViewController* weakSelf = self;
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [NSURLConnection
      sendAsynchronousRequest:request
@@ -74,13 +81,13 @@
          
          if ([data length] >0 && error == nil&&statusCode==200)
          {
-             _newsItems = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+             weakSelf.newsItems = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
              
              dispatch_async(dispatch_get_main_queue(), ^{
-                 self.busyViewController.view.hidden=YES;
-                 self.pageControl.numberOfPages = _newsItems.count;
-                 self.pageControl.currentPage = 0;
-                 [self pageChanged:nil];
+                 weakSelf.busyViewController.view.hidden=YES;
+                 weakSelf.pageControl.numberOfPages = weakSelf.newsItems.count;
+                 weakSelf.pageControl.currentPage = 0;
+                 [weakSelf pageChanged:nil];
              });
              
          }

@@ -11,11 +11,11 @@
 #import <MapKit/MapKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "Constants.h"
+#import "BikramSilverlake-Swift.h"
 @interface AboutTheStudioViewController ()
-{
-    NSArray* _items;
-    NSString* ImageCellIdentifier;
-}
+@property (nonatomic,strong) NSArray* items;
+@property (nonatomic,strong) NSString* ImageCellIdentifier;
+
 @end
 
 @implementation AboutTheStudioViewController
@@ -40,28 +40,18 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellId];
         }
         cell.textLabel.text = item.item;
+		cell.backgroundColor = [UIColor clearColor];
         cell.detailTextLabel.text = item.value;
         cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
-        cell.detailTextLabel.adjustsLetterSpacingToFitWidth=YES;
         if([item.item isEqualToString:@"address"]){
             cell.detailTextLabel.numberOfLines=3;
 
         }
        }
     else{
-        cell   =  [self.tblView dequeueReusableCellWithIdentifier:ImageCellIdentifier];
-        for (UIView* view in cell.subviews) {
-            for (UIView* sview in view.subviews) {
-                if([sview isKindOfClass:[UIImageView class]])
-                {
-//                    UIImageView* iview = (UIImageView*)sview;
-//                     CGRect ibounds = iview.bounds;
-//                    iview.image =item.image;
-//                    iview.layer.cornerRadius = 10;
-//                    iview.contentMode = UIViewContentModeScaleAspectFit;
-                }
-            }
-        }
+        cell   =  [self.tblView dequeueReusableCellWithIdentifier:self.ImageCellIdentifier];
+		ImageTableViewCell* imageCell = (ImageTableViewCell*)cell;
+		imageCell.cellImage = item.image;
     }
     return cell;
 }
@@ -84,10 +74,12 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    CGFloat h = 25;
-    if(indexPath.section==1)
+    CGFloat h = 50;
+	AboutItems* item = self.items[indexPath.row];
+	
+    if(item.image)
     {
-        h = 50;
+		h = 100;
     }
     return h;
 
@@ -139,17 +131,20 @@
 {
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",number]]];
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        self.title = @"Info";
-        self.tabBarItem.image = [UIImage imageNamed:@"aboutus"];
-        _items = @[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, CA 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"]];
-    }
-    return self;
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+	self = [super initWithCoder:aDecoder];
+	if(self){
+		NSMutableArray* arr = [[NSMutableArray alloc] init];
+		[arr addObjectsFromArray:@[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, CA 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"]]];
+		AboutItems* fb = [[AboutItems alloc] initWithItem:@"facebook" andValue:@"106087309432633" andImage:[UIImage imageNamed:@"fb"]];
+		[arr addObject:fb];
+		AboutItems* twitter = [[AboutItems alloc] initWithItem:@"twitter" andValue:@"bikramsilvrlake" andImage:[UIImage imageNamed:@"twitter"]];
+		[arr addObject:twitter];
+		self.items = arr.copy;
+	}
+	return self;
 }
+
 - (IBAction)privacyButton:(id)sender {
     [self privacy:nil];
 }
@@ -187,11 +182,9 @@
 {
     
     [super viewDidLoad];
-    ImageCellIdentifier = @"ImageCell";
+    self.ImageCellIdentifier = @"ImageCell";
     self.tblView.sectionHeaderHeight = 0.0;
     self.tblView.sectionFooterHeight = 0.0;
-    // Do any additional setup after loading the view from its nib.
-    [self.tblView registerNib:[UINib nibWithNibName:@"ImageCell" bundle:nil] forCellReuseIdentifier:ImageCellIdentifier];
     
   
 }

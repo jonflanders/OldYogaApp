@@ -88,7 +88,6 @@
 		FCACB9ED16F28A9A00D4E78A /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCACB9EB16F28A9900D4E78A /* YouViewController.xib */; };
 		FCB04D7716FE1EBB005D505E /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7516FE1EBB005D505E /* fb.png */; };
 		FCB04D7816FE1EBB005D505E /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7616FE1EBB005D505E /* twitter.png */; };
-		FCB04D7A16FE2548005D505E /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7916FE2548005D505E /* ImageCell.xib */; };
 		FCB04D7B16FE2FB4005D505E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */; };
 		FCB04D7F16FE3CE9005D505E /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */; };
 		FCB04D8016FE3CE9005D505E /* NewAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7E16FE3CE9005D505E /* NewAccountViewController.xib */; };
@@ -115,6 +114,7 @@
 		FCE7BC4A1AFFC4DB002EF2A4 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BC491AFFC4DB002EF2A4 /* OrderedDictionary.swift */; };
 		FCE7BC4C1AFFD671002EF2A4 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BC4B1AFFD671002EF2A4 /* TeacherViewController.swift */; };
 		FCE7BC4E1B004DE3002EF2A4 /* ClassTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BC4D1B004DE3002EF2A4 /* ClassTypeViewController.swift */; };
+		FCE7BC501B07BA2A002EF2A4 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7BC4F1B07BA2A002EF2A4 /* ImageTableViewCell.swift */; };
 		FCF38ABC16CABE38005DD57B /* SettingsSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */; };
 		FCF38AC016CAC1E5005DD57B /* AlarmTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF38ABE16CAC1E5005DD57B /* AlarmTimeTableViewController.m */; };
 		FCF38AC116CAC1E5005DD57B /* AlarmTimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF38ABF16CAC1E5005DD57B /* AlarmTimeTableViewController.xib */; };
@@ -235,7 +235,6 @@
 		FCACB9EB16F28A9900D4E78A /* YouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YouViewController.xib; path = ../YouViewController.xib; sourceTree = "<group>"; };
 		FCB04D7516FE1EBB005D505E /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
 		FCB04D7616FE1EBB005D505E /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
-		FCB04D7916FE2548005D505E /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		FCB04D7C16FE3CE9005D505E /* NewAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewAccountViewController.h; path = ../NewAccountViewController.h; sourceTree = "<group>"; };
 		FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewAccountViewController.m; path = ../NewAccountViewController.m; sourceTree = "<group>"; };
 		FCB04D7E16FE3CE9005D505E /* NewAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewAccountViewController.xib; path = ../NewAccountViewController.xib; sourceTree = "<group>"; };
@@ -265,6 +264,7 @@
 		FCE7BC491AFFC4DB002EF2A4 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		FCE7BC4B1AFFD671002EF2A4 /* TeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
 		FCE7BC4D1B004DE3002EF2A4 /* ClassTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTypeViewController.swift; sourceTree = "<group>"; };
+		FCE7BC4F1B07BA2A002EF2A4 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		FCF38ABA16CABE38005DD57B /* SettingsSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSectionItem.h; sourceTree = "<group>"; };
 		FCF38ABB16CABE38005DD57B /* SettingsSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSectionItem.m; sourceTree = "<group>"; };
 		FCF38ABD16CAC1E5005DD57B /* AlarmTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmTimeTableViewController.h; path = ../AlarmTimeTableViewController.h; sourceTree = "<group>"; };
@@ -385,7 +385,6 @@
 				FCC453E716F2EB28004127C3 /* CreditCardTableViewCell.xib */,
 				FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */,
 				FCB6332216F9862200E8D4A6 /* LoginViewController.xib */,
-				FCB04D7916FE2548005D505E /* ImageCell.xib */,
 				FCB04D8116FE3D80005D505E /* NewEditTableViewCell.xib */,
 				FCE7BC471AFEE378002EF2A4 /* ScheduleTableHeaderView.xib */,
 			);
@@ -470,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				FC577F0E1AFC329000377B90 /* ScheduleTableViewCell.swift */,
+				FCE7BC4F1B07BA2A002EF2A4 /* ImageTableViewCell.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -688,7 +688,6 @@
 				FCC3718716FD3EAA00CC57CA /* bikramdonate.png in Resources */,
 				FCB04D7716FE1EBB005D505E /* fb.png in Resources */,
 				FCB04D7816FE1EBB005D505E /* twitter.png in Resources */,
-				FCB04D7A16FE2548005D505E /* ImageCell.xib in Resources */,
 				FCB04D7B16FE2FB4005D505E /* Default-568h@2x.png in Resources */,
 				FCB04D8016FE3CE9005D505E /* NewAccountViewController.xib in Resources */,
 				FCB04D8216FE3D80005D505E /* NewEditTableViewCell.xib in Resources */,
@@ -748,6 +747,7 @@
 				FC6497CD1AFE75B400A12668 /* ScheduleTableViewDataSource.swift in Sources */,
 				FC577F0F1AFC329000377B90 /* ScheduleTableViewCell.swift in Sources */,
 				FCC453EB16F4E59C004127C3 /* MBOClientRecords.m in Sources */,
+				FCE7BC501B07BA2A002EF2A4 /* ImageTableViewCell.swift in Sources */,
 				FC577F211AFC496200377B90 /* ScheduleViewController.swift in Sources */,
 				FCB6332316F9862200E8D4A6 /* LoginViewController.m in Sources */,
 				FCC3718A16FD415000CC57CA /* CMPopTipView.m in Sources */,
