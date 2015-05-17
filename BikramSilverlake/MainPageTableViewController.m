@@ -342,7 +342,7 @@
 		
 	}
 	else{
-		UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later or make sure you have a valid payment method setup on Mindbody" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+		UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"There was a failure processing your request, please try again later or make sure you have a valid payment method set up on Mindbody" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
 		[theAlert show];
 		
 	}

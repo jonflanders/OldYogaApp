@@ -17,6 +17,16 @@ protocol ScheduleTableViewCellDelegate{
 
 class ScheduleTableViewCell: UITableViewCell {
 
+	var scheduleTableViewCellIsActive:Bool{
+		get{
+			if let si  = self.scheduleItem{
+				return !si.scheduleItemInPast
+			}else
+			{
+				return false
+			}
+		}
+	}
 	var delegate:ScheduleTableViewCellDelegate?
 	@IBAction func showClassType(sender: AnyObject) {
 		if let del = self.delegate,let item  = self.scheduleItem{
@@ -46,9 +56,20 @@ class ScheduleTableViewCell: UITableViewCell {
 			if let si = self.scheduleItem{
 				self.timeLabel.text = si.scheduleFullTime
 				self.teacherButton .setTitle(si.scheduleTeacherName, forState: UIControlState.Normal)
+				if si.scheduleItemType == ScheduleItemType.Hour{
+					self.classType.setImage(UIImage(named: "bikram_60"), forState: UIControlState.Normal)
+				}
+				if si.scheduleItemInPast {
+					self.userInteractionEnabled = false
+					var newAlpha:CGFloat = 0.5
+					for v in self.allViews{
+						v.alpha = newAlpha
+					}
+				}
 			}
 		}
 	}
+	@IBOutlet var allViews: [UIView]!
 	@IBOutlet weak var scheduleButton: UIButton!
 	@IBOutlet weak var classType: UIButton!
 	@IBOutlet weak var reserveButton: UIButton!

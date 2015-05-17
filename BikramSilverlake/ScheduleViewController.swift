@@ -7,16 +7,72 @@
 //
 
 import UIKit
+import EventKit
 private let nextDaySegueID = "showNextDaySegue"
 private let showInstructorSegue = "showInstructorSegue"
 private let showClassTypeSegue = "showClassTypeSegue"
 
 private var currentDayIndex = 0
 class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTableViewDataSourceDelegate ,UIPopoverPresentationControllerDelegate,MBOLoginComplete{
-
+	@IBOutlet weak var messageView: UIView!
+	@IBOutlet weak var messageLabel: UILabel!
+	@IBOutlet weak var messageViewConstraint: NSLayoutConstraint!
+		{
+		didSet{
+			self.messageViewConstraintConstant = self.messageViewConstraint.constant
+		}
+	}
+	var messageViewConstraintConstant:CGFloat!
+	@IBAction func closeMessage(s:AnyObject?){
+		self.messageViewConstraint.constant = self.messageViewConstraintConstant
+		UIView.animateWithDuration(0.5, animations: {[unowned self] () -> Void in
+			self.view.layoutIfNeeded()
+		})
+	}
+	func showMessage(msg:String){
+		self.messageLabel.text = msg;
+		self.messageViewConstraint.constant = 0
+		UIView.animateWithDuration(0.5, animations: {[unowned self] () -> Void in
+			self.view.layoutIfNeeded()
+			})
+//		dispatch_after(3, dispatch_get_main_queue()) {[unowned self] () -> Void in
+//			self.closeMessage(nil)
+//		}
+	}
+	private var eventStore:EKEventStore = EKEventStore()
 	func scheduleTableViewDataSourceAddToSchedule(item: ScheduleItem) {
 		self.currentItem = item
+		var event = EKEvent(eventStore: eventStore)
+		event.title = "Bikram"
+		event.location = "Bikram Yoga Silverlake"
+		event.startDate = item.scheduleStartDate
+		event.endDate = item.scheduleEndDate
+		var cal = eventStore.defaultCalendarForNewEvents
+		event.calendar = cal
+		eventStore .saveEvent(event, span: EKSpanThisEvent, error: nil)
+		self.showMessage("Class added to your calendar")
+		
 	}
+/* NSString* dateString = [day objectForKey:@"DateLink"];
+EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
+event.title     = @"Bikram Yoga Silverlake";
+NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+[dateFormatter setDateFormat:@"yyyy-MM-ddHH:mm:ss"];
+NSDate *date = [dateFormatter dateFromString:dateString];
+event.startDate = date;
+NSNumber* time = [day objectForKey:@"ClassLength"];
+event.endDate   = [[NSDate alloc] initWithTimeInterval:(60*time.doubleValue) sinceDate:event.startDate];
+EKCalendar* cal = [eventStore defaultCalendarForNewEvents];
+[event setCalendar:cal];
+NSError *err;
+[eventStore saveEvent:event span:EKSpanThisEvent error:&err];
+double delayInSeconds = 2.0;
+dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+self.addedToCalendar.hidden = YES;
+});
+*/
 	func scheduleTableViewDataSourceReserverClass(item: ScheduleItem) {
 		self.currentItem = item
 		self.login  = MBOClientLogin()

@@ -11,9 +11,11 @@ import UIKit
 class ClassTypeViewController: UIViewController {
 	var message:String?
 	@IBOutlet private weak var messageLabel: UILabel!
+	@IBOutlet weak var scrollView: UIScrollView!
 	override func viewDidLoad() {
 		if let msg  = self.message{
 			self.messageLabel.text = self.stringByStrippingHTML(msg)
+			self.scrollView.contentSize = self.messageLabel.frame.size
 		}
 	}
 	private let regex = "<[^>]+"

@@ -43,16 +43,28 @@ class ScheduleTableViewDataSource : NSObject, UITableViewDataSource, ScheduleTab
 	@IBOutlet var tableView:UITableView!
 	var currentDay : (String,[ScheduleItem])?{
 		didSet{
-			if let cd = self.currentDay{
-				if self.tableView != nil {
-					self.tableView.reloadData()
-				}
-			}
+			self.reloadData()
 		}
 	}
 	func reloadData(){
 		if self.tableView != nil && self.currentDay != nil {
 			self.tableView.reloadData()
+			var currentCell:ScheduleTableViewCell?
+			
+			for cell in self.tableView.visibleCells(){
+				if let scell = cell as? ScheduleTableViewCell{
+					if scell.scheduleTableViewCellIsActive{
+						currentCell = scell
+						break
+					}
+				}
+			}
+			if let cc = currentCell{
+				var indexPath = self.tableView.indexPathForCell(cc)
+				if let realIndexPath = indexPath {
+					self.tableView.scrollToRowAtIndexPath(realIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+				}
+			}
 		}
 	}
 	
