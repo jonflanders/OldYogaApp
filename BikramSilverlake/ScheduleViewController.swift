@@ -53,26 +53,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		self.showMessage("Class added to your calendar")
 		
 	}
-/* NSString* dateString = [day objectForKey:@"DateLink"];
-EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
-event.title     = @"Bikram Yoga Silverlake";
-NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-[dateFormatter setDateFormat:@"yyyy-MM-ddHH:mm:ss"];
-NSDate *date = [dateFormatter dateFromString:dateString];
-event.startDate = date;
-NSNumber* time = [day objectForKey:@"ClassLength"];
-event.endDate   = [[NSDate alloc] initWithTimeInterval:(60*time.doubleValue) sinceDate:event.startDate];
-EKCalendar* cal = [eventStore defaultCalendarForNewEvents];
-[event setCalendar:cal];
-NSError *err;
-[eventStore saveEvent:event span:EKSpanThisEvent error:&err];
-double delayInSeconds = 2.0;
-dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-self.addedToCalendar.hidden = YES;
-});
-*/
+
 	func scheduleTableViewDataSourceReserverClass(item: ScheduleItem) {
 		self.currentItem = item
 		self.login  = MBOClientLogin()
