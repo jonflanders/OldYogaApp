@@ -32,12 +32,14 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	func showMessage(msg:String){
 		self.messageLabel.text = msg;
 		self.messageViewConstraint.constant = 0
-		UIView.animateWithDuration(0.5, animations: {[unowned self] () -> Void in
+		UIView.animateWithDuration(0.5, animations: { () -> Void in
 			self.view.layoutIfNeeded()
-			})
-//		dispatch_after(3, dispatch_get_main_queue()) {[unowned self] () -> Void in
-//			self.closeMessage(nil)
-//		}
+		}) { (complete) -> Void in
+			dispatch_after(3, dispatch_get_main_queue()) {[unowned self] () -> Void in
+							self.closeMessage(nil)
+			}
+		}
+
 	}
 	private var eventStore:EKEventStore = EKEventStore()
 	func scheduleTableViewDataSourceAddToSchedule(item: ScheduleItem) {
@@ -118,6 +120,11 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 			
 		}
 		
+	}
+	override func willMoveToParentViewController(parent: UIViewController?) {
+		if parent == nil{
+			currentDayIndex--
+		}
 	}
 	func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
 		return .None

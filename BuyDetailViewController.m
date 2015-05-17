@@ -93,14 +93,14 @@ static NSString* editCellID = @"itemCell";
                     UILabel* label = (UILabel*)sv;
                     label.text = t;
                 }
-#ifdef DEBUG
-                if([sv isKindOfClass:[UITextField class]])
-                {
-                    UITextField* tf = (UITextField*)sv;
-                    tf.text= [itemValues objectAtIndex:indexPath.row];
-                }
-              
-#endif
+//#ifdef DEBUG
+//                if([sv isKindOfClass:[UITextField class]])
+//                {
+//                    UITextField* tf = (UITextField*)sv;
+//                    tf.text= [itemValues objectAtIndex:indexPath.row];
+//                }
+//              
+//#endif
 
             }
         }
