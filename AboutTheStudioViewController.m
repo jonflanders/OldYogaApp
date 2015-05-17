@@ -115,7 +115,7 @@
     coordinate.longitude = -118.260727;
     MKPlacemark* placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
     MKMapItem* destination =  [[MKMapItem alloc] initWithPlacemark:placemark];
-    
+    destination.name  = @"Bikram Yoga Silverlake";
     if([destination respondsToSelector:@selector(openInMapsWithLaunchOptions:)])
     {
         // Using iOS6 native maps app

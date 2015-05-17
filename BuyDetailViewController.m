@@ -72,10 +72,12 @@ static NSString* editCellID = @"itemCell";
         }
 
         if(indexPath.row==0){
-            NSNumber* price = [self.item objectForKey:@"price"];
+            NSString* price = [self.item objectForKey:@"price"];
             NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
-            formatter.numberStyle = NSNumberFormatterCurrencyStyle;
-            cell.textLabel.text =[NSString stringWithFormat:@"%@-%@", [self.item objectForKey:@"name"],[formatter stringFromNumber:price]];
+            NSNumber* numberFromPrice = [formatter numberFromString:price];
+			formatter.numberStyle = NSNumberFormatterCurrencyStyle;
+			
+            cell.textLabel.text =[NSString stringWithFormat:@"%@-%@", [self.item objectForKey:@"name"],[formatter stringFromNumber:numberFromPrice]];
            
         }
        
@@ -91,14 +93,14 @@ static NSString* editCellID = @"itemCell";
                     UILabel* label = (UILabel*)sv;
                     label.text = t;
                 }
-//#ifdef DEBUG
-//                if([sv isKindOfClass:[UITextField class]])
-//                {
-//                    UITextField* tf = (UITextField*)sv;
-//                    tf.text= [itemValues objectAtIndex:indexPath.row];
-//                }
-//              
-//#endif
+#ifdef DEBUG
+                if([sv isKindOfClass:[UITextField class]])
+                {
+                    UITextField* tf = (UITextField*)sv;
+                    tf.text= [itemValues objectAtIndex:indexPath.row];
+                }
+              
+#endif
 
             }
         }
@@ -133,6 +135,19 @@ static NSString* editCellID = @"itemCell";
 -(void)complete:(NSString *)clientID{
     MBOSaleClient* client = [[MBOSaleClient alloc] init];
     NSMutableDictionary* params = [self extractParametersFromTable];
+	BOOL valid = YES;
+	for (NSString* val in params.allValues) {
+		if ([val isEqualToString:@""]) {
+			valid =  NO;
+			break;
+		}
+	}
+	if(!valid){
+		UIAlertView* theAlert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"All fields are required" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK" , nil];
+		[theAlert show];
+		 self.busyView.view.hidden = YES;
+		return;
+	}
     [params setObject:clientID forKey:@"ClientID"];
     [params setObject: [self.item objectForKey:@"price"] forKey:@"Amount"];
     [params setObject:[self.item objectForKey:@"id"] forKey:@"ID"];
