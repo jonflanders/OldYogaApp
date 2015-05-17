@@ -40,9 +40,30 @@
                                 <view key="tableFooterView" contentMode="scaleToFill" id="XTD-Aq-Zc2">
                                     <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mats.png" translatesAutoresizingMaskIntoConstraints="NO" id="gC1-Dc-9vs">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                        </imageView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvW-42-wgO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MJ4-1R-5sp">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="EvW-42-wgO" firstAttribute="leading" secondItem="XTD-Aq-Zc2" secondAttribute="leading" id="5lf-b6-Z92"/>
+                                        <constraint firstItem="EvW-42-wgO" firstAttribute="top" secondItem="XTD-Aq-Zc2" secondAttribute="top" id="EGM-GB-Xlw"/>
+                                        <constraint firstItem="gC1-Dc-9vs" firstAttribute="leading" secondItem="XTD-Aq-Zc2" secondAttribute="leading" id="JG1-F0-dqm"/>
+                                        <constraint firstAttribute="bottom" secondItem="gC1-Dc-9vs" secondAttribute="bottom" id="MNR-Ye-a3e"/>
+                                        <constraint firstAttribute="trailing" secondItem="EvW-42-wgO" secondAttribute="trailing" id="bnQ-Lr-hjc"/>
+                                        <constraint firstItem="gC1-Dc-9vs" firstAttribute="top" secondItem="XTD-Aq-Zc2" secondAttribute="top" id="dXd-k8-EXd"/>
                                         <constraint firstAttribute="height" constant="300" id="ds9-eV-lHY"/>
+                                        <constraint firstAttribute="trailing" secondItem="gC1-Dc-9vs" secondAttribute="trailing" id="giy-3e-OCA"/>
+                                        <constraint firstAttribute="bottom" secondItem="EvW-42-wgO" secondAttribute="bottom" id="rLQ-Dp-WY4"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
