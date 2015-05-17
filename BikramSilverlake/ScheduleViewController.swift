@@ -45,8 +45,8 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		var event = EKEvent(eventStore: eventStore)
 		event.title = "Bikram"
 		event.location = "Bikram Yoga Silverlake"
-		event.startDate = item.scheduleStartDate
-		event.endDate = item.scheduleEndDate
+		event.startDate = item.scheduleLocalStartTime
+		event.endDate = item.scheduleLocalEndTime
 		var cal = eventStore.defaultCalendarForNewEvents
 		event.calendar = cal
 		eventStore .saveEvent(event, span: EKSpanThisEvent, error: nil)

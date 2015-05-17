@@ -29,12 +29,11 @@ struct ScheduleItem {
 		
 		dispatch_once(&token, { () -> Void in
 			ScheduleItem.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-			ScheduleItem.dateFormatter.timeZone = NSTimeZone(name: "UTC")
+			//ScheduleItem.dateFormatter.timeZone = NSTimeZone(name: "Americas")
 		})
 		if let dict = jSONDict{
 			if let d = dict[descriptionKey] as? String, let i = dict[idKey] as? Int, let t = dict[typeKey] as? String, let dt = dict[dateKey] as? String, let et = dict[endTimeKey] as? String, let teach = dict[teacherKey] as? String, let teachID = dict[teacherIDKey] as? String, let ft = dict[fullTimeKey] as? String{
-				let rd  = d.stringByReplacingOccurrencesOfString("....", withString: "...")
-				return ScheduleItem(scheduleItemID: i, scheduleDescription: rd, scheduleType: t, scheduleStartDate: dateFormatter.dateFromString(dt)!	, scheduleEndDate: dateFormatter.dateFromString(et)!, scheduleTeacherName: teach, scheduleTeacherID: teachID, scheduleFullTime: ft)
+				return ScheduleItem(scheduleItemID: i, scheduleDescription: d, scheduleType: t, scheduleStartDate: dateFormatter.dateFromString(dt)!	, scheduleEndDate: dateFormatter.dateFromString(et)!, scheduleTeacherName: teach, scheduleTeacherID: teachID, scheduleFullTime: ft)
 			}
 		}
 		return nil
@@ -60,6 +59,36 @@ struct ScheduleItem {
 			let boolResult = (result != NSComparisonResult.OrderedAscending)
 			return boolResult
 		}
+	}
+	var scheduleLocalStartTime:NSDate{
+		get{
+			return self.toAbsoluteLocalTime(self.scheduleStartDate)
+		}
+	}
+	var scheduleLocalEndTime:NSDate{
+		get{
+			return self.toAbsoluteLocalTime(self.scheduleEndDate)
+		}
+	}
+	private func toAbsoluteLocalTime(date:NSDate)->NSDate{
+//		var calendar = NSCalendar.currentCalendar()
+//		var components = calendar.components(NSCalendarUnit.CalendarUnitDay|NSCalendarUnit.CalendarUnitHour|NSCalendarUnit.CalendarUnitMinute|NSCalendarUnit.CalendarUnitYear|NSCalendarUnit.MonthCalendarUnit, fromDate: date)
+//		
+//		
+//		var newComponents  = NSDateComponents()
+//		newComponents.timeZone = NSTimeZone(name: "UTC")
+//		newComponents.calendar = calendar
+//		newComponents.month = components.month
+//		newComponents.year = components.year
+//		newComponents.day = components.day
+//		newComponents.hour = components.hour + 7
+//		newComponents.minute = components.minute
+//		
+//		var newDate = newComponents.date
+		var seconds:Double =  7 * 60 * 60;
+		var newDate = date.dateByAddingTimeInterval(seconds)
+		
+		return newDate
 	}
 	private func toLocalTime(date:NSDate)->NSDate{
 		var tx  = NSTimeZone.localTimeZone()
