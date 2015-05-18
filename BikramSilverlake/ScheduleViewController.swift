@@ -267,18 +267,6 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "")
-		        // Do any additional setup after loading the view.
-//		var frame = CGRect(x: 0, y: 0, width: 58, height: 30)
-//		var customView =  UIView(frame: frame)
-//		var button = UIButton(frame: frame)
-//		var atString = NSAttributedString(string: "Next")
-//
-//		button.titleLabel?.textColor = UIColor.orangeColor()
-//		button.setAttributedTitle(atString, forState: UIControlState.Normal)
-//		
-//		customView.addSubview(button)
-//		self.nextButton.customView = customView
 		if(self.schedule == nil){
 			let sc = ScheduleController()
 			sc.getSchedule { (schedule, error) -> Void in

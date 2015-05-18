@@ -282,14 +282,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-dD-EgN">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-dD-EgN">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="C7R-1z-UGs" userLabel="ClassTypeMessage">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+                                        <rect key="frame" x="10" y="10" width="288" height="288"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="nhc-vY-hPK"/>
-                                            <constraint firstAttribute="width" constant="300" id="wDf-tu-QOY"/>
+                                            <constraint firstAttribute="height" constant="288" id="nhc-vY-hPK"/>
+                                            <constraint firstAttribute="width" constant="288" id="wDf-tu-QOY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -297,10 +297,10 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="C7R-1z-UGs" firstAttribute="top" secondItem="Dgf-dD-EgN" secondAttribute="top" id="GrA-Ou-urr"/>
-                                    <constraint firstAttribute="trailing" secondItem="C7R-1z-UGs" secondAttribute="trailing" id="MuO-IX-jyZ"/>
-                                    <constraint firstItem="C7R-1z-UGs" firstAttribute="leading" secondItem="Dgf-dD-EgN" secondAttribute="leading" id="Nn9-g9-32t"/>
-                                    <constraint firstAttribute="bottom" secondItem="C7R-1z-UGs" secondAttribute="bottom" id="ktq-oN-0h8"/>
+                                    <constraint firstItem="C7R-1z-UGs" firstAttribute="top" secondItem="Dgf-dD-EgN" secondAttribute="top" constant="10" id="GrA-Ou-urr"/>
+                                    <constraint firstAttribute="trailing" secondItem="C7R-1z-UGs" secondAttribute="trailing" constant="10" id="MuO-IX-jyZ"/>
+                                    <constraint firstItem="C7R-1z-UGs" firstAttribute="leading" secondItem="Dgf-dD-EgN" secondAttribute="leading" constant="10" id="Nn9-g9-32t"/>
+                                    <constraint firstAttribute="bottom" secondItem="C7R-1z-UGs" secondAttribute="bottom" constant="10" id="ktq-oN-0h8"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
