@@ -44,16 +44,24 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	}
 	private var eventStore:EKEventStore = EKEventStore()
 	func scheduleTableViewDataSourceAddToSchedule(item: ScheduleItem) {
-		self.currentItem = item
-		var event = EKEvent(eventStore: eventStore)
-		event.title = "Bikram"
-		event.location = "Bikram Yoga Silverlake"
-		event.startDate = item.scheduleLocalStartTime
-		event.endDate = item.scheduleLocalEndTime
-		var cal = eventStore.defaultCalendarForNewEvents
-		event.calendar = cal
-		eventStore .saveEvent(event, span: EKSpanThisEvent, error: nil)
-		self.showMessage("Class added to your calendar")
+		self.eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {[unowned self] (allowed, error) -> Void in
+			if allowed {
+				self.currentItem = item
+				var event = EKEvent(eventStore: self.eventStore)
+				event.title = "Bikram"
+				event.location = "Bikram Yoga Silverlake"
+				event.startDate = item.scheduleLocalStartTime
+				event.endDate = item.scheduleLocalEndTime
+				var cal = self.eventStore.defaultCalendarForNewEvents
+				event.calendar = cal
+				self.eventStore .saveEvent(event, span: EKSpanThisEvent, error: nil)
+				self.showMessage("Class added to your calendar")
+
+			}else
+			{
+				self.showMessage("Unable to access your calendar")
+			}
+		})
 		
 	}
 
@@ -223,7 +231,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 			var classID = "\(item.scheduleItemID)"
 			if let currentID = self.currentClientID{
 				var title = "Sorry"
-				var msg = "There was a failure processing your request, please try again later or make sure you have a valid payment method setup on Mindbody"
+				var msg = "There was a failure processing your request, please try again later or make sure you have a valid payment method set up on Mindbody"
 				if reserve.reserveClass(classID, forClient: currentID){
 					title = "Success!"
 					msg = "You are confirmed for this class."

@@ -762,6 +762,7 @@
                     <tabBarItem key="tabBarItem" title="Schedule" image="smallcalendar.png" id="Fq7-vc-og3"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Schedule" id="QDH-Ub-Zaf">
+                        <barButtonItem key="backBarButtonItem" title="Prev" id="auA-8W-Wwc"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="YLU-3U-BZa">
                             <connections>
                                 <segue destination="OAu-tm-G9e" kind="show" identifier="showNextDaySegue" id="xOG-5g-Xd7"/>
