@@ -25,6 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.parentViewController.automaticallyAdjustsScrollViewInsets = NO;
     [self getClasses];
     cl = [[MBOClientLogin alloc] init];
      self.loggedIn = ([cl clientLoggedIn]!=nil);

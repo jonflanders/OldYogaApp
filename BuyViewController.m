@@ -105,6 +105,7 @@ static NSString* purchaseSegue = @"buyDetailSegue";
 	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     NSDictionary* item = [self.items objectAtIndex:indexPath.row];
     cell.textLabel.text  = [item objectForKey:@"name"] ;
+	cell.textLabel.adjustsFontSizeToFitWidth = YES;
     NSNumber* price = [item objectForKey:@"price"];
     NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterCurrencyStyle;    
