@@ -12,7 +12,9 @@
                     <items>
                         <group width="1" alignment="left" id="hdF-ho-cEY">
                             <items>
-                                <label width="1" alignment="left" text="Today's Schedule" textAlignment="center" id="5OQ-Pw-BVU"/>
+                                <label width="1" alignment="left" text="Today's Schedule" textAlignment="center" id="5OQ-Pw-BVU">
+                                    <color key="textColor" red="0.99607843139999996" green="0.69803921570000005" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
                             </items>
                         </group>
                         <table alignment="left" id="eUA-Ml-Xdp">
@@ -20,10 +22,12 @@
                                 <tableRow identifier="ScheduleRowController" id="ytd-jx-fZg" customClass="ScheduleRowController" customModule="BikramSilverlake_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="IVi-sw-W7z">
                                         <items>
-                                            <label width="1" alignment="left" text="Label" textAlignment="center" id="ipx-PF-9zJ"/>
-                                            <separator alignment="left" verticalAlignment="bottom" id="9ds-B1-Yjd">
+                                            <separator alignment="left" id="Pjb-X1-gHd">
                                                 <color key="color" red="0.99607843139999996" green="0.69803921570000005" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </separator>
+                                            <label width="113" height="20" alignment="left" text="Label" textAlignment="left" minimumScaleFactor="0.80000000000000004" id="ipx-PF-9zJ">
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            </label>
                                         </items>
                                     </group>
                                     <connections>
@@ -39,43 +43,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="348" y="184"/>
-        </scene>
-        <!--Glance Interface Controller-->
-        <scene sceneID="BOz-TT-tkC">
-            <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="BikramSilverlake_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
-                    </items>
-                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
-                </glanceController>
-            </objects>
-            <point key="canvasLocation" x="378" y="594"/>
-        </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
-            <objects>
-                <notificationController id="YCC-NB-fut">
-                    <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
-                    </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
-                    <connections>
-                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
-                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
-                    </connections>
-                </notificationController>
-            </objects>
-            <point key="canvasLocation" x="235" y="1001"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="KIl-fV-djm">
-            <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="BikramSilverlake_WatchKit_App" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="553" y="1001"/>
+            <point key="canvasLocation" x="287" y="219"/>
         </scene>
     </scenes>
 </document>

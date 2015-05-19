@@ -26,20 +26,23 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	var messageViewConstraintConstant:CGFloat!
 	@IBAction func closeMessage(s:AnyObject?){
 		self.messageViewConstraint.constant = self.messageViewConstraintConstant
-		UIView.animateWithDuration(0.5, animations: {[unowned self] () -> Void in
+		UIView.animateWithDuration(1, animations: {[unowned self] () -> Void in
 			self.view.layoutIfNeeded()
 		})
 	}
 	func showMessage(msg:String){
-		self.messageLabel.text = msg;
-		self.messageViewConstraint.constant = 0
-		UIView.animateWithDuration(1, animations: { () -> Void in
-			self.view.layoutIfNeeded()
-		}) { (complete) -> Void in
-			dispatch_after(3, dispatch_get_main_queue()) {[unowned self] () -> Void in
-							self.closeMessage(nil)
+		dispatch_async(dispatch_get_main_queue(), { [unowned self]() -> Void in
+			
+			self.messageLabel.text = msg;
+			self.messageViewConstraint.constant = 0
+			UIView.animateWithDuration(2, animations: { () -> Void in
+				self.view.layoutIfNeeded()
+				}) { (complete) -> Void in
+					dispatch_after(5, dispatch_get_main_queue()) {[unowned self] () -> Void in
+						self.closeMessage(nil)
+					}
 			}
-		}
+		})
 
 	}
 	private var eventStore:EKEventStore = EKEventStore()
