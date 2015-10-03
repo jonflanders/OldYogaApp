@@ -22,7 +22,6 @@
 		FC3FF77016C8DFC700CB3700 /* bikramsettings.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3FF76F16C8DFC700CB3700 /* bikramsettings.png */; };
 		FC3FF77416C8E43000CB3700 /* BusyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3FF77116C8E42F00CB3700 /* BusyViewController.xib */; };
 		FC3FF77516C8E43000CB3700 /* BusyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3FF77316C8E42F00CB3700 /* BusyViewController.m */; };
-		FC577F031AFC06BF00377B90 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC577F021AFC06BF00377B90 /* Reveal.framework */; };
 		FC577F051AFC08B200377B90 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC577F041AFC08B200377B90 /* CFNetwork.framework */; };
 		FC577F071AFC08C000377B90 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC577F061AFC08C000377B90 /* libz.dylib */; };
 		FC577F0A1AFC2AB800377B90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC577F091AFC2AB800377B90 /* Main.storyboard */; };
@@ -90,6 +89,7 @@
 		FC98D3CF162A3D1F00436255 /* fwd.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3CC162A3D1F00436255 /* fwd.png */; };
 		FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3D4162A494C00436255 /* SettingsViewController.m */; };
 		FC98D3D7162A494C00436255 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3D5162A494C00436255 /* SettingsViewController.xib */; };
+		FC9F58601BC06F44004620A7 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F585F1BC06F44004620A7 /* Reveal.framework */; settings = {ASSET_TAGS = (); }; };
 		FCA905B316DF03F500746A54 /* BuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B116DF03F500746A54 /* BuyViewController.m */; };
 		FCA905B416DF03F500746A54 /* BuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA905B216DF03F500746A54 /* BuyViewController.xib */; };
 		FCA905B716E18F0100746A54 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B616E18F0100746A54 /* Constants.m */; };
@@ -195,7 +195,6 @@
 		FC3FF77116C8E42F00CB3700 /* BusyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusyViewController.xib; sourceTree = "<group>"; };
 		FC3FF77216C8E42F00CB3700 /* BusyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusyViewController.h; sourceTree = "<group>"; };
 		FC3FF77316C8E42F00CB3700 /* BusyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusyViewController.m; sourceTree = "<group>"; };
-		FC577F021AFC06BF00377B90 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = "../../../../../../../../../Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/Reveal.framework"; sourceTree = "<group>"; };
 		FC577F041AFC08B200377B90 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FC577F061AFC08C000377B90 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FC577F091AFC2AB800377B90 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -277,6 +276,7 @@
 		FC98D3D3162A494C00436255 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FC98D3D4162A494C00436255 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FC98D3D5162A494C00436255 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		FC9F585F1BC06F44004620A7 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = "../../../../../../../../../Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/Reveal.framework"; sourceTree = "<group>"; };
 		FCA905B016DF03F500746A54 /* BuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyViewController.h; path = ../BuyViewController.h; sourceTree = "<group>"; };
 		FCA905B116DF03F500746A54 /* BuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyViewController.m; path = ../BuyViewController.m; sourceTree = "<group>"; };
 		FCA905B216DF03F500746A54 /* BuyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyViewController.xib; path = ../BuyViewController.xib; sourceTree = "<group>"; };
@@ -345,9 +345,9 @@
 				FC33B8D616EE5951006991CD /* libxml2.2.dylib in Frameworks */,
 				FC96662D16D49E7C00E656A2 /* MapKit.framework in Frameworks */,
 				FC98D3C7162A314D00436255 /* EventKit.framework in Frameworks */,
-				FC577F031AFC06BF00377B90 /* Reveal.framework in Frameworks */,
 				FC98D3C11628EC6900436255 /* QuartzCore.framework in Frameworks */,
 				FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */,
+				FC9F58601BC06F44004620A7 /* Reveal.framework in Frameworks */,
 				FC59685F15DC5431006B4745 /* Foundation.framework in Frameworks */,
 				FC59686115DC5431006B4745 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -612,9 +612,9 @@
 		FC59685B15DC5431006B4745 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC9F585F1BC06F44004620A7 /* Reveal.framework */,
 				FC577F061AFC08C000377B90 /* libz.dylib */,
 				FC577F041AFC08B200377B90 /* CFNetwork.framework */,
-				FC577F021AFC06BF00377B90 /* Reveal.framework */,
 				FC33B8D516EE5951006991CD /* libxml2.2.dylib */,
 				FC96662C16D49E7C00E656A2 /* MapKit.framework */,
 				FC98D3C6162A314D00436255 /* EventKit.framework */,
@@ -1065,7 +1065,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BikramSilverlake/BikramSilverlake.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1092,7 +1091,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BikramSilverlake/BikramSilverlake.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

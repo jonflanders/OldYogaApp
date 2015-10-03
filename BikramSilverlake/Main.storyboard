@@ -615,20 +615,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBP-rm-MgI" userLabel="Info">
-                                                    <rect key="frame" x="8" y="0.0" width="115" height="59"/>
+                                                    <rect key="frame" x="8" y="0.0" width="125" height="59"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="12:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yBt-Ar-PZt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="27"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="125" height="27"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="27" id="X7F-vT-FGt"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssb-Hn-ynR" userLabel="Teacher Label">
-                                                            <rect key="frame" x="0.0" y="33" width="115" height="26"/>
+                                                            <rect key="frame" x="0.0" y="33" width="125" height="26"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                             <state key="normal" title="Teacher">
@@ -642,12 +642,13 @@
                                                                 <action selector="showTeacher:" destination="rUz-BJ-7wZ" eventType="touchUpInside" id="86x-Yv-4sw"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bikram 90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5q2-GC-AvX" userLabel="Type Label">
-                                                            <rect key="frame" x="0.0" y="19" width="115" height="21"/>
+                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DONATION CLASS - $10 cash only (1 hour)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5q2-GC-AvX" userLabel="Type Label">
+                                                            <rect key="frame" x="0.0" y="19" width="125" height="21"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="mzC-As-qa6"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -657,7 +658,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="Ssb-Hn-ynR" secondAttribute="trailing" id="0ub-sA-iIr"/>
                                                         <constraint firstAttribute="trailing" secondItem="Ssb-Hn-ynR" secondAttribute="trailing" id="AOw-RD-HLw"/>
                                                         <constraint firstItem="yBt-Ar-PZt" firstAttribute="leading" secondItem="yBP-rm-MgI" secondAttribute="leading" id="CNG-GL-ThT"/>
-                                                        <constraint firstAttribute="width" constant="115" id="CNS-Xq-aIL"/>
+                                                        <constraint firstAttribute="width" constant="125" id="CNS-Xq-aIL"/>
                                                         <constraint firstItem="5q2-GC-AvX" firstAttribute="centerY" secondItem="yBP-rm-MgI" secondAttribute="centerY" id="GNS-Po-Bpt"/>
                                                         <constraint firstItem="Ssb-Hn-ynR" firstAttribute="leading" secondItem="yBP-rm-MgI" secondAttribute="leading" id="GgO-8g-qHH"/>
                                                         <constraint firstAttribute="trailing" secondItem="5q2-GC-AvX" secondAttribute="trailing" id="Kr5-wC-Urj"/>
@@ -688,14 +689,10 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJr-j8-vYc" userLabel="Time Info">
-                                                    <rect key="frame" x="430" y="8" width="44" height="43"/>
+                                                    <rect key="frame" x="430" y="0.0" width="44" height="59"/>
                                                     <subviews>
                                                         <button opaque="NO" alpha="0.90000000000000002" tag="10" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKX-ma-88i" userLabel="Class Type Button">
-                                                            <rect key="frame" x="0.0" y="-2" width="44" height="47"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="47" id="81z-2i-RxQ"/>
-                                                                <constraint firstAttribute="width" constant="44" id="OOp-IZ-Vx3"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="0.0" y="8" width="44" height="44"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <state key="normal" image="clock">
                                                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -708,8 +705,8 @@
                                                                 <action selector="showClassType:" destination="rUz-BJ-7wZ" eventType="touchUpInside" id="gXN-pY-BDJ"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vjz-hl-Plv" userLabel="MInutes">
-                                                            <rect key="frame" x="5" y="12" width="35" height="25"/>
+                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vjz-hl-Plv" userLabel="MInutes">
+                                                            <rect key="frame" x="5" y="20" width="35" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="QGd-zA-ibY"/>
                                                                 <constraint firstAttribute="width" constant="35" id="tAM-x6-fny"/>
@@ -722,7 +719,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="mKX-ma-88i" firstAttribute="centerX" secondItem="bJr-j8-vYc" secondAttribute="centerX" id="3z6-RL-JVf"/>
-                                                        <constraint firstAttribute="width" constant="44" id="adL-cV-gdP"/>
+                                                        <constraint firstAttribute="width" constant="44" id="SnF-L7-GST"/>
                                                         <constraint firstItem="mKX-ma-88i" firstAttribute="centerY" secondItem="bJr-j8-vYc" secondAttribute="centerY" id="mtl-j4-r0x"/>
                                                         <constraint firstItem="vjz-hl-Plv" firstAttribute="centerY" secondItem="mKX-ma-88i" secondAttribute="centerY" constant="3" id="od0-tX-bsx"/>
                                                         <constraint firstItem="vjz-hl-Plv" firstAttribute="centerX" secondItem="bJr-j8-vYc" secondAttribute="centerX" id="ttX-Co-RjI"/>
@@ -730,10 +727,6 @@
                                                 </view>
                                                 <button opaque="NO" alpha="0.90000000000000002" tag="20" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TG-9l-mrH" userLabel="Schedule Button">
                                                     <rect key="frame" x="489" y="5" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="j8T-O2-z8F"/>
-                                                        <constraint firstAttribute="height" constant="44" id="pSe-f2-wgi"/>
-                                                    </constraints>
                                                     <state key="normal" image="calendar.png"/>
                                                     <connections>
                                                         <action selector="addToSchedule:" destination="rUz-BJ-7wZ" eventType="touchUpInside" id="IaU-IK-Lvm"/>
@@ -746,13 +739,13 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="4TG-9l-mrH" secondAttribute="bottom" constant="2" id="9Z4-9q-4AA"/>
                                                 <constraint firstItem="yBP-rm-MgI" firstAttribute="leading" secondItem="lUs-EB-jL6" secondAttribute="leadingMargin" id="Bpl-hJ-A4R"/>
                                                 <constraint firstItem="4TG-9l-mrH" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" constant="5" id="ETb-Yj-h8e"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="bJr-j8-vYc" secondAttribute="bottom" id="FtS-tO-ky4"/>
                                                 <constraint firstItem="yBP-rm-MgI" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" id="GHe-2f-Pdb"/>
                                                 <constraint firstAttribute="bottom" secondItem="yBP-rm-MgI" secondAttribute="bottom" id="Nog-v0-YgR"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wz8-OD-Cqd" secondAttribute="trailing" id="S05-gQ-Of6"/>
-                                                <constraint firstItem="bJr-j8-vYc" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="topMargin" id="Y82-d1-Cvz"/>
                                                 <constraint firstItem="wz8-OD-Cqd" firstAttribute="leading" secondItem="4TG-9l-mrH" secondAttribute="trailing" constant="15" id="Ya8-cQ-wrF"/>
+                                                <constraint firstItem="bJr-j8-vYc" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" id="lGA-FU-Ezf"/>
                                                 <constraint firstItem="bJr-j8-vYc" firstAttribute="trailing" secondItem="4TG-9l-mrH" secondAttribute="leading" constant="-15" id="r43-QV-vAa"/>
+                                                <constraint firstAttribute="bottom" secondItem="bJr-j8-vYc" secondAttribute="bottom" id="zxo-S9-3Nr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -919,7 +912,7 @@
         <image name="bikramsettings.png" width="30" height="30"/>
         <image name="buy.png" width="30" height="30"/>
         <image name="calendar.png" width="44" height="50"/>
-        <image name="clock" width="44" height="47"/>
+        <image name="clock" width="44" height="44"/>
         <image name="mats.png" width="428" height="424"/>
         <image name="pose.png" width="30" height="30"/>
         <image name="smallcalendar.png" width="30" height="30"/>

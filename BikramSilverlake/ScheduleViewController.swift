@@ -86,6 +86,10 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	func addCurrentItemToCalendar(){
 		
 	}
+	
+	@IBAction func classTypeTouched(sender: AnyObject) {
+		self.performSegueWithIdentifier(showClassTypeSegue, sender: nil)
+	}
 	private var params:(UIView,CGRect,String)?
 	private var currentItem:ScheduleItem?
 	func scheduleTableViewDataSourceShowTeacher(view: UIView, rect: CGRect, instructor: String) {

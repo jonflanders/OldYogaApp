@@ -28,6 +28,10 @@ class ScheduleTableViewCell: UITableViewCell {
 		}
 	}
 	var delegate:ScheduleTableViewCellDelegate?
+	func classTapped()
+	{
+		self.showClassType(self)
+	}
 	@IBAction func showClassType(sender: AnyObject) {
 		if let del = self.delegate,let item  = self.scheduleItem{
 	
@@ -79,6 +83,8 @@ class ScheduleTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+		let tap = UITapGestureRecognizer(target: self, action: Selector("classTapped"))
+		self.classTypeLabel.addGestureRecognizer(tap)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
