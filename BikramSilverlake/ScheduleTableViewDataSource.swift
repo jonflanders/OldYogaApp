@@ -51,7 +51,7 @@ class ScheduleTableViewDataSource : NSObject, UITableViewDataSource, ScheduleTab
 			self.tableView.reloadData()
 			var currentCell:ScheduleTableViewCell?
 			
-			for cell in self.tableView.visibleCells(){
+			for cell in self.tableView.visibleCells{
 				if let scell = cell as? ScheduleTableViewCell{
 					if scell.scheduleTableViewCellIsActive{
 						currentCell = scell
@@ -60,7 +60,7 @@ class ScheduleTableViewDataSource : NSObject, UITableViewDataSource, ScheduleTab
 				}
 			}
 			if let cc = currentCell{
-				var indexPath = self.tableView.indexPathForCell(cc)
+				let indexPath = self.tableView.indexPathForCell(cc)
 				if let realIndexPath = indexPath {
 					self.tableView.scrollToRowAtIndexPath(realIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
 				}

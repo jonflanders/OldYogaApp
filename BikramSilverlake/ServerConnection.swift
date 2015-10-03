@@ -10,8 +10,8 @@ import Foundation
 
 let mainServerConnection = ServerConnectionManager()
 
-typealias JsonDictionary = Dictionary<String,AnyObject>?
-typealias ServerCallback = (JsonDictionary,NSError?)->(Void)
+typealias JsonDictionary = Dictionary<String,AnyObject>
+typealias ServerCallback = (JsonDictionary?,NSError?)->(Void)
 typealias ServerRawCallback = (NSData?,NSError?)->Void
 class ServerConnectionManager {
     let maxOp = 100;
@@ -54,8 +54,14 @@ class ServerConnectionManager {
     }
     private func dictionaryFromData(data:NSData)->(JsonDictionary,NSErrorPointer){
         var err:NSErrorPointer = nil
-        var ret = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: err) as! JsonDictionary
-        return (ret,err)
+		var ret:JsonDictionary? = nil
+		do{
+			ret = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! JsonDictionary
+		}
+		catch{
+			
+		}
+        return (ret!,err)
     }
     private func getSession()->NSURLSession{
         let ret = NSURLSession(configuration: configuration)

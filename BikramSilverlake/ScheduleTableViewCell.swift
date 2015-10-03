@@ -51,17 +51,17 @@ class ScheduleTableViewCell: UITableViewCell {
 		}
 		
 	}
+	@IBOutlet weak var minutesLabel:UILabel!
+	
 	var scheduleItem:ScheduleItem?{
 		didSet{
 			if let si = self.scheduleItem{
 				self.timeLabel.text = si.scheduleFullTime
 				self.teacherButton .setTitle(si.scheduleTeacherName, forState: UIControlState.Normal)
-				if si.scheduleItemType == ScheduleItemType.Hour{
-					self.classType.setImage(UIImage(named: "bikram_60"), forState: UIControlState.Normal)
-				}
+				self.minutesLabel.text = si.scheduleItemMinutes
 				if si.scheduleItemInPast {
 					self.userInteractionEnabled = false
-					var newAlpha:CGFloat = 0.5
+					let newAlpha:CGFloat = 0.5
 					for v in self.allViews{
 						v.alpha = newAlpha
 					}

@@ -17,7 +17,7 @@ struct Schedule{
 	func instructorFromID(id:String)->Instructor?{
 		return self.scheduleInstructors.filter{ $0.instructorID == id}.first
 	}
-	static func scheduleFromDictionary(dict:JsonDictionary)->Schedule?{
+	static func scheduleFromDictionary(dict:JsonDictionary?)->Schedule?{
 	
 		var instructors = [Instructor]()
 		var thisWeekSchedule = ScheduleDict()
@@ -36,7 +36,7 @@ struct Schedule{
 			if let thisWeek  = realDict[thisWeekKey] as? [AnyObject]{
 				for s in thisWeek{
 					if let sDict  = s as? [String:AnyObject]{
-						var (d,items) = Schedule.scheduleItemFromDict(sDict)
+						let (d,items) = Schedule.scheduleItemFromDict(sDict)
 						thisWeekSchedule[d] = items
 					}
 				}
@@ -44,7 +44,7 @@ struct Schedule{
 			if let nextWeek  = realDict[nextWeekKey] as? [AnyObject]{
 				for s in nextWeek{
 					if let sDict  = s as? [String:AnyObject]{
-						var (d,items) = Schedule.scheduleItemFromDict(sDict)
+						let (d,items) = Schedule.scheduleItemFromDict(sDict)
 						nextWeekSchedule[d] = items
 					}
 				}
@@ -54,11 +54,11 @@ struct Schedule{
 		return Schedule(scheduleThisWeek: thisWeekSchedule, scheduleNextWeek: ScheduleDict(), scheduleInstructors: instructors)
 	}
 	private static func scheduleItemFromDict(dict:[String:AnyObject])->(String,[ScheduleItem]){
-		var date = dict[dateKey] as! String
+		let date = dict[dateKey] as! String
 		var items = [ScheduleItem]()
 		if let sitems = dict[scheduleKey] as? [AnyObject]{
 			for si in sitems {
-				items.append(ScheduleItem.scheduleItemFromDictionary(si as? [String:AnyObject])!)
+				items.append(ScheduleItem.scheduleItemFromDictionary((si as? [String:AnyObject])!)!)
 			}
 		}
 		return (date,items)

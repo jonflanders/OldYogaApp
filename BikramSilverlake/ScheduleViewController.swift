@@ -47,17 +47,20 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	}
 	private var eventStore:EKEventStore = EKEventStore()
 	func scheduleTableViewDataSourceAddToSchedule(item: ScheduleItem) {
-		self.eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {[unowned self] (allowed, error) -> Void in
+		self.eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {[unowned self] (allowed, error) -> Void in
 			if allowed {
 				self.currentItem = item
-				var event = EKEvent(eventStore: self.eventStore)
+				let event = EKEvent(eventStore: self.eventStore)
 				event.title = "Bikram"
 				event.location = "Bikram Yoga Silverlake"
 				event.startDate = item.scheduleLocalStartTime
 				event.endDate = item.scheduleLocalEndTime
-				var cal = self.eventStore.defaultCalendarForNewEvents
+				let cal = self.eventStore.defaultCalendarForNewEvents
 				event.calendar = cal
-				self.eventStore .saveEvent(event, span: EKSpanThisEvent, error: nil)
+				do {
+					try self.eventStore .saveEvent(event, span: EKSpan.ThisEvent)
+				} catch _ {
+				}
 				self.showMessage("Class added to your calendar")
 
 			}else
@@ -141,7 +144,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
 		return .None
 	}
-	override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+	override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
 		var ret = true
 		
 		if(identifier == nextDaySegueID){
@@ -150,10 +153,10 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		return ret
 	}
 	func hasNextDay()->Bool{
-		var tempIdx = currentDayIndex + 1
+		let tempIdx = currentDayIndex + 1
 		if let days = self.daysInOrder {
 			if tempIdx < days.count{
-				var day = days[tempIdx]
+				let day = days[tempIdx]
 				return self.getItemsForDay(day) != nil
 			}
 		}
@@ -161,10 +164,10 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	}
 	private func getItemsForDay(day:String)->[ScheduleItem]?{
 		if let s = self.schedule{
-			var tempIdx = currentDayIndex + 1
+			let tempIdx = currentDayIndex + 1
 			if let days = self.daysInOrder {
 				if tempIdx < days.count {
-					var day = days[tempIdx]
+					let day = days[tempIdx]
 					let items = s.scheduleThisWeek[day]
 					if let realItems = items {
 						
@@ -179,10 +182,10 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	func nextDay()->(String,[ScheduleItem])?{
 		
 		if let s = self.schedule{
-			var tempIdx = currentDayIndex + 1
+			let tempIdx = currentDayIndex + 1
 			if let days = self.daysInOrder {
 				if tempIdx < days.count {
-					var day = days[tempIdx]
+					let day = days[tempIdx]
 					if let items = self.getItemsForDay(day){
 					
 						currentDayIndex++
@@ -197,8 +200,8 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	
 	
 	func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		var nib = UINib(nibName: "ScheduleTableHeaderView", bundle: nil)
-		var view = nib.instantiateWithOwner(nil, options: nil).first as! UIView
+		let nib = UINib(nibName: "ScheduleTableHeaderView", bundle: nil)
+		let view = nib.instantiateWithOwner(nil, options: nil).first as! UIView
 		return view
 	}
 	var login:MBOClientLogin?
@@ -230,8 +233,8 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	func reserveClass(){
 
 		if let item = self.currentItem{
-			var reserve = MBOReserveClass()
-			var classID = "\(item.scheduleItemID)"
+			let reserve = MBOReserveClass()
+			let classID = "\(item.scheduleItemID)"
 			if let currentID = self.currentClientID{
 				var title = "Sorry"
 				var msg = "There was a failure processing your request, please try again later or make sure you have a valid payment method set up on Mindbody"
@@ -262,10 +265,10 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 			})
 
 			if let realSchedule  = self.schedule{
-				var days = realSchedule.scheduleThisWeek.keys.array
-				days.sort{ [unowned self] in
-					var d1 = self.dateFormatter?.dateFromString($0)
-					var d2 = self.dateFormatter?.dateFromString($1)
+				var days = Array(realSchedule.scheduleThisWeek.keys)
+				days.sortInPlace{ [unowned self] in
+					let d1 = self.dateFormatter?.dateFromString($0)
+					let d2 = self.dateFormatter?.dateFromString($1)
 					return d1!.compare(d2!) == NSComparisonResult.OrderedAscending
 				}
 				self.daysInOrder = days
@@ -284,7 +287,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 				if let realSchedule = schedule{
 					dispatch_async(dispatch_get_main_queue(), { () -> Void in
 						self.schedule = realSchedule
-						var day = self.daysInOrder![0]
+						let day = self.daysInOrder![0]
 						if let idx = realSchedule.scheduleThisWeek.indexForKey(day){
 							let (k,v) = realSchedule.scheduleThisWeek[idx]
 							self.dataSource.currentDay  = (k,v)

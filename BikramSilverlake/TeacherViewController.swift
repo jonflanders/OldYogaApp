@@ -22,7 +22,7 @@ class TeacherViewController: UIViewController {
 	func reloadData(instructor:Instructor){
 	
 		self.instructorBio .loadHTMLString(instructor.instructorBio, baseURL: nil)
-		var data = NSData(contentsOfURL: NSURL(string: instructor.instructorURL)!)
+		let data = NSData(contentsOfURL: NSURL(string: instructor.instructorURL)!)
 		self.instructorImage.image = UIImage(data: data!)
 		self.instructorNameLabel.text = instructor.instructorName
 	}

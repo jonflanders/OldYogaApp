@@ -25,7 +25,7 @@ enum ScheduleItemType : String{
 struct ScheduleItem {
 	static var dateFormatter = NSDateFormatter()
 	static var token:dispatch_once_t = 0
-	static func scheduleItemFromDictionary(jSONDict:JsonDictionary)->ScheduleItem?{
+	static func scheduleItemFromDictionary(jSONDict:JsonDictionary?)->ScheduleItem?{
 		
 		dispatch_once(&token, { () -> Void in
 			ScheduleItem.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -46,6 +46,11 @@ struct ScheduleItem {
 	let scheduleTeacherName :String
 	let scheduleTeacherID: String
 	let scheduleFullTime : String
+	var scheduleItemMinutes : String{
+		let diff = self.scheduleEndDate.timeIntervalSinceDate(self.scheduleStartDate)
+		let m = Int(diff /  60)
+		return "\(m)"
+	}
 	var scheduleItemType : ScheduleItemType {
 		get {
 			 return ScheduleItemType.scheduleItemTypeFromString(self.scheduleType)
@@ -85,15 +90,15 @@ struct ScheduleItem {
 //		newComponents.minute = components.minute
 //		
 //		var newDate = newComponents.date
-		var seconds:Double =  7 * 60 * 60;
-		var newDate = date.dateByAddingTimeInterval(seconds)
+		let seconds:Double =  7 * 60 * 60;
+		let newDate = date.dateByAddingTimeInterval(seconds)
 		
 		return newDate
 	}
 	private func toLocalTime(date:NSDate)->NSDate{
-		var tx  = NSTimeZone.localTimeZone()
-		var sec = tx.secondsFromGMTForDate(date)
-		var tsec = Double(sec)
+		let tx  = NSTimeZone.localTimeZone()
+		let sec = tx.secondsFromGMTForDate(date)
+		let tsec = Double(sec)
 		return NSDate(timeInterval: tsec, sinceDate: date)
 	}
 //	-(NSDate *) toLocalTime

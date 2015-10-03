@@ -23,7 +23,7 @@ class InterfaceController: WKInterfaceController {
 			if let realSchedule = schedule{
 				dispatch_async(dispatch_get_main_queue(), { [unowned self]() -> Void in
 					self.schedule = realSchedule
-					var day = self.daysInOrder![0]
+					let day = self.daysInOrder![0]
 					if let idx = realSchedule.scheduleThisWeek.indexForKey(day){
 						let (k,v) = realSchedule.scheduleThisWeek[idx]
 						//self.titleLabel .setText(k)
@@ -32,7 +32,7 @@ class InterfaceController: WKInterfaceController {
 						for i in 0..<items.count
 						{
 							if let  rc =  self.scheduleTable.rowControllerAtIndex(i) as? ScheduleRowController{
-								var si = items[i]
+								let si = items[i]
 								rc.scheduleTime = si.scheduleFullTime
 							}
 							
@@ -63,10 +63,10 @@ class InterfaceController: WKInterfaceController {
 				})
 			
 			if let realSchedule  = self.schedule{
-				var days = realSchedule.scheduleThisWeek.keys.array
-				days.sort{ [unowned self] in
-					var d1 = self.dateFormatter?.dateFromString($0)
-					var d2 = self.dateFormatter?.dateFromString($1)
+				var days = Array(realSchedule.scheduleThisWeek.keys)
+				days.sortInPlace{ [unowned self] in
+					let d1 = self.dateFormatter?.dateFromString($0)
+					let d2 = self.dateFormatter?.dateFromString($1)
 					return d1!.compare(d2!) == NSComparisonResult.OrderedAscending
 				}
 				self.daysInOrder = days

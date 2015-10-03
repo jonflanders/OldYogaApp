@@ -12,7 +12,7 @@ typealias ScheduleCallback = (schedule:Schedule?,error:NSError?)-> Void
 
 struct ScheduleController {
 	func getSchedule(callback:ScheduleCallback){
-		var conn = mainServerConnection
+		let conn = mainServerConnection
 		conn.getDictionary(baseURL + schedulePath, serverCallback: { (dict, err) -> (Void) in
 			if let d = dict{
 				if let schedule = Schedule.scheduleFromDictionary(d){
