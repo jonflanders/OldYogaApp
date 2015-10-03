@@ -52,12 +52,13 @@ class ScheduleTableViewCell: UITableViewCell {
 		
 	}
 	@IBOutlet weak var minutesLabel:UILabel!
-	
+	@IBOutlet weak var classTypeLabel:UILabel!
 	var scheduleItem:ScheduleItem?{
 		didSet{
 			if let si = self.scheduleItem{
 				self.timeLabel.text = si.scheduleFullTime
-				self.teacherButton .setTitle(si.scheduleTeacherName, forState: UIControlState.Normal)
+				self.teacherButton .setTitle(si.scheduleTeacherName, forState: .Normal)
+				self.classTypeLabel.text = si.scheduleType
 				self.minutesLabel.text = si.scheduleItemMinutes
 				if si.scheduleItemInPast {
 					self.userInteractionEnabled = false

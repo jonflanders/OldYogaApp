@@ -181,7 +181,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	
 	func nextDay()->(String,[ScheduleItem])?{
 		
-		if let s = self.schedule{
+		if let _ = self.schedule{
 			let tempIdx = currentDayIndex + 1
 			if let days = self.daysInOrder {
 				if tempIdx < days.count {
@@ -281,6 +281,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+		self.tableView.tableFooterView = UIView(frame: CGRectZero)
 		if(self.schedule == nil){
 			let sc = ScheduleController()
 			sc.getSchedule { (schedule, error) -> Void in

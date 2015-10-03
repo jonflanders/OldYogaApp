@@ -23,10 +23,12 @@ class ClassTypeViewController: UIViewController {
 		var outputString = String(inputString)
 		
 		var r = outputString.rangeOfString(regex, options:NSStringCompareOptions.RegularExpressionSearch)
-		repeat{
-			outputString.removeRange(r!)
-			r = outputString.rangeOfString(regex, options:NSStringCompareOptions.RegularExpressionSearch)
-		}while(r != nil)
+		if r != nil  {
+			repeat{
+				outputString.removeRange(r!)
+				r = outputString.rangeOfString(regex, options:NSStringCompareOptions.RegularExpressionSearch)
+			}while(r != nil)
+		}
 		outputString = outputString.stringByReplacingOccurrencesOfString(">", withString: "")
 		outputString = outputString.stringByReplacingOccurrencesOfString("<", withString: "")
 		

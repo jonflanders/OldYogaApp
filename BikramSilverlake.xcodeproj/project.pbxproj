@@ -107,6 +107,7 @@
 		FCB04D7F16FE3CE9005D505E /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */; };
 		FCB04D8016FE3CE9005D505E /* NewAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7E16FE3CE9005D505E /* NewAccountViewController.xib */; };
 		FCB04D8216FE3D80005D505E /* NewEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D8116FE3D80005D505E /* NewEditTableViewCell.xib */; };
+		FCB10C0D1BC0676200B7B6DC /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB10C0C1BC0676200B7B6DC /* Launch.storyboard */; settings = {ASSET_TAGS = (); }; };
 		FCB6330B16F9258F00E8D4A6 /* ScheduleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */; };
 		FCB6330E16F92F2F00E8D4A6 /* 90minutes.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6330C16F92F2F00E8D4A6 /* 90minutes.png */; };
 		FCB6331316F9314B00E8D4A6 /* reserve.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6331216F9314B00E8D4A6 /* reserve.png */; };
@@ -299,6 +300,7 @@
 		FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewAccountViewController.m; path = ../NewAccountViewController.m; sourceTree = "<group>"; };
 		FCB04D7E16FE3CE9005D505E /* NewAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewAccountViewController.xib; path = ../NewAccountViewController.xib; sourceTree = "<group>"; };
 		FCB04D8116FE3D80005D505E /* NewEditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewEditTableViewCell.xib; sourceTree = "<group>"; };
+		FCB10C0C1BC0676200B7B6DC /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		FCB4F3B2163864CE00A2AA9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleHeader.xib; sourceTree = "<group>"; };
 		FCB6330C16F92F2F00E8D4A6 /* 90minutes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 90minutes.png; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				FC577F091AFC2AB800377B90 /* Main.storyboard */,
+				FCB10C0C1BC0676200B7B6DC /* Launch.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				FC8024A01AEC12FC003B5FEB /* Images.xcassets in Resources */,
 				FC98D3CD162A3D1F00436255 /* about.png in Resources */,
 				FC98D3CE162A3D1F00436255 /* back.png in Resources */,
+				FCB10C0D1BC0676200B7B6DC /* Launch.storyboard in Resources */,
 				FC98D3CF162A3D1F00436255 /* fwd.png in Resources */,
 				FC98D3D7162A494C00436255 /* SettingsViewController.xib in Resources */,
 				FC3FF76516C831C800CB3700 /* arrow.png in Resources */,

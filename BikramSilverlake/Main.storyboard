@@ -602,10 +602,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6CK-Hq-JMm" userLabel="Schedule Table View">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6CK-Hq-JMm" userLabel="Schedule Table View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="1" green="0.94340982019999997" blue="0.31983232150000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.90588235289999997" green="0.43137254899999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ScheduleCell" rowHeight="60" id="rUz-BJ-7wZ" customClass="ScheduleTableViewCell" customModule="BikramSilverlake" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="600" height="60"/>
@@ -615,7 +615,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBP-rm-MgI" userLabel="Info">
-                                                    <rect key="frame" x="8" y="8" width="115" height="43"/>
+                                                    <rect key="frame" x="8" y="0.0" width="115" height="59"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="12:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yBt-Ar-PZt">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="27"/>
@@ -628,7 +628,7 @@
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssb-Hn-ynR" userLabel="Teacher Label">
-                                                            <rect key="frame" x="0.0" y="17" width="115" height="26"/>
+                                                            <rect key="frame" x="0.0" y="33" width="115" height="26"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                             <state key="normal" title="Teacher">
@@ -642,13 +642,28 @@
                                                                 <action selector="showTeacher:" destination="rUz-BJ-7wZ" eventType="touchUpInside" id="86x-Yv-4sw"/>
                                                             </connections>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bikram 90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5q2-GC-AvX" userLabel="Type Label">
+                                                            <rect key="frame" x="0.0" y="19" width="115" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="mzC-As-qa6"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="Ssb-Hn-ynR" secondAttribute="trailing" id="0ub-sA-iIr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ssb-Hn-ynR" secondAttribute="trailing" id="AOw-RD-HLw"/>
                                                         <constraint firstItem="yBt-Ar-PZt" firstAttribute="leading" secondItem="yBP-rm-MgI" secondAttribute="leading" id="CNG-GL-ThT"/>
                                                         <constraint firstAttribute="width" constant="115" id="CNS-Xq-aIL"/>
+                                                        <constraint firstItem="5q2-GC-AvX" firstAttribute="centerY" secondItem="yBP-rm-MgI" secondAttribute="centerY" id="GNS-Po-Bpt"/>
+                                                        <constraint firstItem="Ssb-Hn-ynR" firstAttribute="leading" secondItem="yBP-rm-MgI" secondAttribute="leading" id="GgO-8g-qHH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5q2-GC-AvX" secondAttribute="trailing" id="Kr5-wC-Urj"/>
+                                                        <constraint firstItem="5q2-GC-AvX" firstAttribute="leading" secondItem="yBP-rm-MgI" secondAttribute="leading" id="j2K-1A-Kw1"/>
                                                         <constraint firstAttribute="bottom" secondItem="Ssb-Hn-ynR" secondAttribute="bottom" id="kyH-JP-zi7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ssb-Hn-ynR" secondAttribute="bottom" id="oTh-7y-Qz9"/>
                                                         <constraint firstItem="Ssb-Hn-ynR" firstAttribute="leading" secondItem="yBP-rm-MgI" secondAttribute="leading" id="riT-nZ-ekl"/>
                                                         <constraint firstItem="yBt-Ar-PZt" firstAttribute="top" secondItem="yBP-rm-MgI" secondAttribute="top" id="szR-Sf-BHC"/>
                                                         <constraint firstAttribute="trailing" secondItem="yBt-Ar-PZt" secondAttribute="trailing" id="yUW-ad-CBP"/>
@@ -673,7 +688,7 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJr-j8-vYc" userLabel="Time Info">
-                                                    <rect key="frame" x="460" y="8" width="44" height="43"/>
+                                                    <rect key="frame" x="430" y="8" width="44" height="43"/>
                                                     <subviews>
                                                         <button opaque="NO" alpha="0.90000000000000002" tag="10" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKX-ma-88i" userLabel="Class Type Button">
                                                             <rect key="frame" x="0.0" y="-2" width="44" height="47"/>
@@ -725,22 +740,25 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="wz8-OD-Cqd" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" constant="5" id="8Ub-tw-BTp"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="4TG-9l-mrH" secondAttribute="bottom" constant="2" id="9Z4-9q-4AA"/>
                                                 <constraint firstItem="yBP-rm-MgI" firstAttribute="leading" secondItem="lUs-EB-jL6" secondAttribute="leadingMargin" id="Bpl-hJ-A4R"/>
                                                 <constraint firstItem="4TG-9l-mrH" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" constant="5" id="ETb-Yj-h8e"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="bJr-j8-vYc" secondAttribute="bottom" id="FtS-tO-ky4"/>
-                                                <constraint firstItem="yBP-rm-MgI" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="topMargin" id="GHe-2f-Pdb"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="yBP-rm-MgI" secondAttribute="bottom" id="Nog-v0-YgR"/>
+                                                <constraint firstItem="yBP-rm-MgI" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="top" id="GHe-2f-Pdb"/>
+                                                <constraint firstAttribute="bottom" secondItem="yBP-rm-MgI" secondAttribute="bottom" id="Nog-v0-YgR"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wz8-OD-Cqd" secondAttribute="trailing" id="S05-gQ-Of6"/>
                                                 <constraint firstItem="bJr-j8-vYc" firstAttribute="top" secondItem="lUs-EB-jL6" secondAttribute="topMargin" id="Y82-d1-Cvz"/>
                                                 <constraint firstItem="wz8-OD-Cqd" firstAttribute="leading" secondItem="4TG-9l-mrH" secondAttribute="trailing" constant="15" id="Ya8-cQ-wrF"/>
-                                                <constraint firstItem="bJr-j8-vYc" firstAttribute="trailing" secondItem="4TG-9l-mrH" secondAttribute="leading" constant="15" id="r43-QV-vAa"/>
+                                                <constraint firstItem="bJr-j8-vYc" firstAttribute="trailing" secondItem="4TG-9l-mrH" secondAttribute="leading" constant="-15" id="r43-QV-vAa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="classType" destination="mKX-ma-88i" id="WSP-B9-R1T"/>
+                                            <outlet property="classTypeLabel" destination="5q2-GC-AvX" id="tDz-vS-tUO"/>
                                             <outlet property="minutesLabel" destination="vjz-hl-Plv" id="AJ4-av-Dps"/>
                                             <outlet property="reserveButton" destination="wz8-OD-Cqd" id="iHQ-w6-mqf"/>
                                             <outlet property="scheduleButton" destination="4TG-9l-mrH" id="qSP-cX-PQy"/>
@@ -834,7 +852,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="484" y="-627"/>
+            <point key="canvasLocation" x="401" y="-614"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yug-n3-b7F">
