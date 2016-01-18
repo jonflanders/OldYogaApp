@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[ClassDetailViewController viewDidLoad]:ClassDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " [self.teacherBio objectAtIndex:0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MBOClientLogin createClient:]:MBOClientLogin.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BuyDetailViewController tableView:numberOfRowsInSection:]:BuyDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MainPageTableViewController tableView:cellForRowAtIndexPath:]:MainPageTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "po (NSDictionary*)day">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__38-[MainPageTableViewController refresh]_block_invoke_2:MainPageTableViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController saveNewAccount:]:LoginViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

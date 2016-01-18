@@ -57,7 +57,7 @@
 		FC88E03B1B097FE5003B6EC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC88E03A1B097FE5003B6EC7 /* Images.xcassets */; };
 		FC88E03F1B097FE5003B6EC7 /* BikramSilverlake WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = FC88E03E1B097FE5003B6EC7 /* BikramSilverlake WatchKit App.app */; };
 		FC88E0471B097FE5003B6EC7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC88E0451B097FE5003B6EC7 /* Interface.storyboard */; };
-		FC88E0491B097FE5003B6EC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC88E0481B097FE5003B6EC7 /* Images.xcassets */; };
+		FC88E0491B097FE5003B6EC7 /* WImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC88E0481B097FE5003B6EC7 /* WImages.xcassets */; };
 		FC88E04C1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC88E02F1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC88E0551B0980F1003B6EC7 /* ScheduleRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88E0541B0980F1003B6EC7 /* ScheduleRowController.swift */; };
 		FC88E0561B09824D003B6EC7 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F141AFC424200377B90 /* ScheduleController.swift */; };
@@ -89,7 +89,6 @@
 		FC98D3CF162A3D1F00436255 /* fwd.png in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3CC162A3D1F00436255 /* fwd.png */; };
 		FC98D3D6162A494C00436255 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC98D3D4162A494C00436255 /* SettingsViewController.m */; };
 		FC98D3D7162A494C00436255 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC98D3D5162A494C00436255 /* SettingsViewController.xib */; };
-		FC9F58601BC06F44004620A7 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F585F1BC06F44004620A7 /* Reveal.framework */; settings = {ASSET_TAGS = (); }; };
 		FCA905B316DF03F500746A54 /* BuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B116DF03F500746A54 /* BuyViewController.m */; };
 		FCA905B416DF03F500746A54 /* BuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA905B216DF03F500746A54 /* BuyViewController.xib */; };
 		FCA905B716E18F0100746A54 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA905B616E18F0100746A54 /* Constants.m */; };
@@ -232,6 +231,7 @@
 		FC5C0C42170118AD008C1D8D /* twitternew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitternew.png; sourceTree = "<group>"; };
 		FC5C0C43170118AD008C1D8D /* likefb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likefb.png; sourceTree = "<group>"; };
 		FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = country_names_and_code_elements_txt.txt; sourceTree = "<group>"; };
+		FC610EA51BC0967B00F4E316 /* BikramSilverlake WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BikramSilverlake WatchKit App.entitlements"; sourceTree = "<group>"; };
 		FC6497CC1AFE75B400A12668 /* ScheduleTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewDataSource.swift; sourceTree = "<group>"; };
 		FC80249F1AEC12FC003B5FEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC88E02F1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BikramSilverlake WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,7 +244,7 @@
 		FC88E03E1B097FE5003B6EC7 /* BikramSilverlake WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikramSilverlake WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC88E0441B097FE5003B6EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC88E0461B097FE5003B6EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		FC88E0481B097FE5003B6EC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FC88E0481B097FE5003B6EC7 /* WImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WImages.xcassets; sourceTree = "<group>"; };
 		FC88E0541B0980F1003B6EC7 /* ScheduleRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleRowController.swift; sourceTree = "<group>"; };
 		FC9665DF16D41BE800E656A2 /* ClassDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassDetailViewController.h; path = ../ClassDetailViewController.h; sourceTree = "<group>"; };
 		FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassDetailViewController.m; path = ../ClassDetailViewController.m; sourceTree = "<group>"; };
@@ -276,7 +276,6 @@
 		FC98D3D3162A494C00436255 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FC98D3D4162A494C00436255 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FC98D3D5162A494C00436255 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
-		FC9F585F1BC06F44004620A7 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = "../../../../../../../../../Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/Reveal.framework"; sourceTree = "<group>"; };
 		FCA905B016DF03F500746A54 /* BuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyViewController.h; path = ../BuyViewController.h; sourceTree = "<group>"; };
 		FCA905B116DF03F500746A54 /* BuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyViewController.m; path = ../BuyViewController.m; sourceTree = "<group>"; };
 		FCA905B216DF03F500746A54 /* BuyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyViewController.xib; path = ../BuyViewController.xib; sourceTree = "<group>"; };
@@ -347,7 +346,6 @@
 				FC98D3C7162A314D00436255 /* EventKit.framework in Frameworks */,
 				FC98D3C11628EC6900436255 /* QuartzCore.framework in Frameworks */,
 				FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */,
-				FC9F58601BC06F44004620A7 /* Reveal.framework in Frameworks */,
 				FC59685F15DC5431006B4745 /* Foundation.framework in Frameworks */,
 				FC59686115DC5431006B4745 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -612,7 +610,6 @@
 		FC59685B15DC5431006B4745 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FC9F585F1BC06F44004620A7 /* Reveal.framework */,
 				FC577F061AFC08C000377B90 /* libz.dylib */,
 				FC577F041AFC08B200377B90 /* CFNetwork.framework */,
 				FC33B8D516EE5951006991CD /* libxml2.2.dylib */,
@@ -686,8 +683,9 @@
 		FC88E0421B097FE5003B6EC7 /* BikramSilverlake WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				FC610EA51BC0967B00F4E316 /* BikramSilverlake WatchKit App.entitlements */,
 				FC88E0451B097FE5003B6EC7 /* Interface.storyboard */,
-				FC88E0481B097FE5003B6EC7 /* Images.xcassets */,
+				FC88E0481B097FE5003B6EC7 /* WImages.xcassets */,
 				FC88E0431B097FE5003B6EC7 /* Supporting Files */,
 			);
 			path = "BikramSilverlake WatchKit App";
@@ -787,6 +785,11 @@
 					FC88E03D1B097FE5003B6EC7 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = LCT7F69LK9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -888,7 +891,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC88E0471B097FE5003B6EC7 /* Interface.storyboard in Resources */,
-				FC88E0491B097FE5003B6EC7 /* Images.xcassets in Resources */,
+				FC88E0491B097FE5003B6EC7 /* WImages.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1186,7 +1189,7 @@
 		FC88E04F1B097FE5003B6EC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1194,6 +1197,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "BikramSilverlake WatchKit App/BikramSilverlake WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1224,7 +1228,7 @@
 		FC88E0501B097FE5003B6EC7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1232,6 +1236,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "BikramSilverlake WatchKit App/BikramSilverlake WatchKit App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;

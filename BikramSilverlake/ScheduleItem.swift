@@ -90,7 +90,7 @@ struct ScheduleItem {
 //		newComponents.minute = components.minute
 //		
 //		var newDate = newComponents.date
-		let seconds:Double =  7 * 60 * 60;
+		let seconds:Double =  (7 * 60 * 60) + 3600
 		let newDate = date.dateByAddingTimeInterval(seconds)
 		
 		return newDate
