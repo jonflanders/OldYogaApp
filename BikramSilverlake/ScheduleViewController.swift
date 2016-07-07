@@ -51,8 +51,8 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 			if allowed {
 				self.currentItem = item
 				let event = EKEvent(eventStore: self.eventStore)
-				event.title = "Bikram"
-				event.location = "Bikram Yoga Silverlake"
+				event.title = "Yoga"
+				event.location = "Rise Hot Yoga"
 				event.startDate = item.scheduleLocalStartTime
 				event.endDate = item.scheduleLocalEndTime
 				let cal = self.eventStore.defaultCalendarForNewEvents
@@ -95,6 +95,12 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	func scheduleTableViewDataSourceShowTeacher(view: UIView, rect: CGRect, instructor: String) {
 		self.params = (view,rect,instructor)
 		self.performSegueWithIdentifier(showInstructorSegue, sender: nil )
+	}
+	@IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
+		self.navigationController?.popViewControllerAnimated(true)
+	}
+	@IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
+		self.performSegueWithIdentifier(nextDaySegueID, sender: self)
 	}
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		switch(segue.identifier!)

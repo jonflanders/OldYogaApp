@@ -93,7 +93,7 @@ struct ScheduleItem {
 		let seconds:Double =  (7 * 60 * 60) + 3600
 		let newDate = date.dateByAddingTimeInterval(seconds)
 		
-		return newDate
+		return date
 	}
 	private func toLocalTime(date:NSDate)->NSDate{
 		let tx  = NSTimeZone.localTimeZone()

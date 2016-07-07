@@ -106,7 +106,7 @@
 		FCB04D7F16FE3CE9005D505E /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB04D7D16FE3CE9005D505E /* NewAccountViewController.m */; };
 		FCB04D8016FE3CE9005D505E /* NewAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D7E16FE3CE9005D505E /* NewAccountViewController.xib */; };
 		FCB04D8216FE3D80005D505E /* NewEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB04D8116FE3D80005D505E /* NewEditTableViewCell.xib */; };
-		FCB10C0D1BC0676200B7B6DC /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB10C0C1BC0676200B7B6DC /* Launch.storyboard */; settings = {ASSET_TAGS = (); }; };
+		FCB10C0D1BC0676200B7B6DC /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB10C0C1BC0676200B7B6DC /* Launch.storyboard */; };
 		FCB6330B16F9258F00E8D4A6 /* ScheduleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB6330A16F9258F00E8D4A6 /* ScheduleHeader.xib */; };
 		FCB6330E16F92F2F00E8D4A6 /* 90minutes.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6330C16F92F2F00E8D4A6 /* 90minutes.png */; };
 		FCB6331316F9314B00E8D4A6 /* reserve.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB6331216F9314B00E8D4A6 /* reserve.png */; };
@@ -1189,7 +1189,7 @@
 		FC88E04F1B097FE5003B6EC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1228,7 +1228,7 @@
 		FC88E0501B097FE5003B6EC7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
