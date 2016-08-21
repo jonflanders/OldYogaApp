@@ -10,6 +10,7 @@ import Foundation
 
 //let baseURL = "http://localhost:3000/api/"
 
-let baseURL = "http://www.bikramyogasilverlake.com/api/"
+let baseURL = "http://www.risehotyoga.com/api/"
+let studioName = "Rise Hot Yoga"
 let schedulePath = "NewSchedule"
 let salesPath = "Sales"

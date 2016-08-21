@@ -34,12 +34,13 @@
    
     
     AboutItems* item= [_items objectAtIndex:indexPath.section];
-    if(item.image==nil){
+   
         cell = [self.tblView dequeueReusableCellWithIdentifier:cellId];
         if(cell==nil){
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellId];
         }
         cell.textLabel.text = item.item;
+	cell.textLabel.font = [UIFont fontWithName:cell.textLabel.font.fontName size:cell.textLabel.font.pointSize + 2.0];
 		cell.backgroundColor = [UIColor clearColor];
         cell.detailTextLabel.text = item.value;
         cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
@@ -47,12 +48,7 @@
             cell.detailTextLabel.numberOfLines=3;
 
         }
-       }
-    else{
-        cell   =  [self.tblView dequeueReusableCellWithIdentifier:self.ImageCellIdentifier];
-		ImageTableViewCell* imageCell = (ImageTableViewCell*)cell;
-		imageCell.cellImage = item.image;
-    }
+	
     return cell;
 }
 -(CGFloat) tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section{
@@ -115,7 +111,7 @@
     coordinate.longitude = -118.260727;
     MKPlacemark* placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
     MKMapItem* destination =  [[MKMapItem alloc] initWithPlacemark:placemark];
-    destination.name  = @"Bikram Yoga Silverlake";
+    destination.name  = @"Rise Hot Yoga";
     if([destination respondsToSelector:@selector(openInMapsWithLaunchOptions:)])
     {
         // Using iOS6 native maps app
@@ -135,10 +131,10 @@
 	self = [super initWithCoder:aDecoder];
 	if(self){
 		NSMutableArray* arr = [[NSMutableArray alloc] init];
-		[arr addObjectsFromArray:@[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, CA 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@bikramyogasilverlake.com"]]];
-		AboutItems* fb = [[AboutItems alloc] initWithItem:@"facebook" andValue:@"106087309432633" andImage:[UIImage imageNamed:@"fb"]];
+		[arr addObjectsFromArray:@[[[AboutItems alloc] initWithItem:@"phone" andValue:@"323-668-2500"],[[AboutItems alloc] initWithItem:@"address" andValue:@"3223 Glendale Boulevard Los Angeles, CA 90039"],[[AboutItems alloc] initWithItem:@"email" andValue:@"info@risehotyoga.com"]]];
+		AboutItems* fb = [[AboutItems alloc] initWithItem:@"facebook" andValue:@"risehotyoga" andImage:[UIImage imageNamed:@"fb"]];
 		[arr addObject:fb];
-		AboutItems* twitter = [[AboutItems alloc] initWithItem:@"twitter" andValue:@"bikramsilvrlake" andImage:[UIImage imageNamed:@"twitter"]];
+		AboutItems* twitter = [[AboutItems alloc] initWithItem:@"twitter" andValue:@"risehotyoga" andImage:[UIImage imageNamed:@"twitter"]];
 		[arr addObject:twitter];
 		self.items = arr.copy;
 	}
@@ -149,11 +145,11 @@
     [self privacy:nil];
 }
 -(void)privacy:(NSString*)s{
-    NSURL* url = [NSURL URLWithString:@"http://www.bikramyogasilverlake.com/#!//Home/Privacy"];
+    NSURL* url = [NSURL URLWithString:@"http://www.risehotyoga.com/#!//Home/Privacy"];
     [[UIApplication sharedApplication] openURL:url];
 }
 - (IBAction)twitterButton:(id)sender {
-    [self twitter:@"bikramsilvrlake"];
+    [self twitter:@"risehotyoga"];
 }
 -(void)twitter:(NSString*)twitterUser
 {
@@ -172,7 +168,7 @@
 
 }
 - (IBAction)facebookButton:(id)sender {
-    [self facebook:@"bikramyogasilverlake"];
+    [self facebook:@"risehotyoga"];
 }
 -(void)facebook:(NSString*)facebookUser{
  

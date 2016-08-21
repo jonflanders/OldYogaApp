@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LND-Za-aNB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LND-Za-aNB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -418,9 +418,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hLE-HW-BP6">
-                                            <rect key="frame" x="40" y="40" width="520" height="520"/>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hLE-HW-BP6">
+                                            <rect key="frame" x="40" y="175" width="520" height="250"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="250" id="MTP-2g-lDk"/>
+                                            </constraints>
                                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <view key="tableFooterView" contentMode="scaleToFill" id="Igw-xG-GHY">
                                                 <rect key="frame" x="0.0" y="122" width="520" height="300"/>
@@ -464,13 +467,15 @@
                                         </tableView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="hLE-HW-BP6" secondAttribute="bottom" constant="40" id="AwX-UU-SXo"/>
-                                        <constraint firstItem="hLE-HW-BP6" firstAttribute="top" secondItem="LRo-AP-7l3" secondAttribute="top" constant="40" id="s5Y-Ye-MYV"/>
-                                        <constraint firstItem="hLE-HW-BP6" firstAttribute="leading" secondItem="LRo-AP-7l3" secondAttribute="leading" constant="40" id="vIw-Qi-Ush"/>
-                                        <constraint firstAttribute="trailing" secondItem="hLE-HW-BP6" secondAttribute="trailing" constant="40" id="x09-M1-Dxs"/>
+                                        <constraint firstItem="hLE-HW-BP6" firstAttribute="centerX" secondItem="LRo-AP-7l3" secondAttribute="centerX" id="AEz-vt-yxn"/>
+                                        <constraint firstItem="hLE-HW-BP6" firstAttribute="leading" secondItem="LRo-AP-7l3" secondAttribute="leading" constant="40" id="TVa-9Z-Lt1"/>
+                                        <constraint firstItem="hLE-HW-BP6" firstAttribute="centerY" secondItem="LRo-AP-7l3" secondAttribute="centerY" id="m7Q-1P-Irr"/>
+                                        <constraint firstAttribute="trailing" secondItem="hLE-HW-BP6" secondAttribute="trailing" constant="40" id="zAe-e3-hJA"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="light"/>
+                                <vibrancyEffect>
+                                    <blurEffect style="extraLight"/>
+                                </vibrancyEffect>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -493,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5L8-OX-OHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-289" y="1753"/>
+            <point key="canvasLocation" x="303" y="2049"/>
         </scene>
         <!--News-->
         <scene sceneID="iVh-gy-d8B">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC00A3481D691B250037EF7D /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC00A3471D691B250037EF7D /* NSDate.swift */; };
 		FC20D1CC16F11FE800CA43D2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC20D1CB16F11FE800CA43D2 /* Settings.bundle */; };
 		FC20D1CF16F1243900CA43D2 /* Client_x0020_ServiceSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FC20D1CE16F1243900CA43D2 /* Client_x0020_ServiceSvc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FC20D1D216F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FC20D1D116F12C1D00CA43D2 /* Class_x0020_ServiceSvc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -168,6 +169,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FC00A3471D691B250037EF7D /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		FC1E45E71B0AB68600863F74 /* BikramSilverlake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BikramSilverlake.entitlements; sourceTree = "<group>"; };
 		FC1E45E81B0AB6B200863F74 /* BikramSilverlake WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BikramSilverlake WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		FC20D1CB16F11FE800CA43D2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
@@ -361,6 +363,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC00A3461D691B140037EF7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC00A3471D691B250037EF7D /* NSDate.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		FC33B8C216EE58C8006991CD /* MBO */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +471,7 @@
 		FC3FF76816C8D63800CB3700 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				FC00A3461D691B140037EF7D /* Extensions */,
 				FC96662516D4825F00E656A2 /* AboutItems.h */,
 				FC96662616D4826000E656A2 /* AboutItems.m */,
 				FC9665E416D41BFD00E656A2 /* AboutTheStudioViewController.h */,
@@ -924,6 +935,7 @@
 				FCA905BB16E2D66500746A54 /* BuyDetailViewController.m in Sources */,
 				FC33B8CF16EE58DD006991CD /* NSDate+ISO8601Parsing.m in Sources */,
 				FC33B8D016EE58DD006991CD /* NSDate+ISO8601Unparsing.m in Sources */,
+				FC00A3481D691B250037EF7D /* NSDate.swift in Sources */,
 				FC33B8D116EE58DD006991CD /* Sale_x0020_Service.m in Sources */,
 				FC33B8D216EE58DD006991CD /* USAdditions.m in Sources */,
 				FC33B8D316EE58DD006991CD /* USGlobals.m in Sources */,

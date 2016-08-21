@@ -51,10 +51,10 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 			if allowed {
 				self.currentItem = item
 				let event = EKEvent(eventStore: self.eventStore)
-				event.title = "Yoga"
-				event.location = "Rise Hot Yoga"
-				event.startDate = item.scheduleLocalStartTime
-				event.endDate = item.scheduleLocalEndTime
+				event.title = item.scheduleType
+				event.location = studioName
+				event.startDate = item.scheduleStartDate.globalTime
+				event.endDate = item.scheduleEndDate.globalTime
 				let cal = self.eventStore.defaultCalendarForNewEvents
 				event.calendar = cal
 				do {
