@@ -12,7 +12,7 @@ import UIKit
 enum ScheduleItemType : String{
 	case Normal = "Bikram"
 	case Hour = "Bikram Hour"
-	static func scheduleItemTypeFromString(type:String)->ScheduleItemType{
+	static func scheduleItemTypeFromString(_ type:String)->ScheduleItemType{
 		switch(type){
 		case ScheduleItemType.Hour.rawValue:
 			return ScheduleItemType.Hour
@@ -23,17 +23,18 @@ enum ScheduleItemType : String{
 }
 
 struct ScheduleItem {
-	static var dateFormatter = NSDateFormatter()
-	static var token:dispatch_once_t = 0
-	static func scheduleItemFromDictionary(jSONDict:JsonDictionary?)->ScheduleItem?{
-		
-		dispatch_once(&token, { () -> Void in
+	private static var __once: () = { () -> Void in
 			ScheduleItem.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
 			//ScheduleItem.dateFormatter.timeZone = NSTimeZone(name: "Americas")
-		})
+		}()
+	static var dateFormatter = DateFormatter()
+	static var token:Int = 0
+	static func scheduleItemFromDictionary(_ jSONDict:JsonDictionary?)->ScheduleItem?{
+		
+		_ = ScheduleItem.__once
 		if let dict = jSONDict{
 			if let d = dict[descriptionKey] as? String, let i = dict[idKey] as? Int, let t = dict[typeKey] as? String, let dt = dict[dateKey] as? String, let et = dict[endTimeKey] as? String, let teach = dict[teacherKey] as? String, let teachID = dict[teacherIDKey] as? String, let ft = dict[fullTimeKey] as? String{
-				return ScheduleItem(scheduleItemID: i, scheduleDescription: d, scheduleType: t, scheduleStartDate: dateFormatter.dateFromString(dt)!	, scheduleEndDate: dateFormatter.dateFromString(et)!, scheduleTeacherName: teach, scheduleTeacherID: teachID, scheduleFullTime: ft)
+				return ScheduleItem(scheduleItemID: i, scheduleDescription: d, scheduleType: t, scheduleStartDate: dateFormatter.date(from: dt)!	, scheduleEndDate: dateFormatter.date(from: et)!, scheduleTeacherName: teach, scheduleTeacherID: teachID, scheduleFullTime: ft)
 			}
 		}
 		return nil
@@ -41,13 +42,13 @@ struct ScheduleItem {
 	let scheduleItemID:Int
 	let scheduleDescription:String
 	let scheduleType : String
-	let scheduleStartDate :NSDate
-	let scheduleEndDate: NSDate
+	let scheduleStartDate :Date
+	let scheduleEndDate: Date
 	let scheduleTeacherName :String
 	let scheduleTeacherID: String
 	let scheduleFullTime : String
 	var scheduleItemMinutes : String{
-		let diff = self.scheduleEndDate.timeIntervalSinceDate(self.scheduleStartDate)
+		let diff = self.scheduleEndDate.timeIntervalSince(self.scheduleStartDate)
 		let m = Int(diff /  60)
 		return "\(m)"
 	}
@@ -58,24 +59,24 @@ struct ScheduleItem {
 	}
 	var scheduleItemInPast:Bool{
 		get{
-			let now = NSDate()
+			let now = Date()
 			let tznow = self.toLocalTime(now)
 			let result  = tznow.compare(self.scheduleStartDate)
-			let boolResult = (result != NSComparisonResult.OrderedAscending)
+			let boolResult = (result != ComparisonResult.orderedAscending)
 			return boolResult
 		}
 	}
-	var scheduleLocalStartTime:NSDate{
+	var scheduleLocalStartTime:Date{
 		get{
 			return self.toAbsoluteLocalTime(self.scheduleStartDate)
 		}
 	}
-	var scheduleLocalEndTime:NSDate{
+	var scheduleLocalEndTime:Date{
 		get{
 			return self.toAbsoluteLocalTime(self.scheduleEndDate)
 		}
 	}
-	private func toAbsoluteLocalTime(date:NSDate)->NSDate{
+	fileprivate func toAbsoluteLocalTime(_ date:Date)->Date{
 //		var calendar = NSCalendar.currentCalendar()
 //		var components = calendar.components(NSCalendarUnit.CalendarUnitDay|NSCalendarUnit.CalendarUnitHour|NSCalendarUnit.CalendarUnitMinute|NSCalendarUnit.CalendarUnitYear|NSCalendarUnit.MonthCalendarUnit, fromDate: date)
 //		
@@ -91,15 +92,15 @@ struct ScheduleItem {
 //		
 //		var newDate = newComponents.date
 		let seconds:Double =  (7 * 60 * 60) + 3600
-		let newDate = date.dateByAddingTimeInterval(seconds)
+		let newDate = date.addingTimeInterval(seconds)
 		
 		return date
 	}
-	private func toLocalTime(date:NSDate)->NSDate{
-		let tx  = NSTimeZone.localTimeZone()
-		let sec = tx.secondsFromGMTForDate(date)
+	fileprivate func toLocalTime(_ date:Date)->Date{
+		let tx  = TimeZone.autoupdatingCurrent
+		let sec = tx.secondsFromGMT(for: date)
 		let tsec = Double(sec)
-		return NSDate(timeInterval: tsec, sinceDate: date)
+		return Date(timeInterval: tsec, since: date)
 	}
 //	-(NSDate *) toLocalTime
 //	{

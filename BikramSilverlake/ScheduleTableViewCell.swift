@@ -9,10 +9,10 @@
 import UIKit
 
 protocol ScheduleTableViewCellDelegate{
-	func scheduleTableViewCellShowTeacher(view:UIView,rect:CGRect,instructor:String)
-	func scheduleTableViewCellShowClassType(view:UIView,rect:CGRect,message:String)
-	func scheduleTableViewCellReserverClass(item:ScheduleItem)
-	func scheduleTableViewCellAddToSchedule(item:ScheduleItem)
+	func scheduleTableViewCellShowTeacher(_ view:UIView,rect:CGRect,instructor:String)
+	func scheduleTableViewCellShowClassType(_ view:UIView,rect:CGRect,message:String)
+	func scheduleTableViewCellReserverClass(_ item:ScheduleItem)
+	func scheduleTableViewCellAddToSchedule(_ item:ScheduleItem)
 }
 
 class ScheduleTableViewCell: UITableViewCell {
@@ -32,24 +32,24 @@ class ScheduleTableViewCell: UITableViewCell {
 	{
 		self.showClassType(self)
 	}
-	@IBAction func showClassType(sender: AnyObject) {
+	@IBAction func showClassType(_ sender: AnyObject) {
 		if let del = self.delegate,let item  = self.scheduleItem{
 	
 			del.scheduleTableViewCellShowClassType(self, rect: self.classType.frame, message: item.scheduleDescription)
 		}
 	}
-	@IBAction func addToSchedule(sender: AnyObject) {
+	@IBAction func addToSchedule(_ sender: AnyObject) {
 		if let del = self.delegate{
 			del.scheduleTableViewCellAddToSchedule(self.scheduleItem!)
 		}
 	}
 	
-	@IBAction func reserverClass(sender: AnyObject) {
+	@IBAction func reserverClass(_ sender: AnyObject) {
 		if let del = self.delegate{
 			del.scheduleTableViewCellReserverClass(self.scheduleItem!)
 		}
 	}
-	@IBAction func showTeacher(sender: AnyObject) {
+	@IBAction func showTeacher(_ sender: AnyObject) {
 		if let del = self.delegate{
 			del.scheduleTableViewCellShowTeacher(self, rect: self.teacherButton.frame, instructor: self.scheduleItem!.scheduleTeacherID)
 		}
@@ -61,11 +61,11 @@ class ScheduleTableViewCell: UITableViewCell {
 		didSet{
 			if let si = self.scheduleItem{
 				self.timeLabel.text = si.scheduleFullTime
-				self.teacherButton .setTitle(si.scheduleTeacherName, forState: .Normal)
+				self.teacherButton .setTitle(si.scheduleTeacherName, for: UIControlState())
 				self.classTypeLabel.text = si.scheduleType
 				self.minutesLabel.text = si.scheduleItemMinutes
 				if si.scheduleItemInPast {
-					self.userInteractionEnabled = false
+					self.isUserInteractionEnabled = false
 					let newAlpha:CGFloat = 0.5
 					for v in self.allViews{
 						v.alpha = newAlpha
@@ -83,11 +83,11 @@ class ScheduleTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-		let tap = UITapGestureRecognizer(target: self, action: Selector("classTapped"))
+		let tap = UITapGestureRecognizer(target: self, action: #selector(ScheduleTableViewCell.classTapped))
 		self.classTypeLabel.addGestureRecognizer(tap)
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

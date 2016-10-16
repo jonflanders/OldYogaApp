@@ -12,26 +12,33 @@ import Foundation
 private let rowType = "ScheduleRowController"
 class InterfaceController: WKInterfaceController {
 
+	private lazy var __once: () = { [unowned self]() -> Void in
+				let ds = DateFormatter()
+				ds.dateFormat = "EEE MMM d yyyy"
+				self.dateFormatter = ds
+				//Sun May 10 2015
+				}()
+
 	@IBOutlet weak var scheduleTable: WKInterfaceTable!
 	@IBOutlet weak var titleLabel: WKInterfaceLabel!
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         // Configure interface objects here.
 		let sc = ScheduleController()
 			sc.getSchedule { (schedule, error) -> Void in
 			if let realSchedule = schedule{
-				dispatch_async(dispatch_get_main_queue(), { [unowned self]() -> Void in
+				DispatchQueue.main.async(execute: { [unowned self]() -> Void in
 					self.schedule = realSchedule
 					let day = self.daysInOrder![0]
-					if let idx = realSchedule.scheduleThisWeek.indexForKey(day){
+					if let idx = realSchedule.scheduleThisWeek.index(forKey: day){
 						let (k,v) = realSchedule.scheduleThisWeek[idx]
 						//self.titleLabel .setText(k)
 						var items = v
 						self.scheduleTable.setNumberOfRows(items.count, withRowType: rowType)
 						for i in 0..<items.count
 						{
-							if let  rc =  self.scheduleTable.rowControllerAtIndex(i) as? ScheduleRowController{
+							if let  rc =  self.scheduleTable.rowController(at: i) as? ScheduleRowController{
 								let si = items[i]
 								rc.scheduleTime = si.scheduleFullTime
 							}
@@ -49,25 +56,20 @@ class InterfaceController: WKInterfaceController {
 		}
     }
 	
-	var token: dispatch_once_t = 0
-	var dateFormatter:NSDateFormatter?
+	var token: Int = 0
+	var dateFormatter:DateFormatter?
 	
 	var daysInOrder:[String]?
 	var schedule:Schedule?{
 		didSet{
-			dispatch_once(&token, { [unowned self]() -> Void in
-				let ds = NSDateFormatter()
-				ds.dateFormat = "EEE MMM d yyyy"
-				self.dateFormatter = ds
-				//Sun May 10 2015
-				})
+			_ = self.__once
 			
 			if let realSchedule  = self.schedule{
 				var days = Array(realSchedule.scheduleThisWeek.keys)
-				days.sortInPlace{ [unowned self] in
-					let d1 = self.dateFormatter?.dateFromString($0)
-					let d2 = self.dateFormatter?.dateFromString($1)
-					return d1!.compare(d2!) == NSComparisonResult.OrderedAscending
+				days.sort{ [unowned self] in
+					let d1 = self.dateFormatter?.date(from: $0)
+					let d2 = self.dateFormatter?.date(from: $1)
+					return d1!.compare(d2!) == ComparisonResult.orderedAscending
 				}
 				self.daysInOrder = days
 			}

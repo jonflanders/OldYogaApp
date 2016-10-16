@@ -11,19 +11,19 @@ import Foundation
 let mainServerConnection = ServerConnectionManager()
 
 typealias JsonDictionary = Dictionary<String,AnyObject>
-typealias ServerCallback = (JsonDictionary?,NSError?)->(Void)
-typealias ServerRawCallback = (NSData?,NSError?)->Void
+typealias ServerCallback = (JsonDictionary?,Error?)->(Void)
+typealias ServerRawCallback = (Data?,Error?)->Void
 class ServerConnectionManager {
     let maxOp = 100;
     init()
     {
-        self.queue = NSOperationQueue()
+        self.queue = OperationQueue()
         self.queue.maxConcurrentOperationCount = maxOp
-        self.configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        self.configuration = URLSessionConfiguration.default
     }
-    private let queue:NSOperationQueue
-    private let configuration:NSURLSessionConfiguration
-	func getDictionary(resourceURL:String, serverCallback:ServerCallback)
+    fileprivate let queue:OperationQueue
+    fileprivate let configuration:URLSessionConfiguration
+	func getDictionary(_ resourceURL:String, serverCallback:@escaping ServerCallback)
 	{
 		
 		self.get(resourceURL, callback: { (data, error) -> Void in
@@ -33,12 +33,13 @@ class ServerConnectionManager {
 			
 		})
 	}
-    func get(resourceURL: String, callback: ServerRawCallback) {
+    func get(_ resourceURL: String, callback: @escaping ServerRawCallback) {
         
-        let url = NSURL(string: resourceURL)
-        let request = NSMutableURLRequest(URL: url!)
+        let url = URL(string: resourceURL)
+        let request = MutableURLRequest(url: url!)
         let session = self.getSession()
-        let task = session.dataTaskWithRequest(request) { (data , response ,  err) -> Void in
+	
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { (data , response ,  err) -> Void in
           
             if(err != nil){
                 
@@ -48,23 +49,23 @@ class ServerConnectionManager {
             {
 				callback(data,nil)
 			}
-        }
+        }) 
         task.resume()
-        
+		
     }
-    private func dictionaryFromData(data:NSData)->(JsonDictionary,NSErrorPointer){
-        var err:NSErrorPointer = nil
+    fileprivate func dictionaryFromData(_ data:Data)->(JsonDictionary,NSErrorPointer){
+        let err:NSErrorPointer? = nil
 		var ret:JsonDictionary? = nil
 		do{
-			ret = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! JsonDictionary
+			ret = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! JsonDictionary
 		}
 		catch{
 			
 		}
-        return (ret!,err)
+        return (ret!,err!)
     }
-    private func getSession()->NSURLSession{
-        let ret = NSURLSession(configuration: configuration)
+    fileprivate func getSession()->URLSession{
+        let ret = URLSession(configuration: configuration)
         return ret
     }
 }

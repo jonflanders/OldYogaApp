@@ -24,20 +24,20 @@ return [NSDate dateWithTimeInterval: seconds sinceDate: self];
  */
 
 
-extension NSDate{
-	var localTime:NSDate{
+extension Date{
+	var localTime:Date{
 		get{
-			let tz = NSTimeZone.localTimeZone()
-			let seconds:NSTimeInterval = Double(tz.secondsFromGMTForDate(self))
-			return NSDate(timeInterval: seconds, sinceDate: self)
+			let tz = TimeZone.autoupdatingCurrent
+			let seconds:TimeInterval = Double(tz.secondsFromGMT(for: self))
+			return Date(timeInterval: seconds, since: self)
 		}
 	}
 	
-	var globalTime:NSDate{
+	var globalTime:Date{
 		get{
-			let tz = NSTimeZone.localTimeZone()
-			let seconds:NSTimeInterval = 0 - Double(tz.secondsFromGMTForDate(self))
-			return NSDate(timeInterval: seconds, sinceDate: self)
+			let tz = TimeZone.autoupdatingCurrent
+			let seconds:TimeInterval = 0 - Double(tz.secondsFromGMT(for: self))
+			return Date(timeInterval: seconds, since: self)
 		}
 	}
 }

@@ -10,36 +10,36 @@ import Foundation
 import UIKit
 
 protocol ScheduleTableViewDataSourceDelegate{
-	func scheduleTableViewDataSourceShowTeacher(view:UIView,rect:CGRect,instructor:String)
-	func scheduleTableViewDataSourceShowClassType(view:UIView,rect:CGRect, message: String)
-	func scheduleTableViewDataSourceReserverClass(item:ScheduleItem)
-	func scheduleTableViewDataSourceAddToSchedule(item:ScheduleItem)
+	func scheduleTableViewDataSourceShowTeacher(_ view:UIView,rect:CGRect,instructor:String)
+	func scheduleTableViewDataSourceShowClassType(_ view:UIView,rect:CGRect, message: String)
+	func scheduleTableViewDataSourceReserverClass(_ item:ScheduleItem)
+	func scheduleTableViewDataSourceAddToSchedule(_ item:ScheduleItem)
 }
 
 class ScheduleTableViewDataSource : NSObject, UITableViewDataSource, ScheduleTableViewCellDelegate
 {
 	 var delegate:ScheduleTableViewDataSourceDelegate?
-	func scheduleTableViewCellReserverClass(item: ScheduleItem) {
+	func scheduleTableViewCellReserverClass(_ item: ScheduleItem) {
 		if let del = self.delegate{
 			del.scheduleTableViewDataSourceReserverClass(item)
 		}
 	}
-	func scheduleTableViewCellAddToSchedule(item: ScheduleItem) {
+	func scheduleTableViewCellAddToSchedule(_ item: ScheduleItem) {
 		if let del = self.delegate{
 			del.scheduleTableViewDataSourceAddToSchedule(item)
 		}
 	}
-	func scheduleTableViewCellShowClassType(view: UIView, rect: CGRect, message: String) {
+	func scheduleTableViewCellShowClassType(_ view: UIView, rect: CGRect, message: String) {
 		if let del = self.delegate{
 			del.scheduleTableViewDataSourceShowClassType(view, rect: rect, message:message)
 		}
 	}
-	func scheduleTableViewCellShowTeacher(view: UIView, rect: CGRect, instructor: String) {
+	func scheduleTableViewCellShowTeacher(_ view: UIView, rect: CGRect, instructor: String) {
 		if let del = self.delegate{
 			del.scheduleTableViewDataSourceShowTeacher(view, rect: rect, instructor: instructor)
 		}
 	}
-	private let cellID = "ScheduleCell"
+	fileprivate let cellID = "ScheduleCell"
 	@IBOutlet var tableView:UITableView!
 	var currentDay : (String,[ScheduleItem])?{
 		didSet{
@@ -60,15 +60,15 @@ class ScheduleTableViewDataSource : NSObject, UITableViewDataSource, ScheduleTab
 				}
 			}
 			if let cc = currentCell{
-				let indexPath = self.tableView.indexPathForCell(cc)
+				let indexPath = self.tableView.indexPath(for: cc)
 				if let realIndexPath = indexPath {
-					self.tableView.scrollToRowAtIndexPath(realIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+					self.tableView.scrollToRow(at: realIndexPath, at: UITableViewScrollPosition.top, animated: true)
 				}
 			}
 		}
 	}
 	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if let unwarappedDay  = self.currentDay{
 			return unwarappedDay.1.count
 		}else
@@ -76,11 +76,11 @@ class ScheduleTableViewDataSource : NSObject, UITableViewDataSource, ScheduleTab
 			return 0
 		}
 	}
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		var ret:UITableViewCell?
-		if let cell = tableView.dequeueReusableCellWithIdentifier(cellID) as? ScheduleTableViewCell{
+		if let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as? ScheduleTableViewCell{
 			if let unwarappedDay = self.currentDay{
-				cell.scheduleItem = unwarappedDay.1[indexPath.row]
+				cell.scheduleItem = unwarappedDay.1[(indexPath as NSIndexPath).row]
 				cell.delegate = self
 			}
 			ret = cell

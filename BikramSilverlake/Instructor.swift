@@ -9,9 +9,9 @@
 import Foundation
 
 struct Instructor {
-	static func instructorFromDictionary(jsonDict:JsonDictionary?)->Instructor?{
+	static func instructorFromDictionary(_ jsonDict:JsonDictionary?)->Instructor?{
 		if let dict = jsonDict {
-			if let iID = dict[idKey] as? String, name = dict[nameKey] as? String, bio = dict[bioKey] as? String, image = dict[imageURIKey] as? String{
+			if let iID = dict[idKey] as? String, let name = dict[nameKey] as? String, let bio = dict[bioKey] as? String, let image = dict[imageURIKey] as? String{
 				return Instructor(instructorID: iID, instructorName: name, instructorBio: bio, instructorURL: image)
 			}
 		}

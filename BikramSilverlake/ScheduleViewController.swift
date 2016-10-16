@@ -14,6 +14,12 @@ private let showClassTypeSegue = "showClassTypeSegue"
 
 private var currentDayIndex = 0
 class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTableViewDataSourceDelegate ,UIPopoverPresentationControllerDelegate,MBOLoginComplete{
+	private lazy var __once: () = { [unowned self]() -> Void in
+				let ds = DateFormatter()
+				ds.dateFormat = "EEE MMM d yyyy"
+				self.dateFormatter = ds
+				//Sun May 10 2015
+			}()
 	@IBOutlet weak var messageView: UIView!
 	@IBOutlet weak var messageLabel: UILabel!
 	@IBOutlet weak var messageViewConstraint: NSLayoutConstraint!
@@ -24,41 +30,41 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		}
 	}
 	var messageViewConstraintConstant:CGFloat!
-	@IBAction func closeMessage(s:AnyObject?){
+	@IBAction func closeMessage(_ s:AnyObject?){
 		self.messageViewConstraint.constant = self.messageViewConstraintConstant
-		UIView.animateWithDuration(1, animations: {[unowned self] () -> Void in
+		UIView.animate(withDuration: 1, animations: {[unowned self] () -> Void in
 			self.view.layoutIfNeeded()
 		})
 	}
-	func showMessage(msg:String){
-		dispatch_async(dispatch_get_main_queue(), { [unowned self]() -> Void in
+	func showMessage(_ msg:String){
+		DispatchQueue.main.async(execute: { [unowned self]() -> Void in
 			
 			self.messageLabel.text = msg;
 			self.messageViewConstraint.constant = 0
-			UIView.animateWithDuration(2, animations: { () -> Void in
+			UIView.animate(withDuration: 2, animations: { () -> Void in
 				self.view.layoutIfNeeded()
-				}) { (complete) -> Void in
-					dispatch_after(5, dispatch_get_main_queue()) {[unowned self] () -> Void in
+				}, completion: { (complete) -> Void in
+					DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {[unowned self] () -> Void in
 						self.closeMessage(nil)
 					}
-			}
+			}) 
 		})
 
 	}
-	private var eventStore:EKEventStore = EKEventStore()
-	func scheduleTableViewDataSourceAddToSchedule(item: ScheduleItem) {
-		self.eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {[unowned self] (allowed, error) -> Void in
+	fileprivate var eventStore:EKEventStore = EKEventStore()
+	func scheduleTableViewDataSourceAddToSchedule(_ item: ScheduleItem) {
+		self.eventStore.requestAccess(to: EKEntityType.event, completion: {[unowned self] (allowed, error) -> Void in
 			if allowed {
 				self.currentItem = item
 				let event = EKEvent(eventStore: self.eventStore)
 				event.title = item.scheduleType
 				event.location = studioName
-				event.startDate = item.scheduleStartDate.globalTime
-				event.endDate = item.scheduleEndDate.globalTime
+				event.startDate = item.scheduleStartDate.globalTime as Date
+				event.endDate = item.scheduleEndDate.globalTime as Date
 				let cal = self.eventStore.defaultCalendarForNewEvents
 				event.calendar = cal
 				do {
-					try self.eventStore .saveEvent(event, span: EKSpan.ThisEvent)
+					try self.eventStore .save(event, span: EKSpan.thisEvent)
 				} catch _ {
 				}
 				self.showMessage("Class added to your calendar")
@@ -71,7 +77,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		
 	}
 
-	func scheduleTableViewDataSourceReserverClass(item: ScheduleItem) {
+	func scheduleTableViewDataSourceReserverClass(_ item: ScheduleItem) {
 		self.currentItem = item
 		self.login  = MBOClientLogin()
 		if let l = self.login{
@@ -79,41 +85,41 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 			l.login()
 		}
 	}
-	func scheduleTableViewDataSourceShowClassType(view: UIView, rect: CGRect, message: String) {
+	func scheduleTableViewDataSourceShowClassType(_ view: UIView, rect: CGRect, message: String) {
 		self.params = (view,rect,message)
-		self .performSegueWithIdentifier(showClassTypeSegue, sender: nil)
+		self .performSegue(withIdentifier: showClassTypeSegue, sender: nil)
 	}
 	func addCurrentItemToCalendar(){
 		
 	}
 	
-	@IBAction func classTypeTouched(sender: AnyObject) {
-		self.performSegueWithIdentifier(showClassTypeSegue, sender: nil)
+	@IBAction func classTypeTouched(_ sender: AnyObject) {
+		self.performSegue(withIdentifier: showClassTypeSegue, sender: nil)
 	}
-	private var params:(UIView,CGRect,String)?
-	private var currentItem:ScheduleItem?
-	func scheduleTableViewDataSourceShowTeacher(view: UIView, rect: CGRect, instructor: String) {
+	fileprivate var params:(UIView,CGRect,String)?
+	fileprivate var currentItem:ScheduleItem?
+	func scheduleTableViewDataSourceShowTeacher(_ view: UIView, rect: CGRect, instructor: String) {
 		self.params = (view,rect,instructor)
-		self.performSegueWithIdentifier(showInstructorSegue, sender: nil )
+		self.performSegue(withIdentifier: showInstructorSegue, sender: nil )
 	}
-	@IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
-		self.navigationController?.popViewControllerAnimated(true)
+	@IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+		self.navigationController?.popViewController(animated: true)
 	}
-	@IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
-		self.performSegueWithIdentifier(nextDaySegueID, sender: self)
+	@IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+		self.performSegue(withIdentifier: nextDaySegueID, sender: self)
 	}
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		switch(segue.identifier!)
 		{
 		case nextDaySegueID:
-			if let  vc = segue.destinationViewController as? ScheduleViewController{
+			if let  vc = segue.destination as? ScheduleViewController{
 				vc.schedule = self.schedule
 				vc.dataSource.currentDay = self.nextDay()
 			
 			}
 		case showInstructorSegue:
 			
-				if let vc = segue.destinationViewController as? TeacherViewController{
+				if let vc = segue.destination as? TeacherViewController{
 					if let (v,r,i) = self.params{
 						vc.instructor = self.schedule?.instructorFromID(i)
 						if let pop = vc.popoverPresentationController{
@@ -125,7 +131,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 					
 				}
 		case showClassTypeSegue:
-			if let vc = segue.destinationViewController as? ClassTypeViewController{
+			if let vc = segue.destination as? ClassTypeViewController{
 				if let (v,r,m) = self.params{
 					vc.message = m
 					if let pop = vc.popoverPresentationController{
@@ -146,15 +152,15 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		}
 		
 	}
-	override func willMoveToParentViewController(parent: UIViewController?) {
+	override func willMove(toParentViewController parent: UIViewController?) {
 		if parent == nil{
-			currentDayIndex--
+			currentDayIndex -= 1
 		}
 	}
-	func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-		return .None
+	func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+		return .none
 	}
-	override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
 		var ret = true
 		
 		if(identifier == nextDaySegueID){
@@ -172,7 +178,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		}
 		return false
 	}
-	private func getItemsForDay(day:String)->[ScheduleItem]?{
+	fileprivate func getItemsForDay(_ day:String)->[ScheduleItem]?{
 		if let s = self.schedule{
 			let tempIdx = currentDayIndex + 1
 			if let days = self.daysInOrder {
@@ -198,7 +204,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 					let day = days[tempIdx]
 					if let items = self.getItemsForDay(day){
 					
-						currentDayIndex++
+						currentDayIndex += 1
 						return (day,items)
 					}
 				}
@@ -209,31 +215,31 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	
 	
 	
-	func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let nib = UINib(nibName: "ScheduleTableHeaderView", bundle: nil)
-		let view = nib.instantiateWithOwner(nil, options: nil).first as! UIView
+		let view = nib.instantiate(withOwner: nil, options: nil).first as! UIView
 		return view
 	}
 	var login:MBOClientLogin?
 	var currentClientID:String?
-	func complete(clientID: String!) {
+	func complete(_ clientID: String!) {
 
 		if let id = clientID
 		{
 			self.currentClientID = id
-			let alert = UIAlertController(title: "Add Class?", message: "Are you sure you want to reserve this class?", preferredStyle: UIAlertControllerStyle.Alert)
-			alert.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.Default, handler:{ [unowned self](act) -> Void in
+			let alert = UIAlertController(title: "Add Class?", message: "Are you sure you want to reserve this class?", preferredStyle: UIAlertControllerStyle.alert)
+			alert.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.default, handler:{ [unowned self](act) -> Void in
 				self.reserveClass()
 				}))
-			alert.addAction(UIAlertAction(title: "NO", style: .Default, handler: nil))
-			self .presentViewController(alert, animated: true, completion: { () -> Void in
+			alert.addAction(UIAlertAction(title: "NO", style: .default, handler: nil))
+			self .present(alert, animated: true, completion: { () -> Void in
 				
 			})
 			
 		}else
-		{let alert = UIAlertController(title: "Sorry", message: "You must login in order to reserver a class", preferredStyle: UIAlertControllerStyle.Alert)
-			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
-			self .presentViewController(alert, animated: true, completion: { () -> Void in
+		{let alert = UIAlertController(title: "Sorry", message: "You must login in order to reserver a class", preferredStyle: UIAlertControllerStyle.alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:nil))
+			self .present(alert, animated: true, completion: { () -> Void in
 				
 			})
 			
@@ -252,9 +258,9 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 					title = "Success!"
 					msg = "You are confirmed for this class."
 				}
-				let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
-				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
-				self .presentViewController(alert, animated: true, completion: { () -> Void in
+				let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:nil))
+				self .present(alert, animated: true, completion: { () -> Void in
 					
 				})
 			}
@@ -267,39 +273,34 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	var daysInOrder:[String]?
 	var schedule:Schedule?{
 		didSet{
-			dispatch_once(&token, { [unowned self]() -> Void in
-				let ds = NSDateFormatter()
-				ds.dateFormat = "EEE MMM d yyyy"
-				self.dateFormatter = ds
-				//Sun May 10 2015
-			})
+			_ = self.__once
 
 			if let realSchedule  = self.schedule{
 				var days = Array(realSchedule.scheduleThisWeek.keys)
-				days.sortInPlace{ [unowned self] in
-					let d1 = self.dateFormatter?.dateFromString($0)
-					let d2 = self.dateFormatter?.dateFromString($1)
-					return d1!.compare(d2!) == NSComparisonResult.OrderedAscending
+				days.sort{ [unowned self] in
+					let d1 = self.dateFormatter?.date(from: $0)
+					let d2 = self.dateFormatter?.date(from: $1)
+					return d1!.compare(d2!) == ComparisonResult.orderedAscending
 				}
 				self.daysInOrder = days
 			}
 		}
 	}
 	
-	var token: dispatch_once_t = 0
-	var dateFormatter:NSDateFormatter?
+	var token: Int = 0
+	var dateFormatter:DateFormatter?
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		self.tableView.tableFooterView = UIView(frame: CGRectZero)
+		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 		if(self.schedule == nil){
 			let sc = ScheduleController()
 			sc.getSchedule { (schedule, error) -> Void in
 				if let realSchedule = schedule{
-					dispatch_async(dispatch_get_main_queue(), { () -> Void in
+					DispatchQueue.main.async(execute: { () -> Void in
 						self.schedule = realSchedule
 						let day = self.daysInOrder![0]
-						if let idx = realSchedule.scheduleThisWeek.indexForKey(day){
+						if let idx = realSchedule.scheduleThisWeek.index(forKey: day){
 							let (k,v) = realSchedule.scheduleThisWeek[idx]
 							self.dataSource.currentDay  = (k,v)
 							self.dataSource.delegate = self

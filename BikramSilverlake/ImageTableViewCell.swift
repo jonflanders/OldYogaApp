@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class ImageTableViewCell: UITableViewCell {
+open class ImageTableViewCell: UITableViewCell {
 
-	public var cellImage:UIImage?{
+	open var cellImage:UIImage?{
 		didSet{
 			if let i = self.cellImage{
 				self.cellImageView.image = i
@@ -18,12 +18,12 @@ public class ImageTableViewCell: UITableViewCell {
 		}
 	}
 	@IBOutlet weak var cellImageView: UIImageView!
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override public  func setSelected(selected: Bool, animated: Bool) {
+    override open  func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

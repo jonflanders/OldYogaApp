@@ -10,7 +10,7 @@ import UIKit
 
 class ClassTypeViewController: UIViewController {
 	var message:String?
-	@IBOutlet private weak var messageLabel: UILabel!
+	@IBOutlet fileprivate weak var messageLabel: UILabel!
 	@IBOutlet weak var scrollView: UIScrollView!
 	override func viewDidLoad() {
 		if let msg  = self.message{
@@ -18,20 +18,20 @@ class ClassTypeViewController: UIViewController {
 			self.scrollView.contentSize = self.messageLabel.frame.size
 		}
 	}
-	private let regex = "<[^>]+"
-	func stringByStrippingHTML(inputString:String)->String{
+	fileprivate let regex = "<[^>]+"
+	func stringByStrippingHTML(_ inputString:String)->String{
 		var outputString = String(inputString)
 		
-		var r = outputString.rangeOfString(regex, options:NSStringCompareOptions.RegularExpressionSearch)
+		var r = outputString?.range(of: regex, options:NSString.CompareOptions.regularExpression)
 		if r != nil  {
 			repeat{
-				outputString.removeRange(r!)
-				r = outputString.rangeOfString(regex, options:NSStringCompareOptions.RegularExpressionSearch)
+				outputString?.removeSubrange(r!)
+				r = outputString?.range(of: regex, options:NSString.CompareOptions.regularExpression)
 			}while(r != nil)
 		}
-		outputString = outputString.stringByReplacingOccurrencesOfString(">", withString: "")
-		outputString = outputString.stringByReplacingOccurrencesOfString("<", withString: "")
+		outputString = outputString?.replacingOccurrences(of: ">", with: "")
+		outputString = outputString?.replacingOccurrences(of: "<", with: "")
 		
-		return outputString;
+		return outputString!;
 	}
 }

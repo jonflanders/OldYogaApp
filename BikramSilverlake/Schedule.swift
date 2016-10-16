@@ -14,10 +14,10 @@ struct Schedule{
 	let scheduleThisWeek:ScheduleDict
 	let scheduleNextWeek:ScheduleDict
 	let scheduleInstructors:[Instructor]
-	func instructorFromID(id:String)->Instructor?{
+	func instructorFromID(_ id:String)->Instructor?{
 		return self.scheduleInstructors.filter{ $0.instructorID == id}.first
 	}
-	static func scheduleFromDictionary(dict:JsonDictionary?)->Schedule?{
+	static func scheduleFromDictionary(_ dict:JsonDictionary?)->Schedule?{
 	
 		var instructors = [Instructor]()
 		var thisWeekSchedule = ScheduleDict()
@@ -53,7 +53,7 @@ struct Schedule{
 		
 		return Schedule(scheduleThisWeek: thisWeekSchedule, scheduleNextWeek: ScheduleDict(), scheduleInstructors: instructors)
 	}
-	private static func scheduleItemFromDict(dict:[String:AnyObject])->(String,[ScheduleItem]){
+	fileprivate static func scheduleItemFromDict(_ dict:[String:AnyObject])->(String,[ScheduleItem]){
 		let date = dict[dateKey] as! String
 		var items = [ScheduleItem]()
 		if let sitems = dict[scheduleKey] as? [AnyObject]{
