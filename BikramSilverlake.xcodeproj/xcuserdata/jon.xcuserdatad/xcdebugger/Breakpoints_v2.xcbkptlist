@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleController.swift"
-            timestampString = "452901603.500261"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19">
+            startingLineNumber = "11"
+            endingLineNumber = "11">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -34,11 +34,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleTableViewDataSource.swift"
-            timestampString = "453568772.773987"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -50,11 +50,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/Schedule.swift"
-            timestampString = "452979170.259773"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "scheduleFromDictionary(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -66,11 +66,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/Schedule.swift"
-            timestampString = "452979170.259773"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "scheduleFromDictionary(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -82,11 +82,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleItem.swift"
-            timestampString = "453510109.812826"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "scheduleItemFromDictionary(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -98,11 +98,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleTableViewDataSource.swift"
-            timestampString = "453568772.773987"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -114,11 +114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleTableViewDataSource.swift"
-            timestampString = "453568772.773987"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -178,11 +178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleTableViewDataSource.swift"
-            timestampString = "453568834.218157"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "reloadData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -194,11 +194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleTableViewDataSource.swift"
-            timestampString = "453568839.187576"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "reloadData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -210,11 +210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleTableViewDataSource.swift"
-            timestampString = "453568850.309811"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "reloadData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -402,11 +402,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleViewController.swift"
-            timestampString = "453610057.111084"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "__once"
             landmarkType = "24">
          </BreakpointContent>
@@ -418,11 +418,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleViewController.swift"
-            timestampString = "453610057.909574"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "__once"
             landmarkType = "24">
             <Locations>
@@ -481,11 +481,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleViewController.swift"
-            timestampString = "453610232.802367"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "__once"
             landmarkType = "24">
          </BreakpointContent>
@@ -497,11 +497,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ServerConnection.swift"
-            timestampString = "465582811.372241"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "ServerConnectionManager"
             landmarkType = "3">
             <Locations>
@@ -593,11 +593,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ServerConnection.swift"
-            timestampString = "466395245.926764"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "ServerConnectionManager"
             landmarkType = "3">
          </BreakpointContent>
@@ -625,11 +625,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleItem.swift"
-            timestampString = "474785432.959895"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "toAbsoluteLocalTime(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -641,11 +641,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleViewController.swift"
-            timestampString = "493427686.281385"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "__once"
             landmarkType = "24">
          </BreakpointContent>
@@ -673,11 +673,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleItem.swift"
-            timestampString = "493411287.460785"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "scheduleItemFromDictionary(_:)"
             landmarkType = "5">
             <Actions>
@@ -697,13 +697,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BikramSilverlake/ScheduleTableViewDataSource.swift"
-            timestampString = "493426212.468163"
+            timestampString = "498327631.629839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "scheduleTableViewCellAddToSchedule(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikramSilverlake/ScheduleViewController.swift"
+            timestampString = "498328269.151367"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "swipeLeft(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BikramSilverlake/ScheduleViewController.swift"
+            timestampString = "498328269.151367"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "swipeRight(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

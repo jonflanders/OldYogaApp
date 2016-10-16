@@ -53,7 +53,7 @@ class ServerConnectionManager {
         task.resume()
 		
     }
-    fileprivate func dictionaryFromData(_ data:Data)->(JsonDictionary,NSErrorPointer){
+    fileprivate func dictionaryFromData(_ data:Data)->(JsonDictionary?,NSErrorPointer?){
         let err:NSErrorPointer? = nil
 		var ret:JsonDictionary? = nil
 		do{
@@ -62,7 +62,7 @@ class ServerConnectionManager {
 		catch{
 			
 		}
-        return (ret!,err!)
+        return (ret,err)
     }
     fileprivate func getSession()->URLSession{
         let ret = URLSession(configuration: configuration)

@@ -102,11 +102,14 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		self.params = (view,rect,instructor)
 		self.performSegue(withIdentifier: showInstructorSegue, sender: nil )
 	}
-	@IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
-		self.navigationController?.popViewController(animated: true)
+	@IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {		
+			self.navigationController?.popViewController(animated: true)
+
 	}
 	@IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
-		self.performSegue(withIdentifier: nextDaySegueID, sender: self)
+		if self.hasNextDay(){
+			self.performSegue(withIdentifier: nextDaySegueID, sender: self)
+		}
 	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		switch(segue.identifier!)
@@ -315,7 +318,9 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 		{
 			self.dataSource.reloadData()
 			self.dataSource.delegate = self
-			self.navigationItem.title = self.dataSource.currentDay!.0
+			if let currentDay = self.dataSource.currentDay{
+				self.navigationItem.title = currentDay.0
+			}
 			if !self.hasNextDay() {
 				self.navigationItem.rightBarButtonItem = nil
 			}
