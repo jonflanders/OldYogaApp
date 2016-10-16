@@ -51,6 +51,7 @@
 		FC5C0C45170118AD008C1D8D /* likefb.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C43170118AD008C1D8D /* likefb.png */; };
 		FC5C0C4917013F80008C1D8D /* country_names_and_code_elements_txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */; };
 		FC6497CD1AFE75B400A12668 /* ScheduleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6497CC1AFE75B400A12668 /* ScheduleTableViewDataSource.swift */; };
+		FC6D62781DB3E4A0002188AB /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6D62771DB3E4A0002188AB /* Reveal.framework */; };
 		FC8024A01AEC12FC003B5FEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC80249F1AEC12FC003B5FEB /* Images.xcassets */; };
 		FC88E0351B097FE5003B6EC7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88E0341B097FE5003B6EC7 /* InterfaceController.swift */; };
 		FC88E0371B097FE5003B6EC7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88E0361B097FE5003B6EC7 /* NotificationController.swift */; };
@@ -235,6 +236,7 @@
 		FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = country_names_and_code_elements_txt.txt; sourceTree = "<group>"; };
 		FC610EA51BC0967B00F4E316 /* BikramSilverlake WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BikramSilverlake WatchKit App.entitlements"; sourceTree = "<group>"; };
 		FC6497CC1AFE75B400A12668 /* ScheduleTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewDataSource.swift; sourceTree = "<group>"; };
+		FC6D62771DB3E4A0002188AB /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		FC80249F1AEC12FC003B5FEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC88E02F1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BikramSilverlake WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC88E0321B097FE5003B6EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				FC98D3C7162A314D00436255 /* EventKit.framework in Frameworks */,
 				FC98D3C11628EC6900436255 /* QuartzCore.framework in Frameworks */,
 				FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */,
+				FC6D62781DB3E4A0002188AB /* Reveal.framework in Frameworks */,
 				FC59685F15DC5431006B4745 /* Foundation.framework in Frameworks */,
 				FC59686115DC5431006B4745 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -621,6 +624,7 @@
 		FC59685B15DC5431006B4745 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC6D62771DB3E4A0002188AB /* Reveal.framework */,
 				FC577F061AFC08C000377B90 /* libz.dylib */,
 				FC577F041AFC08B200377B90 /* CFNetwork.framework */,
 				FC33B8D516EE5951006991CD /* libxml2.2.dylib */,
@@ -1090,6 +1094,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";
@@ -1117,6 +1122,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BikramSilverlake/BikramSilverlake-Prefix.pch";

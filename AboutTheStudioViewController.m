@@ -15,6 +15,7 @@
 @interface AboutTheStudioViewController ()
 @property (nonatomic,strong) NSArray* items;
 @property (nonatomic,strong) NSString* ImageCellIdentifier;
+@property (weak, nonatomic) IBOutlet UIView *tableContainer;
 
 @end
 
@@ -40,9 +41,12 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellId];
         }
         cell.textLabel.text = item.item;
+		cell.textLabel.tintColor = [UIColor blackColor];
 	cell.textLabel.font = [UIFont fontWithName:cell.textLabel.font.fontName size:cell.textLabel.font.pointSize + 2.0];
 		cell.backgroundColor = [UIColor clearColor];
         cell.detailTextLabel.text = item.value;
+	cell.detailTextLabel.tintColor = [UIColor blueColor];
+	//cell.tintColor = [UIColor blackColor];
         cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
         if([item.item isEqualToString:@"address"]){
             cell.detailTextLabel.numberOfLines=3;
@@ -181,6 +185,9 @@
     self.ImageCellIdentifier = @"ImageCell";
     self.tblView.sectionHeaderHeight = 0.0;
     self.tblView.sectionFooterHeight = 0.0;
+	self.tblView.layer.cornerRadius = 15.0;
+	self.tableContainer.layer.cornerRadius = 15.0;
+	
     
   
 }
