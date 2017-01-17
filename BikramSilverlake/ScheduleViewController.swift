@@ -14,6 +14,7 @@ private let showClassTypeSegue = "showClassTypeSegue"
 
 private var currentDayIndex = 0
 class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTableViewDataSourceDelegate ,UIPopoverPresentationControllerDelegate,MBOLoginComplete{
+	let refresh = UIRefreshControl()
 	private lazy var __once: () = { [unowned self]() -> Void in
 				let ds = DateFormatter()
 				ds.dateFormat = "EEE MMM d yyyy"
@@ -292,10 +293,14 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
 	
 	var token: Int = 0
 	var dateFormatter:DateFormatter?
-	
+	func refreshFunc(){
+		
+	}
 	override func viewDidLoad() {
         super.viewDidLoad()
-		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+		self.refresh.addTarget(self, action: #selector(refreshFunc), for: UIControlEvents.valueChanged)
+		self.tableView.addSubview(self.refresh)
+//		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 		if(self.schedule == nil){
 			let sc = ScheduleController()
 			sc.getSchedule { (schedule, error) -> Void in
