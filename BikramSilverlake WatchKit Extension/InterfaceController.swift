@@ -27,6 +27,12 @@ class InterfaceController: WKInterfaceController {
         // Configure interface objects here.
 		let sc = ScheduleController()
 			sc.getSchedule { (schedule, error) -> Void in
+				if let realError = error {
+					self.scheduleTable.setNumberOfRows(1, withRowType: rowType)
+					if let rc = self.scheduleTable.rowController(at: 0)as? ScheduleRowController{
+						rc.scheduleTime = "Error connecting to server"
+					}
+				}
 			if let realSchedule = schedule{
 				DispatchQueue.main.async(execute: { [unowned self]() -> Void in
 					self.schedule = realSchedule

@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -402,64 +403,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleAspectFill" image="about.png" translatesAutoresizingMaskIntoConstraints="NO" id="cHd-Xr-bVF"/>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSQ-HO-krS">
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LRo-AP-7l3">
-                                    <frame key="frameInset"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAG-AJ-xOO">
-                                            <subviews>
-                                                <tableView clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hLE-HW-BP6">
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="400" id="MTP-2g-lDk"/>
-                                                        <constraint firstAttribute="width" constant="295" id="TLj-oB-dGX"/>
-                                                    </constraints>
-                                                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <sections/>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="w4o-bS-PoH" id="Pj2-UJ-Lyv"/>
-                                                        <outlet property="delegate" destination="w4o-bS-PoH" id="NDa-W0-1lH"/>
-                                                    </connections>
-                                                </tableView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="hLE-HW-BP6" firstAttribute="centerY" secondItem="pAG-AJ-xOO" secondAttribute="centerY" id="COU-wl-P6r"/>
-                                                <constraint firstItem="hLE-HW-BP6" firstAttribute="centerX" secondItem="pAG-AJ-xOO" secondAttribute="centerX" id="ONX-v7-G7b"/>
-                                                <constraint firstAttribute="width" constant="335" id="kSC-AH-gka"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="pAG-AJ-xOO" firstAttribute="centerX" secondItem="LRo-AP-7l3" secondAttribute="centerX" id="TJ7-cr-BiO"/>
-                                        <constraint firstItem="pAG-AJ-xOO" firstAttribute="top" secondItem="LRo-AP-7l3" secondAttribute="top" constant="100" id="Wqf-cJ-LUd"/>
-                                        <constraint firstAttribute="bottom" secondItem="pAG-AJ-xOO" secondAttribute="bottom" constant="100" id="pob-7c-l3S"/>
-                                    </constraints>
-                                </view>
-                                <vibrancyEffect>
-                                    <blurEffect style="regular"/>
-                                </vibrancyEffect>
-                            </visualEffectView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rFN-d2-Yjf">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="w4o-bS-PoH" id="iL8-3t-NQh"/>
+                                    <outlet property="delegate" destination="w4o-bS-PoH" id="jDn-ds-hji"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="SSQ-HO-krS" secondAttribute="trailing" id="9Kt-tq-tc7"/>
-                            <constraint firstItem="cHd-Xr-bVF" firstAttribute="leading" secondItem="JhN-uy-f5G" secondAttribute="leading" id="D19-A5-K9k"/>
-                            <constraint firstItem="SSQ-HO-krS" firstAttribute="top" secondItem="JhN-uy-f5G" secondAttribute="top" id="a6u-SU-sOn"/>
-                            <constraint firstAttribute="bottom" secondItem="SSQ-HO-krS" secondAttribute="bottom" id="dVq-7S-ahG"/>
-                            <constraint firstItem="SSQ-HO-krS" firstAttribute="leading" secondItem="JhN-uy-f5G" secondAttribute="leading" id="guQ-TO-U5K"/>
-                            <constraint firstAttribute="bottom" secondItem="cHd-Xr-bVF" secondAttribute="bottom" id="jfD-rS-hAw"/>
-                            <constraint firstItem="cHd-Xr-bVF" firstAttribute="top" secondItem="JhN-uy-f5G" secondAttribute="top" id="oOK-q7-eqU"/>
-                            <constraint firstAttribute="trailing" secondItem="cHd-Xr-bVF" secondAttribute="trailing" id="zpI-fG-x57"/>
+                            <constraint firstAttribute="trailing" secondItem="cHd-Xr-bVF" secondAttribute="trailing" id="02m-Bt-fzv"/>
+                            <constraint firstItem="rFN-d2-Yjf" firstAttribute="leading" secondItem="JhN-uy-f5G" secondAttribute="leadingMargin" constant="40" id="1iQ-iS-Kge"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rFN-d2-Yjf" secondAttribute="trailing" constant="40" id="7Pp-nZ-a9q"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="rFN-d2-Yjf" secondAttribute="bottom" constant="100" id="CV2-Xh-eyj"/>
+                            <constraint firstAttribute="bottom" secondItem="cHd-Xr-bVF" secondAttribute="bottom" id="OHU-07-0oj"/>
+                            <constraint firstItem="cHd-Xr-bVF" firstAttribute="top" secondItem="JhN-uy-f5G" secondAttribute="top" id="Wfh-Gr-s4Q"/>
+                            <constraint firstItem="cHd-Xr-bVF" firstAttribute="leading" secondItem="JhN-uy-f5G" secondAttribute="leading" id="hIs-mx-TBn"/>
+                            <constraint firstItem="rFN-d2-Yjf" firstAttribute="top" secondItem="JhN-uy-f5G" secondAttribute="topMargin" multiplier="3" constant="100" id="pXW-Rb-4Jt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="aboutus.png" id="SJz-nI-3Rg"/>
                     <navigationItem key="navigationItem" title="Studio Info" id="dzA-bY-dpC"/>
-                    <connections>
-                        <outlet property="tableContainer" destination="pAG-AJ-xOO" id="hnk-Q2-rM8"/>
-                        <outlet property="tblView" destination="hLE-HW-BP6" id="Hd0-FO-5j8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5L8-OX-OHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
