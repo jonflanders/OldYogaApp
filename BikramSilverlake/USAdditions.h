@@ -1,7 +1,7 @@
 //
 //  USAdditions.h
 //  WSDLParser
-//
+//x
 //  Created by John Ogle on 9/5/08.
 //  Copyright 2008 LightSPEED Technologies. All rights reserved.
 //  Modified by Matthew Faupel on 2009-05-06 to use NSDate instead of NSCalendarDate (for iPhone compatibility).
@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import <libxml2/libxml/tree.h>
-
+#import <libxml2/libxml/globals.h>
 @interface NSString (USAdditions)
 
 - (NSString *)stringByEscapingXML;

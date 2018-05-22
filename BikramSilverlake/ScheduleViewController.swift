@@ -300,7 +300,7 @@ class ScheduleViewController: UIViewController,UITableViewDelegate,ScheduleTable
         super.viewDidLoad()
 		self.refresh.addTarget(self, action: #selector(refreshFunc), for: UIControlEvents.valueChanged)
 		self.tableView.addSubview(self.refresh)
-//		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+		self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 		if(self.schedule == nil){
 			let sc = ScheduleController()
 			sc.getSchedule { (schedule, error) -> Void in

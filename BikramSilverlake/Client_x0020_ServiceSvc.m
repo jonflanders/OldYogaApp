@@ -22318,7 +22318,10 @@ NSString * Client_x0020_ServiceSvc_AppointmentStatus_stringFromEnum(Client_x0020
 		xmlAddChild(node, [self.ClientID xmlNodeForDoc:node->doc elementName:@"ClientID" elementNSPrefix:@"Client_x0020_ServiceSvc"]);
 	}
 	if(self.StartDate != 0) {
-		xmlAddChild(node, [self.StartDate xmlNodeForDoc:node->doc elementName:@"StartDate" elementNSPrefix:@"Client_x0020_ServiceSvc"]);
+		NSDateFormatter* df = [[NSDateFormatter alloc] init];
+		[df setDateFormat:@"yyyy-MM-dd"];
+		NSString* stringDate  = [df stringFromDate:self.StartDate];
+		xmlAddChild(node, [stringDate xmlNodeForDoc:node->doc elementName:@"StartDate" elementNSPrefix:@"Client_x0020_ServiceSvc"]);
 	}
 	if(self.EndDate != 0) {
 		xmlAddChild(node, [self.EndDate xmlNodeForDoc:node->doc elementName:@"EndDate" elementNSPrefix:@"Client_x0020_ServiceSvc"]);

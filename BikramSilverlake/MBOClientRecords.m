@@ -31,6 +31,7 @@
 }
 -(void)complete:(NSString *)clientID{
     Client_x0020_ServiceSoapBinding* binding = [[Client_x0020_ServiceSoapBinding alloc] initWithAddress:MBOClientURL];
+	binding.logXMLInOut = YES;
     Client_x0020_ServiceSvc_GetClientVisits* gcv = [[Client_x0020_ServiceSvc_GetClientVisits alloc] init];
     gcv.Request = [[Client_x0020_ServiceSvc_GetClientVisitsRequest alloc] init];
     Client_x0020_ServiceSvc_SourceCredentials* sc = [[Client_x0020_ServiceSvc_SourceCredentials alloc] init];
@@ -40,8 +41,11 @@
     [sc.SiteIDs addInt_:[NSNumber numberWithInt:SiteId]];
     gcv.Request.SourceCredentials = sc;
     gcv.Request.ClientID = clientID;
-    gcv.Request.StartDate = [NSDate dateWithTimeIntervalSinceNow:(NSTimeIntervalSince1970*-1)];
-    Client_x0020_ServiceSoapBinding_GetClientVisits *r = [[Client_x0020_ServiceSoapBinding_GetClientVisits alloc] initWithBinding:binding delegate:self parameters:gcv];
+	
+	NSDate* date = [NSDate dateWithTimeIntervalSinceNow:(NSTimeIntervalSince1970*-1)];
+    gcv.Request.StartDate = date;
+	gcv.Request.XMLDetail = Client_x0020_ServiceSvc_XMLDetailLevel_Full;
+	Client_x0020_ServiceSoapBinding_GetClientVisits *r = [[Client_x0020_ServiceSoapBinding_GetClientVisits alloc] initWithBinding:binding delegate:self parameters:gcv];
     [r main];
   
 }

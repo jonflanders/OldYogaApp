@@ -52,21 +52,6 @@
 		FC5C0C4917013F80008C1D8D /* country_names_and_code_elements_txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC5C0C4817013F80008C1D8D /* country_names_and_code_elements_txt.txt */; };
 		FC6497CD1AFE75B400A12668 /* ScheduleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6497CC1AFE75B400A12668 /* ScheduleTableViewDataSource.swift */; };
 		FC8024A01AEC12FC003B5FEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC80249F1AEC12FC003B5FEB /* Images.xcassets */; };
-		FC88E0351B097FE5003B6EC7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88E0341B097FE5003B6EC7 /* InterfaceController.swift */; };
-		FC88E0371B097FE5003B6EC7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88E0361B097FE5003B6EC7 /* NotificationController.swift */; };
-		FC88E0391B097FE5003B6EC7 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88E0381B097FE5003B6EC7 /* GlanceController.swift */; };
-		FC88E03B1B097FE5003B6EC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC88E03A1B097FE5003B6EC7 /* Images.xcassets */; };
-		FC88E03F1B097FE5003B6EC7 /* BikramSilverlake WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = FC88E03E1B097FE5003B6EC7 /* BikramSilverlake WatchKit App.app */; };
-		FC88E0471B097FE5003B6EC7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC88E0451B097FE5003B6EC7 /* Interface.storyboard */; };
-		FC88E0491B097FE5003B6EC7 /* WImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC88E0481B097FE5003B6EC7 /* WImages.xcassets */; };
-		FC88E04C1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC88E02F1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FC88E0551B0980F1003B6EC7 /* ScheduleRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88E0541B0980F1003B6EC7 /* ScheduleRowController.swift */; };
-		FC88E0561B09824D003B6EC7 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F141AFC424200377B90 /* ScheduleController.swift */; };
-		FC88E0571B098258003B6EC7 /* ScheduleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F111AFC367A00377B90 /* ScheduleItem.swift */; };
-		FC88E0581B098258003B6EC7 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F221AFC64CF00377B90 /* Schedule.swift */; };
-		FC88E0591B098258003B6EC7 /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F241AFC650100377B90 /* Instructor.swift */; };
-		FC88E05A1B098277003B6EC7 /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F171AFC446500377B90 /* ServerConnection.swift */; };
-		FC88E05B1B098289003B6EC7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC577F1D1AFC46AE00377B90 /* Config.swift */; };
 		FC9665E216D41BE800E656A2 /* ClassDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665E016D41BE800E656A2 /* ClassDetailViewController.m */; };
 		FC9665E316D41BE800E656A2 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9665E116D41BE800E656A2 /* ClassDetailViewController.xib */; };
 		FC9665E716D41BFD00E656A2 /* AboutTheStudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9665E516D41BFD00E656A2 /* AboutTheStudioViewController.m */; };
@@ -137,23 +122,6 @@
 		FCF38AC316CAC368005DD57B /* NavController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF38AC216CAC368005DD57B /* NavController.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FC88E0401B097FE5003B6EC7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC59684F15DC5431006B4745 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC88E03D1B097FE5003B6EC7;
-			remoteInfo = "BikramSilverlake WatchKit App";
-		};
-		FC88E04A1B097FE5003B6EC7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC59684F15DC5431006B4745 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC88E02E1B097FE5003B6EC7;
-			remoteInfo = "BikramSilverlake WatchKit Extension";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		FC88E0531B097FE5003B6EC7 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -161,7 +129,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FC88E04C1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,14 +203,12 @@
 		FC610EA51BC0967B00F4E316 /* BikramSilverlake WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BikramSilverlake WatchKit App.entitlements"; sourceTree = "<group>"; };
 		FC6497CC1AFE75B400A12668 /* ScheduleTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewDataSource.swift; sourceTree = "<group>"; };
 		FC80249F1AEC12FC003B5FEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FC88E02F1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BikramSilverlake WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC88E0321B097FE5003B6EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC88E0331B097FE5003B6EC7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		FC88E0341B097FE5003B6EC7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		FC88E0361B097FE5003B6EC7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		FC88E0381B097FE5003B6EC7 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		FC88E03A1B097FE5003B6EC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FC88E03E1B097FE5003B6EC7 /* BikramSilverlake WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BikramSilverlake WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC88E0441B097FE5003B6EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC88E0461B097FE5003B6EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		FC88E0481B097FE5003B6EC7 /* WImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WImages.xcassets; sourceTree = "<group>"; };
@@ -350,13 +315,6 @@
 				FC59685D15DC5431006B4745 /* UIKit.framework in Frameworks */,
 				FC59685F15DC5431006B4745 /* Foundation.framework in Frameworks */,
 				FC59686115DC5431006B4745 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC88E02C1B097FE5003B6EC7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,8 +570,6 @@
 			isa = PBXGroup;
 			children = (
 				FC59685815DC5431006B4745 /* BikramSilverlake.app */,
-				FC88E02F1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex */,
-				FC88E03E1B097FE5003B6EC7 /* BikramSilverlake WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -725,45 +681,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				FC88E04B1B097FE5003B6EC7 /* PBXTargetDependency */,
 			);
 			name = BikramSilverlake;
 			productName = BikramSilverlake;
 			productReference = FC59685815DC5431006B4745 /* BikramSilverlake.app */;
 			productType = "com.apple.product-type.application";
-		};
-		FC88E02E1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC88E0521B097FE5003B6EC7 /* Build configuration list for PBXNativeTarget "BikramSilverlake WatchKit Extension" */;
-			buildPhases = (
-				FC88E02B1B097FE5003B6EC7 /* Sources */,
-				FC88E02C1B097FE5003B6EC7 /* Frameworks */,
-				FC88E02D1B097FE5003B6EC7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FC88E0411B097FE5003B6EC7 /* PBXTargetDependency */,
-			);
-			name = "BikramSilverlake WatchKit Extension";
-			productName = "BikramSilverlake WatchKit Extension";
-			productReference = FC88E02F1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
-		};
-		FC88E03D1B097FE5003B6EC7 /* BikramSilverlake WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC88E0511B097FE5003B6EC7 /* Build configuration list for PBXNativeTarget "BikramSilverlake WatchKit App" */;
-			buildPhases = (
-				FC88E03C1B097FE5003B6EC7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "BikramSilverlake WatchKit App";
-			productName = "BikramSilverlake WatchKit App";
-			productReference = FC88E03E1B097FE5003B6EC7 /* BikramSilverlake WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
 		};
 /* End PBXNativeTarget section */
 
@@ -777,26 +699,6 @@
 				ORGANIZATIONNAME = flounderware;
 				TargetAttributes = {
 					FC59685715DC5431006B4745 = {
-						DevelopmentTeam = LCT7F69LK9;
-						LastSwiftMigration = 0800;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					FC88E02E1B097FE5003B6EC7 = {
-						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = LCT7F69LK9;
-						LastSwiftMigration = 0800;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					FC88E03D1B097FE5003B6EC7 = {
-						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = LCT7F69LK9;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
@@ -821,8 +723,6 @@
 			projectRoot = "";
 			targets = (
 				FC59685715DC5431006B4745 /* BikramSilverlake */,
-				FC88E02E1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension */,
-				FC88E03D1B097FE5003B6EC7 /* BikramSilverlake WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -891,24 +791,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC88E02D1B097FE5003B6EC7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC88E03F1B097FE5003B6EC7 /* BikramSilverlake WatchKit App.app in Resources */,
-				FC88E03B1B097FE5003B6EC7 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC88E03C1B097FE5003B6EC7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC88E0471B097FE5003B6EC7 /* Interface.storyboard in Resources */,
-				FC88E0491B097FE5003B6EC7 /* WImages.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -967,37 +849,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC88E02B1B097FE5003B6EC7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC88E0591B098258003B6EC7 /* Instructor.swift in Sources */,
-				FC88E0371B097FE5003B6EC7 /* NotificationController.swift in Sources */,
-				FC88E0351B097FE5003B6EC7 /* InterfaceController.swift in Sources */,
-				FC88E0561B09824D003B6EC7 /* ScheduleController.swift in Sources */,
-				FC88E0571B098258003B6EC7 /* ScheduleItem.swift in Sources */,
-				FC88E0391B097FE5003B6EC7 /* GlanceController.swift in Sources */,
-				FC88E0581B098258003B6EC7 /* Schedule.swift in Sources */,
-				FC88E05B1B098289003B6EC7 /* Config.swift in Sources */,
-				FC88E05A1B098277003B6EC7 /* ServerConnection.swift in Sources */,
-				FC88E0551B0980F1003B6EC7 /* ScheduleRowController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FC88E0411B097FE5003B6EC7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC88E03D1B097FE5003B6EC7 /* BikramSilverlake WatchKit App */;
-			targetProxy = FC88E0401B097FE5003B6EC7 /* PBXContainerItemProxy */;
-		};
-		FC88E04B1B097FE5003B6EC7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC88E02E1B097FE5003B6EC7 /* BikramSilverlake WatchKit Extension */;
-			targetProxy = FC88E04A1B097FE5003B6EC7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FC59686515DC5431006B4745 /* InfoPlist.strings */ = {
@@ -1083,6 +935,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BikramSilverlake/BikramSilverlake.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1111,6 +964,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BikramSilverlake/BikramSilverlake.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1135,155 +989,6 @@
 			};
 			name = Release;
 		};
-		FC88E04D1B097FE5003B6EC7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "BikramSilverlake WatchKit Extension/BikramSilverlake WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "BikramSilverlake WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		FC88E04E1B097FE5003B6EC7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "BikramSilverlake WatchKit Extension/BikramSilverlake WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "BikramSilverlake WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		FC88E04F1B097FE5003B6EC7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "BikramSilverlake WatchKit App/BikramSilverlake WatchKit App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				IBSC_MODULE = BikramSilverlake_WatchKit_Extension;
-				INFOPLIST_FILE = "BikramSilverlake WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Debug;
-		};
-		FC88E0501B097FE5003B6EC7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "BikramSilverlake WatchKit App/BikramSilverlake WatchKit App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				IBSC_MODULE = BikramSilverlake_WatchKit_Extension;
-				INFOPLIST_FILE = "BikramSilverlake WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1301,24 +1006,6 @@
 			buildConfigurations = (
 				FC59687A15DC5431006B4745 /* Debug */,
 				FC59687B15DC5431006B4745 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FC88E0511B097FE5003B6EC7 /* Build configuration list for PBXNativeTarget "BikramSilverlake WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC88E04F1B097FE5003B6EC7 /* Debug */,
-				FC88E0501B097FE5003B6EC7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FC88E0521B097FE5003B6EC7 /* Build configuration list for PBXNativeTarget "BikramSilverlake WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC88E04D1B097FE5003B6EC7 /* Debug */,
-				FC88E04E1B097FE5003B6EC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
